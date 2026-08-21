@@ -1,0 +1,29 @@
+/**
+ * 1732. Find the Highest Altitude
+ * Difficulty: Easy | Tags: Array, Prefix Sum
+ * https://leetcode.com/problems/find-the-highest-altitude/
+ *
+ * Pattern: Array
+ * Key insight: Systematically processes the input relying on array principles.
+ *
+ * Time Complexity: O(N) - Iterates over the input elements linearly
+ * Space Complexity: O(N) - Uses a presum array
+ *
+ * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ */
+class FindTheHighestAltitude {
+    public int largestAltitude(int[] gain) {
+        int[] presum = new int[gain.length + 1];
+
+        for (int i = 0; i < gain.length; i++) {
+            presum[i + 1] = presum[i] + gain[i];
+        }
+        int max = 0;
+        for (int i = 0; i < gain.length + 1; i++) {
+            if (max < presum[i]) {
+                max = presum[i];
+            }
+        }
+        return max;
+    }
+}

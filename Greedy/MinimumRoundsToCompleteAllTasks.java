@@ -1,0 +1,37 @@
+/**
+ * 2244. Minimum Rounds to Complete All Tasks
+ * Difficulty: Medium | Tags: Array, Hash Table, Greedy, Counting
+ * https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/
+ *
+ * Pattern: Array
+ * Key insight: Systematically processes the input relying on array principles.
+ *
+ * Time Complexity: O(N) - Iterates over the input elements linearly
+ * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ *
+ * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ */
+class MinimumRoundsToCompleteAllTasks {
+    public int minimumRounds(int[] tasks) {
+        int rounds = 0;
+        Map<Integer, Integer> map = new HashMap<>();
+        for (int i : tasks) {
+            map.put(i, map.getOrDefault(i, 0) + 1);
+        }
+
+        for (int i : map.keySet()) {
+            if (map.get(i) == 1) {
+                return -1;
+            }
+
+            int rem = map.get(i) % 3;
+
+            if (rem == 0) {
+                rounds += map.get(i) / 3;
+            } else {
+                rounds += map.get(i) / 3 + 1;
+            }
+        }
+        return rounds;
+    }
+}

@@ -1,0 +1,45 @@
+/**
+ * Rat in a Maze (Maze Solver)
+ * Difficulty: Medium | Tags: Array, Backtracking, Matrix
+ * https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
+ *
+ * Pattern: Backtracking
+ * Key insight: Explores all possible directions (Up, Down, Left, Right) recursively and backtracks on dead ends.
+ *
+ * Time Complexity: O(4^(N^2)) - Four choices at each step, max path length is N^2
+ * Space Complexity: O(N^2) - Max recursion depth in the worst-case scenario
+ *
+ * Edge Cases Handled: Start or end cell is blocked, no possible path, matrix bounds
+ */
+class MazeSolver {
+
+    public List<String> findPaths(int[][] maze, int n) {
+        List<String> res = new ArrayList<>();
+        if (maze[0][0] == 0 || maze[n - 1][n - 1] == 0)
+            return res;
+
+        String path = "";
+        helper(maze, n, 0, 0, path, res);
+        return res;
+    }
+
+    public void helper(int[][] maze, int n, int row, int col, String path, List<String> res) {
+        if (row < 0 || col < 0 || row >= n || col >= n || maze[row][col] == 0 || maze[row][col] == -1) {
+            return;
+        }
+
+        if (row == n - 1 && col == n - 1) {
+            res.add(path);
+            return;
+        }
+
+        maze[row][col] = -1;
+
+        helper(maze, n, row - 1, col, path + 'U', res);
+        helper(maze, n, row + 1, col, path + 'D', res);
+        helper(maze, n, row, col + 1, path + 'R', res);
+        helper(maze, n, row, col - 1, path + 'L', res);
+
+        maze[row][col] = 1;
+    }
+}

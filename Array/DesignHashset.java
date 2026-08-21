@@ -1,0 +1,49 @@
+/**
+ * 705. Design HashSet
+ * Difficulty: Easy | Tags: Array, Hash Table, Linked List, Design, Hash Function
+ * https://leetcode.com/problems/design-hashset/
+ *
+ * Pattern: Array
+ * Key insight: Systematically processes the input relying on array principles.
+ *
+ * Time Complexity: O(N) worst case - Linked list traversal in buckets degrades as N grows
+ * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ *
+ * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ */
+class MyHashSet {
+    LinkedList<Integer>[] bucketArray;
+
+    public MyHashSet() {
+        bucketArray = new LinkedList[1000];
+        for (int i = 0; i < 1000; i++) {
+            bucketArray[i] = new LinkedList<Integer>();
+        }
+    }
+
+    public void add(int key) {
+        int index = key % 1000;
+        if (!bucketArray[index].contains(key)) {
+            bucketArray[index].add(key);
+        }
+    }
+
+    public void remove(int key) {
+        int index = key % 1000;
+        if (bucketArray[index].contains(key)) {
+            bucketArray[index].remove((Integer) key);
+        }
+    }
+
+    public boolean contains(int key) {
+        return bucketArray[key % 1000].contains(key);
+    }
+}
+
+/**
+ * Your MyHashSet object will be instantiated and called as such:
+ * MyHashSet obj = new MyHashSet();
+ * obj.add(key);
+ * obj.remove(key);
+ * boolean param_3 = obj.contains(key);
+ */

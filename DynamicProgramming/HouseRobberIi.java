@@ -1,0 +1,50 @@
+/**
+ * 213. House Robber II
+ * Difficulty: Medium | Tags: Array, Dynamic Programming
+ * https://leetcode.com/problems/house-robber-ii/
+ *
+ * Pattern: Array
+ * Key insight: Systematically processes the input relying on array principles.
+ *
+ * Time Complexity: O(N) - Iterates over the input elements linearly
+ * Space Complexity: O(N) - Uses arrays for skipFirst/skipLast processing
+ *
+ * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ */
+class HouseRobberIi {
+    public int rob(int[] nums) {
+        if (nums.length == 0)
+            return 0;
+
+        if (nums.length == 1)
+            return nums[0];
+
+        if (nums.length == 2)
+            return Math.max(nums[0], nums[1]);
+
+        int[] skipLast = new int[nums.length - 1];
+        int[] skipFirst = new int[nums.length - 1];
+
+        for (int i = 0; i < nums.length - 1; i++) {
+            skipLast[i] = nums[i];
+            skipFirst[i] = nums[i + 1];
+        }
+
+        int lootSkippingLast = robbery(skipLast);
+        int lootSkippingFirst = robbery(skipFirst);
+
+        return Math.max(lootSkippingLast, lootSkippingFirst);
+    }
+
+    public static int robbery(int[] arr) {
+        int[] loot = new int[arr.length];
+
+        loot[0] = arr[0];
+        loot[1] = Math.max(arr[0], arr[1]);
+
+        for (int i = 2; i < arr.length; i++) {
+            loot[i] = Math.max(loot[i - 2] + arr[i], loot[i - 1]);
+        }
+        return loot[arr.length - 1];
+    }
+}

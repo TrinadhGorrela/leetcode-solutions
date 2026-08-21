@@ -1,0 +1,62 @@
+/**
+ * 133. Clone Graph
+ * Difficulty: Medium | Tags: Hash Table, Depth-First Search, Breadth-First Search, Graph Theory
+ * https://leetcode.com/problems/clone-graph/
+ *
+ * Pattern: Hash Table
+ * Key insight: Systematically processes the input relying on hash table principles.
+ *
+ * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
+ * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ *
+ * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ */
+/*
+// Definition for a Node.
+class Node {
+    public int val;
+    public List<Node> neighbors;
+    public Node() {
+        val = 0;
+        neighbors = new ArrayList<Node>();
+    }
+    public Node(int _val) {
+        val = _val;
+        neighbors = new ArrayList<Node>();
+    }
+    public Node(int _val, ArrayList<Node> _neighbors) {
+        val = _val;
+        neighbors = _neighbors;
+    }
+}
+*/
+
+class CloneGraph {
+
+    public Node cloneGraph(Node node) {
+        Map<Integer, Node> visited = new HashMap<>();
+        return dfs(visited, node);
+    }
+
+    private Node dfs(Map<Integer, Node> visited, Node node) {
+        if (node == null) {
+            return null;
+        }
+
+        if (visited.containsKey(node.val)) {
+            return visited.get(node.val);
+        }
+
+        Node temp = new Node(node.val);
+        visited.put(node.val, temp);
+
+        for (Node i : node.neighbors) {
+            if (!visited.containsKey(i.val)) {
+                temp.neighbors.add(dfs(visited, i));
+            } else {
+                temp.neighbors.add(visited.get(i.val));
+            }
+        }
+        return temp;
+    }
+}
