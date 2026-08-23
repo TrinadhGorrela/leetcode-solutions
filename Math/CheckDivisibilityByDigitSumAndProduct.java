@@ -3,11 +3,11 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/check-divisibility-by-digit-sum-and-product/
  *
- * Pattern: 
- * Key insight: 
+ * Pattern: Digit Extraction
+ * Key insight: Extract each digit via modulo and division to accumulate their sum and product, then verify divisibility against the original number.
  *
- * Time Complexity: O(?)
- * Space Complexity: O(?)
+ * Time Complexity: O(log n) - iterates through each digit of n
+ * Space Complexity: O(1) - uses a constant amount of extra memory
  *
  * Edge Cases Handled: Per LeetCode constraints
  */
