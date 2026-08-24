@@ -3,11 +3,11 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/self-dividing-numbers/
  *
- * Pattern: 
- * Key insight: 
+ * Pattern: Digit Extraction
+ * Key insight: Iterate through the range, and for each number, extract its digits using modulo 10 to verify divisibility.
  *
- * Time Complexity: O(?)
- * Space Complexity: O(?)
+ * Time Complexity: O(N * D) - N is the range size, D is the number of digits (at most 5)
+ * Space Complexity: O(1) - constant auxiliary space
  *
  * Edge Cases Handled: Per LeetCode constraints
  */
