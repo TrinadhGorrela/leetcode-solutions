@@ -24,7 +24,7 @@
  */
 public class LinkedListCycle {
     public boolean hasCycle(ListNode head) {
-          ListNode slow = head;
+        ListNode slow = head;
         ListNode fast = head;
         while (fast != null && fast.next != null) {
             slow = slow.next;

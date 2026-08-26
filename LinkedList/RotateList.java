@@ -41,9 +41,11 @@ class RotateList {
         if (k == 0) {
             return head;
         }
+
         while (curr2.next != null) {
             curr2 = curr2.next;
         }
+        
         curr2.next = head;
 
         ListNode prev = null;

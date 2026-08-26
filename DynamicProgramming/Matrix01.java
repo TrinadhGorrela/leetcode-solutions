@@ -7,7 +7,7 @@
  * Key insight: Systematically processes the input relying on array principles.
  *
  * Time Complexity: O(m*n) - Two-pass dynamic programming (forward and backward pass over the grid)
- * Space Complexity: O(m * n) - Allocates a 2D DP grid
+ * Space Complexity: O(1) - Excluding the output matrix, no extra auxiliary space is used
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
  */
