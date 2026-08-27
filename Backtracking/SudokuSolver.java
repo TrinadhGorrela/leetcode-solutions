@@ -72,6 +72,7 @@ class SudokuSolver {
             if ((Brd[row][i] == num) || (Brd[i][col] == num))
                 return false;
         }
+        
         int srow = row - row % 3;
         int scol = col - col % 3;
         for (int i = 0; i < 3; i++) {
