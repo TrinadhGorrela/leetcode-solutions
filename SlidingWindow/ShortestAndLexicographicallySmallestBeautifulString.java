@@ -1,0 +1,47 @@
+/**
+ * 2904. Shortest and Lexicographically Smallest Beautiful String
+ * Difficulty: Medium | Tags: String, Sliding Window
+ * https://leetcode.com/problems/shortest-and-lexicographically-smallest-beautiful-string/
+ *
+ * Pattern: 
+ * Key insight: 
+ *
+ * Time Complexity: O(?)
+ * Space Complexity: O(?)
+ *
+ * Edge Cases Handled: Per LeetCode constraints
+ */
+class ShortestAndLexicographicallySmallestBeautifulString {
+    public String shortestBeautifulSubstring(String s, int k) {
+        int left = 0;
+        int count = 0;
+        int min = Integer.MAX_VALUE;
+        String res = "";
+        for (int right = 0; right < s.length(); right++) {
+            if (s.charAt(right) == '1') {
+                count++;
+            }
+
+            while (count == k) {
+                if (min > right - left + 1) {
+                    res = s.substring(left, right + 1);
+                    min = right - left + 1;
+                } else if (min == right - left + 1) {
+                    String temp = s.substring(left, right + 1);
+                    if (res.compareTo(temp) > 0) {
+                        res = temp;
+                    }
+                }
+                if (s.charAt(left) == '1') {
+                    count--;
+                }
+                left++;
+            }
+        }
+
+        if (min == Integer.MAX_VALUE) {
+            return "";
+        }
+        return res;
+    }
+}
