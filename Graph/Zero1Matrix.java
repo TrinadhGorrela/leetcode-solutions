@@ -3,11 +3,11 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Breadth-First Search, Matrix
  * https://leetcode.com/problems/01-matrix/
  *
- * Pattern: 
- * Key insight: 
+ * Pattern: Multi-source BFS
+ * Key insight: Start BFS from all 0s simultaneously to find shortest path to 1s
  *
- * Time Complexity: O(?)
- * Space Complexity: O(?)
+ * Time Complexity: O(R * C) - Visit every cell in the matrix
+ * Space Complexity: O(R * C) - Queue can contain all cells in worst case
  *
  * Edge Cases Handled: Per LeetCode constraints
  */

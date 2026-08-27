@@ -3,11 +3,11 @@
  * Difficulty: Medium | Tags: String, Sliding Window
  * https://leetcode.com/problems/shortest-and-lexicographically-smallest-beautiful-string/
  *
- * Pattern: 
- * Key insight: 
+ * Pattern: Sliding Window
+ * Key insight: Expand right pointer, shrink left when condition met, track min length and lexicographical order
  *
- * Time Complexity: O(?)
- * Space Complexity: O(?)
+ * Time Complexity: O(N) - Each character processed at most twice
+ * Space Complexity: O(1) - Constant extra space (ignoring output string)
  *
  * Edge Cases Handled: Per LeetCode constraints
  */

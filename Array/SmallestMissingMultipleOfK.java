@@ -3,11 +3,11 @@
  * Difficulty: Easy | Tags: Array, Hash Table
  * https://leetcode.com/problems/smallest-missing-multiple-of-k/
  *
- * Pattern: 
- * Key insight: 
+ * Pattern: Hash Set
+ * Key insight: Store array in set and iterate multiples of k
  *
- * Time Complexity: O(?)
- * Space Complexity: O(?)
+ * Time Complexity: O(N + (max/k)) - N for set creation, loop runs max/k times
+ * Space Complexity: O(N) - Hash set storage for array elements
  *
  * Edge Cases Handled: Per LeetCode constraints
  */

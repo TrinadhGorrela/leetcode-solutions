@@ -3,11 +3,11 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/inverse-coin-change/
  *
- * Pattern: 
- * Key insight: 
+ * Pattern: 1D Dynamic Programming
+ * Key insight: Reverse knapsack logic
  *
- * Time Complexity: O(?)
- * Space Complexity: O(?)
+ * Time Complexity: O(C * A)
+ * Space Complexity: O(A)
  *
  * Edge Cases Handled: Per LeetCode constraints
  */

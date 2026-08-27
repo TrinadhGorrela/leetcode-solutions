@@ -3,11 +3,11 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Knapsack Problem, Complete Knapsack
  * https://leetcode.com/problems/coin-change-ii/
  *
- * Pattern: 
- * Key insight: 
+ * Pattern: 1D DP Knapsack
+ * Key insight: Iterate coins and accumulate ways to make each amount
  *
- * Time Complexity: O(?)
- * Space Complexity: O(?)
+ * Time Complexity: O(C * A) - C coins and A amount
+ * Space Complexity: O(A) - 1D DP array of size amount + 1
  *
  * Edge Cases Handled: Per LeetCode constraints
  */
