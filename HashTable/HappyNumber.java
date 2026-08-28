@@ -15,8 +15,7 @@ class HappyNumber {
     public boolean isHappy(int n) {
         Set<Integer> used = new HashSet<>();
         while (true) {
-            int sum = 0;
-           sum=square(n);
+            int sum = square(n);
             n = sum;
             if (n == 1)
                 return true;
@@ -24,18 +23,18 @@ class HappyNumber {
             if (used.contains(n))
                 return false;
 
-                
-                used.add(n);
+            used.add(n);
         }
     }
-    public int square(int n){
-        int sum=0;
-        int rem=0;
-         while (n != 0) {
-            rem=n%10;
-            sum = sum+(rem*rem);
+
+    public int square(int n) {
+        int sum = 0;
+        int rem = 0;
+        while (n != 0) {
+            rem = n % 10;
+            sum = sum + (rem * rem);
             n = n / 10;
-            }
-            return sum;
+        }
+        return sum;
     }
 }

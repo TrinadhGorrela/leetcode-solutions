@@ -17,7 +17,7 @@ class Candy {
         Arrays.fill(t, 1);
         for (int i = 1; i < ratings.length; i++) {
             if (ratings[i - 1] < ratings[i]) {
-                t[i] = t[i - 1] + 1;
+                t[i] = Math.max(t[i], t[i + 1] + 1);
             }
         }
 

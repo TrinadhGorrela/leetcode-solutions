@@ -22,11 +22,11 @@ class IsomorphicStrings {
 
             if (iso.containsKey(c1)) {
                 if (iso.get(c1) != c2) {
-                    return false; 
+                    return false;
                 }
             } else {
                 if (iso.containsValue(c2)) {
-                    return false; 
+                    return false;
                 }
                 iso.put(c1, c2);
             }

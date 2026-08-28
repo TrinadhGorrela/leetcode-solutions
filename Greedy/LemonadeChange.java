@@ -13,24 +13,23 @@
  */
 class LemonadeChange {
     public boolean lemonadeChange(int[] bills) {
-        int f = 0;
-        int ten = 0;
-        int twe = 0;
+        int five_count = 0;
+        int ten_count = 0;
         for (int i : bills) {
             if (i == 5) {
-                f++;
+                five_count++;
             } else if (i == 10) {
-                ten++;
-                if (f == 0) {
+                ten_count++;
+                if (five_count == 0) {
                     return false;
                 }
-                f--;
+                five_count--;
             } else {
-                if (ten != 0 && f != 0) {
-                    ten--;
-                    f--;
-                } else if (f >= 3) {
-                    f -= 3;
+                if (ten_count != 0 && five_count != 0) {
+                    ten_count--;
+                    five_count--;
+                } else if (five_count >= 3) {
+                    five_count -= 3;
                 } else {
                     return false;
                 }

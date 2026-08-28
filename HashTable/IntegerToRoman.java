@@ -30,11 +30,11 @@ class IntegerToRoman {
 
         StringBuilder roman = new StringBuilder();
         for (Map.Entry<Integer, String> entry : map.entrySet()) {
-				while (num >= entry.getKey()) {
-					roman.append(entry.getValue());
-				    num = num - entry.getKey();
-				}
-			}
-            return roman.toString();
+            while (num >= entry.getKey()) {
+                roman.append(entry.getValue());
+                num = num - entry.getKey();
+            }
+        }
+        return roman.toString();
     }
 }
