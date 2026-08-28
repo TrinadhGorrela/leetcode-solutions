@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, String, Trie
  * https://leetcode.com/problems/longest-common-prefix/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Horizontal Scanning (String)
+ * Key insight: Start with the first string as the prefix and repeatedly trim it by one character until it is a prefix of the current word; repeat across all words.
  *
  * Time Complexity: O(N * min(L)) - Total character comparisons bounded by shortest string
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: String, Backtracking, Bit Manipulation
  * https://leetcode.com/problems/letter-case-permutation/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Binary Choice)
+ * Key insight: At each letter position branch into lowercase and uppercase; digits are appended unchanged, producing all 2^L combinations.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via
  * recursion

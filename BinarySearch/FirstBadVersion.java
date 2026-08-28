@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Binary Search, Interactive
  * https://leetcode.com/problems/first-bad-version/
  *
- * Pattern: Binary Search
- * Key insight: Systematically processes the input relying on binary search principles.
+ * Pattern: Binary Search (Lower Bound)
+ * Key insight: Versions form a monotonic bad-after-a-point sequence; find the first index where isBadVersion is true by moving the upper bound to mid on a bad version and the lower bound past mid otherwise.
  *
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state

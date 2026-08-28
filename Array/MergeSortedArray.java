@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/merge-sorted-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers (Merge from the End)
+ * Key insight: Fill the output from the largest position backward using pointers at the ends of both arrays, so no extra space is needed and no element is overwritten before use.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

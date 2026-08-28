@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Sorting
  * https://leetcode.com/problems/third-maximum-number/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Single-Pass (Track Top Three)
+ * Key insight: Maintain the top three distinct values, rotating them down as larger values appear; skip duplicates, and return the third if it exists else the maximum.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

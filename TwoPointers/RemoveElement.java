@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Two Pointers
  * https://leetcode.com/problems/remove-element/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers (In-Place Overwrite)
+ * Key insight: Use a write pointer; each element not equal to val is copied to the write position, compressing all other values to the front in place.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

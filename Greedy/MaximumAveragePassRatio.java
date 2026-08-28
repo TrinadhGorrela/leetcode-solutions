@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Greedy, Heap (Priority Queue)
  * https://leetcode.com/problems/maximum-average-pass-ratio/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy + Max-Heap (Marginal Gain)
+ * Key insight: Always add a student to the class with the largest marginal pass-ratio gain, tracked with a max heap keyed by that gain; reinsert after improving each class.
  *
  * Time Complexity: O((N + extraStudents) log N) - Priority queue offer/poll per iteration
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

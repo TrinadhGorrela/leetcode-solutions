@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Linked List, Math
  * https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Linked List Traversal + Base-2 Conversion
+ * Key insight: Concatenate each node's bit into a string as the list is traversed, then parse that binary string into an integer.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - StringBuilder grows with the input size

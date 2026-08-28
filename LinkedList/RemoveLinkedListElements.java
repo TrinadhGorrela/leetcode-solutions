@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Linked List, Recursion
  * https://leetcode.com/problems/remove-linked-list-elements/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Linked List Deletion with Dummy Node
+ * Key insight: A dummy node precedes the head to simplify removal of leading matches; unlink every node whose value equals the target, keeping the previous pointer otherwise.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

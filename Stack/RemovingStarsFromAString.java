@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: String, Stack, Simulation
  * https://leetcode.com/problems/removing-stars-from-a-string/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: StringBuilder as Stack (Simulation)
+ * Key insight: Append each non-star character to a StringBuilder (acting as a stack) and remove the last character when a star is read, emulating the deletion of the nearest left neighbor.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - StringBuilder grows with the input size

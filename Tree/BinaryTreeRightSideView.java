@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/binary-tree-right-side-view/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: BFS (Rightmost Node per Level)
+ * Key insight: Traverse level by level and capture the last node visited in each level after enqueuing both children, collecting the right-side view.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

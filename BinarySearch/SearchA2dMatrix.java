@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Matrix
  * https://leetcode.com/problems/search-a-2d-matrix/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Binary Search (Flatten 2D to 1D)
+ * Key insight: Map each flat index to a (row, col) pair with division/modulo by the column count, then run a standard binary search over the conceptually flattened sorted matrix.
  *
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state

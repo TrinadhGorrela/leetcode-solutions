@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Depth-First Search, Breadth-First Search, Union-Find, Matrix
  * https://leetcode.com/problems/max-area-of-island/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: BFS (Grid Connected Components)
+ * Key insight: BFS each unvisited land cell to measure its island area, marking visited to avoid recounting, and keep the maximum area found.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

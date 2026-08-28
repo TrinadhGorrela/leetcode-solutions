@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Two Pointers
  * https://leetcode.com/problems/remove-duplicates-from-sorted-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers (In-Place Overwrite)
+ * Key insight: Walk with one index while a write pointer places each first-seen value; because the array is sorted, comparing to the previous element detects duplicates.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

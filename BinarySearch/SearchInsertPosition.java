@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Binary Search
  * https://leetcode.com/problems/search-insert-position/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Binary Search (Lower Bound)
+ * Key insight: Track the first index where the value is >= target; when the loop ends, low naturally holds the correct insertion position.
  *
  * Time Complexity: O(log N) - Search space is halved per iteration in a
  * monotonic sequence

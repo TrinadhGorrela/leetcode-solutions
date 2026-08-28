@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math
  * https://leetcode.com/problems/angle-between-hands-of-a-clock/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Clock Geometry Formula
+ * Key insight: Hour hand moves 30 degrees/hour, minute hand 6 degrees/min (relative 5.5 deg/min); take the smaller angle between the two positions, min(diff, 360-diff).
  *
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Hash Table, String, Greedy, Sorting, Heap (Priority Queue), Counting
  * https://leetcode.com/problems/reorganize-string/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Greedy + Counting (Frequency Staggering)
+ * Key insight: Stagger the most frequent character at even indices first (impossible if its count exceeds ceil(n/2)), then fill the remaining slots with the other characters.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates character array proportional to input string

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Stack, Simulation
  * https://leetcode.com/problems/baseball-game/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Stack (Simulation)
+ * Key insight: Apply each operation against a stack of scores: push raw numbers, pop on C, push 2x the top on D, and push the sum of the top two on +, then total the stack.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Bit Manipulation
  * https://leetcode.com/problems/longest-subsequence-with-non-zero-bitwise-xor/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Bit Manipulation / Math
+ * Key insight: XOR the whole array; if the total XOR is non-zero take every element, otherwise drop exactly one element (unless all are zeros, yielding 0) so the XOR stays non-zero.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

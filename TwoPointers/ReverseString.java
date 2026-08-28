@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/reverse-string/
  *
- * Pattern: Two Pointers
- * Key insight: Systematically processes the input relying on two pointers principles.
+ * Pattern: Two Pointers (In-Place Swap)
+ * Key insight: Swap the characters at two pointers moving from both ends toward the center, reversing the array in place.
  *
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(1) - Only primitive variables used for tracking state

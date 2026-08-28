@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Bit Manipulation, Sorting
  * https://leetcode.com/problems/set-mismatch/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Set + Math
+ * Key insight: Find the duplicated number with a set; derive the missing number from the expected sum of 1..n minus the actual sum plus the duplicate.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

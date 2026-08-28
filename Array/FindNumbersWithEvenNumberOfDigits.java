@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Math
  * https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Math (Digit Counting)
+ * Key insight: Count the number of digits in each value by repeated division by 10; a value qualifies when the digit count is even.
  *
  * Time Complexity: O(N log M) - M is max value, counting digits takes logarithmic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

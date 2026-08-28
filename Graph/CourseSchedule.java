@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort, Directed Acyclic Graph
  * https://leetcode.com/problems/course-schedule/
  *
- * Pattern: Depth-First Search
- * Key insight: Systematically processes the input relying on depth-first search principles.
+ * Pattern: DFS Cycle Detection (Directed Graph)
+ * Key insight: The schedule is possible iff the prerequisite graph has no cycle; run DFS tracking nodes on the current recursion path and return true as soon as a back edge is found.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

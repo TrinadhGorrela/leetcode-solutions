@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Linked List
  * https://leetcode.com/problems/reverse-linked-list-ii/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Sub-list Reversal with Dummy Node
+ * Key insight: Walk to the node just before left, reverse exactly (right-left+1) nodes in place, then re-attach the head and tail of that reversed segment to the surroundings.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

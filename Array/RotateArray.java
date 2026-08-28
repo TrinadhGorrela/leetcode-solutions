@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Math, Two Pointers
  * https://leetcode.com/problems/rotate-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Three Reversals
+ * Key insight: Normalize k by n, then reverse the whole array, the first k elements, and the remaining elements — a combined effect that rotates the array right by k positions in-place.
  *
  * Time Complexity: O(N) - Triple-reverse takes linear time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Greedy, Bit Manipulation
  * https://leetcode.com/problems/cinema-seat-allocation/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Table + Greedy
+ * Key insight: Only rows with reservations matter; for each reserved row check the three possible 4-seat groups (left, middle, right), and add the full 2-group count for every unreserved row.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

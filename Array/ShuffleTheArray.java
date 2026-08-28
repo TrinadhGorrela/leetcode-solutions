@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array
  * https://leetcode.com/problems/shuffle-the-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Simulation
+ * Key insight: Build the result by alternating the first half and second half elements at even and odd positions, respectively.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates the result array

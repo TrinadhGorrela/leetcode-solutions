@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Breadth-First Search, Knapsack Problem, Complete Knapsack
  * https://leetcode.com/problems/coin-change/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (Bottom-up, Complete Knapsack)
+ * Key insight: dp[a] = minimum coins to make amount a; for each amount, try every coin and take 1 + dp[a-coin], skipping unreachable states.
  *
  * Time Complexity: O(amount * coins.length) - DP states and transitions
  * Space Complexity: O(amount) - DP array size

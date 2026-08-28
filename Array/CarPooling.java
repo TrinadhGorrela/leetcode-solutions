@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Sorting, Heap (Priority Queue), Simulation, Prefix Sum
  * https://leetcode.com/problems/car-pooling/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Prefix Sum (Sweep Line)
+ * Key insight: Use a difference array over stops: add passengers at the pickup point and subtract at the drop-off point, then sweep forward to ensure the running total never exceeds capacity.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling

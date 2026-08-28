@@ -4,8 +4,8 @@
  * Sequences
  * https://leetcode.com/problems/generate-parentheses/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Valid Bracket Construction)
+ * Key insight: Recursively place '(' whenever any remain, and ')' only when more close than open brackets are pending, ensuring every generated string is well-formed.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via
  * recursion

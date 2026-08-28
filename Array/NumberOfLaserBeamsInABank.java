@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Math, String, Matrix
  * https://leetcode.com/problems/number-of-laser-beams-in-a-bank/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Math + Greedy
+ * Key insight: Beams form only between consecutive rows that each contain a device; multiply the device counts of adjacent non-empty rows and accumulate.
  *
  * Time Complexity: O(total characters across all rows) - Linear scan over character strings
  * Space Complexity: O(1) - Only primitive variables used for tracking state

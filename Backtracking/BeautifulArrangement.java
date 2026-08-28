@@ -4,7 +4,7 @@
  * https://leetcode.com/problems/beautiful-arrangement/
  *
  * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Key insight: Build the arrangement position by position, pruning any candidate where the index condition (i % pos == 0 or pos % i == 0) is not satisfied, and count complete arrangements.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

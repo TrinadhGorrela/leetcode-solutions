@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Sorting, Bucket Sort, Radix Sort, Pigeonhole Principle
  * https://leetcode.com/problems/maximum-gap/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting
+ * Key insight: Sort the array and take the maximum difference between consecutive elements. (Linear bucket/radix sort achieves O(N); sorting is the straightforward but suboptimal O(N log N) route.)
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array (Suboptimal approach)
  * Space Complexity: O(1) - Only primitive variables used for tracking state

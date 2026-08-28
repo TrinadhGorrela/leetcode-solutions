@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Math, Greedy, Sorting, Quicksort, Polygons
  * https://leetcode.com/problems/largest-perimeter-triangle/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Greedy
+ * Key insight: Sort descending and test triples from the largest side; the triangle inequality a+b>c holds for the first valid consecutive triple, giving the maximum perimeter.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Binary Search, Interactive
  * https://leetcode.com/problems/guess-number-higher-or-lower/
  *
- * Pattern: Binary Search
- * Key insight: Systematically processes the input relying on binary search principles.
+ * Pattern: Binary Search (Interactive)
+ * Key insight: Use the guess() feedback (-1/0/1) as the comparison to shrink the search interval toward the picked number in logarithmic time.
  *
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state

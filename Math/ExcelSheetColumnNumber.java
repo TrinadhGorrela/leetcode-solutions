@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, String
  * https://leetcode.com/problems/excel-sheet-column-number/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Base-26 Conversion
+ * Key insight: Treat the column title as a base-26 number (A=1...Z=26); fold each letter into the running total with sum = sum*26 + digit.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

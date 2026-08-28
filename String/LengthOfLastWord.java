@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: String
  * https://leetcode.com/problems/length-of-last-word/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: Backward Scan (Trailing Whitespace Trim)
+ * Key insight: Skip trailing spaces from the end, then count non-space characters until the next space to measure just the last word.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

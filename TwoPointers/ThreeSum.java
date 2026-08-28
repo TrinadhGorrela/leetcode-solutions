@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/3sum/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Two Pointers (Nested Sum, Dedup via Set)
+ * Key insight: Sort, fix one element, then two-pointer the remainder toward sum zero; a hash set of lists deduplicates the triplets.
  *
  * Time Complexity: O(N^2) - The outer loop combined with the inner two-pointer scan dominates the O(N log N) sort
  * Space Complexity: O(N^2) - Stores up to O(N^2) unique triplets in the worst case

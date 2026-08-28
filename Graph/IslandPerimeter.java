@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Depth-First Search, Breadth-First Search, Matrix
  * https://leetcode.com/problems/island-perimeter/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Grid Counting (Per-Cell Neighbor Scan)
+ * Key insight: For each land cell, its contribution to the perimeter is 4 minus the number of adjacent land cells; sum these over the whole grid.
  *
  * Time Complexity: O(rows * cols) - Iterates over the grid
  * Space Complexity: O(rows * cols) - Maintains a visited state matching grid size

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Greedy, Sorting
  * https://leetcode.com/problems/maximum-units-on-a-truck/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy + Sorting (Fractional Knapsack)
+ * Key insight: Load boxes with the most units per box first; sort by unit count descending and fill the truck, taking a partial box when capacity runs short.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

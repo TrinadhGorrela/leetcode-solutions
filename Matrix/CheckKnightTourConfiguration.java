@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Depth-First Search, Breadth-First Search, Matrix, Simulation
  * https://leetcode.com/problems/check-knight-tour-configuration/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: DFS (Knight-Move Path Validation)
+ * Key insight: Recursively validate that the sequence of cell values is reachable by legal knight moves: each step must be on-board, hold the expected next counter, and terminate at n*n-1.
  *
  * Time Complexity: O(N^2) - Iterates over the grid
  * Space Complexity: O(N^2) - Recursion depth equals the total number of cells visited

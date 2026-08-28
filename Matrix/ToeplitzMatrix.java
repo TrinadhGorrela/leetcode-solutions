@@ -3,10 +3,10 @@
  * Difficulty: Easy | Tags: Array, Matrix
  * https://leetcode.com/problems/toeplitz-matrix/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Diagonal Group Validation (Neighbor Comparison)
+ * Key insight: Each cell must equal the cell one row down and one column right for all diagonals to match; comparing each cell against its lower-right neighbor suffices.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
+ * Time Complexity: O(M*N) - Visits every matrix element
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)

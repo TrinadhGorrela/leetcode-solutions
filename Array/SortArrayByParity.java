@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/sort-array-by-parity/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: In-place Partition (Bubble-Style Shift)
+ * Key insight: Slide each even number left to its correct position. A two-pointer single-swap solution is more efficient, but this shifting implementation is also correct.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time (Suboptimal approach)
  * Space Complexity: O(1) - Only primitive variables used for tracking state

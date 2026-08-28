@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Greedy
  * https://leetcode.com/problems/jump-game/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy (Reachability via Farthest Reach)
+ * Key insight: Track the farthest index reachable so far; if any position is beyond the current reach the array is unwinnable, and reaching or exceeding the last index means success.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,11 +3,11 @@
  * Difficulty: Easy | Tags: String
  * https://leetcode.com/problems/detect-capital/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: Character Case Counting
+ * Key insight: Accepted capitalizations are: all upper, all lower, or only the first letter upper; count uppercase letters and check these conditions.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Allocates memory for string processing
+ * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
  */

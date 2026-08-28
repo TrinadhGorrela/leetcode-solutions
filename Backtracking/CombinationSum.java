@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Backtracking
  * https://leetcode.com/problems/combination-sum/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Unbounded Choice)
+ * Key insight: Explore both taking the current element (with unlimited reuse) and skipping it, descending to the target; record combinations that exactly reach zero.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(2^N) - Holds all valid combinations

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array
  * https://leetcode.com/problems/max-consecutive-ones/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sliding Window / Counting
+ * Key insight: Maintain a running count of consecutive 1s, reset it at each 0, and keep the all-time maximum.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

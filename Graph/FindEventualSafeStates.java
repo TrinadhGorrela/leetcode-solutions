@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort, Kosaraju's Algorithm, Tarjan's SCC Algorithm
  * https://leetcode.com/problems/find-eventual-safe-states/
  *
- * Pattern: Depth-First Search
- * Key insight: Systematically processes the input relying on depth-first search principles.
+ * Pattern: DFS with Recursion-Path Cycle Detection
+ * Key insight: A node is safe iff it is not part of a cycle; run DFS over the graph marking the current recursion path and only mark a node safe when it has no outgoing edge to an unsafe/cyclic node.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

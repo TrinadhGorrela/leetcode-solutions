@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Two Pointers, String, Dynamic Programming, Manacher
  * https://leetcode.com/problems/longest-palindromic-substring/
  *
- * Pattern: Two Pointers
- * Key insight: Systematically processes the input relying on two pointers principles.
+ * Pattern: Expand Around Center
+ * Key insight: For each center (single char or char pair), expand outward while the two ends are equal and track the longest palindrome; even/odd lengths handled by the two center cases.
  *
  * Time Complexity: O(N^2) - Explores palindromes centered at each index
  * Space Complexity: O(1) - Only primitive variables used for tracking state

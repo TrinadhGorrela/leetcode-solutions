@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/minimum-depth-of-binary-tree/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: Depth-First Search (Post-order with Single-Child Handling)
+ * Key insight: Minimum depth requires a leaf (no children); if a node has only one child, take that child's depth, otherwise the smaller of the two, since a path must end at a leaf.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(V) - Maintains visited states or queue/stack depth

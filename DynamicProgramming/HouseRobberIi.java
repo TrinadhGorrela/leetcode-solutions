@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/house-robber-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (Circular Reduction)
+ * Key insight: Because houses are circular (first and last are adjacent), run the linear House Robber DP on two sub-arrays: one excluding the first house and one excluding the last, taking the better result.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses arrays for skipFirst/skipLast processing

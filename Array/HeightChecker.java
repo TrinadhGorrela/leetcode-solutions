@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Sorting, Counting Sort, Bubble Sort
  * https://leetcode.com/problems/height-checker/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting (Comparison)
+ * Key insight: Clone and sort the heights, then count positions where the sorted order differs from the original to get the number of out-of-place students.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Allocates a cloned array

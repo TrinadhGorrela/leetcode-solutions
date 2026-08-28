@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Dynamic Programming, Memoization
  * https://leetcode.com/problems/climbing-stairs/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Dynamic Programming (Fibonacci)
+ * Key insight: The number of ways to reach step i is the sum of ways to reach steps i-1 and i-2 (since you climb 1 or 2 steps), making this a simple Fibonacci recurrence.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size

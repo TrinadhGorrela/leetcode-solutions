@@ -3,8 +3,8 @@
  * Difficulty: Hard | Tags: Array, Backtracking, Algorithm X
  * https://leetcode.com/problems/n-queens/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Constraint Placement)
+ * Key insight: Place a queen in each row one column at a time, rejecting columns that conflict with already-placed queens on the same column or diagonal; backtrack when no safe column remains.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(solutions * N^2) - Stores every valid full board

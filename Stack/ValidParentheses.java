@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: String, Stack, Bracket Sequences
  * https://leetcode.com/problems/valid-parentheses/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: Stack (Bracket Matching)
+ * Key insight: Push opening brackets; on a closing bracket, ensure the stack is non-empty and its top matches the required type, then pop; the string is valid iff the stack ends empty.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

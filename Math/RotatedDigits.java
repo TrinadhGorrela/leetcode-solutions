@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math, Dynamic Programming
  * https://leetcode.com/problems/rotated-digits/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Digit Validation (Invalid / Rotating Set)
+ * Key insight: A number is good if it contains no ambiguous digit (3,4,7) and at least one rotating digit (2,5,6,9); scan each number's digits and count the good ones.
  *
  * Time Complexity: O(N log N) - Outer loop N, inner loop over digits of i is log i
  * Space Complexity: O(1) - Only primitive variables used for tracking state

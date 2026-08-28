@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Sliding Window
  * https://leetcode.com/problems/fruit-into-baskets/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sliding Window (At Most Two Distinct)
+ * Key insight: Expand the right edge adding fruit types; when more than two types are present, shrink the left edge until only two remain, tracking the longest window.
  *
  * Time Complexity: O(N) - Sliding window pointers only move forward
  * Space Complexity: O(1) - Map size is capped at 2

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Sorting, Heap (Priority Queue)
  * https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Single-Pass (Track Top Two)
+ * Key insight: Track the largest and second-largest values in one pass, then return (max-1)*(secondMax-1) for the maximum product.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

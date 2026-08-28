@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, String, Greedy, Sorting
  * https://leetcode.com/problems/largest-number/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting (Custom Comparator)
+ * Key insight: Convert numbers to strings and sort by the concatenation comparator (b+a).compareTo(a+b) so the largest combined number comes first; guard against the all-zeros case.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Uses a string array

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table
  * https://leetcode.com/problems/find-the-largest-almost-missing-integer/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Brute Force (Enumerate Subarrays)
+ * Key insight: Enumerate every length-k contiguous subarray; a value is a candidate if it appears in exactly one subarray, and the answer is the largest such value.
  *
  * Time Complexity: O(N^2 * K) - Nested loops scanning through lists of
  * sub-arrays (Brute-force approach)

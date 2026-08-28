@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/house-robber/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (1D, Max Subset without Adjacent)
+ * Key insight: At each house, the optimal total is max(rob this house + total two houses back, skip and keep the previous total); recurrence res[i] = max(res[i-2]+nums[i], res[i-1]).
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses a DP array

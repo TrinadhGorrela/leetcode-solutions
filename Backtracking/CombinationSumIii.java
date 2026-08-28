@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Backtracking
  * https://leetcode.com/problems/combination-sum-iii/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Fixed Pool)
+ * Key insight: Choose k distinct numbers from 1..9 that sum to n, advancing the start index each step; record only when both the target and size constraints are met.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(C(9,k) * k) - Stores valid combinations from a fixed 1-9 pool

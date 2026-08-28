@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: String, Greedy, Enumeration
  * https://leetcode.com/problems/remove-digit-from-number-to-maximize-result/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: Enumeration (All Removal Positions)
+ * Key insight: Try removing the digit at every matching index, building each candidate string and keeping the lexicographically greatest via compareTo.
  *
  * Time Complexity: O(N^2) - Substring operations inside the loop
  * Space Complexity: O(N) - Allocates new strings inside the loop

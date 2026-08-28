@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Math, Greedy, Minimax, Counting, Game Theory, Nim Game, Zero-Sum Game
  * https://leetcode.com/problems/stone-game-ix/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Counting + Game Theory (Greedy)
+ * Key insight: Reduce each stone modulo 3 and reason about the turn sequence; Alice wins depending on the count of 0s, 1s, and 2s based on known game-state outcomes.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Enumeration
  * https://leetcode.com/problems/sequential-digits/
  *
- * Pattern: Enumeration
- * Key insight: Systematically processes the input relying on enumeration principles.
+ * Pattern: Enumeration (Sliding Window over Fixed Digit Pool)
+ * Key insight: All sequential-digit numbers are substrings of "123456789"; enumerate windows of increasing length and keep those within [low, high].
  *
  * Time Complexity: O(1) - Bounded by a fixed pool of 9 digits and string lengths (~36 max iterations)
  * Space Complexity: O(1) - Auxiliary collection holds at most a constant ~36 valid numbers

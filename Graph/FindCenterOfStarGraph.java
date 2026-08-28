@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Graph Theory
  * https://leetcode.com/problems/find-center-of-star-graph/
  *
- * Pattern: Graph Theory
- * Key insight: Systematically processes the input relying on graph theory principles.
+ * Pattern: Degree Counting
+ * Key insight: In a star graph the center appears in every edge; count occurrences of the two endpoints of the first edge across all edges and return the one with the higher count.
  *
  * Time Complexity: O(E) - Single pass over the edges array
  * Space Complexity: O(1) - Only a few variables for counting

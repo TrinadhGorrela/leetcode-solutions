@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Hash Table, String, Sorting
  * https://leetcode.com/problems/valid-anagram/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Character Frequency Array (Counting)
+ * Key insight: Increment a 26-slot counter for each char of s and decrement for t; the strings are anagrams iff all slots return to zero (after lengths match).
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Math, Prefix Sum
  * https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sliding Window (Running Sum)
+ * Key insight: For each odd length, slide a fixed-size window over the array updating the sum incrementally, and add every window sum to the total.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

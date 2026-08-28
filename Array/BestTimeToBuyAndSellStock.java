@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: One-Pass Min Tracking (Greedy)
+ * Key insight: Track the minimum price seen so far and compute the maximum profit by taking each price as the sell price, updating profit = max(profit, price - minPrice) on the fly.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

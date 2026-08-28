@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Combinatorics, Enumeration
  * https://leetcode.com/problems/distribute-candies-among-children-i/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Combinatorial Enumeration
+ * Key insight: Enumerate the first two children's shares up to the per-child limit, and count assignments where the remaining candies for the third child are non-negative and within limit.
  *
  * Time Complexity: O(limit^2) - Nested loops run from 0 to limit, independent of n
  * Space Complexity: O(1) - Only primitive variables used for tracking state

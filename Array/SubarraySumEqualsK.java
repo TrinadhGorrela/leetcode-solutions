@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Prefix Sum
  * https://leetcode.com/problems/subarray-sum-equals-k/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Prefix Sum + Hash Map
+ * Key insight: A subarray sums to k when prefixSum[i] - prefixSum[j] = k; count how many prior prefix sums equal prefixSum[i] - k using a map that also seeds prefix 0.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

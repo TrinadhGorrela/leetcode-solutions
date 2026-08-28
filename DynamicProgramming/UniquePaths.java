@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math, Dynamic Programming, Combinatorics
  * https://leetcode.com/problems/unique-paths/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Dynamic Programming (Grid Counting)
+ * Key insight: dp[i][j] = number of ways to reach cell (i,j), equal to the sum of the ways from the cell above and the cell to the left; edges are seeded to 1.
  *
  * Time Complexity: O(M * N) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(M * N) - Allocates a full 2D DP grid

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Linked List, Design, Hash Function
  * https://leetcode.com/problems/design-hashset/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Set (Bucketing)
+ * Key insight: Distribute keys into 1000 buckets using modulo, resolving collisions with a linked list per bucket; contains/remove scan the bucket chain.
  *
  * Time Complexity: O(N) worst case - Linked list traversal in buckets degrades as N grows
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

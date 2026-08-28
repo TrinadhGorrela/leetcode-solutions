@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Sliding Window
  * https://leetcode.com/problems/maximum-average-subarray-i/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sliding Window (Fixed-Length Sum)
+ * Key insight: Start with the sum of the first k elements, then roll the window right by adding the entering element and subtracting the leaving one, tracking the maximum sum before dividing by k.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

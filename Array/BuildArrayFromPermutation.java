@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Simulation
  * https://leetcode.com/problems/build-array-from-permutation/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Simulation
+ * Key insight: Build the result by directly mapping each index i to nums[nums[i]], since the permutation guarantees valid indices.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates the result array

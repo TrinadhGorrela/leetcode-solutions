@@ -3,10 +3,10 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Matrix
  * https://leetcode.com/problems/set-matrix-zeroes/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Flag Arrays (Row / Column Marking)
+ * Key insight: First scan records which rows and columns contain a zero in two boolean flags, then zero out entire marked rows and columns in a second pass.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
+ * Time Complexity: O(M*N) - Visits every matrix element
  * Space Complexity: O(M+N) - Uses arrays to track rows and columns to be zeroed
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)

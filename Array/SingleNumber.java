@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Bit Manipulation
  * https://leetcode.com/problems/single-number/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Bit Manipulation (XOR)
+ * Key insight: XORing every element cancels out pairs (x XOR x = 0), leaving the single number that appears only once.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

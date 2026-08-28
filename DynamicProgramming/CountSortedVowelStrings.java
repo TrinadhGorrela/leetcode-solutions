@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math, Dynamic Programming, Combinatorics
  * https://leetcode.com/problems/count-sorted-vowel-strings/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Dynamic Programming (Counting)
+ * Key insight: dp[i][j] counts strings of length i ending with the j-th vowel; each extends only from vowels <= itself to preserve sorted order, and the answer is the sum of the final row.
  *
  * Time Complexity: O(N) - Inner loop is bounded by a constant (5 vowels)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size

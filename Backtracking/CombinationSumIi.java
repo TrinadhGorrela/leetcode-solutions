@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Backtracking
  * https://leetcode.com/problems/combination-sum-ii/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Sorted + Skip Duplicates)
+ * Key insight: Sort candidates, then at each level skip consecutive duplicates to avoid duplicate combinations, and stop early once the target is exceeded.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(2^N) - Holds all valid combinations

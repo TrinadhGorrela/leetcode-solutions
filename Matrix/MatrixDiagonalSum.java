@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Matrix
  * https://leetcode.com/problems/matrix-diagonal-sum/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Matrix Diagonal Summation
+ * Key insight: Add cells on either main diagonal (i==j or i+j == n-1); the two diagonals share only the center on odd n, keeping the sum single-counted via the inclusive condition.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

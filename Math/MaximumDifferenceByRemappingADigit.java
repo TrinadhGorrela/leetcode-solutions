@@ -3,11 +3,11 @@
  * Difficulty: Easy | Tags: Math, Greedy
  * https://leetcode.com/problems/maximum-difference-by-remapping-a-digit/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Greedy (Digit Remapping)
+ * Key insight: Remap the first digit that is not 9 to 9 for the maximum, and remap the leading digit to 0 for the minimum; subtract the two results.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Space Complexity: O(N) - Creates string copies for remapping
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
  */

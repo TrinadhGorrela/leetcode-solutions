@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Divide and Conquer, Matrix
  * https://leetcode.com/problems/search-a-2d-matrix-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Staircase Search (Start Top-Right)
+ * Key insight: Start at the top-right corner; move left when the cell is larger than the target and down when it is smaller, eliminating a full row or column each step.
  *
  * Time Complexity: O(M+N) - Staircase search starting from top-right or bottom-left
  * Space Complexity: O(1) - Only primitive variables used for tracking state

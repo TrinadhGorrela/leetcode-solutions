@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/perfect-number/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Divisor Summation (Square-Root Bound)
+ * Key insight: A divisor d pairs with n/d, so only scan up to sqrt(n), adding both members of each pair while skipping the number itself; perfect iff the sum equals n.
  *
  * Time Complexity: O(sqrt(N)) - Iterates up to the square root of N
  * Space Complexity: O(1) - Only primitive variables used for tracking state

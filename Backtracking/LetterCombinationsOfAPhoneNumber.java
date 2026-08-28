@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Hash Table, String, Backtracking
  * https://leetcode.com/problems/letter-combinations-of-a-phone-number/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Iterative BFS (Level-by-Level Expansion)
+ * Key insight: Build combinations incrementally: start with the empty string and, for each digit, append each of its letters to every string produced so far.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via iterative BFS-style expansion
  * Space Complexity: O(4^N * N) - N is digits length, stores all combinations

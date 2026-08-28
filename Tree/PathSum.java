@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/path-sum/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: Depth-First Search (Root-to-Leaf Sum Check)
+ * Key insight: Subtract the node value from the running target as you descend; succeed only when the target reaches zero exactly at a leaf node (no children).
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Requires space for the recursion call stack

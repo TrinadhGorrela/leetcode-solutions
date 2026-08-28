@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Sorting
  * https://leetcode.com/problems/remove-covered-intervals/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Greedy (Intervals)
+ * Key insight: Sort intervals so covers appear first (same start -> larger end first), then count intervals that are not fully covered by the last kept interval.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

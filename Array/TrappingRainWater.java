@@ -3,8 +3,8 @@
  * Difficulty: Hard | Tags: Array, Two Pointers, Dynamic Programming, Stack, Monotonic Stack
  * https://leetcode.com/problems/trapping-rain-water/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers
+ * Key insight: Water trapped above a bar is bounded by min(leftMax, rightMax) - height; move the pointer on the shorter side, updating its max and adding the difference.
  *
  * Time Complexity: O(N) - Two-pointer approach is linear
  * Space Complexity: O(1) - Only primitive variables used for tracking state

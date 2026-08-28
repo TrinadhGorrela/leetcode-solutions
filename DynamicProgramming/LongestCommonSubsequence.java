@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: String, Dynamic Programming, Longest Common Subsequence
  * https://leetcode.com/problems/longest-common-subsequence/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: Dynamic Programming (2D LCS Table)
+ * Key insight: If characters match extend 1 + the diagonal result; otherwise take the better of the two adjacent subproblems; the bottom-right cell holds the LCS length.
  *
  * Time Complexity: O(m*n) - Dynamic programming over two strings
  * Space Complexity: O(m*n) - Allocates a 2D array for memoization scaling with input sizes

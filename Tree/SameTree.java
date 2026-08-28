@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/same-tree/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: Depth-First Search (Structural Comparison)
+ * Key insight: Two trees are identical iff both are null, or both non-null with equal values and matching left and right subtrees, checked recursively in pre-order.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Requires space for the recursion call stack

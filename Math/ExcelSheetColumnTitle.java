@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, String
  * https://leetcode.com/problems/excel-sheet-column-title/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Base-26 Encoding (1-indexed Alphabet)
+ * Key insight: Repeatedly extract (col-1) % 26 as a letter, using col-1 to handle A=1 treating the columns as a 1-based base-26 system, then reverse the built string.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates memory for string processing

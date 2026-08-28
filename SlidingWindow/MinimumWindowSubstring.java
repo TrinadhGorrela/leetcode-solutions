@@ -3,8 +3,8 @@
  * Difficulty: Hard | Tags: Hash Table, String, Sliding Window
  * https://leetcode.com/problems/minimum-window-substring/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Sliding Window (Two-Frequency Matching)
+ * Key insight: Slide a window whose counts of each ASCII char dominate t's counts (isPos check), then shrink the left edge while the window still covers t to minimize its length.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling

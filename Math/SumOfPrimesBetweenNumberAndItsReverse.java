@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math, Number Theory
  * https://leetcode.com/problems/sum-of-primes-between-number-and-its-reverse/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Reverse Construction + Prime Summation
+ * Key insight: Reverse the digits to bound the range, then sum every prime between the smaller and larger of n and its reverse via trial-division primality.
  *
  * Time Complexity: O(N * sqrt(N)) - isPrime is O(sqrt(N)) and gets called for each number in the range
  * Space Complexity: O(1) - Only primitive variables used for tracking state

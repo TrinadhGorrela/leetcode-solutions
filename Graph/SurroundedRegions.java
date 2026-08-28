@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Depth-First Search, Breadth-First Search, Union-Find, Matrix
  * https://leetcode.com/problems/surrounded-regions/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: BFS (Flood from Border)
+ * Key insight: Any 'O' connected to the border is not surrounded; BFS from all border 'O' cells marking visited, then rewrite visited cells as 'O' and everything else as 'X'.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

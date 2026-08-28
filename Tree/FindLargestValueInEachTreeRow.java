@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/find-largest-value-in-each-tree-row/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: BFS (Level Maximum)
+ * Key insight: Traverse level by level, tracking the largest value seen within each level and appending it to the per-row results.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

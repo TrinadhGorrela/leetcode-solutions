@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array
  * https://leetcode.com/problems/maximum-area-of-longest-diagonal-rectangle/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Math + Greedy
+ * Key insight: For each rectangle compare the squared diagonal (avoiding a sqrt) and break ties by the larger area, tracking the best pair in one pass.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,10 +3,10 @@
  * Difficulty: Easy | Tags: Math, Enumeration
  * https://leetcode.com/problems/smallest-divisible-digit-product-i/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Iterative Search (Digit Product Test)
+ * Key insight: Compute the product of a number's digits and test divisibility by t, incrementing n until a valid candidate is found; the solution space is dense so it terminates quickly.
  *
- * Time Complexity: Unproven (O(1) in practice) - Loop terminates quickly due to dense solution space
+ * Time Complexity: Small constant in practice - The digit product reaches a multiple of t within a few increments thanks to the dense solution space
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)

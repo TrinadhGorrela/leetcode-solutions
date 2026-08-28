@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/reverse-string-ii/
  *
- * Pattern: Two Pointers
- * Key insight: Systematically processes the input relying on two pointers principles.
+ * Pattern: Two Pointers (Chunked Reversal)
+ * Key insight: Step through the array in 2k blocks, reversing only the first k characters of each block (bounded by the array end on the last chunk).
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates memory for string processing

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, String
  * https://leetcode.com/problems/keyboard-row/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: String / Keyboard Mapping
+ * Key insight: Map each character of a word to its keyboard row; the word qualifies only if all of its letters belong to a single row.
  *
  * Time Complexity: O(N * L) - N is number of words, L is max word length
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

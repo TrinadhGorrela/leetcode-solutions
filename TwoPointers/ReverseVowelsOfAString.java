@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/reverse-vowels-of-a-string/
  *
- * Pattern: Two Pointers
- * Key insight: Systematically processes the input relying on two pointers principles.
+ * Pattern: Two Pointers (Vowel Swap)
+ * Key insight: Advance two pointers inward until each lands on a vowel, then swap them; non-vowel characters remain untouched in place.
  *
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(N) - Allocates memory for string processing

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/available-captures-for-rook/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Grid Simulation (Directional Scan)
+ * Key insight: Locate the rook, then walk each of the four compass directions, counting the first pawn encountered before any blocking bishop.
  *
  * Time Complexity: O(1) - Loops are bounded by fixed 8x8 board size
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math, Greedy
  * https://leetcode.com/problems/broken-calculator/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Greedy (Reverse from Target)
+ * Key insight: Work backwards from target: halve it when even else increment, because the forward operations only make the value grow; convert the remainder with startValue - target at the end.
  *
  * Time Complexity: O(log(target)) - Divides by 2 or adds 1, reaching startValue in log time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

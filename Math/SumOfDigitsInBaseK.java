@@ -3,10 +3,10 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/sum-of-digits-in-base-k/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Base Conversion (Digit Sum)
+ * Key insight: Repeatedly take n % k as the least significant base-k digit and divide n by k, summing the residues.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
+ * Time Complexity: O(log_k n) - Number of base-k digits of n
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)

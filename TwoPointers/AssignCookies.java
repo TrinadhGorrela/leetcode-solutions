@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Greedy, Sorting, Quicksort
  * https://leetcode.com/problems/assign-cookies/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Two Pointers (Greedy Matching)
+ * Key insight: Sort greediness and cookie sizes; advance the cookie pointer until it satisfies the current child's greed, counting each matched pair (a child never goes backwards).
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

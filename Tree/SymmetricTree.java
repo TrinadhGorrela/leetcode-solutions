@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/symmetric-tree/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: Depth-First Search (Mirror Comparison)
+ * Key insight: A tree is symmetric when its left and right subtrees are mirrors, i.e., left.left matches right.right and left.right matches right.left, comparing recursively.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Requires space for the recursion call stack

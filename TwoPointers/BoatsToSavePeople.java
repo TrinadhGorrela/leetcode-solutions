@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Greedy, Sorting, Timsort
  * https://leetcode.com/problems/boats-to-save-people/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Two Pointers (Opposite Ends)
+ * Key insight: Sort weights; pair the lightest and heaviest remaining people, sending the heaviest alone if they exceed the limit, else together, counting one boat per pass.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

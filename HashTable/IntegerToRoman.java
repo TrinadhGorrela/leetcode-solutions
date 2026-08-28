@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Hash Table, Math, String
  * https://leetcode.com/problems/integer-to-roman/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Greedy (Ordered Roman Value Lookup)
+ * Key insight: Walk a descending ordered list of roman value/symbol pairs (including subtractive combos like 900/CM), greedily appending the largest symbol that fits and subtracting its value from num.
  *
  * Time Complexity: O(1) - Work bounded by fixed constraints (Roman numerals max ~3999, 13 rules)
  * Space Complexity: O(1) - Fixed size array/map and bounded string output

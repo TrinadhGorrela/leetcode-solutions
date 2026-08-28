@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Linked List
  * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Linked List Deletion (previous / current pointers)
+ * Key insight: Walk prev and curr; when curr duplicates prev, unlink curr by pointing prev.next beyond it, otherwise advance both; values repeat only in runs because the list is sorted.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

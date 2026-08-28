@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, String, Simulation
  * https://leetcode.com/problems/final-value-of-variable-after-performing-operations/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Simulation
+ * Key insight: Each operation string either increments or decrements X; recognize the two increment forms via string equality and update accordingly.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

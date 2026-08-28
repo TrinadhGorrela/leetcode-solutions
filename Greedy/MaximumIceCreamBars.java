@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Greedy, Sorting, Counting Sort
  * https://leetcode.com/problems/maximum-ice-cream-bars/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy + Sorting
+ * Key insight: To maximize the count, buy the cheapest bars first; sort costs ascending and deduct until coins run out.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

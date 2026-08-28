@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Prefix Sum
  * https://leetcode.com/problems/find-pivot-index/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Prefix Sum
+ * Key insight: Precompute left and right cumulative sums for each index; the pivot is the first index where the sum of elements on the left equals the sum on the right.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses prefix/suffix arrays (can be optimized to O(1) space)

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search
  * https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Binary Search on Answer (Feasibility)
+ * Key insight: Search the minimum possible capacity between the heaviest package and the total weight; check feasibility by greedily counting the days required for a candidate capacity.
  *
  * Time Complexity: O(N log W) - Binary search over answer range with linear validation per step
  * Space Complexity: O(1) - Only primitive variables used for tracking state

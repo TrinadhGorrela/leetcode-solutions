@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Hash Table, Two Pointers, String, Greedy
  * https://leetcode.com/problems/partition-labels/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Greedy + Two Pointers (Last Occurrence Scan)
+ * Key insight: Record each character's last index, then sweep the string extending the current partition's end to the max last-index seen; close a partition when the sweep reaches that end.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Bounded by lowercase alphabet size (26)

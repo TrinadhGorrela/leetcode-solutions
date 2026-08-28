@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Two Pointers
  * https://leetcode.com/problems/next-permutation/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers (Standard Next Permutation)
+ * Key insight: Find the pivot where ascending order breaks, swap it with the next-larger element from the right, then reverse the suffix to get the smallest greater permutation; if no pivot exists, reverse the whole array.
  *
  * Time Complexity: O(N) - Two passes over the array to find pivot and reverse elements
  * Space Complexity: O(1) - Only primitive variables used for tracking state

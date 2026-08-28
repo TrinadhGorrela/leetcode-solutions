@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Math, Matrix
  * https://leetcode.com/problems/rotate-image/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Transpose + Reverse Each Row
+ * Key insight: A 90-degree clockwise rotation equals transposing the matrix (swap across the main diagonal) then reversing each row in place.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

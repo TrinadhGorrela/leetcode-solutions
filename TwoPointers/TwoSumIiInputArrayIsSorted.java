@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Binary Search
  * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers (Sorted Opposite Ends)
+ * Key insight: Exploit the sorted array by pointing at both ends; move the left up when the sum is too small and the right down when too large, returning the 1-indexed pair.
  *
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling

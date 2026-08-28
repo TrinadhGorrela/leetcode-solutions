@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Prefix Sum
  * https://leetcode.com/problems/find-the-highest-altitude/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Prefix Sum
+ * Key insight: Compute the running altitude (starting at 0) by cumulative gain, and track the maximum altitude reached.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses a presum array

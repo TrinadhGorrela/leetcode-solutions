@@ -3,10 +3,10 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/palindrome-number/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Reverse-and-Compare
+ * Key insight: Rebuild the number's digits in reverse order and compare with the original; negatives are automatically not palindromes.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
+ * Time Complexity: O(log n) - Processes the digits of the number
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)

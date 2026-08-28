@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math, Dynamic Programming
  * https://leetcode.com/problems/2-keys-keyboard/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Prime Factorization (Greedy Copy Count)
+ * Key insight: The minimal operations equal the sum of the prime factors of n (with multiplicity), because each paste block corresponds to a factor added to the running length.
  *
  * Time Complexity: O(√N) - Trial division prime factorization loop
  * Space Complexity: O(1) - Only primitive variables used for tracking state

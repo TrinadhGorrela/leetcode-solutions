@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Matrix
  * https://leetcode.com/problems/unique-paths-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (2D Grid with Obstacles)
+ * Key insight: Same grid-counting as Unique Paths, but obstacle cells are forced to 0 ways and the top/left edges stop propagating past a blocked cell.
  *
  * Time Complexity: O(M * N) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(M * N) - Allocates a full 2D DP grid

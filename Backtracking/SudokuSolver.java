@@ -3,8 +3,8 @@
  * Difficulty: Hard | Tags: Array, Hash Table, Backtracking, Matrix, Algorithm X, Dancing Links
  * https://leetcode.com/problems/sudoku-solver/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Constraint Satisfaction)
+ * Key insight: Find the first empty cell and try digits 1-9, recursing on success and undoing the attempt on failure; validate each digit against its row, column, and 3x3 box.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling

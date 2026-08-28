@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/min-cost-climbing-stairs/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (1D Bottom-up)
+ * Key insight: dp[i] = minimum cost to reach step i, computed as min(cost[i-1] + dp[i-1], cost[i-2] + dp[i-2]); answer is the cost to pass the last step.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses a DP array

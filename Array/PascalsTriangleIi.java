@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/pascals-triangle-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (Reuse Previous Row)
+ * Key insight: Build rows iteratively from the previous one; each interior element is the sum of the two above it. The whole triangle is built here for clarity (an O(k) rolling-row version is possible).
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N^2) - Builds the entire triangle

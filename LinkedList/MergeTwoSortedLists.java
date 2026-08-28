@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Linked List, Recursion
  * https://leetcode.com/problems/merge-two-sorted-lists/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Iterative Merge with Dummy Node
+ * Key insight: Repeatedly attach the smaller head of the two lists to a dummy tail pointer, advancing that list; after one list empties, link the remainder of the other — all in place with no node copying.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

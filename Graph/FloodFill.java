@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Depth-First Search, Breadth-First Search, Matrix
  * https://leetcode.com/problems/flood-fill/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: BFS (Grid Flood Fill)
+ * Key insight: BFS from the start cell, recoloring every same-color neighbor in the 4 directions until the connected component is fully repainted; early exit if the start already has the target color.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

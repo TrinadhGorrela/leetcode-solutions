@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Linked List, Math, Recursion
  * https://leetcode.com/problems/add-two-numbers/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Linked List Traversal with Carry
+ * Key insight: Walk both lists simultaneously, summing aligned digits plus a carry, and building the result list; after the shorter list ends, drain the longer one and append any final carry.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(max(m, n)) - Allocates new output linked list nodes

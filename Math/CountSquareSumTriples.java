@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Enumeration
  * https://leetcode.com/problems/count-square-sum-triples/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Brute-force Enumeration (Pythagorean Triples)
+ * Key insight: Test every (a, b) pair, check whether a^2 + b^2 is a perfect square within range, and count each valid triple.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

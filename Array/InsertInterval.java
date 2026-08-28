@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array
  * https://leetcode.com/problems/insert-interval/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Intervals (Linear Merge)
+ * Key insight: Walk the sorted intervals in three phases: add all intervals ending before the new interval, merge all overlapping ones into the new interval, then append the remaining intervals.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

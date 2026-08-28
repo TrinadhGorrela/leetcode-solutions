@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Backtracking, Bit Manipulation
  * https://leetcode.com/problems/subsets-ii/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Sort + Skip Duplicates)
+ * Key insight: Sort first, then skip consecutive duplicate values at the same recursion level so that each distinct subset is generated exactly once.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N * 2^N) - Holds all subsets

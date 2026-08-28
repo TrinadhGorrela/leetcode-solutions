@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Hash Table, String, Sliding Window
  * https://leetcode.com/problems/maximum-length-substring-with-two-occurrences/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Sliding Window (At Most Two of Each)
+ * Key insight: Extend the right edge counting each char; when the newest char exceeds two occurrences, advance the left edge to restore the constraint, maximizing the valid window.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Map keys bounded by alphabet size

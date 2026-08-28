@@ -3,11 +3,11 @@
  * Difficulty: Easy | Tags: Array, Hash Table
  * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: In-place Marking (Negation Trick)
+ * Key insight: Use the array itself as a marker: for each value, negate the element at the index it maps to; any index left positive corresponds to a missing number. No extra space needed.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Space Complexity: O(1) - Marks elements in-place by negation, no auxiliary collection
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
  */

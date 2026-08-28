@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Math, Enumeration, Number Theory, Primality Test, Sieve Theory, Prime Number Sieve
  * https://leetcode.com/problems/count-primes/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sieve of Eratosthenes
+ * Key insight: Mark multiples of each prime starting from 2 as composite in a boolean array; the unmarked cells are primes. Count them for numbers < n.
  *
  * Time Complexity: O(N log log N) - Sieve of Eratosthenes approach
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size

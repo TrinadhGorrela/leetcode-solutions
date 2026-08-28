@@ -3,8 +3,8 @@
  * Difficulty: Hard | Tags: Array, Queue, Sliding Window, Heap (Priority Queue), Monotonic Queue, Range Minimum/Maximum Query
  * https://leetcode.com/problems/sliding-window-maximum/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Monotonic Deque (Sliding Maximum)
+ * Key insight: Keep a deque of candidate indices with strictly decreasing values; on each slide, pop smaller values from the back, add the new index, expire stale front indices, and read the max at the front.
  *
  * Time Complexity: O(N) - Monotonic queue operations are amortized O(1)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

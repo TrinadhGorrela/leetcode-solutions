@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Hash Table, Math, Two Pointers, Floyd's Cycle Finding Algorithm
  * https://leetcode.com/problems/happy-number/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Hash Set (Cycle Detection)
+ * Key insight: Repeatedly replace n with the sum of the squares of its digits; track seen values, returning true at 1 and false the moment a value repeats (a cycle is reached).
  *
  * Time Complexity: O(log N) amortized - Digit square sum sequence cycles quickly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

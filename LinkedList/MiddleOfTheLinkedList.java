@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Linked List, Two Pointers
  * https://leetcode.com/problems/middle-of-the-linked-list/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Two Pointers (Slow / Fast Runner)
+ * Key insight: Advance a slow pointer one step and a fast pointer two steps; when the fast pointer reaches the end, the slow pointer sits exactly at the middle (second middle for even length).
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

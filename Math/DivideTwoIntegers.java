@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math, Bit Manipulation
  * https://leetcode.com/problems/divide-two-integers/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Bit Manipulation (Binary Long Division)
+ * Key insight: Build the quotient bit by bit from the high bits: for each bit position, subtract the divisor shifted that far when it fits, accumulating the corresponding power of two; clamp the MIN_VALUE/-1 overflow case.
  *
  * Time Complexity: O(log N) - Bit-shift approach evaluates 32 bit positions
  * Space Complexity: O(1) - Only primitive variables used for tracking state

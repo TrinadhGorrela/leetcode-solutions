@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Sliding Window, Prefix Sum
  * https://leetcode.com/problems/max-consecutive-ones-iii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sliding Window (At Most k Zeros)
+ * Key insight: Track the number of zeros in the window; when it exceeds k, shrink from the left until zeros are within budget, keeping the longest window that is flippable to all ones.
  *
  * Time Complexity: O(N) - Sliding window takes linear time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

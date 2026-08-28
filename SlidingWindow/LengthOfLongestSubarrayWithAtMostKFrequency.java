@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Sliding Window
  * https://leetcode.com/problems/length-of-longest-subarray-with-at-most-k-frequency/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sliding Window (Frequency Bound)
+ * Key insight: Extend the right edge counting each element; whenever the newest element's count exceeds k, advance the left edge until it falls back to k, maximizing the valid window.
  *
  * Time Complexity: O(N) - Sliding window pointers only move forward
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

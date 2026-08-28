@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: String
  * https://leetcode.com/problems/replace-all-digits-with-characters/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: Character-by-Character Shift Transformation
+ * Key insight: Walk in letter/digit pairs and advance each digit's preceding letter by the digit value (c + digit), appending into a StringBuilder.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - StringBuilder scales with input length

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, String, Bit Manipulation, Simulation
  * https://leetcode.com/problems/add-binary/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Base-2 Addition with Carry
+ * Key insight: Add both strings from their least significant bits using a running carry, appending sum%2 and carrying sum/2, then reverse the result.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - StringBuilder grows with the input size

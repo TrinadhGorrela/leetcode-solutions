@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Number Theory
  * https://leetcode.com/problems/smallest-even-multiple/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: LCM with 2 (Even-Multiple Rule)
+ * Key insight: When n is already even it is its own smallest even multiple; otherwise doubling n is required, i.e. return n * 2.
  *
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only primitive variables used for tracking state

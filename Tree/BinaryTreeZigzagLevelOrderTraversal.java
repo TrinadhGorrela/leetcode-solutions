@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Tree, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: BFS (Level-Order with Alternating Direction)
+ * Key insight: Build each level via BFS and reverse the list on alternating depth counts, producing a left-to-right then right-to-left zig-zag sequence.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Hash Table, String, Backtracking, Counting
  * https://leetcode.com/problems/letter-tile-possibilities/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Permutation Dedup via Set)
+ * Key insight: Generate every non-empty prefix permutation using a used[] flag and collect them in a set to eliminate duplicate-letter combinations.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N!) - Set holds up to N! permutations

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Greedy, Sorting
  * https://leetcode.com/problems/non-overlapping-intervals/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Greedy (Intervals)
+ * Key insight: Sort by end time and greedily keep intervals that do not overlap the last kept interval; the number of removals is total minus kept.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

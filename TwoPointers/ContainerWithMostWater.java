@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Greedy
  * https://leetcode.com/problems/container-with-most-water/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers (Shrink from Ends)
+ * Key insight: Start pointers at both ends, compute area from the shorter wall's height and current width, then move the shorter wall inward since its height bounds the container.
  *
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(1) - Only primitive variables used for tracking state

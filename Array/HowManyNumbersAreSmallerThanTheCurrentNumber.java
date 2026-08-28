@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Sorting, Counting Sort
  * https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Brute Force (Nested Loops)
+ * Key insight: For each element, count how many other elements are strictly smaller by scanning the whole array.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N) - Allocates the result array

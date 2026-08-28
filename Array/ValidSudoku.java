@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Matrix
  * https://leetcode.com/problems/valid-sudoku/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Backtracking-style Validation (Hash of Row/Col/Box)
+ * Key insight: For each filled cell, temporarily blank it and verify no other cell in the same row, column, or 3x3 box holds the same digit, then restore it.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Fixed 9x9 board structure

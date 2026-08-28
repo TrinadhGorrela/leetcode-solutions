@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/spiral-matrix/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Boundary Shrinking (Spiral Simulation)
+ * Key insight: Walk four edges of the current bounds (top, right, bottom, left), shrink the bounds inward each lap, guarding the bottom/left passes for single-row or single-column cases.
  *
  * Time Complexity: O(M * N) - Traverses every element in the M x N matrix exactly once
  * Space Complexity: O(M * N) - Stores all matrix elements in the output list

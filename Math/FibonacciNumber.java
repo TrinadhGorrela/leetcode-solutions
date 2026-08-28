@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Dynamic Programming, Recursion, Memoization
  * https://leetcode.com/problems/fibonacci-number/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Naive Recursion (Overlapping Subproblems)
+ * Key insight: fib(n) is defined by the recurrence fib(n-1)+fib(n-2) with base cases 0 and 1, recomputed redundantly (hence exponential) without memoization.
  *
  * Time Complexity: O(2^N) - Naive recursion explores overlapping subproblems exponentially
  * Space Complexity: O(N) - Requires space for the recursion call stack

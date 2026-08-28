@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Prefix Sum
  * https://leetcode.com/problems/running-sum-of-1d-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Prefix Sum (In-place)
+ * Key insight: Accumulate a running total and overwrite each element with the cumulative sum up to that point.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

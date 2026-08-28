@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/count-odd-numbers-in-an-interval-range/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Arithmetic Formula (Count Within Range)
+ * Key insight: The count of odd numbers up to x is (x+1)/2; subtracting the count up to low-1 gives the number of odds within [low, high].
  *
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only primitive variables used for tracking state

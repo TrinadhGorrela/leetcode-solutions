@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/valid-palindrome/
  *
- * Pattern: Two Pointers
- * Key insight: Systematically processes the input relying on two pointers principles.
+ * Pattern: Sanitization + Reverse Comparison
+ * Key insight: Strip non-alphanumeric characters and lowercase the remainder, then compare the result with its reverse; equality means a valid palindrome.
  *
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(N) - Allocates new strings during processing

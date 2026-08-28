@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Bit Manipulation, Counting
  * https://leetcode.com/problems/divide-array-into-equal-pairs/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Map (Counting)
+ * Key insight: The array can be paired iff every value occurs an even number of times; count frequencies and verify all counts are even.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

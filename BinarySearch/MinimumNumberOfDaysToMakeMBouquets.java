@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search
  * https://leetcode.com/problems/minimum-number-of-days-to-make-m-bouquets/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Binary Search on Answer (Feasibility)
+ * Key insight: Binary search the minimum day between the earliest and latest bloom days; a candidate day is feasible if the number of adjacent bloomed runs of length k yields at least m bouquets.
  *
  * Time Complexity: O(N log W) - Binary search over answer range with linear validation per step
  * Space Complexity: O(1) - Only primitive variables used for tracking state

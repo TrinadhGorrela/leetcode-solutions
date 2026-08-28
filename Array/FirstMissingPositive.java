@@ -3,8 +3,8 @@
  * Difficulty: Hard | Tags: Array, Hash Table
  * https://leetcode.com/problems/first-missing-positive/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Set
+ * Key insight: Store all elements in a set, then scan upward from 1 to find the first positive integer not present. (Suboptimal O(N) space; an O(1)-space in-place marking solution also exists.)
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly (Optimal time, but suboptimal O(N) space approach)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

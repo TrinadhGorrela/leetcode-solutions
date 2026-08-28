@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Depth-First Search, Breadth-First Search, Union-Find, Graph Theory, Graph Coloring, Bipartite Graph
  * https://leetcode.com/problems/is-graph-bipartite/
  *
- * Pattern: Depth-First Search
- * Key insight: Systematically processes the input relying on depth-first search principles.
+ * Pattern: DFS Graph Coloring (Bipartite Check)
+ * Key insight: Two-color each connected component; the graph is bipartite iff no adjacent pair ends up with the same color. Recurse on unvisited neighbors with the opposite color.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Linked List, Two Pointers
  * https://leetcode.com/problems/rotate-list/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Circular Shift (Length Normalization)
+ * Key insight: Compute the list length, reduce k modulo it, link the tail to the head to form a cycle, then walk len-k steps and cut the cycle to expose the new head.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

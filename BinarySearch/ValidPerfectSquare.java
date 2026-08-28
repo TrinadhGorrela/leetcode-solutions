@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Binary Search
  * https://leetcode.com/problems/valid-perfect-square/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Binary Search on Integer Square Root
+ * Key insight: Binary search for an integer whose square exactly equals num, using long arithmetic when squaring to avoid overflow.
  *
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state

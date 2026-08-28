@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Math, Sorting
  * https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Median
+ * Key insight: The value that minimizes the sum of absolute deviations is the median; after sorting, accumulate distances of all elements to the middle element.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

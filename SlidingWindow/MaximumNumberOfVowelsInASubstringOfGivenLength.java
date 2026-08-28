@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: String, Sliding Window
  * https://leetcode.com/problems/maximum-number-of-vowels-in-a-substring-of-given-length/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: Sliding Window (Fixed-Length Vowel Count)
+ * Key insight: Count vowels in the first k window, then slide right subtracting the leaving char's vowel status and adding the entering one, tracking the peak.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

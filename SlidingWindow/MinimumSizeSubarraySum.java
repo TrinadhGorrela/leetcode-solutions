@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Sliding Window, Prefix Sum
  * https://leetcode.com/problems/minimum-size-subarray-sum/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sliding Window (Variable-Length Sum)
+ * Key insight: Extend the right edge growing the sum; once it reaches target, shrink from the left to find the minimal covering window while recording the shortest length found.
  *
  * Time Complexity: O(N) - Sliding window pointers only move forward
  * Space Complexity: O(1) - Only primitive variables used for tracking state

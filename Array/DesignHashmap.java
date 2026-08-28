@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Linked List, Design, Hash Function
  * https://leetcode.com/problems/design-hashmap/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Direct-Address Array
+ * Key insight: Since keys are bounded to the range [0, 10^6], store value+1 directly at index key in a fixed array (offset so that value 0 can be represented distinctly from 'empty').
  *
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling

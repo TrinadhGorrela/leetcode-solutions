@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Math, Sorting
  * https://leetcode.com/problems/maximum-product-of-three-numbers/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Math
+ * Key insight: After sorting, the maximum product of three numbers is the larger of the two largest positives times the third largest, or the two smallest (most negative) times the largest positive.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

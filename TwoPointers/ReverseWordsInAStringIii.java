@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/reverse-words-in-a-string-iii/
  *
- * Pattern: Two Pointers
- * Key insight: Systematically processes the input relying on two pointers principles.
+ * Pattern: Two Pointers (Per-Word Reversal)
+ * Key insight: Mark each word's start, and on each space reverse the just-completed word by swapping its boundaries; reverse the final word after the loop.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates memory for string processing

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Stack, Monotonic Stack
  * https://leetcode.com/problems/next-greater-element-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Monotonic Stack (Circular Array, Twice-Length)
+ * Key insight: Iterate over the doubled-circular array right-to-left keeping a decreasing stack; the nearest greater element for each position is the stack top after popping smaller values, which naturally handles the wrap.
  *
  * Time Complexity: O(N) - Monotonic stack operations are amortized O(1)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

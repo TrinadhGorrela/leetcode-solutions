@@ -3,8 +3,8 @@
  * Difficulty: Hard | Tags: Backtracking, Algorithm X
  * https://leetcode.com/problems/n-queens-ii/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Constraint Placement)
+ * Key insight: Same N-Queens solution as the full-board variant, but only the total count is returned by checking column, main-diagonal, and anti-diagonal conflicts per placement.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N^2) - Allocates an N x N board array

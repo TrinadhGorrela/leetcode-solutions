@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Backtracking
  * https://leetcode.com/problems/permutations/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Permutation)
+ * Key insight: Build permutations by appending any not-yet-used number at each step, using a contains() guard to avoid reusing elements.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N * N!) - Holds all permutations

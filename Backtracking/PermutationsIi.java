@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Backtracking, Sorting
  * https://leetcode.com/problems/permutations-ii/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Sorted + Skip Duplicates)
+ * Key insight: Sort and use a used[] array; skip an index when it equals the previous value that was not used, preventing duplicate permutations.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N * N!) - Holds all permutations

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Breadth-First Search, Matrix
  * https://leetcode.com/problems/shortest-path-in-binary-matrix/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: BFS (Unweighted Shortest Path on Grid)
+ * Key insight: BFS explores cells in increasing distance order; store each cell's distance in the grid itself, move in 8 directions, and return the distance at the bottom-right cell.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

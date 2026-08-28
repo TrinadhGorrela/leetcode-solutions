@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Stack, Monotonic Stack
  * https://leetcode.com/problems/daily-temperatures/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Monotonic Stack (Next Greater Distance)
+ * Key insight: Scan from right to left keeping a decreasing stack of indices; pop smaller/equal temperatures and the distance to the remaining top is the answer for each day.
  *
  * Time Complexity: O(N) - Monotonic stack operations are amortized O(1)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

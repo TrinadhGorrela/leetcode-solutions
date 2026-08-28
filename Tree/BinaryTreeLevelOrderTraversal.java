@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Tree, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/binary-tree-level-order-traversal/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: BFS (Level-Order Traversal)
+ * Key insight: Dequeue the current level's node count into a snapshot, collect those nodes into a list while enqueuing their children, yielding one list per level.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Math, Sorting, Polygons
  * https://leetcode.com/problems/type-of-triangle/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Math (Triangle Inequality)
+ * Key insight: Apply the triangle inequality to reject invalid sides, then classify by comparing the three side lengths (equilateral, isosceles, scalene).
  *
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only primitive variables used for tracking state

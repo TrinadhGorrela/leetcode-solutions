@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/4sum/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Two Pointers (Nested Sum, Dedup via Set)
+ * Key insight: Fix two indices, then run two pointers on the remainder; use a hash set of lists to deduplicate quadruplets and a long sum to avoid overflow.
  *
  * Time Complexity: O(N^3) - Two nested loops plus two-pointer search on remaining elements
  * Space Complexity: O(N^3) - Stores up to O(N^3) unique quadruplets in the worst case

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/average-of-levels-in-binary-tree/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: BFS (Level-Order Averaging)
+ * Key insight: Process nodes level by level using a queue, summing each level's values and dividing by that level's node count to produce per-level averages.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

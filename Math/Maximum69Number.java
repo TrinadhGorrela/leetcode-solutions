@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Greedy
  * https://leetcode.com/problems/maximum-69-number/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Greedy (Leftmost Digit Flip)
+ * Key insight: Convert to digits and flip the first (most significant) '6' to '9', since that yields the largest possible increase.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates memory for string processing

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Hash Table, String, Sliding Window
  * https://leetcode.com/problems/find-all-anagrams-in-a-string/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Sliding Window + Frequency Array
+ * Key insight: Slide a fixed-length window equal to pattern length across s, maintaining the window's letter counts and comparing them to the pattern's counts; matches yield starting indices.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Frequency arrays have a fixed size of 26

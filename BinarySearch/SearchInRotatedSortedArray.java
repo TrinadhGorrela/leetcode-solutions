@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search
  * https://leetcode.com/problems/search-in-rotated-sorted-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Binary Search (Rotated Array)
+ * Key insight: One half around the pivot is always fully sorted; determine which half the target lies in by comparing against nums[left] to decide the search direction.
  *
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state

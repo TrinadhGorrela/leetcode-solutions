@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Hash Table, String, Bit Manipulation, Sorting
  * https://leetcode.com/problems/find-the-difference/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Sum Difference (Bit Manipulation Alternative)
+ * Key insight: Sum the ASCII values of t and subtract those of s; the leftover is the added character, since the target string holds exactly one extra char.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates memory for string processing

@@ -3,8 +3,8 @@
  * Difficulty: Hard | Tags: Array, Binary Search, Divide and Conquer
  * https://leetcode.com/problems/median-of-two-sorted-arrays/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Merge (Two Pointers)
+ * Key insight: Merge the two sorted arrays into one and pick the middle element(s), handling both odd and even total lengths. (Suboptimal O(m+n); a binary-search O(log(m+n)) partition approach is ideal.)
  *
  * Time Complexity: O(m+n) - Merge-based implementation (Suboptimal approach)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size

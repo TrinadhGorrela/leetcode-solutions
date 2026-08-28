@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Binary Search
  * https://leetcode.com/problems/binary-search/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Classical Binary Search
+ * Key insight: Repeatedly probe the middle of the remaining interval and discard the half that cannot contain the target, shrinking the search space by half each iteration.
  *
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state

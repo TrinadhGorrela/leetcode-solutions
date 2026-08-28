@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: String, Simulation
  * https://leetcode.com/problems/divide-a-string-into-groups-of-size-k/
  *
- * Pattern: String
- * Key insight: Systematically processes the input relying on string principles.
+ * Pattern: Chunking Simulation (Fixed-Size Groups)
+ * Key insight: Slice the string every k characters; pad the possibly short final chunk to length k with the fill character and store each chunk in a pre-sized array.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates array for the full re-chunked string

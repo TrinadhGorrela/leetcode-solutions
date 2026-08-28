@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/maximum-depth-of-binary-tree/
  *
- * Pattern: Tree
- * Key insight: Systematically processes the input relying on tree principles.
+ * Pattern: Depth-First Search (Post-order Height)
+ * Key insight: The depth of a node is 1 plus the larger of its children's depths; compute bottom-up recursively.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(V) - Maintains visited states or queue/stack depth

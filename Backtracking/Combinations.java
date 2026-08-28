@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Backtracking
  * https://leetcode.com/problems/combinations/
  *
- * Pattern: Backtracking
- * Key insight: Systematically processes the input relying on backtracking principles.
+ * Pattern: Backtracking (Choose/Skip)
+ * Key insight: Recursively build combinations of size k, always choosing elements after the current index to preserve order and avoid duplicates.
  *
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(C(n,k) * k) - Holds all combinations

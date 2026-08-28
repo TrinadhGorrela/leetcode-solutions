@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Greedy, Counting
  * https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy + Hash Map (Counting / Grouping)
+ * Key insight: Each task level must appear at least 2 times (else impossible); the minimum rounds per level is ceil(count/3) since groups of 2 or 3 are allowed, and sum over all levels.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

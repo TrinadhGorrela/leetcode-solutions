@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Hash Table, String
  * https://leetcode.com/problems/word-pattern/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Hash Map + Set (Bijection Check)
+ * Key insight: Map each pattern character to a word while a set records words already used, enforcing the one-to-one correspondence in both directions.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

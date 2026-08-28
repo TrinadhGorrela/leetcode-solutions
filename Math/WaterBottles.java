@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Simulation
  * https://leetcode.com/problems/water-bottles/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Simulation (Bottle Exchange, Fixed Rate)
+ * Key insight: Repeatedly exchange full bottles back to empties: drink them, add the exchange's yield to the total, and carry forward any remainder bottles until fewer than numExchange remain.
  *
  * Time Complexity: O(log N) - Logarithmic division by exchange rate
  * Space Complexity: O(1) - Only primitive variables used for tracking state

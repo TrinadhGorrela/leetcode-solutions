@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Prefix Sum
  * https://leetcode.com/problems/left-and-right-sum-differences/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Prefix Sum
+ * Key insight: Build left and right cumulative sums for every index, then take the absolute difference between them as the result.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses prefix/suffix arrays (can be optimized to O(1) space)

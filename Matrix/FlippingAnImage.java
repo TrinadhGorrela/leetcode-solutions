@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Bit Manipulation, Matrix, Simulation
  * https://leetcode.com/problems/flipping-an-image/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Matrix Transform (Reverse then Invert)
+ * Key insight: Reverse each row in place with two pointers, then invert every cell with 1 - value, all in the original array.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state

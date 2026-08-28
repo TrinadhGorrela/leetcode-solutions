@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Matrix
  * https://leetcode.com/problems/minimum-path-sum/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (2D Grid)
+ * Key insight: dp[i][j] = minimum sum to reach (i,j); at each cell add its value to the smaller of the sums from the top and left neighbors.
  *
  * Time Complexity: O(M * N) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(M * N) - Allocates a full 2D DP grid

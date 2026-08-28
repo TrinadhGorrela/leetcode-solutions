@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Math, Prefix Sum
  * https://leetcode.com/problems/count-partitions-with-even-sum-difference/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Prefix Sum + Math
+ * Key insight: Compute the total sum once; for each valid split, the right side is total - leftSum, so the difference (leftSum - rightSum) can be checked for evenness in O(1).
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Number Theory
  * https://leetcode.com/problems/gcd-of-odd-and-even-sums/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Number Theory (Series Sums + Euclidean GCD)
+ * Key insight: Compute closed-form sums of even and odd numbers up to n, then return their greatest common divisor via the Euclidean algorithm.
  *
  * Time Complexity: O(log N) - Logarithmic Euclidean GCD algorithm
  * Space Complexity: O(1) - Only primitive variables used for tracking state

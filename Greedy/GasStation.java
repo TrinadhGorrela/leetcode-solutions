@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Greedy
  * https://leetcode.com/problems/gas-station/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy (Single-Pass Start Selection)
+ * Key insight: A circuit exists iff total gas >= total cost; then walk the loop and whenever the running surplus drops below zero, no earlier station can be the start, so restart from the next station.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

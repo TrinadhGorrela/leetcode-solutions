@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Two Pointers, Binary Search
  * https://leetcode.com/problems/minimum-common-value/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Set
+ * Key insight: Insert all elements of the first array into a set, then scan the second array for the smallest value that is also present in the set.
  *
  * Time Complexity: O(N+M) - Builds HashSet from nums1, loops nums2
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

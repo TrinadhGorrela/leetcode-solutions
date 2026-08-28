@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Greedy
  * https://leetcode.com/problems/jump-game-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy (BFS-Layer Jump Counting)
+ * Key insight: Two pointers track the current jump's reachable window; each time the sweep reaches the window end, increment jumps and widen the window to the farthest reach computed so far.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

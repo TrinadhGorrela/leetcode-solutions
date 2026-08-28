@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Math, Number Theory, Euclidean Algorithm, Greatest Common Divisor
  * https://leetcode.com/problems/find-greatest-common-divisor-of-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Math (Euclidean Algorithm)
+ * Key insight: The GCD of the whole array equals the GCD of its smallest and largest elements; use the Euclidean algorithm to compute a GCD in O(log min) time.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

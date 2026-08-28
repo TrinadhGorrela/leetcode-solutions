@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Math, Dynamic Programming, Recursion, Minimax, Game Theory, Zero-Sum Game
  * https://leetcode.com/problems/predict-the-winner/
  *
- * Pattern: Dynamic Programming
- * Key insight: Systematically processes the input relying on dynamic programming principles.
+ * Pattern: Dynamic Programming (Minimax, Interval DP)
+ * Key insight: The current player's score minus the optimal opponent score from the remaining interval is maximized; memoize state (start, end) to avoid recomputation.
  *
  * Time Complexity: O(N^2) - 2D memoization has N^2 states
  * Space Complexity: O(N^2) - Allocates a 2D array for memoization

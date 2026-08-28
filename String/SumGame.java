@@ -3,11 +3,11 @@
  * Difficulty: Medium | Tags: Math, String, Greedy, Game Theory
  * https://leetcode.com/problems/sum-game/
  *
- * Pattern: 
- * Key insight: 
+ * Pattern: Game Theory (Parity + Pair Mirroring)
+ * Key insight: If the total number of '?' is odd Alice moves last and wins; with an even count, Bob mirrors paired '?'s on both sides, so Alice wins only when the surplus question marks on one side (driving by 9 per paired excess) cannot be balanced to equal half-sums.
  *
- * Time Complexity: O(?)
- * Space Complexity: O(?)
+ * Time Complexity: O(N) - Single linear scan over the string
+ * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
  * Edge Cases Handled: Per LeetCode constraints
  */

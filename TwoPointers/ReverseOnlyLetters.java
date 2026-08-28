@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/reverse-only-letters/
  *
- * Pattern: Two Pointers
- * Key insight: Systematically processes the input relying on two pointers principles.
+ * Pattern: Two Pointers (Letter Swap, Skip Non-Letters)
+ * Key insight: Swap letters with two pointers moving inward, advancing each pointer past any non-letter before swapping; non-letters stay in place.
  *
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(N) - Allocates memory for string processing

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Sliding Window
  * https://leetcode.com/problems/defuse-the-bomb/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Prefix Sum
+ * Key insight: Duplicate the code array to handle the circular window, build a prefix sum of length 2N, and compute each window sum with O(1) prefix differences (special-case k == 0).
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Hash Table, String, Counting
  * https://leetcode.com/problems/maximum-number-of-balloons/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Hash Map (Character Counting)
+ * Key insight: Count occurrences of the letters in 'balloon'; the answer is the minimum of b, a, n and half of l and o (since l and o appear twice).
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Math
  * https://leetcode.com/problems/plus-one/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Simulation (Digit Carry)
+ * Key insight: Traverse digits from the least-significant end, incrementing and carrying only while a digit is 9; a leading overflow requires a new array with a 1 at the front.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size

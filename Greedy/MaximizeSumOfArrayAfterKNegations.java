@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Greedy, Sorting
  * https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy + Sorting
+ * Key insight: Flip the most negative values first while flips remain; if leftover flips are odd, subtract twice the smallest element, since a remaining flip must reduce the sum by 2*min at worst.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

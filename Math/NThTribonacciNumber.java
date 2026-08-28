@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Dynamic Programming, Memoization
  * https://leetcode.com/problems/n-th-tribonacci-number/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Iterative Dynamic Programming (Rolling Variables)
+ * Key insight: Build T(n) from the previous three values, sliding three rolling variables forward instead of allocating a full DP table.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

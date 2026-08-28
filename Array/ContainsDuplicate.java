@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Sorting
  * https://leetcode.com/problems/contains-duplicate/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Set
+ * Key insight: Insert each element into a set; if an element is already present before insertion, a duplicate exists.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

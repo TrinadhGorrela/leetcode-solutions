@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Sliding Window
  * https://leetcode.com/problems/contains-duplicate-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Brute Force (Nested Loops)
+ * Key insight: For each element, scan the next k positions and return true if an equal value appears within the window.
  *
  * Time Complexity: O(N*K) - Inner loop constrained by window size k
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Simulation
  * https://leetcode.com/problems/distribute-elements-into-two-arrays-i/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Simulation
+ * Key insight: Place the first two elements into two lists and append each subsequent element to the list whose last element is larger, then concatenate both lists back into the array.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input

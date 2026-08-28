@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/squares-of-a-sorted-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Brute Force (Square + Bubble Sort)
+ * Key insight: Square each element and then sort the result. (Suboptimal O(N^2) due to bubble sort; a two-pointer merge of the two halves is O(N).)
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time (Suboptimal approach)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size

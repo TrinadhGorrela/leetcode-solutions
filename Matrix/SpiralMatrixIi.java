@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/spiral-matrix-ii/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Boundary Shrinking (Spiral Fill)
+ * Key insight: Fill an n x n matrix in spiral order by writing the four edges of the shrinking square each lap with an incrementing counter.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N^2) - Allocates the result 2D array

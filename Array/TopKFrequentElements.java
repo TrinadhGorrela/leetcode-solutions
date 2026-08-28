@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Divide and Conquer, Sorting, Heap (Priority Queue), Bucket Sort, Counting, Quickselect
  * https://leetcode.com/problems/top-k-frequent-elements/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Map + Sorting
+ * Key insight: Count frequencies in a map, then sort the entries by frequency descending and take the first k keys. (A heap or bucket sort can achieve O(N log k)/O(N).)
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

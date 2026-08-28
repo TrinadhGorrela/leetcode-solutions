@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Sorting
  * https://leetcode.com/problems/smallest-missing-integer-greater-than-sequential-prefix-sum/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Set + Sequential Prefix Sum
+ * Key insight: Sum the longest prefix where consecutive values differ by 1, then keep incrementing that sum until it is not present in the set of all elements.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

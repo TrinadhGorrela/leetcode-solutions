@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Greedy, Sorting, Hungarian Algorithm, Successive Shortest Path Algorithm
  * https://leetcode.com/problems/two-city-scheduling/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Greedy + Sorting (Cost Difference)
+ * Key insight: Sort by the (costA - costB) difference; send the first half to city A and the second half to city B, minimizing total cost while honoring the equal-split constraint.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Allocates an array for sorting differences

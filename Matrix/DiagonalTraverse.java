@@ -3,10 +3,10 @@
  * Difficulty: Medium | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/diagonal-traverse/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Map (Diagonal Grouping)
+ * Key insight: Group cells by the constant i+j (each group is one diagonal), then emit groups in order, reversing alternate diagonals to achieve the zig-zag traversal.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
+ * Time Complexity: O(M*N) - Visits every matrix element once
  * Space Complexity: O(M * N) - Map stores all matrix elements
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)

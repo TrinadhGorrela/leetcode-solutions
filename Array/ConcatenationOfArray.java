@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Simulation
  * https://leetcode.com/problems/concatenation-of-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Simulation
+ * Key insight: Allocate an array of size 2N and copy each element into both position i and position i + N.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates the result array

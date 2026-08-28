@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Divide and Conquer, Sorting, Counting, Boyer–Moore Majority Vote Algorithm
  * https://leetcode.com/problems/majority-element/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Map (Counting)
+ * Key insight: Count frequencies of every element and return the one with the highest count (guaranteed to exceed n/2 by the problem definition).
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

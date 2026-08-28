@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Linked List, Two Pointers
  * https://leetcode.com/problems/remove-nth-node-from-end-of-list/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Two Pointers (Offset Window)
+ * Key insight: Advance fast n steps ahead, then move slow and fast together until fast reaches the tail; slow then points just before the n-th-from-end node, which gets unlinked via a dummy head.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

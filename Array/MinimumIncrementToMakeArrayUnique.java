@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Greedy, Sorting, Counting
  * https://leetcode.com/problems/minimum-increment-to-make-array-unique/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Greedy
+ * Key insight: After sorting, whenever an element is not strictly greater than the previous one, bump it just past the previous and add the increment cost to the total.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

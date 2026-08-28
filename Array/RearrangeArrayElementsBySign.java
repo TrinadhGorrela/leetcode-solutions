@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Simulation
  * https://leetcode.com/problems/rearrange-array-elements-by-sign/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers / Partition + Merge
+ * Key insight: Split positives and negatives into two lists, then interleave them back at even/odd positions in the original order.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Linked List, Recursion
  * https://leetcode.com/problems/reverse-linked-list/
  *
- * Pattern: Linked List
- * Key insight: Systematically processes the input relying on linked list principles.
+ * Pattern: Iterative In-Place Reversal
+ * Key insight: Sweep with curr/prev/next, flipping each node's next pointer to its predecessor as the traversal advances; prev ends up as the new head.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

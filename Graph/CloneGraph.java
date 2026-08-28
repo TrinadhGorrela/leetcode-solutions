@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Hash Table, Depth-First Search, Breadth-First Search, Graph Theory
  * https://leetcode.com/problems/clone-graph/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: DFS + Hash Map (Memoized Clone)
+ * Key insight: Recursively clone each node, using a map keyed by node value to return already-cloned nodes and break cycles; each neighbor is cloned via DFS.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

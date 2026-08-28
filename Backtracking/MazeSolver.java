@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Backtracking, Matrix
  * https://practice.geeksforgeeks.org/problems/rat-in-a-maze-problem/1
  *
- * Pattern: Backtracking
- * Key insight: Explores all possible directions (Up, Down, Left, Right) recursively and backtracks on dead ends.
+ * Pattern: Backtracking (Graph DFS)
+ * Key insight: Explore Up/Down/Left/Right from each cell, marking visited cells with -1 and restoring them on backtrack to find every path, pruning out-of-bounds and blocked cells.
  *
  * Time Complexity: O(4^(N^2)) - Four choices at each step, max path length is N^2
  * Space Complexity: O(N^2) - Max recursion depth in the worst-case scenario

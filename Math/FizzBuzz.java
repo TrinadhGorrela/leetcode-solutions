@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, String, Simulation
  * https://leetcode.com/problems/fizz-buzz/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Modular Conditional Simulation
+ * Key insight: For each number, check divisibility by 15, 3, then 5 in descending precedence, appending the matching token or the number itself.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

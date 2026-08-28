@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Hash Table, String, Sorting
  * https://leetcode.com/problems/group-anagrams/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Table (Canonical Form)
+ * Key insight: Anagrams share the same sorted character sequence; sort each word and group words by their sorted-key in a hash map.
  *
  * Time Complexity: O(N * L log L) - Sorting each string of max length L
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

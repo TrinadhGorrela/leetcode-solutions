@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Hash Table, String, Sliding Window
  * https://leetcode.com/problems/longest-substring-without-repeating-characters/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Sliding Window + Hash Set
+ * Key insight: Move the right pointer adding characters to a set; on a repeat, advance the left pointer removing characters until the duplicate is gone, then record the longest window.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

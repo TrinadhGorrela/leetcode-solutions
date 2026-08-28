@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Binary Search, Newton's Method
  * https://leetcode.com/problems/sqrtx/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Binary Search on Integer Square Root
+ * Key insight: Binary search the largest m with m*m <= x, comparing mid <= x/mid to avoid integer overflow, and remember the last viable mid.
  *
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state

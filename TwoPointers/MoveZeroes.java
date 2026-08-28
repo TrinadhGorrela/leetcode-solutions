@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Two Pointers
  * https://leetcode.com/problems/move-zeroes/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Two Pointers (In-Place Partition)
+ * Key insight: Use a write pointer to track the position for the next non-zero, swapping each non-zero forward; all zeros naturally shift to the tail in place.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state

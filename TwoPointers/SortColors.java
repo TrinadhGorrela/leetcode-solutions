@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Sorting, Quicksort, Bubble Sort
  * https://leetcode.com/problems/sort-colors/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dutch National Flag (Three-Way Partition)
+ * Key insight: Sweep with a mid pointer, swapping 0s to the left boundary and 2s to the right boundary while leaving 1s in the middle, producing a single-pass in-place sort.
  *
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(1) - Only primitive variables used for tracking state

@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/concatenate-non-zero-digits-and-multiply-by-sum-i/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Digit Manipulation (Reversal + Sum)
+ * Key insight: Reverse the digits to restore their original order and sum them; rebuild a number skipping zero digits, then return the product of that number and the digit sum.
  *
  * Time Complexity: O(log N) - Processes digits of the number
  * Space Complexity: O(1) - Only primitive variables used for tracking state

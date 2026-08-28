@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Divide and Conquer, Sorting, Heap (Priority Queue), Merge Sort, Bucket Sort, Radix Sort, Counting Sort
  * https://leetcode.com/problems/sort-an-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Merge Sort (Divide & Conquer)
+ * Key insight: Recursively split the array in half and merge sorted halves into a temporary array, copying the merged run back in place.
  *
  * Time Complexity: O(N log N) - Merge sort is O(N log N)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size

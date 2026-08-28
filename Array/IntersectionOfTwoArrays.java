@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Two Pointers, Binary Search, Sorting
  * https://leetcode.com/problems/intersection-of-two-arrays/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Hash Set
+ * Key insight: Load one array into a set, then collect unique elements of the other array that are present in the set.
  *
  * Time Complexity: O(N) - HashSet lookup takes linear time
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search
  * https://leetcode.com/problems/koko-eating-bananas/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Binary Search on Answer (Feasibility)
+ * Key insight: Search eating speeds from 1 to the largest pile; validate a candidate speed by computing the total hours needed (ceiling of pile/speed) and comparing against h.
  *
  * Time Complexity: O(N log W) - Binary search over answer range with linear validation per step
  * Space Complexity: O(1) - Only primitive variables used for tracking state

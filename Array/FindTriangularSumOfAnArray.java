@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Math, Simulation, Combinatorics, Number Theory
  * https://leetcode.com/problems/find-triangular-sum-of-an-array/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Simulation
+ * Key insight: Repeatedly replace the array with the pairwise modulo-10 sums of adjacent elements until a single value remains.
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N) - sum() allocates a new array each pass

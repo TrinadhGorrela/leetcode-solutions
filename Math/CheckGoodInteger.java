@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math, Simulation
  * https://leetcode.com/problems/check-good-integer/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Digit Summary (Sum of Digits and Squares)
+ * Key insight: Extract each digit with mod 10, accumulating both the digit sum and the sum of digits squared, then test whether their difference meets the threshold.
  *
  * Time Complexity: O(log N) - Iterates over the digits of the input number
  * Space Complexity: O(1) - Only primitive variables used for tracking state

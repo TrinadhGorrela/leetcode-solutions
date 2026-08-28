@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Array, Sorting
  * https://leetcode.com/problems/can-make-arithmetic-progression-from-sequence/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting
+ * Key insight: Sort the array, then verify that the difference between every adjacent pair is the same constant.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

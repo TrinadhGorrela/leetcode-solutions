@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Breadth-First Search, Matrix
  * https://leetcode.com/problems/rotting-oranges/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Multi-Source BFS (Level-Order)
+ * Key insight: Seed the queue with every initially rotten orange and BFS outward one level at a time, counting minutes; if any fresh orange remains after the flood, return -1.
  *
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

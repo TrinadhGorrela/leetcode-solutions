@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Dynamic Programming, Longest Increasing Subsequence
  * https://leetcode.com/problems/longest-increasing-subsequence/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (Quadratic LIS)
+ * Key insight: dp[i] = LIS ending at i; for each i scan all earlier j and set dp[i] = max(dp[i], dp[j]+1) whenever nums[j] < nums[i]. (An O(N log N) patience-sorting variant also exists.)
  *
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N) - Uses a DP array

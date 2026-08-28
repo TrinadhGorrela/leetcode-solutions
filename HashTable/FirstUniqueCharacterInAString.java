@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Hash Table, String, Queue, Counting
  * https://leetcode.com/problems/first-unique-character-in-a-string/
  *
- * Pattern: Hash Table
- * Key insight: Systematically processes the input relying on hash table principles.
+ * Pattern: Hash Map (Frequency Counting)
+ * Key insight: Count each character's frequency in one pass, then scan left to right returning the first index whose character appears exactly once.
  *
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size

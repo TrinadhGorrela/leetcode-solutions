@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Two Pointers, String, Stack
  * https://leetcode.com/problems/reverse-prefix-of-word/
  *
- * Pattern: Two Pointers
- * Key insight: Systematically processes the input relying on two pointers principles.
+ * Pattern: Two Pointers (Locate Character, Swap Prefix)
+ * Key insight: Find the first index of the target char, then reverse the substring from index 0 to that index by swapping with two inward pointers.
  *
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(N) - Allocates memory for string processing

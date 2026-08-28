@@ -3,10 +3,10 @@
  * Difficulty: Easy | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/transpose-matrix/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Index Swap (Transposition)
+ * Key insight: Exchange roles of rows and columns by writing matrix[i][j] into res[j][i], producing a result of swapped dimensions.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
+ * Time Complexity: O(M*N) - Visits every matrix element
  * Space Complexity: O(M * N) - Allocates a 2D array for the transposed matrix
  *
  * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)

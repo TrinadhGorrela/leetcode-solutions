@@ -3,8 +3,8 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/convert-the-temperature/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Unit Conversion Formula
+ * Key insight: Apply the fixed Celsius-to-Kelvin and Celsius-to-Fahrenheit formulas and return both results in an array.
  *
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling

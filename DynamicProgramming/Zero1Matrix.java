@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Breadth-First Search, Matrix
  * https://leetcode.com/problems/01-matrix/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Dynamic Programming (Two-Pass Propagation)
+ * Key insight: Initialize 1-cells with a large sentinel, then propagate distances with a forward top-left pass followed by a backward bottom-right pass, taking the minimum at each cell.
  *
  * Time Complexity: O(m*n) - Two-pass dynamic programming (forward and backward pass over the grid)
  * Space Complexity: O(1) - Excluding the output matrix, no extra auxiliary space is used

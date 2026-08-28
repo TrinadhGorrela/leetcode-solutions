@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Array, Greedy, Sorting
  * https://leetcode.com/problems/destroying-asteroids/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: Sorting + Greedy
+ * Key insight: Destroy the smallest asteroids first; sort, then greedily absorb each asteroid that is <= the current mass (tracked in long to avoid overflow) and fail on the first that is too large.
  *
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state

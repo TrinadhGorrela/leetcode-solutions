@@ -3,8 +3,8 @@
  * Difficulty: Medium | Tags: Math
  * https://leetcode.com/problems/factorial-trailing-zeroes/
  *
- * Pattern: Math
- * Key insight: Systematically processes the input relying on math principles.
+ * Pattern: Counting Factor Multiples (Legendre's formula)
+ * Key insight: Trailing zeros come from factors of 10 = 2*5; since 5 is the scarcer factor, sum floor(n/5) + floor(n/25) + ... by repeatedly dividing n by 5.
  *
  * Time Complexity: O(log5 N) - Logarithmic division by 5
  * Space Complexity: O(1) - Only primitive variables used for tracking state
