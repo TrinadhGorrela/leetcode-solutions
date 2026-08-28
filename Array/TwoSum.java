@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Hash Table
  * https://leetcode.com/problems/two-sum/
  *
- * Pattern: Array
- * Key insight: Systematically processes the input relying on array principles.
+ * Pattern: One-Pass Hash Map
+ * Key insight: Store previously seen numbers and their indices in a hash map to quickly check if the complement of the current number has been encountered.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - Single pass, constant time map operations
+ * Space Complexity: O(N) - Stores up to N elements in hash map
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Per LeetCode constraints
  */
 class TwoSum {
     public int[] twoSum(int[] nums, int target) {
