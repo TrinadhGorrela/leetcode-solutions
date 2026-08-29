@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: no unique character (returns -1), all same characters, single character (returns 0)
  */
 class FirstUniqueCharacterInAString {
 	public int firstUniqChar(String s) {

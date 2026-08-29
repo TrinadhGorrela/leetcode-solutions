@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Inner loop is bounded by a constant (5 vowels)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 (returns 5), strings of length 1 seeded directly
  */
 class CountSortedVowelStrings {
     public int countVowelStrings(int n) {

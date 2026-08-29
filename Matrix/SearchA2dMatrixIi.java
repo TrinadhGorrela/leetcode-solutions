@@ -9,7 +9,7 @@
  * Time Complexity: O(M+N) - Staircase search starting from top-right or bottom-left
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: target not found (returns false), single row or single column, target at top-right start cell
  */
 class SearchA2dMatrixIi {
     public boolean searchMatrix(int[][] matrix, int target) {

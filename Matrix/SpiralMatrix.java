@@ -9,7 +9,7 @@
  * Time Complexity: O(M * N) - Traverses every element in the M x N matrix exactly once
  * Space Complexity: O(M * N) - Stores all matrix elements in the output list
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single row, single column, 1x1 matrix, single-row/single-column traversal (guarded bottom and left passes)
  */
 class SpiralMatrix {
     public List<Integer> spiralOrder(int[][] matrix) {

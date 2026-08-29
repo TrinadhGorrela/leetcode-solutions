@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(N) - Allocates memory for string processing
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty string, single character, no letters (string unchanged), all letters, mixed letters/non-letters with non-letters kept in place
  */
 class ReverseOnlyLetters {
     public static String reverseOnlyLetters(String s) {

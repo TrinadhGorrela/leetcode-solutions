@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Floyd's cycle detection is linear
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: duplicate appearing multiple times, duplicate at index 0, cycle of length 1
  */
 class FindTheDuplicateNumber {
     public int findDuplicate(int[] nums) {

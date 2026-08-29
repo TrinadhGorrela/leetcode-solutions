@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(2^N) - Holds all valid combinations
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: duplicate candidates (deduped), single element, no valid combination (returns empty), target smaller than smallest candidate (early break)
  */
 class CombinationSumIi {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {

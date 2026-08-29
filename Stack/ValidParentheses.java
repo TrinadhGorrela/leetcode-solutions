@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty string (valid), single bracket (unmatched), unmatched closing bracket (empty stack pop returns false), mismatched bracket pairs, deeply nested brackets
  */
 class ValidParentheses {
     public boolean isValid(String s) {

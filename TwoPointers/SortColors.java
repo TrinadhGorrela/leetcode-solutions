@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty array, single element, all elements the same color (0s/1s/2s), already sorted array
  */
 class SortColors {
     public void sortColors(int[] nums) {

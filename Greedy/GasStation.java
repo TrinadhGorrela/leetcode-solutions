@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: total gas < total cost (returns -1), single station, start resets to next station when surplus drops below zero
  */
 class GasStation {
     public int canCompleteCircuit(int[] gas, int[] cost) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(M * N) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(M * N) - Allocates a full 2D DP grid
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: obstacle at start cell (returns 0), obstacle at end, fully blocked path (returns 0), single row or single column with obstacles
  */
 class UniquePathsIi {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

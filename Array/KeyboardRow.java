@@ -9,7 +9,7 @@
  * Time Complexity: O(N * L) - N is number of words, L is max word length
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: uppercase letters (case-insensitive), single-letter words, empty string (excluded), words spanning multiple rows (excluded)
  */
 class KeyboardRow {
     public String[] findWords(String[] words) {

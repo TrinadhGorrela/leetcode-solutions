@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Marks elements in-place by negation, no auxiliary collection
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: no missing numbers, all missing (multiple), duplicates of the same value, value already negated (repeated index)
  */
 class FindAllNumbersDisappearedInAnArray {
     public List<Integer> findDisappearedNumbers(int[] nums) {

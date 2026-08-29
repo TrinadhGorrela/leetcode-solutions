@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: duplicates (skipped), single element (none missing), contiguous range with no gaps, gaps at either end
  */
 class FindMissingElements {
     public List<Integer> findMissingElements(int[] nums) {

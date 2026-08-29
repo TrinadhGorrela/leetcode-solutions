@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - StringBuilder grows with the input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: final carry overflow (loop continues while carry is set), unequal string lengths (exhausted operand skipped), all-zero strings, single-digit strings
  */
 class AddBinary {
     public String addBinary(String a, String b) {

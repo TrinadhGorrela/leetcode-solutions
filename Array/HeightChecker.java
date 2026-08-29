@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Allocates a cloned array
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: already sorted (result 0), all equal heights, fully reversed order, single element
  */
 class HeightChecker {
     public int heightChecker(int[] heights) {

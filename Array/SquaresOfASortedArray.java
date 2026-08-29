@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time (Suboptimal approach)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: negative values (squares reorder), zero, all equal values, single element
  */
 class SquaresOfASortedArray {
     public int[] sortedSquares(int[] nums) {

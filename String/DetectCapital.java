@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Single letter (upper or lower), all uppercase, all lowercase, only first letter uppercase, other mixed capitalizations rejected
  */
 class DetectCapital {
     public boolean detectCapitalUse(String word) {

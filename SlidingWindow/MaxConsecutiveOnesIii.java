@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Sliding window takes linear time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: k = 0 (no flips allowed), all zeros, all ones, k exceeding the number of zeros (full array flippable)
  */
 class MaxConsecutiveOnesIii {
     public int longestOnes(int[] nums, int k) {

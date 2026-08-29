@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Floyd's Cycle Finding traverses nodes in linear time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: null head (returns null), no cycle (returns null), single node, cycle of length 1
  */
 /**
  * Definition for singly-linked list.

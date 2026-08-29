@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N^2) - Allocates an N x N board array
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 (single queen), small boards, column/diagonal boundary checks at board edges
  */
 class NQueensIi {
     public int totalNQueens(int n) {

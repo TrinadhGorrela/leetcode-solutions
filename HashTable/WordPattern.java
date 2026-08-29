@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: pattern and word counts differ (returns false), empty pattern, one pattern char mapped to two different words (conflict), two pattern chars mapped to the same word (set conflict)
  */
 class WordPattern {
     public boolean wordPattern(String pattern, String s) {

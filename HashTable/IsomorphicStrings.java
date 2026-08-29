@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Iterates over elements, containsValue takes O(N)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: different lengths (returns false), empty strings, two different s-chars mapped to one t-char (one-to-many), one s-char reused for different t-chars via containsValue
  */
 class IsomorphicStrings {
     public boolean isIsomorphic(String s, String t) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Bounded by a fixed pool of 9 digits and string lengths (~36 max iterations)
  * Space Complexity: O(1) - Auxiliary collection holds at most a constant ~36 valid numbers
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: low == high, single-digit windows, differing digit lengths between low and high, early exit once a candidate exceeds high
  */
 class SequentialDigits {
     public List<Integer> sequentialDigits(int low, int high) {

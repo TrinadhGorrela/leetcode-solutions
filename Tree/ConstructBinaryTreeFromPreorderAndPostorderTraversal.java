@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Visit each node once to construct
  * Space Complexity: O(N) - Hash map and recursion stack
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: single node tree, empty arrays (guard st > end / preIndex out of bounds), leaf node (st == end), skewed chains
  */
 /**
  * Definition for a binary tree node.

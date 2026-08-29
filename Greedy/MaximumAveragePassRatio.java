@@ -9,7 +9,7 @@
  * Time Complexity: O((N + extraStudents) log N) - Priority queue offer/poll per iteration
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single class, extraStudents = 0 (no distribution), class already fully passed (total == pass gives no marginal gain)
  */
 class MaximumAveragePassRatio {
     public double maxAverageRatio(int[][] classes, int extraStudents) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Sliding window pointers only move forward
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: k = 0 (empty valid window), single element, one value repeated more than k times, all elements distinct (full array length)
  */
 class LengthOfLongestSubarrayWithAtMostKFrequency {
     public int maxSubarrayLength(int[] nums, int k) {

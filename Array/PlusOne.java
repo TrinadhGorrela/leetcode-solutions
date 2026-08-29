@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: all 9s (leading carry to new array), trailing zeros after carry, single digit 9, last digit not 9 (no carry)
  */
 class PlusOne {
     public int[] plusOne(int[] digits) {

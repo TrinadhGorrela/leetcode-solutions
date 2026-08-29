@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Single linear scan over the string
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: Odd number of '?' (Alice wins), no '?' present, balanced '?' counts and digit sums (Bob wins), single '?'
  */
 class SumGame {
     public boolean sumGame(String num) {

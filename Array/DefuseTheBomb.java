@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: k = 0 (all zeros), negative k (previous elements), circular wrap-around, single element
  */
 class DefuseTheBomb {
     public int[] decrypt(int[] code, int k) {

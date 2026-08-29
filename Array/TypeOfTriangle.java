@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: degenerate/invalid sides (returns "none"), equilateral, isosceles (two equal sides)
  */
 class TypeOfTriangle {
     public String triangleType(int[] nums) {

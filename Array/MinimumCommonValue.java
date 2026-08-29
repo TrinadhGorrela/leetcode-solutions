@@ -9,7 +9,7 @@
  * Time Complexity: O(N+M) - Builds HashSet from nums1, loops nums2
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: no common value (returns -1), duplicates within arrays (deduplicated), common value at position 0
  */
 class MinimumCommonValue {
     public int getCommon(int[] nums1, int[] nums2) {

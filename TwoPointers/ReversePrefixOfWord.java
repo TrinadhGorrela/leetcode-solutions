@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(N) - Allocates memory for string processing
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Character not present (returns original string), char at first position (no reversal), char at last position, single character
  */
 class ReversePrefixOfWord {
     public String reversePrefix(String word, char ch) {

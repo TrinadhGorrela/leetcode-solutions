@@ -9,7 +9,7 @@
  * Time Complexity: O(C * A)
  * Space Complexity: O(A)
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: inconsistent way-counts (t < 0 or t > 1, returns empty), empty input, single coin in list
  */
 class InverseCoinChange {
     public List<Integer> findCoins(int[] numWays) {

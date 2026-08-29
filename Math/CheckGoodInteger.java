@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Iterates over the digits of the input number
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: single-digit n, n = 0 (digit loop skipped), digit 0 contributes nothing to either sum
  */
 class CheckGoodInteger {
     public boolean checkGoodInteger(int n) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: level appearing exactly once (returns -1), count divisible by 3, count not divisible by 3 (extra group of 2), count = 2 (single round)
  */
 class MinimumRoundsToCompleteAllTasks {
     public int minimumRounds(int[] tasks) {

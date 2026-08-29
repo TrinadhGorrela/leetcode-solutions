@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: index at the edge of array (one side count 0), decrements reaching 1 (long formula), large n/maxSum (long arithmetic to avoid overflow)
  */
 class MaximumValueAtAGivenIndexInABoundedArray {
     public int maxValue(int n, int index, int maxSum) {

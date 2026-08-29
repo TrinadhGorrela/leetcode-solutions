@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: two elements (always a progression), already sorted / already arithmetic, unsorted input
  */
 class CanMakeArithmeticProgressionFromSequence {
     public boolean canMakeArithmeticProgression(int[] arr) {

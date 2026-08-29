@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Explores palindromes centered at each index
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Single character, all same characters (whole string palindromic), even-length palindromes via double center, strings with no palindrome longer than 1
  */
 class LongestPalindromicSubstring {
 

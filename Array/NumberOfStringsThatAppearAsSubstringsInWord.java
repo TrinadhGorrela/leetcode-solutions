@@ -9,7 +9,7 @@
  * Time Complexity: O(P * W) - P is number of patterns, W is word length
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: pattern equal to word, pattern longer than word (not contained), empty pattern, duplicate patterns, no matches (result 0)
  */
 class NumberOfStringsThatAppearAsSubstringsInWord {
     public int numOfStrings(String[] patterns, String word) {

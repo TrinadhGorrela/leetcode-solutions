@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Map keys bounded by alphabet size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Single character, all same character (result capped at 2), all characters distinct (full length), third occurrence triggering window shrink
  */
 class MaximumLengthSubstringWithTwoOccurrences {
     public int maximumLengthSubstring(String s) {

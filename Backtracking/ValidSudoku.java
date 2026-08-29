@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Fixed 9x9 board structure
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: empty board (all '.'), duplicate in a row, duplicate in a column, duplicate in a 3x3 box, single filled cell
  */
 class ValidSudoku {
     public boolean isValidSudoku(char[][] board) {

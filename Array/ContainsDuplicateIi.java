@@ -9,7 +9,7 @@
  * Time Complexity: O(N*K) - Inner loop constrained by window size k
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element, window size k larger than array, duplicates exactly k apart, no duplicates
  */
 class ContainsDuplicateIi {
     public boolean containsNearbyDuplicate(int[] nums, int k) {

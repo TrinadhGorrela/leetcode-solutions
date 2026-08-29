@@ -9,7 +9,7 @@
  * Time Complexity: O(amount * coins.length) - DP states and transitions
  * Space Complexity: O(amount) - DP array size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: amount = 0 (returns 0), amount impossible to make (returns -1), single coin equal to amount
  */
 class CoinChange {
     public int coinChange(int[] coins, int amount) {

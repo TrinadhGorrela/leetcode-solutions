@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: all stones divisible by 3, single stone, counts of only one residue type, mod-3 reduction of all values
  */
 class StoneGameIx {
     public boolean stoneGameIX(int[] stones) {

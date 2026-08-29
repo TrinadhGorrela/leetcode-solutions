@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Merge sort is O(N log N)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element, already sorted, reverse-sorted, all equal (no swaps), negative values
  */
 class SortAnArray {
     public int[] sortArray(int[] nums) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (odd length 1), even array length, negative values
  */
 class SumOfAllOddLengthSubarrays {
     public int sumOddLengthSubarrays(int[] nums) {

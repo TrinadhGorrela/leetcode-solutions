@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(max(m, n)) - Allocates new output linked list nodes
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: unequal list lengths (draining the longer list), digit sum 10-18 (carry), final carry creating an extra node, one list empty
  */
 /**
  * Definition for singly-linked list.

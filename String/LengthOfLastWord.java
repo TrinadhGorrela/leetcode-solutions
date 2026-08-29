@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Trailing spaces, single word, multiple words, leading spaces, last word at the start of the string
  */
 class LengthOfLastWord {
     public int lengthOfLastWord(String s) {

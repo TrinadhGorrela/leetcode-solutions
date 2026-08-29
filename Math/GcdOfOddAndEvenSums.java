@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Logarithmic Euclidean GCD algorithm
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: n = 1 (coprime sums, gcd 1), Euclidean algorithm terminating when the second argument reaches 0
  */
 class GcdOfOddAndEvenSums {
     public int gcdOfOddEvenSums(int n) {

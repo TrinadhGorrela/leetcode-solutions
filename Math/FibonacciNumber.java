@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) - Naive recursion explores overlapping subproblems exponentially
  * Space Complexity: O(N) - Requires space for the recursion call stack
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: n = 0, n = 1 (base cases terminating recursion)
  */
 class FibonacciNumber {
     public int fib(int n) {

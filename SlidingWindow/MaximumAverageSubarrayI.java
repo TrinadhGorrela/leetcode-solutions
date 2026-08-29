@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: k equals array length (single window), k = 1, all-negative numbers (max seeded from first window, not 0), duplicate max sums
  */
 class MaximumAverageSubarrayI {
     public double findMaxAverage(int[] nums, int k) {

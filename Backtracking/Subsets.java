@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N * 2^N) - Holds all subsets
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (empty subset + full subset), empty subset, repeated values (treated as distinct)
  */
 class Subsets {
     public List<List<Integer>> subsets(int[] nums) {

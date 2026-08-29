@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Map size is fixed to 7 Roman numeral characters
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single-character numeral, subtractive pairs (IV, IX, XL, XC, CD, CM) where a smaller numeral precedes a larger one, repeated numerals (e.g., III, MM)
  */
 class RomanToInteger {
     public int romanToInt(String s) {
@@ -24,12 +24,12 @@ class RomanToInteger {
 
         int r = map.get(s.charAt(s.length() - 1));
         for (int i = s.length() - 2; i >= 0; i--) {
-          int  t = map.get(s.charAt(i));
-          int  b = map.get(s.charAt(i + 1));
-            if (a < b) {
-                r = r - a;
+            int cur = map.get(s.charAt(i));
+            int next = map.get(s.charAt(i + 1));
+            if (cur < next) {
+                r = r - cur;
             } else {
-                r = r + a;
+                r = r + cur;
             }
         }
         return r;

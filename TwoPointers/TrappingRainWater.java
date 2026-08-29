@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two-pointer approach is linear
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: fewer than 3 bars, flat (all equal) / monotonic arrays (no water), equal-height left/right sides
  */
 class TrappingRainWater {
     public int trap(int[] height) {

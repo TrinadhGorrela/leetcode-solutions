@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses prefix/suffix arrays (can be optimized to O(1) space)
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (pivot 0), pivot at first index (empty left sum), pivot at last index (empty right sum), no pivot (returns -1), negative values
  */
 class FindPivotIndex {
     public int pivotIndex(int[] nums) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(C(n,k) * k) - Holds all combinations
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: k = 1, k = n (single combination), single element, no combination shorter than k (base case guard)
  */
 class Combinations {
     public List<List<Integer>> combine(int n, int k) {

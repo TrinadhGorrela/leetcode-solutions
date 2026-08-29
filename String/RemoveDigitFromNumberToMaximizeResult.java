@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Substring operations inside the loop
  * Space Complexity: O(N) - Allocates new strings inside the loop
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Digit at start or end, multiple occurrences of the digit, all characters equal to digit, candidates compared lexicographically
  */
 class RemoveDigitFromNumberToMaximizeResult {
     public String removeDigit(String number, char digit) {

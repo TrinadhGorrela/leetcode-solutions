@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates character array proportional to input string
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single character, all identical characters (returns ""), most frequent char count > ceil(n/2) (returns ""), odd vs even length filling (wrap to index 1)
  */
 class ReorganizeString {
     public String reorganizeString(String s) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary array
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single child (1 candy), all equal ratings (1 each), strictly increasing/decreasing ratings (peak rule), both neighbors higher/lower
  */
 class Candy {
     public int candy(int[] ratings) {

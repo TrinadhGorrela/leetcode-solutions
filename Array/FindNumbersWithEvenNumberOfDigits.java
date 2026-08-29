@@ -9,7 +9,7 @@
  * Time Complexity: O(N log M) - M is max value, counting digits takes logarithmic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single-digit values, largest values (10^5 range), value 0 (counted as 0 digits = even)
  */
 class FindNumbersWithEvenNumberOfDigits {
     public int findNumbers(int[] nums) {

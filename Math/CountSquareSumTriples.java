@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: sums that are not exact perfect squares (floating-point sqrt re-checked), hypotenuse exceeding n excluded, i = j pairs allowed
  */
 class CountSquareSumTriples {
     public int countTriples(int n) {

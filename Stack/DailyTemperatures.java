@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Monotonic stack operations are amortized O(1)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Single day (result 0), all equal temperatures (all 0), strictly decreasing sequence (no warmer day after), warmer day far to the right, last element always 0
  */
 class DailyTemperatures {
     public int[] dailyTemperatures(int[] temperatures) {

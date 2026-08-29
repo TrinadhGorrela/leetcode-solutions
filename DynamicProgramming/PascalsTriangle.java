@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N^2) - Builds the entire triangle
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: numRows = 0 (empty list), numRows = 1 (single row), interior/carry accumulation
  */
 class PascalsTriangle {
     public List<List<Integer>> generate(int numRows) {

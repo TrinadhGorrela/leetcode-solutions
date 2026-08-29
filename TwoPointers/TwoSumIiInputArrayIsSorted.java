@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Single element, duplicates in array, pair at the array ends, target not matching any pair (returns default [0, 0])
  */
 class TwoSumIiInputArrayIsSorted {
     public static int[] twoSum(int[] numbers, int target) {

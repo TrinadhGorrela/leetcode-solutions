@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - All stack operations are constant time.
  * Space Complexity: O(N) - Two stacks store up to N elements.
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: Duplicate minimum values pushed (min stack mirrors each), popping the current minimum repeatedly, single-element stack, push equal to current minimum
  */
 class MinStack {
     Stack<Integer> input;

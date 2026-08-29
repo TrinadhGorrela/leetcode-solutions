@@ -9,7 +9,7 @@
  * Time Complexity: O(sqrt(N)) - Iterates up to the square root of N
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: num = 1 (loop runs and compares to itself), perfect-square divisors (sqrt not double-counted), divisor pair equal to num itself skipped
  */
 class PerfectNumber {
     public boolean checkPerfectNumber(int num) {

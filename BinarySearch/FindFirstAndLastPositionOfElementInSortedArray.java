@@ -9,7 +9,7 @@
  * Time Complexity: O(log n) - Two binary searches on array of size n.
  * Space Complexity: O(1) - Constant extra space used for variables.
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: target not found (both indices -1), single element, single occurrence (first == last), target at boundaries
  */
 class FindFirstAndLastPositionOfElementInSortedArray {
     public int[] searchRange(int[] nums, int target) {

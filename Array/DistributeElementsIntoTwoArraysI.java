@@ -10,7 +10,7 @@
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input
  * size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: exactly two elements, equal last elements (goes to arr2), negative values
  */
 class DistributeElementsIntoTwoArraysI {
     public int[] resultArray(int[] nums) {

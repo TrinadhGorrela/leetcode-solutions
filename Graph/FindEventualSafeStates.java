@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: terminal nodes with no outgoing edges (safe), cycle/back-edge detection via the recursion path, empty graph, nodes forming a cycle
  */
 class FindEventualSafeStates {
     public List<Integer> eventualSafeNodes(int[][] graph) {

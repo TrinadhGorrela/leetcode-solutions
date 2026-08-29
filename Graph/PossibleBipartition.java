@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Each person and dislike relation is visited once during traversal
  * Space Complexity: O(V + E) - Adjacency list storage and recursion call stack
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: no dislikes (trivially possible), odd-length cycle detected via 2-coloring conflict, isolated persons not in the dislike map (skipped), n = 1
  */
 class PossibleBipartition {
     public boolean possibleBipartition(int n, int[][] dislikes) {

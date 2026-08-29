@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: equal counts of positives and negatives, unequal counts, zero (treated as negative side), single element
  */
 class RearrangeArrayElementsBySign {
     public int[] rearrangeArray(int[] nums) {

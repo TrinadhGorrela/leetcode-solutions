@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1, picked number at the boundary (1 or n), picked number is the midpoint early hit
  */
 /** 
  * Forward declaration of guess API.

@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Outer loop N, inner loop over digits of i is log i
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: ambiguous digit 3/4/7 (invalidated immediately), at least one rotating digit 2/5/6/9 required, digits 0/1/8 rotate to themselves (valid but not rotating), n = 1
  */
 class RotatedDigits {
     public int rotatedDigits(int n) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) amortized - Digit square sum sequence cycles quickly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 (already happy), n = 0, repeated value (cycle detected, returns false), single-digit numbers
  */
 class HappyNumber {
     public boolean isHappy(int n) {

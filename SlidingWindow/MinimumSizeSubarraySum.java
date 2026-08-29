@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Sliding window pointers only move forward
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: No subarray reaches target (returns 0), single element reaches target, whole array is the only valid window, target met exactly
  */
 class MinimumSizeSubarraySum {
     public int minSubArrayLen(int target, int[] nums) {

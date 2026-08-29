@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: source == destination (immediate true), single-node graph with no edges, destination in a disconnected component (false), empty edge list
  */
 class FindIfPathExistsInGraph {
     public boolean validPath(int n, int[][] edges, int source, int destination) {

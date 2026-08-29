@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses a presum array
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: all negative gains (max stays 0), single element, longest altitude at start (index 0)
  */
 class FindTheHighestAltitude {
     public int largestAltitude(int[] gain) {

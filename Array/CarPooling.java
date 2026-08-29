@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: no trips, capacity zero, simultaneous pickup/drop-off at same stop, trips beyond fixed stop range
  */
 class CarPooling {
     public boolean carPooling(int[][] trips, int capacity) {

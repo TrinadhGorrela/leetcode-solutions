@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty array, single element (self-swap no-op), even and odd length arrays
  */
 class ReverseString {
     public void reverseString(char[] s) {

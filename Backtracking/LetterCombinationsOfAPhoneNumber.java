@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via iterative BFS-style expansion
  * Space Complexity: O(4^N * N) - N is digits length, stores all combinations
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: empty digits string (returns empty list), single digit, repeated digits (e.g., "22"), four-letter digits (7/9)
  */
 class LetterCombinationsOfAPhoneNumber {
     public List<String> letterCombinations(String digits) {

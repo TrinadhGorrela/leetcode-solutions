@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element, sequential prefix of length 1, duplicate values in set, sum already present (incremented)
  */
 class SmallestMissingIntegerGreaterThanSequentialPrefixSum {
     public int missingInteger(int[] nums) {

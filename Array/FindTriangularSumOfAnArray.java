@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N) - sum() allocates a new array each pass
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (returns it directly), sums causing carry (modulo 10), adjacent pair sums
  */
 class FindTriangularSumOfAnArray {
        public static int triangularSum(int[] nums) {

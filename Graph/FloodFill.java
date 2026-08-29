@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: start pixel already the target color (early return, image unchanged), single-cell image, start cell on a border or corner
  */
 class FloodFill {
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {

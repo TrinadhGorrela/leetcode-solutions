@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Triple-reverse takes linear time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: k larger than n (normalized by modulo), k = 0, k = n (no effective rotation), single element
  */
 class RotateArray {
    public static void rotate(int[] nums, int k) {

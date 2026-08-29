@@ -9,7 +9,7 @@
  * Time Complexity: O(N * D) - N is the range size, D is the number of digits (at most 5)
  * Space Complexity: O(1) - constant auxiliary space
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: digit equal to 0 (rejected), digit not dividing the number, single-digit numbers 1-9 (always self-dividing)
  */
 class SelfDividingNumbers {
     public List<Integer> selfDividingNumbers(int left, int right) {

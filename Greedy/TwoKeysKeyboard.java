@@ -9,7 +9,7 @@
  * Time Complexity: O(√N) - Trial division prime factorization loop
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 (zero operations), prime n (single factor), remaining prime factor larger than the trial divisor after divisions
  */
 
 class TwoKeysKeyboard {

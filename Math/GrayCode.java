@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) - Iterative doubling constructs the sequence
  * Space Complexity: O(2^N) - Allocates list for all Gray code permutations
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: n = 0 (sequence is just [0]), mirror reflection preserves the one-bit difference across the boundary
  */
 class GrayCode {
     public List<Integer> grayCode(int n) {

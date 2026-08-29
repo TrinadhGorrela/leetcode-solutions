@@ -9,7 +9,7 @@
  * Time Complexity: O(m*n) - Two-pass dynamic programming (forward and backward pass over the grid)
  * Space Complexity: O(1) - Excluding the output matrix, no extra auxiliary space is used
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: all-zeros matrix (stays 0), all-ones matrix, single cell (0 or 1), 1-cells initialized to large sentinel before propagation
  */
 class Matrix01 {
     public int[][] updateMatrix(int[][] mat) {

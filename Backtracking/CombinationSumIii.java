@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(C(9,k) * k) - Stores valid combinations from a fixed 1-9 pool
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: k = 1, no valid combination (returns empty), target already met with wrong size, smallest/largest k values
  */
 class CombinationSumIii {
     public List<List<Integer>> combinationSum3(int k, int n) {

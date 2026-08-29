@@ -9,7 +9,7 @@
  * Time Complexity: O(log n) - Processes the digits of the number
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: integer overflow (returns 0), negative inputs reversed by sign, trailing-zero inputs (e.g., 120 -> 21), Integer.MIN_VALUE
  */
 class ReverseInteger {
     public int reverse(int x) {

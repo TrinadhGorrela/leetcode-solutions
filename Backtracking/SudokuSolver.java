@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: already-solved board (no empty cells), fully empty board, no valid solution (returns false / unchanged board), empty cells at row/column/box boundaries
  */
 class SudokuSolver {
     public void solveSudoku(char[][] board) {

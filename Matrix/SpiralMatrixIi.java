@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N^2) - Allocates the result 2D array
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 (single cell), odd/even n, single-row/single-column lap (guarded bottom and left passes)
  */
 class SpiralMatrixIi {
     public int[][] generateMatrix(int n) {

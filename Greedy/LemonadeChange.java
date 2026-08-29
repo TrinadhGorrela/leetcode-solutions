@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: first customer pays with $10 or $20 (returns false if no change), gives exact change preferring $10+$5 for $20, insufficient small bills (returns false)
  */
 class LemonadeChange {
     public boolean lemonadeChange(int[] bills) {

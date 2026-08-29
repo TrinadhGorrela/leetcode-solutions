@@ -9,7 +9,7 @@
  * Time Complexity: O(4^(N^2)) - Four choices at each step, max path length is N^2
  * Space Complexity: O(N^2) - Max recursion depth in the worst-case scenario
  *
- * Edge Cases Handled: Start or end cell is blocked, no possible path, matrix bounds
+ * Edge Cases Handled: start or destination cell blocked, no possible path (empty result), out-of-bounds in all four directions, already-visited cells, single-cell maze
  */
 class MazeSolver {
 

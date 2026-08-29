@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Uses a string array
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: all zeros (returns "0" not "000..."), single element, numbers with common prefixes, leading-zero formatting avoided
  */
 class LargestNumber {
     public String largestNumber(int[] nums) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: 1x1 matrix (center counted once), odd n (shared center single-counted), even n (no shared center)
  */
 class MatrixDiagonalSum {
     public int diagonalSum(int[][] mat) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(N) - Allocates new strings during processing
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty string, single character, mixed uppercase/lowercase, non-alphanumeric characters (punctuation, spaces) stripped out
  */
 class ValidPalindrome {
     public boolean isPalindrome(String s) {

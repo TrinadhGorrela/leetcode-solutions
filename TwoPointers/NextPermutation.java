@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two passes over the array to find pivot and reverse elements
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: descending order (no pivot, reverse to ascending), single element or single pivot candidate, duplicate values
  */
 class NextPermutation {
     public void nextPermutation(int[] nums) {

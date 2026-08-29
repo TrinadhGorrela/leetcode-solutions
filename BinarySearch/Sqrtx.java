@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: x = 0 (returns 0), x = 1, perfect squares (exact root), non-perfect squares (floor), overflow avoided by comparing mid <= x/mid
  */
 class Sqrtx {
     public int mySqrt(int x) {

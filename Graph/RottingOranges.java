@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: fresh oranges unreachable from any rotten source (returns -1), no fresh oranges at all (returns 0), no initially rotten oranges with fresh present (-1), all oranges already rotten
  */
 class RottingOranges {
     public int orangesRotting(int[][] grid) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Monotonic queue operations are amortized O(1)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: k = 1, window covering the whole array, all equal elements, monotonic increasing/decreasing sequences, stale indices expired from deque
  */
 class SlidingWindowMaximum {
     public int[] maxSlidingWindow(int[] nums, int k) {

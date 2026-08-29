@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (returns 0 jumps, loop skipped), target reached in one jump, jumps needed exactly as loop ends
  */
 class JumpGameIi {
     public int jump(int[] nums) {

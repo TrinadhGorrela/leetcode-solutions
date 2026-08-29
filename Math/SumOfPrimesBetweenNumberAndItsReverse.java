@@ -9,7 +9,7 @@
  * Time Complexity: O(N * sqrt(N)) - isPrime is O(sqrt(N)) and gets called for each number in the range
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: n = 0 or 1 (not prime), small primes 2, 3, reverse being smaller than n (range reordered via min/max), trailing-zero digits shortening the reverse
  */
 class SumOfPrimesBetweenNumberAndItsReverse {
     public int sumOfPrimesInRange(int n) {

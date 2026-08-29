@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Logarithmic fast exponentiation
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: negative exponent (base inverted), Integer.MIN_VALUE exponent via long to avoid negation overflow, exponent 0 (returns 1), |n| = 1
  */
 class PowxN {
     public double myPow(double x, int n) {

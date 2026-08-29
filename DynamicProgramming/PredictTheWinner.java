@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - 2D memoization has N^2 states
  * Space Complexity: O(N^2) - Allocates a 2D array for memoization
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (st == end), even-length packs (guaranteed win), all equal values (tie)
  */
 class PredictTheWinner {
     public boolean predictTheWinner(int[] nums) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (GCD of value with itself), all elements equal, min/max boundary values at Integer edges
  */
 class FindGreatestCommonDivisorOfArray {
     public int findGCD(int[] nums) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - StringBuilder grows with the input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty string, no stars, all stars (guarded empty delete), leading star, alternating star/letter pairs
  */
 class RemovingStarsFromAString {
     public String removeStars(String s) {

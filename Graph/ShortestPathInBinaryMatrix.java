@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: null or empty grid, blocked start or end cell (returns -1), unreachable target (returns -1), single 1x1 open cell (returns 1), 8-directional boundaries
  */
 class ShortestPathInBinaryMatrix {
     public int shortestPathBinaryMatrix(int[][] grid) {

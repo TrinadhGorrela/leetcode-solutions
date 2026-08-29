@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: value 0 (distinct from empty via offset), missing key returns -1, re-putting same key, remove then get
  */
 class MyHashMap {
     int[] map;

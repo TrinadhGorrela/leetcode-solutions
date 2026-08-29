@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: cannot afford any bar (returns 0), can afford all bars, coins fully spent mid-array
  */
 class MaximumIceCreamBars {
     public int maxIceCream(int[] costs, int coins) {

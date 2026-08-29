@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Iterates over the grid
  * Space Complexity: O(N^2) - Recursion depth equals the total number of cells visited
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: 1x1 grid (must start at 0), start not at 0 (returns false), out-of-bounds knight moves, last cell n*n-1 termination
  */
 class CheckKnightTourConfiguration {
     public boolean checkValidGrid(int[][] grid) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Single pass, constant time map operations
  * Space Complexity: O(N) - Stores up to N elements in hash map
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: negative values, target requiring two negatives, duplicate values (complement may reuse index avoided via ordering), answer spanning endpoints
  */
 class TwoSum {
     public int[] twoSum(int[] nums, int target) {

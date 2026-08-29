@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: target not found (returns false), single row or single column, target at matrix corners
  */
 class SearchA2dMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: s shorter than t (returns empty string), no valid window (returns empty string), s equals t (whole string returned), duplicate characters in t
  */
 class MinimumWindowSubstring {
     public String minWindow(String s, String t) {

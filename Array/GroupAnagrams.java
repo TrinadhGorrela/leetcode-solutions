@@ -9,7 +9,7 @@
  * Time Complexity: O(N * L log L) - Sorting each string of max length L
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single string, empty strings (all anagrams), repeated identical strings, all distinct
  */
 class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {

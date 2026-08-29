@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: empty intervals list, new interval before all / after all, exact overlap boundaries, full containment
  */
 class InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {

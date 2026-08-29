@@ -9,7 +9,7 @@
  * Time Complexity: O(N * min(L)) - Total character comparisons bounded by shortest string
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single string (returns it), no common prefix (empty result), empty string in list, repeated identical strings
  */
 class LongestCommonPrefix {
     public String longestCommonPrefix(String[] strs) {

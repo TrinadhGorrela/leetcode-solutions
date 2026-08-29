@@ -9,7 +9,7 @@
  * Time Complexity: O(log3 N) - Logarithmic division by 3
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 (3^0), exact powers of 3 matched by repeated multiplication, non-powers terminate when the multiplier exceeds int range
  */
 class PowerOfThree {
     public boolean isPowerOfThree(int n) {

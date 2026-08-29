@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Bounded by lowercase alphabet size (26)
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single character (one partition), all identical characters (single partition), all unique characters (each its own partition of length 1)
  */
 class PartitionLabels {
     public List<Integer> partitionLabels(String s) {

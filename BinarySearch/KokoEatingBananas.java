@@ -9,7 +9,7 @@
  * Time Complexity: O(N log W) - Binary search over answer range with linear validation per step
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single pile, piles not evenly divisible by speed (ceil handling), hours sum using long to avoid overflow
  */
 class KokoEatingBananas {
     public int minEatingSpeed(int[] piles, int h) {

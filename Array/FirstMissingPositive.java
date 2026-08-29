@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly (Optimal time, but suboptimal O(N) space approach)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: no positive integers (answer 1), all positives in sequence (answer n+1), negatives and zeros ignored, duplicate values
  */
 class FirstMissingPositive {
     public int firstMissingPositive(int[] nums) {

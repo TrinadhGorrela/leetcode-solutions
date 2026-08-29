@@ -9,7 +9,7 @@
  * Time Complexity: O(M * N) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(M * N) - Allocates a full 2D DP grid
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single cell, single row or single column (only one path), start cell
  */
 class MinimumPathSum {
     public int minPathSum(int[][] grid) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - The outer loop combined with the inner two-pointer scan dominates the O(N log N) sort
  * Space Complexity: O(N^2) - Stores up to O(N^2) unique triplets in the worst case
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: null or empty array, fewer than 3 elements, no valid triplets (returns empty list), duplicates deduplicated via set
  */
 class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {

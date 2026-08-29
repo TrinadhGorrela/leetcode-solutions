@@ -9,7 +9,7 @@
  * Time Complexity: O(log4 N) - Logarithmic division by 4
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 (4^0), exact powers of 4 matched by repeated multiplication, non-powers terminate when the multiplier exceeds int range
  */
 class PowerOfFour {
     public boolean isPowerOfFour(int n) {

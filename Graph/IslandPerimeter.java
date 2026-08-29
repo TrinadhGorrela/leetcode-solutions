@@ -9,7 +9,7 @@
  * Time Complexity: O(rows * cols) - Iterates over the grid
  * Space Complexity: O(rows * cols) - Maintains a visited state matching grid size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: single-cell island (perimeter 4), land touching grid borders or corners (missing neighbors not undercounted), all-water grid
  */
 class IslandPerimeter {
     public int islandPerimeter(int[][] grid) {

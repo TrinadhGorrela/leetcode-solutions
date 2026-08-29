@@ -9,7 +9,7 @@
  * Time Complexity: O(log n) - Number of digits in n is proportional to log10(n)
  * Space Complexity: O(1) - Only a few scalar variables are used
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: any digit equal to 0 (product collapses to zero), single-digit n, divisor sum + product always positive so modulo is never a division by zero
  */
 class CheckDivisibilityByDigitSumAndProduct {
     public boolean checkDivisibility(int n) {

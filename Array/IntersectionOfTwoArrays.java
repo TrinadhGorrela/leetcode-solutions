@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - HashSet lookup takes linear time
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: no common elements (empty result), duplicate values in either input (deduplicated), one array with single element
  */
 class IntersectionOfTwoArrays {
     public int[] intersection(int[] nums1, int[] nums2) {

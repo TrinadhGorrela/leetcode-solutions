@@ -10,7 +10,7 @@
  * recursion
  * Space Complexity: O(2^L * L) - L is number of letters, stores all permutations
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: empty string (returns [""]), no letters (all digits, single result), one digit, mixed digits and letters
  */
 class LetterCasePermutation {
     public List<String> letterCasePermutation(String s) {

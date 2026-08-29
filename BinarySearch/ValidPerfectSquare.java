@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: num < 0 (returns false), num = 0, num = 1 (perfect square), overflow avoided via long multiplication
  */
 class ValidPerfectSquare {
     public boolean isPerfectSquare(int num) {

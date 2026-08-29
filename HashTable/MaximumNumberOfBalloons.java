@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: missing required letters (returns 0), all 26 letters present, odd count of 'l' or 'o' (halved correctly), text without enough of any single letter
  */
 class MaximumNumberOfBalloons {
     public int maxNumberOfBalloons(String text) {

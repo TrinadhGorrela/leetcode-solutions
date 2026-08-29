@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Requires space for the recursion call stack
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: empty tree / null root, single node (symmetric), both children null (leaf), asymmetric single branch (one child null)
  */
 /**
  * Definition for a binary tree node.

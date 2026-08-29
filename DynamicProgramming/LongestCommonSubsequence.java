@@ -9,7 +9,7 @@
  * Time Complexity: O(m*n) - Dynamic programming over two strings
  * Space Complexity: O(m*n) - Allocates a 2D array for memoization scaling with input sizes
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: one or both strings empty (returns 0), no common characters (returns 0), all characters identical (LCS = full string)
  */
 class LongestCommonSubsequence {
     public int longestCommonSubsequence(String text1, String text2) {

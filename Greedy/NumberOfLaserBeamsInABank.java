@@ -9,7 +9,7 @@
  * Time Complexity: O(total characters across all rows) - Linear scan over character strings
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: empty rows skipped, no devices (result 0), single row with devices, rows with all zeros between device rows
  */
 class NumberOfLaserBeamsInABank {
     public int numberOfBeams(String[] bank) {

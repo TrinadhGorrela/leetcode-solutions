@@ -9,7 +9,7 @@
  * Time Complexity: O(N log log N) - Sieve of Eratosthenes approach
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n <= 1 (returns 0), n = 2, n = 3 (prime itself excluded)
  */
 class CountPrimes {
     public int countPrimes(int n) {

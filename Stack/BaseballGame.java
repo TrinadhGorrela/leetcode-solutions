@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Negative scores parsed correctly, zero, single number, stack emptied by consecutive C operations before summing
  */
 class BaseballGame {
     public int calPoints(String[] operations) {

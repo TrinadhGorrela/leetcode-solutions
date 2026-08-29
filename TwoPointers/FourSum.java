@@ -9,7 +9,7 @@
  * Time Complexity: O(N^3) - Two nested loops plus two-pointer search on remaining elements
  * Space Complexity: O(N^3) - Stores up to O(N^3) unique quadruplets in the worst case
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: null or empty array, fewer than 4 elements, no valid quadruplets (returns empty list), duplicates deduplicated via set, integer overflow avoided with long sum
  */
 class FourSum {
    public static List<List<Integer>> fourSum(int[] nums, int target) {

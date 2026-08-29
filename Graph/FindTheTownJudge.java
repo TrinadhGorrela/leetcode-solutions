@@ -9,7 +9,7 @@
  * Time Complexity: O(N + E) - Iterates over people (N) and trust relationships (E)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 with no trust relations (returns 1), no person satisfying in-degree = n-1 and out-degree = 0 (returns -1), judge never trusts anyone
  */
 class FindTheTownJudge {
     public int findJudge(int n, int[][] trust) {

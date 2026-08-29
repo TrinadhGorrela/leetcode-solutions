@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: different lengths (returns false), empty strings (true), all same characters, single character anagrams
  */
 class ValidAnagram {
     public boolean isAnagram(String s, String t) {

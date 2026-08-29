@@ -9,7 +9,7 @@
  * Time Complexity: O(M*N) - Visits every matrix element
  * Space Complexity: O(M+N) - Uses arrays to track rows and columns to be zeroed
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: no zeros (unchanged matrix), already all zeros, single zero, single row / single column, zeros already in flagged cells
  */
 class SetMatrixZeroes {
     public void setZeroes(int[][] matrix) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: 1x1 matrix, 2x2 matrix, single row reverse (works for any square size)
  */
 class RotateImage {
     public void rotate(int[][] matrix) {

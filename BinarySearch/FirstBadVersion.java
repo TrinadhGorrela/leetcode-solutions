@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1, first version is bad (start stays 1), last version is first bad (end converges to n), all versions good/good-then-bad
  */
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Two pointers approach iterating through elements once
  * Space Complexity: O(N) - Allocates memory for string processing
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty string, single character, no vowels (string unchanged), all vowels, uppercase vowels recognized and swapped
  */
 class ReverseVowelsOfAString {
     public String reverseVowels(String s) {

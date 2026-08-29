@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Work bounded by fixed constraints (Roman numerals max ~3999, 13 rules)
  * Space Complexity: O(1) - Fixed size array/map and bounded string output
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: num = 1, subtractive combinations (4, 9, 40, 90, 400, 900), exact multiples of 10/100/1000, repeated symbols (e.g., 2, 3, 20, 30)
  */
 class IntegerToRoman {
     public String intToRoman(int num) {

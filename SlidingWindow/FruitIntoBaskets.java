@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Sliding window pointers only move forward
  * Space Complexity: O(1) - Map size is capped at 2
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Single element, only one distinct fruit type, more than two types requiring window shrink, type reappearing after being removed from count
  */
 class FruitIntoBaskets {
     public int totalFruit(int[] fruits) {

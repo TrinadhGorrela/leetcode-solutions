@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: 1x1 image, single row, middle cell of odd-length row (unchanged by reversal but inverted), all zeros / all ones
  */
 class FlippingAnImage {
     public int[][] flipAndInvertImage(int[][] image) {

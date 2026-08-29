@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - StringBuilder grows with the input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single node, leading zero bit (does not change value), value that exceeds what a shorter representation implies
  */
 /**
  * Definition for singly-linked list.

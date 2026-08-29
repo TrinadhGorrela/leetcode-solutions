@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: zero celsius (breaks even at 273.15 K / 32 F), negative celsius, fractional celsius (decimal arithmetic preserved)
  */
 class ConvertTheTemperature {
     public double[] convertTemperature(double celsius) {

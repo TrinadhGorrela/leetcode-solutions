@@ -9,7 +9,7 @@
  * Time Complexity: O(M*N) - Visits every matrix element
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single row, single column, 1x1 matrix, all equal values, out-of-bounds avoided by length-1 loop bounds
  */
 class ToeplitzMatrix {
     public boolean isToeplitzMatrix(int[][] matrix) {

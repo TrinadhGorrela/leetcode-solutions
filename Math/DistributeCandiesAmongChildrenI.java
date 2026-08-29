@@ -9,7 +9,7 @@
  * Time Complexity: O(limit^2) - Nested loops run from 0 to limit, independent of n
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: third child's remaining share must be non-negative and within limit, n exceeding the total capacity 3 * limit yields zero valid distributions, limit = 0
  */
 class DistributeCandiesAmongChildrenI {
     public int distributeCandies(int n, int limit) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N * 2^N) - Enumerates all subsets and XORs each
  * Space Complexity: O(N * 2^N) - Stores every subset in the result list (can be O(N) with a running sum instead)
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (empty subset + itself), empty subset (XOR 0), repeated/duplicate values
  */
 class SumOfAllSubsetXorTotals {
     public int subsetXORSum(int[] nums) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty greed or sizes array (result 0), no cookie large enough for any child, all children satisfied, extra oversized cookies left unused
  */
 class AssignCookies {
     public int findContentChildren(int[] g, int[] s) {

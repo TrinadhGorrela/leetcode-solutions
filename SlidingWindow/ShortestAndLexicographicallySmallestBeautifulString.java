@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Each character processed at most twice
  * Space Complexity: O(1) - Constant extra space (ignoring output string)
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: No substring with k ones (returns empty string), k larger than count of ones, single 1 with k = 1, equal-length candidates resolved lexicographically
  */
 class ShortestAndLexicographicallySmallestBeautifulString {
     public String shortestBeautifulSubstring(String s, int k) {

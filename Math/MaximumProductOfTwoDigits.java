@@ -9,7 +9,7 @@
  * Time Complexity: O(log n) - Number of digits is proportional to log10(n)
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: single-digit number (second largest stays 0), repeated identical digits (e.g., 999 -> 9*9), digit encountered equal to current max shifts the runner-up
  */
 class MaximumProductOfTwoDigits {
     public int maxProduct(int n) {

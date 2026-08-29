@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates memory for string processing
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty string, single word (no spaces), multiple words, single-character words
  */
 class ReverseWordsInAStringIii {
     public String reverseWords(String s) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: all zeros (result 0), all ones (maximum run at end captured by final max), single element, trailing ones
  */
 class MaxConsecutiveOnes {
     public int findMaxConsecutiveOnes(int[] nums) {

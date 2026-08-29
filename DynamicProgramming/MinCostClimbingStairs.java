@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses a DP array
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: two steps (start at step 0), can start from first or second step (dp[0] and dp[1] = 0)
  */
 class MinCostClimbingStairs {
     public int minCostClimbingStairs(int[] cost) {

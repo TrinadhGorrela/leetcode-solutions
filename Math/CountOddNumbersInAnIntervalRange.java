@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: low == high, even or odd bounds at either end, low or high equal to 0
  */
 class CountOddNumbersInAnIntervalRange {
     public int countOdds(int low, int high) {

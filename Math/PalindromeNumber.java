@@ -9,7 +9,7 @@
  * Time Complexity: O(log n) - Processes the digits of the number
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: negative numbers (immediately false), x = 0 (palindrome), single-digit numbers
  */
 class PalindromeNumber {
     public boolean isPalindrome(int x) {

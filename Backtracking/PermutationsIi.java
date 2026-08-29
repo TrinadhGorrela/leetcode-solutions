@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N * N!) - Holds all permutations
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element, all elements identical (one unique permutation), duplicate values (deduped), no duplicates
  */
 class PermutationsIi {
     public List<List<Integer>> permuteUnique(int[] nums) {

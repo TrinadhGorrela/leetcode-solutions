@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Loop bounded strictly by 32 bits
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: n = 0 (zero set bits), negative inputs with the sign bit set (unsigned right shift), all 32 bits scanned
  */
 class NumberOf1Bits {
     public int hammingWeight(int n) {

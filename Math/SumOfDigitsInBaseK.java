@@ -9,7 +9,7 @@
  * Time Complexity: O(log_k n) - Number of base-k digits of n
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: single-digit n, base k larger than n (result is n itself), loop terminates when n reaches 0
  */
 class SumOfDigitsInBaseK {
     public int sumBase(int n, int k) {

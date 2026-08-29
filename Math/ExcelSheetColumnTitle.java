@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates memory for string processing
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: col = 1 (single letter A), exact multiples of 26 (the Z boundary), rollover beyond one letter (e.g., 26 -> Z, 27 -> AA)
  */
 class ExcelSheetColumnTitle {
     public String convertToTitle(int col) {

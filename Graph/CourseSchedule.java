@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: no prerequisites (trivially schedulable), cycle/back-edge detected via recursion path, disconnected prerequisite graph, single course
  */
 class CourseSchedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: negative values, total sum overflow (uses long), no valid partition (odd difference)
  */
 class CountPartitionsWithEvenSumDifference {
     public int countPartitions(int[] nums) {

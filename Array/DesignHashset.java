@@ -9,7 +9,7 @@
  * Time Complexity: O(N) worst case - Linked list traversal in buckets degrades as N grows
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: hash collisions (multiple keys per bucket), key 999 vs 1999 same bucket, duplicate add (idempotent), remove of absent key
  */
 class MyHashSet {
     LinkedList<Integer>[] bucketArray;

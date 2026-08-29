@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Monotonic stack operations are amortized O(1)
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Single element (result -1), all equal elements (all -1), maximum element at any position (result -1), circular wrap finding greater in earlier indices
  */
 class NextGreaterElementIi {
     public int[] nextGreaterElements(int[] nums) {

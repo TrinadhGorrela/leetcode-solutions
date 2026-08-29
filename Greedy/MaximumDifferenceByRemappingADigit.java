@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Creates string copies for remapping
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: number already all 9s (no digit can be raised, a unchanged), leading digit remapped to 0 (leading zeros produced), remapped minimum parsed after dropping leading zeros
  */
 class MaximumDifferenceByRemappingADigit {
     public int minMaxDifference(int num) {

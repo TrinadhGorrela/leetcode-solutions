@@ -11,7 +11,7 @@
  * recursion
  * Space Complexity: O(Catalan(n) * n) - Stores all valid parenthesis strings
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: n = 1 (single "()"), only well-formed strings (close never exceeds open guard)
  */
 class GenerateParentheses {
     public List<String> generateParenthesis(int n) {

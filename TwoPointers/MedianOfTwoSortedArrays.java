@@ -9,7 +9,7 @@
  * Time Complexity: O(m+n) - Merge-based implementation (Suboptimal approach)
  * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: empty first / second array, one array fully smaller, equal elements across arrays, odd and even combined lengths
  */
 class MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {

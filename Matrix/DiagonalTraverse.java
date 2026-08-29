@@ -9,7 +9,7 @@
  * Time Complexity: O(M*N) - Visits every matrix element once
  * Space Complexity: O(M * N) - Map stores all matrix elements
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: 1x1 matrix, single row / single column, non-square matrices, diagonal boundary cells
  */
 class DiagonalTraverse {
     public int[] findDiagonalOrder(int[][] mat) {

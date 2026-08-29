@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single interval, adjacent/overlapping boundaries, one interval contained in another, unsorted input
  */
 class MergeIntervals {
     public int[][] merge(int[][] intervals) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Frequency arrays have a fixed size of 26
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: s shorter than t (empty result), s equals t, no anagram present, anagram at start (index 0) or end of s
  */
 class FindAllAnagramsInAString {
     public List<Integer> findAnagrams(String s, String t) {

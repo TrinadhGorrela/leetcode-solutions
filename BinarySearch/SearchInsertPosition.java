@@ -10,7 +10,7 @@
  * monotonic sequence
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: target already present, target smaller than all (inserts at 0), target larger than all (inserts at end), single element
  */
 class SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {

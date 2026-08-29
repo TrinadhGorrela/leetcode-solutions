@@ -9,7 +9,7 @@
  * Time Complexity: O(N log W) - Binary search over answer range with linear validation per step
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: impossible case m*k > n (returns -1), single bloom day, adjacent bloomed runs not multiples of k (leftover flowers discarded), sum overflow avoided via long check
  */
 class MinimumNumberOfDaysToMakeMBouquets {
     public int minDays(int[] bloomDay, int m, int k) {

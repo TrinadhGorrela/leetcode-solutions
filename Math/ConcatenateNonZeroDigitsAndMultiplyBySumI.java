@@ -9,7 +9,7 @@
  * Time Complexity: O(log N) - Processes digits of the number
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: digits equal to zero (dropped during reconstruction), numbers ending in zero (reversal produces leading zeros), result kept in long to avoid overflow
  */
 class ConcatenateNonZeroDigitsAndMultiplyBySumI {
     public long sumAndMultiply(int n) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: left = 1 (reversal includes the head, dummy node), left == right (single-node segment, unchanged), reversal at the tail, reversal spanning the whole list
  */
 /**
  * Definition for singly-linked list.

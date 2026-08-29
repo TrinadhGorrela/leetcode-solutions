@@ -9,7 +9,7 @@
  * Time Complexity: O((N - M + 1) * M) - Nested comparison of needle length M for each starting index in haystack of length N
  * Space Complexity: O(1) - Uses only a constant number of integer index pointers
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: Empty haystack, needle longer than haystack (returns -1), needle not found (returns -1), needle at start or end of haystack
  */
 class FindTheIndexOfTheFirstOccurrenceInAString {
     public int strStr(String haystack, String needle) {

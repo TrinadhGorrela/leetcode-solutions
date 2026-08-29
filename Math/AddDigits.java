@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Computes the result mathematically without any iteration
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: num = 0 (returns 0), exact multiples of 9 (returns 9), num already a single digit
  */
 class AddDigits {
     public int addDigits(int num) {

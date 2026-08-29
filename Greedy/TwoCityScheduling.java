@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(N) - Allocates an array for sorting differences
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: two people (minimum even case), equal costs for both cities (difference 0), sorting ties by difference
  */
 class TwoCityScheduling {
     public int twoCitySchedCost(int[][] costs) {

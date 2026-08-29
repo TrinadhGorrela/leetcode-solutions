@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - StringBuilder scales with input length
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Single character, odd-length input (final char appended without a following digit), digit value pushing char beyond 'z' avoided by constraints
  */
 class ReplaceAllDigitsWithCharacters {
     public String replaceDigits(String s) {

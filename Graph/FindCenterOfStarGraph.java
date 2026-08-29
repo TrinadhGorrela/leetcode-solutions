@@ -9,7 +9,7 @@
  * Time Complexity: O(E) - Single pass over the edges array
  * Space Complexity: O(1) - Only a few variables for counting
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: minimal star of a single edge, both first-edge endpoints counted across all edges to break ties
  */
 class FindCenterOfStarGraph {
     public int findCenter(int[][] edges) {

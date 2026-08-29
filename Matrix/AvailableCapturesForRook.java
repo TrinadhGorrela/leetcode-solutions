@@ -9,7 +9,7 @@
  * Time Complexity: O(1) - Loops are bounded by fixed 8x8 board size
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: rook at board edge (single scan direction), no pawns in any direction, pawn blocked by bishop, empty cells around rook
  */
 class AvailableCapturesForRook {
     public int numRookCaptures(char[][] board) {

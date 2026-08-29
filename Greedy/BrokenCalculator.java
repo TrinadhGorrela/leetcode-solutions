@@ -9,7 +9,7 @@
  * Time Complexity: O(log(target)) - Divides by 2 or adds 1, reaching startValue in log time
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: target already equal to startValue (zero operations), odd target (incremented instead of halved), target below startValue (only double+decrement path, converted via subtraction)
  */
 class BrokenCalculator {
     public int brokenCalc(int startValue, int target) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: null head (returns null), k = 0 or k a multiple of length (returns head unchanged), k > length (reduced via modulo), single node
  */
 /**
  * Definition for singly-linked list.

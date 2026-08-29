@@ -9,7 +9,7 @@
  * Time Complexity: O(N + (max/k)) - N for set creation, loop runs max/k times
  * Space Complexity: O(N) - Hash set storage for array elements
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: k not in array (returns k), consecutive multiples present, duplicates in array
  */
 class SmallestMissingMultipleOfK {
     public int missingMultiple(int[] nums, int k) {

@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates array for the full re-chunked string
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Final chunk shorter than k (padded with fill), string evenly divisible by k (no padding), k larger than string length, k = 1
  */
 class DivideAStringIntoGroupsOfSizeK {
     public String[] divideString(String s, int k, char fill) {

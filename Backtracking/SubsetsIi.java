@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N * 2^N) - Holds all subsets
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element, all elements equal (duplicates deduped to one subset of each size), no duplicates (behaves like plain subsets), empty subset
  */
 class SubsetsIi {
     public List<List<Integer>> subsetsWithDup(int[] nums) {

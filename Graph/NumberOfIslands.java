@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: all-water grid (zero islands), single-cell island, islands at grid borders/corners, diagonal 1s not connected
  */
 class NumberOfIslands {
     public int numIslands(char[][] grid) {

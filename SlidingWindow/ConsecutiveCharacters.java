@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Single pass through string
  * Space Complexity: O(1) - Constant extra variables
  *
- * Edge Cases Handled: Per LeetCode constraints
+ * Edge Cases Handled: Empty string, single character, all same character (full length), longest run extending to the end of the string
  */
 class ConsecutiveCharacters {
     public int maxPower(String s) {

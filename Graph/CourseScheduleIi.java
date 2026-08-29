@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: cycle in prerequisites (returns empty array), no prerequisites (any order valid), disconnected course graph, numCourses = 0
  */
 class CourseScheduleIi {
     public int[] findOrder(int numCourses, int[][] prerequisites) {

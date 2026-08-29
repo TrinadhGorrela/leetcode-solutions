@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: n = 0, n = 1, n = 2 (base cases), n = 3 (first sum iteration)
  */
 class NThTribonacciNumber {
     public int tribonacci(int n) {

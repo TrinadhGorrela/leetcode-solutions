@@ -9,7 +9,7 @@
  * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
  * Space Complexity: O(N!) - Set holds up to N! permutations
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single tile, all tiles identical (duplicates deduped), single character (non-empty prefix)
  */
 class LetterTilePossibilities {
     public int numTilePossibilities(String tiles) {

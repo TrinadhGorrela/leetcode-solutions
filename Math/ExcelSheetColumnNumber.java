@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: single-letter column (A = 1), multi-letter titles folded left with base-26 arithmetic, uppercase letters assumed
  */
 class ExcelSheetColumnNumber {
     public int titleToNumber(String columnTitle) {

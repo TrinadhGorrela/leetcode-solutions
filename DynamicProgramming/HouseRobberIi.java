@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses arrays for skipFirst/skipLast processing
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: empty array (returns 0), single house (returns its value), two houses (max of the two), circular adjacency handled by skipping first/last
  */
 class HouseRobberIi {
     public int rob(int[] nums) {

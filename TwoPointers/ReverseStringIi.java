@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Allocates memory for string processing
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: Empty string, k larger than string length (whole string reversed), last partial chunk shorter than k bounded by array end
  */
 class ReverseStringIi {
     public static String reverseStr(String s, int k) {

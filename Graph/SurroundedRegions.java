@@ -9,7 +9,7 @@
  * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
  * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+* Edge Cases Handled: border 'O' cells preserved (touching the edge is never surrounded), single-row or single-column board (all cells are border), interior region fully enclosed flipped to 'X'
  */
 class SurroundedRegions {
     public void solve(char[][] board) {

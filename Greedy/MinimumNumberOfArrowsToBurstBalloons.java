@@ -9,7 +9,7 @@
  * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single balloon (1 arrow), overlapping balloons (same arrow), adjacent/touching balloons (last == start does not add an arrow), non-overlapping intervals
  */
 class MinimumNumberOfArrowsToBurstBalloons {
     public int findMinArrowShots(int[][] points) {

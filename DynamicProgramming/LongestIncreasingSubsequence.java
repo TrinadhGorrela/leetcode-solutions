@@ -9,7 +9,7 @@
  * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
  * Space Complexity: O(N) - Uses a DP array
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (returns 1), strictly decreasing array (LIS = 1), all equal elements (LIS = 1), all increasing
  */
 class LongestIncreasingSubsequence {
     public int lengthOfLIS(int[] nums) {

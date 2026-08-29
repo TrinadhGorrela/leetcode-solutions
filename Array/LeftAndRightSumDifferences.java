@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(N) - Uses prefix/suffix arrays (can be optimized to O(1) space)
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single element (both sums 0), negative values (absolute difference), pivot at edges
  */
 class LeftAndRightSumDifferences {
     public int[] leftRightDifference(int[] nums) {

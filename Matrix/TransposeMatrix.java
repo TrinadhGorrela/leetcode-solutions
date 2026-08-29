@@ -9,7 +9,7 @@
  * Time Complexity: O(M*N) - Visits every matrix element
  * Space Complexity: O(M * N) - Allocates a 2D array for the transposed matrix
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: single row / single column, non-square matrices (swapped dimensions), 1x1 matrix
  */
 class TransposeMatrix {
     public int[][] transpose(int[][] matrix) {

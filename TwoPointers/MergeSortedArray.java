@@ -9,7 +9,7 @@
  * Time Complexity: O(N) - Iterates over the input elements linearly
  * Space Complexity: O(1) - Only primitive variables used for tracking state
  *
- * Edge Cases Handled: Per LeetCode constraints (e.g., array length >= 1)
+ * Edge Cases Handled: m = 0 (only nums2), n = 0 (only nums1), equal elements, all of nums1 smaller / larger than nums2
  */
 class MergeSortedArray {
   public void merge(int[] nums1, int m, int[] nums2, int n) {
