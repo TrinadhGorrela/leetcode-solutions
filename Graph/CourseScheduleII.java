@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: cycle in prerequisites (DFS detects back edge, returns empty array), no prerequisites (all courses pushed to stack in arbitrary order), disconnected components (outer loop initiates DFS from each unvisited course)
  */
-class CourseScheduleIi {
+class CourseScheduleII {
     public int[] findOrder(int numCourses, int[][] prerequisites) {
         List<List<Integer>> adj = new ArrayList<>();
         Stack<Integer> stack = new Stack<>();

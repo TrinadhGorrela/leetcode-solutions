@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: rowIndex=0 returns [1]; rowIndex=1 returns [1,1]; no modular arithmetic needed
  */
-class PascalsTriangleIi {
+class PascalsTriangleII {
     public List<Integer> getRow(int rowIndex) {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> firstRow = new ArrayList<>();

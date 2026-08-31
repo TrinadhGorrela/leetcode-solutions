@@ -21,7 +21,7 @@
  *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * }
  */
-class ReverseLinkedListIi {
+class ReverseLinkedListII {
     public ListNode reverseBetween(ListNode head, int left, int right) {
         ListNode dummy = new ListNode();
         dummy.next = head;

@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: k = 1 (single-number combinations), n < k*(k+1)/2 or n > sum(9-k+1..9) (impossible by bounds), single valid combination, no valid combination exists (empty result), k = 9 with n = 45 (exactly one combination)
  */
-class CombinationSumIii {
+class CombinationSumIII {
     public List<List<Integer>> combinationSum3(int k, int n) {
         List<List<Integer>> res = new ArrayList<>();
         int[] nums = new int[9];

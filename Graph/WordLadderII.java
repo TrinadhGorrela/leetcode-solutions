@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: endWord not in wordList (empty result), beginWord equals endWord (handled by BFS termination), no valid transformation path exists (BFS exhausts queue without finding endWord)
  */
-class WordLadderIi {
+class WordLadderII {
     public List<List<String>> findLadders(String beginWord, String endWord, List<String> wordList) {
         Map<String, List<String>> map = new HashMap<>();
         List<List<String>> res = new ArrayList<>();

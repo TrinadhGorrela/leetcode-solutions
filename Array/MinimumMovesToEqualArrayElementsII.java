@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: single element (0 moves), all elements equal (0 moves), even-length array (uses upper median at N/2), negative values (absolute difference handles sign)
  */
-class MinimumMovesToEqualArrayElementsIi {
+class MinimumMovesToEqualArrayElementsII {
     public int minMoves2(int[] nums) {
         Arrays.sort(nums);
         int mid = nums[nums.length / 2];

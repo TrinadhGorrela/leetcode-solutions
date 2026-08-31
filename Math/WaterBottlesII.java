@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: no empties left to exchange (outer loop exits), exchange rate grows after every single trade preventing cycles, initial numBottles = 0 (returns 0 immediately)
  */
-class WaterBottlesIi {
+class WaterBottlesII {
     public int maxBottlesDrunk(int numBottles, int numExchange) {
         int fullBottles = numBottles, empty = 0, BottlesDrunk = 0;
         while (fullBottles > 0) {

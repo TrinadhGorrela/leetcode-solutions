@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: n = 1 (single cell), odd n (innermost layer is a single row/col), boundary collapse after last layer
  */
-class SpiralMatrixIi {
+class SpiralMatrixII {
     public int[][] generateMatrix(int n) {
         int[][] res = new int[n][n];
 

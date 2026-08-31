@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: k >= string length (whole string reversed), last chunk shorter than k (Math.min clamps boundary), empty string, k = 1 (every other char reversed)
  */
-class ReverseStringIi {
+class ReverseStringII {
     public static String reverseStr(String s, int k) {
         char[] res = s.toCharArray();
 

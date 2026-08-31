@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: n=0 returns 0; n=1 returns nums[0]; n=2 returns max of both; circular adjacency resolved by exclusive sub-arrays
  */
-class HouseRobberIi {
+class HouseRobberII {
     public int rob(int[] nums) {
         if (nums.length == 0)
             return 0;

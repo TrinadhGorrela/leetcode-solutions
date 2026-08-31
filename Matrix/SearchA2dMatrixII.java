@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: target absent (returns false), single row or column, target at the starting top-right cell, target at bottom-left
  */
-class SearchA2dMatrixIi {
+class SearchA2dMatrixII {
     public boolean searchMatrix(int[][] matrix, int target) {
         int row = 0;
         int col = matrix[0].length - 1;

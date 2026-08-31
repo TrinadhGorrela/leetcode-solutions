@@ -26,7 +26,7 @@
  *     }
  * }
  */
-class BinaryTreeLevelOrderTraversalIi {
+class BinaryTreeLevelOrderTraversalII {
     public List<List<Integer>> levelOrderBottom(TreeNode root) {
         List<List<Integer>> result = new ArrayList<>();
 

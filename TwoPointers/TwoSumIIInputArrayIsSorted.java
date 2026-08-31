@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: Pair spanning the full array length, duplicate values at adjacent indices, target requiring the very last comparison, guaranteed exactly one solution per problem contract
  */
-class TwoSumIiInputArrayIsSorted {
+class TwoSumIIInputArrayIsSorted {
     public static int[] twoSum(int[] numbers, int target) {
         int[] res = new int[2];
         int left = 0;

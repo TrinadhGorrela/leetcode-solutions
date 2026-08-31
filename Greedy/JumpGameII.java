@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: single element (loop body never executes, returns 0), one-jump solution (currentEnd starts at 0, farthestReach already past last index), array requiring maximum possible jumps
  */
-class JumpGameIi {
+class JumpGameII {
     public int jump(int[] nums) {
         int currentEnd = 0;
         int farthestReach = 0;

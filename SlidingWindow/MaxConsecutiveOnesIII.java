@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: k = 0 (no flips, answer is the longest existing run of 1s), all zeros (answer is k if k <= N), all ones (answer is N), k >= total zero count (entire array is flippable)
  */
-class MaxConsecutiveOnesIii {
+class MaxConsecutiveOnesIII {
     public int longestOnes(int[] nums, int k) {
         int left = 0;
         int max = 0;

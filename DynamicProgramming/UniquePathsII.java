@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: obstacle at (0,0) immediately returns 0; first row/column propagate zeros after any obstacle blocks the edge
  */
-class UniquePathsIi {
+class UniquePathsII {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {
         int[][] dp = new int[obstacleGrid.length][obstacleGrid[0].length];
         for (int i = 0; i < obstacleGrid.length; i++) {

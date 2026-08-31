@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: no common elements (empty result), one element appears more times in nums2 than nums1 (capped by frequency), both arrays empty
  */
-class IntersectionOfTwoArraysIi {
+class IntersectionOfTwoArraysII {
     public int[] intersect(int[] nums1, int[] nums2) {
         Map<Integer, Integer> frequencyMap = new HashMap<>();
         List<Integer> resultList = new ArrayList<>();

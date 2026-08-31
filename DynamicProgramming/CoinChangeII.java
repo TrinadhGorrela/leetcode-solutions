@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: amount=0 returns 1 (one way: choose nothing); coins larger than current amount are naturally skipped by the loop bound
  */
-class CoinChangeIi {
+class CoinChangeII {
     public int change(int amount, int[] coins) {
         int[] dp = new int[amount + 1];
         dp[0] = 1;

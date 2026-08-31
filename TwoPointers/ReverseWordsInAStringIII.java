@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: Leading/trailing spaces (none per contract but code is robust), multiple consecutive spaces, single-character words, entire string as one word
  */
-class ReverseWordsInAStringIii {
+class ReverseWordsInAStringIII {
     public String reverseWords(String s) {
       char[] arr = s.toCharArray();
 		int j = 0;

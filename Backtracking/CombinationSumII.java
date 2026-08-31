@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: all candidates identical (dedup collapses to one combination per valid size), target smaller than every candidate (early break on sorted array), empty result when no subset sums to target, single candidate equal to target
  */
-class CombinationSumIi {
+class CombinationSumII {
     public List<List<Integer>> combinationSum2(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(candidates);

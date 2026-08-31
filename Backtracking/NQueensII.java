@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: n = 1 (one solution), n = 2 or n = 3 (zero solutions), boundary cells on first/last column where diagonal indices go out of bounds (guarded by bounds check), full backtracking when no safe column exists in a row
  */
-class NQueensIi {
+class NQueensII {
     public int totalNQueens(int n) {
         List<List<String>> res = new ArrayList<>();
         char[][] board = new char[n][n];

@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: single element (result −1), all equal values (all −1), maximum value at every position (all −1), wrap-around where next greater is at an earlier index
  */
-class NextGreaterElementIi {
+class NextGreaterElementII {
     public int[] nextGreaterElements(int[] nums) {
         Stack<Integer> stack = new Stack<>();
         int[] res = new int[nums.length];

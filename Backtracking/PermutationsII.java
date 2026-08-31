@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: all elements identical (returns exactly one permutation), no duplicates (behaves identically to Permutations I), single element, mixed duplicates and distinct values
  */
-class PermutationsIi {
+class PermutationsII {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);

@@ -11,7 +11,7 @@
  *
  * Edge Cases Handled: all elements identical (only one subset per size), no duplicates (skip condition never triggers), single element, empty subset always included via the initial res.add snapshot
  */
-class SubsetsIi {
+class SubsetsII {
     public List<List<Integer>> subsetsWithDup(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
