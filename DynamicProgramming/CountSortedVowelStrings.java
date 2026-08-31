@@ -4,7 +4,8 @@
  * https://leetcode.com/problems/count-sorted-vowel-strings/
  *
  * Pattern: 2D counting DP with suffix-sum recurrence
- * Key insight: dp[i][j] = number of sorted strings of length i using vowels[j..4]; the backward inner loop computes a suffix sum so each position accumulates all valid extensions from equal or later vowels.
+ * Key insight: dp[i][j] = number of sorted strings of length i using vowels[j..4]; the backward inner loop computes a
+ * suffix sum so each position accumulates all valid extensions from equal or later vowels.
  *
  * Time Complexity: O(n) - Outer loop n, inner loop is constant 5
  * Space Complexity: O(n*5) = O(n) - 2D array with 5 columns

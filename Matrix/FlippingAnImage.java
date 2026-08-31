@@ -4,7 +4,8 @@
  * https://leetcode.com/problems/flipping-an-image/
  *
  * Pattern: Two-Pointer Row Reverse + Bitwise Invert
- * Key insight: Reverse each row in-place with two pointers, then invert every cell with 1 - value; both operations run on the original array with no extra space.
+ * Key insight: Reverse each row in-place with two pointers, then invert every cell with 1 - value; both operations run
+ * on the original array with no extra space.
  *
  * Time Complexity: O(n²) - Reverse is O(n) per row, invert is O(n) per row.
  * Space Complexity: O(1) - In-place swaps and subtraction.

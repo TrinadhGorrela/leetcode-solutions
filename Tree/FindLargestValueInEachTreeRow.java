@@ -4,12 +4,14 @@
  * https://leetcode.com/problems/find-largest-value-in-each-tree-row/
  *
  * Pattern: BFS with Per-Level Maximum
- * Key insight: Snapshot the queue size before processing each level, track the max within that batch, then enqueue children for the next level. The running max naturally handles any number of nodes per level.
+ * Key insight: Snapshot the queue size before processing each level, track the max within that batch, then enqueue
+ * children for the next level. The running max naturally handles any number of nodes per level.
  *
  * Time Complexity: O(n) - Each node is enqueued and dequeued once.
  * Space Complexity: O(w) - Queue width equals the maximum number of nodes at any level (up to n/2 at the widest).
  *
- * Edge Cases Handled: null root returns empty list, single node, skewed tree (one node per level), all-negative values (Integer.MIN_VALUE initialization), complete wide tree
+ * Edge Cases Handled: null root returns empty list, single node, skewed tree (one node per level), all-negative values
+ * (Integer.MIN_VALUE initialization), complete wide tree
  */
 /**
  * Definition for a binary tree node.

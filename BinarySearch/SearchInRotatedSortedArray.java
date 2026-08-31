@@ -4,7 +4,9 @@
  * https://leetcode.com/problems/search-in-rotated-sorted-array/
  *
  * Pattern: Modified Binary Search on Rotated Array
- * Key insight: At every mid, one half (left-to-mid or mid-to-right) is guaranteed sorted; compare nums[left] ≤ nums[mid] to identify which half is sorted, then check if the target falls within that sorted range to decide the search direction.
+ * Key insight: At every mid, one half (left-to-mid or mid-to-right) is guaranteed sorted; compare nums[left] ≤
+ * nums[mid] to identify which half is sorted, then check if the target falls within that sorted range to decide the
+ * search direction.
  *
  * Time Complexity: O(log n) - Interval halves each step.
  * Space Complexity: O(1) - Three pointers: left, right, mid.

@@ -4,12 +4,14 @@
  * https://leetcode.com/problems/count-primes/
  *
  * Pattern: Sieve of Eratosthenes
- * Key insight: Instead of testing each number for primality, mark all multiples of each discovered prime as composite — the unmarked entries below n are the primes, counted in a final scan.
+ * Key insight: Instead of testing each number for primality, mark all multiples of each discovered prime as composite —
+ * the unmarked entries below n are the primes, counted in a final scan.
  *
  * Time Complexity: O(N log log N) - Harmonic-series sum of N/p for each prime p <= sqrt(N)
  * Space Complexity: O(N) - Boolean array of size n to track composite flags
  *
- * Edge Cases Handled: n <= 1 (returns 0 immediately), n = 2 (no primes below 2), n = 3 (only 2 is prime), large n (sieve scales efficiently)
+ * Edge Cases Handled: n <= 1 (returns 0 immediately), n = 2 (no primes below 2), n = 3 (only 2 is prime), large n
+ * (sieve scales efficiently)
  */
 class CountPrimes {
     public int countPrimes(int n) {

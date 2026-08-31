@@ -4,12 +4,14 @@
  * https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
  *
  * Pattern: Dual Binary Search (Lower/Upper Bound)
- * Key insight: A single helper runs standard binary search but takes an `isLeft` flag: on a match, record the index and continue searching left (for first) or right (for last) instead of returning immediately.
+ * Key insight: A single helper runs standard binary search but takes an `isLeft` flag: on a match, record the index and
+ * continue searching left (for first) or right (for last) instead of returning immediately.
  *
  * Time Complexity: O(log n) - Two independent binary searches, each halving the range.
  * Space Complexity: O(1) - Only pointer variables and one intermediate index.
  *
- * Edge Cases Handled: target absent (both return -1), single element array, first == last when target appears exactly once, target at array boundaries
+ * Edge Cases Handled: target absent (both return -1), single element array, first == last when target appears exactly
+ * once, target at array boundaries
  */
 class FindFirstAndLastPositionOfElementInSortedArray {
     public int[] searchRange(int[] nums, int target) {

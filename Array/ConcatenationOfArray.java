@@ -4,7 +4,8 @@
  * https://leetcode.com/problems/concatenation-of-array/
  *
  * Pattern: Double-Write Loop
- * Key insight: Allocate a 2N result array and write each nums[i] to both position i and position i+N in a single pass, producing nums+nums without string concatenation.
+ * Key insight: Allocate a 2N result array and write each nums[i] to both position i and position i+N in a single pass,
+ * producing nums+nums without string concatenation.
  *
  * Time Complexity: O(N) - One pass writing two result slots per iteration
  * Space Complexity: O(N) - Output array of exactly 2N elements

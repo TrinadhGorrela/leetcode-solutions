@@ -4,12 +4,14 @@
  * https://leetcode.com/problems/sort-colors/
  *
  * Pattern: Dutch National Flag Three-Way Partition
- * Key insight: Three pointers (left, mid, right) maintain the invariant [0..left-1]=0, [left..mid-1]=1, [right+1..end]=2; swapping 0 past left and 2 past right lets mid advance through unprocessed elements in one pass.
+ * Key insight: Three pointers (left, mid, right) maintain the invariant [0..left-1]=0, [left..mid-1]=1,
+ * [right+1..end]=2; swapping 0 past left and 2 past right lets mid advance through unprocessed elements in one pass.
  *
  * Time Complexity: O(N) - Single traversal; each element is swapped at most once per boundary
  * Space Complexity: O(1) - Three index variables and one temp swap variable, in-place on input array
  *
- * Edge Cases Handled: Empty or single-element array, already sorted input, all same color, only two of three colors present, consecutive runs of one color
+ * Edge Cases Handled: Empty or single-element array, already sorted input, all same color, only two of three colors
+ * present, consecutive runs of one color
  */
 class SortColors {
     public void sortColors(int[] nums) {

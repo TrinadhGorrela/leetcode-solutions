@@ -4,12 +4,15 @@
  * https://leetcode.com/problems/shortest-path-in-binary-matrix/
  *
  * Pattern: BFS on 8-Directional Grid
- * Key insight: Treat each open cell as a node with up to 8 neighbors (including diagonals); BFS guarantees shortest path since all edges have unit weight. The grid itself stores distances in-place (cell value = distance from origin), eliminating a separate distance array.
+ * Key insight: Treat each open cell as a node with up to 8 neighbors (including diagonals); BFS guarantees shortest
+ * path since all edges have unit weight. The grid itself stores distances in-place (cell value = distance from origin),
+ * eliminating a separate distance array.
  *
  * Time Complexity: O(M * N) - Each cell visited at most once; 8 neighbor checks per cell
  * Space Complexity: O(M * N) - BFS queue worst-case holds an entire BFS frontier
  *
- * Edge Cases Handled: blocked start or end cell (value 1 returns -1), unreachable destination (grid[rows-1][cols-1] stays 0 returns -1), single 1x1 open cell (returns 1 immediately)
+ * Edge Cases Handled: blocked start or end cell (value 1 returns -1), unreachable destination (grid[rows-1][cols-1]
+ * stays 0 returns -1), single 1x1 open cell (returns 1 immediately)
  */
 class ShortestPathInBinaryMatrix {
     public int shortestPathBinaryMatrix(int[][] grid) {

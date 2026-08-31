@@ -4,12 +4,15 @@
  * https://leetcode.com/problems/sort-array-by-parity/
  *
  * Pattern: In-place Bubble-Shift Partition
- * Key insight: Maintain a `left` pointer marking where the next even element belongs; when an even is found, bubble it leftward by swapping adjacent elements until it reaches `left`.
+ * Key insight: Maintain a `left` pointer marking where the next even element belongs; when an even is found, bubble it
+ * leftward by swapping adjacent elements until it reaches `left`.
  *
- * Time Complexity: O(N^2) - Each even element may bubble past all odd elements preceding it (suboptimal; two-pointer swap is O(N))
+ * Time Complexity: O(N^2) - Each even element may bubble past all odd elements preceding it (suboptimal; two-pointer
+ * swap is O(N))
  * Space Complexity: O(1) - In-place swaps with only left, right, and temp variables
  *
- * Edge Cases Handled: all odd (left stays 0), all even (each shifts one position), zeros treated as even, negative evens/odds (parity via modulo)
+ * Edge Cases Handled: all odd (left stays 0), all even (each shifts one position), zeros treated as even, negative
+ * evens/odds (parity via modulo)
  */
 class SortArrayByParity {
     public int[] sortArrayByParity(int[] nums) {

@@ -4,7 +4,8 @@
  * https://leetcode.com/problems/squares-of-a-sorted-array/
  *
  * Pattern: Square + Selection Sort
- * Key insight: Square every element into a fresh array, then sort with an O(N^2) selection-sort pass. (Optimal O(N) is achievable with a two-pointer merge from the negative/positive split.)
+ * Key insight: Square every element into a fresh array, then sort with an O(N^2) selection-sort pass. (Optimal O(N) is
+ * achievable with a two-pointer merge from the negative/positive split.)
  *
  * Time Complexity: O(N^2) - Nested comparison loops implement a selection sort on the squared values (suboptimal)
  * Space Complexity: O(N) - Allocates a separate result array of the same length for the squared values

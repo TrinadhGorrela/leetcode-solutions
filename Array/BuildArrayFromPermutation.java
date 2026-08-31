@@ -4,7 +4,8 @@
  * https://leetcode.com/problems/build-array-from-permutation/
  *
  * Pattern: Direct Index Chaining
- * Key insight: Since nums is a permutation of [0, N-1], nums[i] is always a valid index, so result[i] = nums[nums[i]] can be computed directly without bounds checks.
+ * Key insight: Since nums is a permutation of [0, N-1], nums[i] is always a valid index, so result[i] = nums[nums[i]]
+ * can be computed directly without bounds checks.
  *
  * Time Complexity: O(N) - Single pass writing one result element per index
  * Space Complexity: O(N) - Allocates the output array of length N

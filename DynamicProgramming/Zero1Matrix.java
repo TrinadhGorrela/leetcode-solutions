@@ -4,12 +4,15 @@
  * https://leetcode.com/problems/01-matrix/
  *
  * Pattern: Two-pass DP propagation (top-left then bottom-right)
- * Key insight: Seed 0-cells with 0 and 1-cells with m*n (impossible distance); a forward pass propagates distances from top/left neighbors, then a backward pass corrects from bottom/right neighbors, converging to the true nearest-zero distance.
+ * Key insight: Seed 0-cells with 0 and 1-cells with m*n (impossible distance); a forward pass propagates distances from
+ * top/left neighbors, then a backward pass corrects from bottom/right neighbors, converging to the true nearest-zero
+ * distance.
  *
  * Time Complexity: O(m*n) - Two full grid scans
  * Space Complexity: O(1) auxiliary - Output grid is given; no extra allocation beyond it
  *
- * Edge Cases Handled: all-zeros grid stays all-zeros; isolated 1-cells at corners get corrected by the reverse pass; sentinel value m*n is safely larger than any real distance
+ * Edge Cases Handled: all-zeros grid stays all-zeros; isolated 1-cells at corners get corrected by the reverse pass;
+ * sentinel value m*n is safely larger than any real distance
  */
 class Zero1Matrix {
     public int[][] updateMatrix(int[][] mat) {

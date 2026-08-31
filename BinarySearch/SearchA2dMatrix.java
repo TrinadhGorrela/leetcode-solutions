@@ -4,7 +4,8 @@
  * https://leetcode.com/problems/search-a-2d-matrix/
  *
  * Pattern: Binary Search on Virtual Flattened Array
- * Key insight: Treat the m×n matrix as a sorted array of length m*n; map a flat index to (row, col) via mid / n and mid % n, then run standard binary search—no actual flattening needed.
+ * Key insight: Treat the m×n matrix as a sorted array of length m*n; map a flat index to (row, col) via mid / n and mid
+ * % n, then run standard binary search—no actual flattening needed.
  *
  * Time Complexity: O(log(m·n)) - Standard binary search over m*n elements.
  * Space Complexity: O(1) - Flat index bounds and row/col derived via division/modulo.

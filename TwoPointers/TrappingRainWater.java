@@ -4,12 +4,15 @@
  * https://leetcode.com/problems/trapping-rain-water/
  *
  * Pattern: Two-Pointer Water-Level Sweep
- * Key insight: At each step the shorter-side bar is the bottleneck—water above it is determined by its own historical max and the opposite side's max, so advancing the shorter pointer is always safe and avoids needing precomputed leftMax/rightMax arrays.
+ * Key insight: At each step the shorter-side bar is the bottleneck—water above it is determined by its own historical
+ * max and the opposite side's max, so advancing the shorter pointer is always safe and avoids needing precomputed
+ * leftMax/rightMax arrays.
  *
  * Time Complexity: O(N) - Each pointer advances at most N steps; single pass with no nested loops
  * Space Complexity: O(1) - Only four variables (left, right, leftMax, rightMax) regardless of input size
  *
- * Edge Cases Handled: Fewer than 3 bars (zero water), monotonic ascending/descending heights, plateaus where left == right height, all bars at equal height
+ * Edge Cases Handled: Fewer than 3 bars (zero water), monotonic ascending/descending heights, plateaus where left ==
+ * right height, all bars at equal height
  */
 class TrappingRainWater {
     public int trap(int[] height) {

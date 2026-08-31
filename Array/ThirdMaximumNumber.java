@@ -4,12 +4,14 @@
  * https://leetcode.com/problems/third-maximum-number/
  *
  * Pattern: Single-Pass Three-Variable Tracking
- * Key insight: Maintain three nullable Integer references (first, second, third); on each new distinct value, cascade the old values downward (third = second, second = first) and assign the new max — no sorting or set needed.
+ * Key insight: Maintain three nullable Integer references (first, second, third); on each new distinct value, cascade
+ * the old values downward (third = second, second = first) and assign the new max — no sorting or set needed.
  *
  * Time Complexity: O(N) - One pass with constant-time comparisons and shifts per element
  * Space Complexity: O(1) - Three nullable Integer references and loop index only
  *
- * Edge Cases Handled: fewer than 3 distinct values (third remains null, returns first), duplicates explicitly skipped via equality checks, Integer.MIN_VALUE as a valid candidate, all elements identical
+ * Edge Cases Handled: fewer than 3 distinct values (third remains null, returns first), duplicates explicitly skipped
+ * via equality checks, Integer.MIN_VALUE as a valid candidate, all elements identical
  */
 class ThirdMaximumNumber {
     public int thirdMax(int[] nums) {

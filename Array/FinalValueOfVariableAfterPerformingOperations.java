@@ -4,12 +4,14 @@
  * https://leetcode.com/problems/final-value-of-variable-after-performing-operations/
  *
  * Pattern: Linear String Scan with Pattern Match
- * Key insight: Each operation string is exactly one of four forms: "X++", "++X", "X--", "--X". A single equality check per increment form (two checks) and a default decrement branch handles all cases without parsing.
+ * Key insight: Each operation string is exactly one of four forms: "X++", "++X", "X--", "--X". A single equality check
+ * per increment form (two checks) and a default decrement branch handles all cases without parsing.
  *
  * Time Complexity: O(N) - One pass over the operations array with O(1) string comparisons per element
  * Space Complexity: O(1) - Only an integer accumulator; no additional data structures
  *
- * Edge Cases Handled: all increments (postfix and prefix mix), all decrements, single operation, alternating increment/decrement forms
+ * Edge Cases Handled: all increments (postfix and prefix mix), all decrements, single operation, alternating
+ * increment/decrement forms
  */
 class FinalValueOfVariableAfterPerformingOperations {
     public int finalValueAfterOperations(String[] operations) {

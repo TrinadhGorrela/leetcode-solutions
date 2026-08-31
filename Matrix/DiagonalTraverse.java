@@ -4,7 +4,8 @@
  * https://leetcode.com/problems/diagonal-traverse/
  *
  * Pattern: HashMap Grouping + Direction Toggle
- * Key insight: Group all cells by diagonal index (i + j); even-indexed diagonals are emitted top-to-bottom, odd-indexed ones bottom-to-top (reversed), producing the required zig-zag order.
+ * Key insight: Group all cells by diagonal index (i + j); even-indexed diagonals are emitted top-to-bottom, odd-indexed
+ * ones bottom-to-top (reversed), producing the required zig-zag order.
  *
  * Time Complexity: O(m·n) - Build map in O(m·n), read out in O(m·n).
  * Space Complexity: O(m·n) - HashMap stores every element once.

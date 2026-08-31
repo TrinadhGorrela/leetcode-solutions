@@ -4,7 +4,8 @@
  * https://leetcode.com/problems/predict-the-winner/
  *
  * Pattern: Interval DP with minimax recursion and memoization
- * Key insight: solve(start,end) returns the max score difference (current player minus opponent) over nums[start..end]; picking left gives nums[start] - solve(start+1,end), and the player picks whichever end maximizes this difference.
+ * Key insight: solve(start,end) returns the max score difference (current player minus opponent) over nums[start..end];
+ * picking left gives nums[start] - solve(start+1,end), and the player picks whichever end maximizes this difference.
  *
  * Time Complexity: O(n^2) - n^2 unique (start,end) states, each computed in O(1)
  * Space Complexity: O(n^2) - Memoization table of size n x n

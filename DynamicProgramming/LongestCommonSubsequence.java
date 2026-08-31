@@ -4,7 +4,9 @@
  * https://leetcode.com/problems/longest-common-subsequence/
  *
  * Pattern: 2D bottom-up DP table for subsequence matching
- * Key insight: When text1[i-1]==text2[j-1], extend the diagonal (matched prefix grows); otherwise carry forward the best of dropping one character from either string. The DP invariant is memo[i][j] = LCS length of prefixes of length i and j.
+ * Key insight: When text1[i-1]==text2[j-1], extend the diagonal (matched prefix grows); otherwise carry forward the
+ * best of dropping one character from either string. The DP invariant is memo[i][j] = LCS length of prefixes of length
+ * i and j.
  *
  * Time Complexity: O(m*n) - Fill every cell of the (m+1)x(n+1) table
  * Space Complexity: O(m*n) - Full 2D table

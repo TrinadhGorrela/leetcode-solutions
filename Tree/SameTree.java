@@ -4,12 +4,14 @@
  * https://leetcode.com/problems/same-tree/
  *
  * Pattern: Recursive Structural Equality
- * Key insight: Simultaneously walk both trees in pre-order; fail immediately on any structural mismatch (one null, one not) or value mismatch, otherwise recurse into both children. No hash map needed.
+ * Key insight: Simultaneously walk both trees in pre-order; fail immediately on any structural mismatch (one null, one
+ * not) or value mismatch, otherwise recurse into both children. No hash map needed.
  *
  * Time Complexity: O(n) - Each node is compared at most once; early termination on mismatch.
  * Space Complexity: O(h) - Recursion depth is the minimum height of the two trees.
  *
- * Edge Cases Handled: both null roots, one null and one non-null, same values but different structure, different values at same position, single-node trees, deep left-only vs right-only chains
+ * Edge Cases Handled: both null roots, one null and one non-null, same values but different structure, different values
+ * at same position, single-node trees, deep left-only vs right-only chains
  */
 /**
  * Definition for a binary tree node.

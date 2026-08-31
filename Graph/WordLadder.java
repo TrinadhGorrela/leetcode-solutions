@@ -4,9 +4,12 @@
  * https://leetcode.com/problems/word-ladder/
  *
  * Pattern: BFS (Unweighted Shortest Path on a Word Graph)
- * Key insight: Model each word as a node and two words as connected if they differ by one letter; run level-order BFS where each level represents one transformation, generating all single-letter variants per position and stopping as soon as endWord is hit; return the level count (beginWord counts as step 1).
+ * Key insight: Model each word as a node and two words as connected if they differ by one letter; run level-order BFS
+ * where each level represents one transformation, generating all single-letter variants per position and stopping as
+ * soon as endWord is hit; return the level count (beginWord counts as step 1).
  *
- * Time Complexity: O(N * M^2) - For each of N words, tries 26 letters at each of M positions and builds an M-length string per candidate
+ * Time Complexity: O(N * M^2) - For each of N words, tries 26 letters at each of M positions and builds an M-length
+ * string per candidate
  * Space Complexity: O(N * M) - Stores the word set, visited set, and BFS queue
  *
  * Edge Cases Handled: endWord not in wordList, startWord to endWord transition directly
