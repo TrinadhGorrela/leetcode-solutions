@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Depth-First Search, Breadth-First Search, Union-Find, Matrix
  * https://leetcode.com/problems/max-area-of-island/
  *
- * Pattern: BFS (Grid Connected Components)
- * Key insight: BFS each unvisited land cell to measure its island area, marking visited to avoid recounting, and keep the maximum area found.
+ * Pattern: BFS Connected Components with Area Tracking
+ * Key insight: Similar to counting islands, but each BFS also counts cells as it floods the component. The area counter increments on enqueue (not dequeue), ensuring each land cell contributes exactly 1. Running max across all components yields the answer.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(M * N) - Grid scan plus BFS visits each land cell once; water cells only checked during neighbor bounds
+ * Space Complexity: O(M * N) - Visited matrix and BFS queue scale with grid dimensions
  *
-* Edge Cases Handled: all-water grid (area 0), single-cell island, islands touching grid boundaries, multiple disconnected islands
+ * Edge Cases Handled: all-water grid (returns 0), single-cell island (area 1), entire grid is one island (area = M*N), multiple disconnected islands of varying sizes
  */
 class MaxAreaOfIsland {
     public int maxAreaOfIsland(int[][] grid) {

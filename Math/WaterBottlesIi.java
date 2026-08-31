@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, Simulation
  * https://leetcode.com/problems/water-bottles-ii/
  *
- * Pattern: Simulation (Growing Exchange Rate)
- * Key insight: Drink all full bottles, converting them to empties, then exchange per the current (and incrementing) numExchange requirement until no empties remain, accumulating total drunk.
+ * Pattern: Two-Phase Simulation (Drink Then Exchange with Growing Rate)
+ * Key insight: In each outer loop iteration, drink all full bottles at once (adding them to the total and converting to empties), then repeatedly spend empties at the current numExchange rate to buy new full bottles, incrementing the rate after every purchase.
  *
- * Time Complexity: O(sqrt(N)) - numExchange grows each cycle, decreasing iterations quickly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(sqrt(N)) - The exchange rate grows with each trade, so total purchases are bounded by roughly sqrt(2N)
+ * Space Complexity: O(1) - Only four int variables (fullBottles, empty, BottlesDrunk, numExchange)
  *
-* Edge Cases Handled: insufficient empties left to meet the exchange requirement (loop exits), exchange rate numExchange grows after every trade
+ * Edge Cases Handled: no empties left to exchange (outer loop exits), exchange rate grows after every single trade preventing cycles, initial numBottles = 0 (returns 0 immediately)
  */
 class WaterBottlesIi {
     public int maxBottlesDrunk(int numBottles, int numExchange) {

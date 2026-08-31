@@ -3,45 +3,45 @@
  * Difficulty: Easy | Tags: Array, Depth-First Search, Breadth-First Search, Matrix
  * https://leetcode.com/problems/island-perimeter/
  *
- * Pattern: Grid Counting (Per-Cell Neighbor Scan)
- * Key insight: For each land cell, its contribution to the perimeter is 4 minus the number of adjacent land cells; sum these over the whole grid.
+ * Pattern: Per-Cell Neighbor Counting
+ * Key insight: Each land cell contributes 4 edges to the perimeter, minus 1 for each adjacent land neighbor (shared edge is subtracted from both sides). By counting all adjacent land pairs and subtracting from 4*(total land cells), shared edges cancel correctly. Border cells naturally have fewer neighbors so their contribution is higher.
  *
- * Time Complexity: O(rows * cols) - Iterates over the grid
- * Space Complexity: O(rows * cols) - Maintains a visited state matching grid size
+ * Time Complexity: O(M * N) - Single pass over the grid with up to 4 neighbor checks per land cell
+ * Space Complexity: O(M * N) - Boolean land matrix mirrors the input grid (could be eliminated for O(1) extra space)
  *
-* Edge Cases Handled: single-cell island (perimeter 4), land touching grid borders or corners (missing neighbors not undercounted), all-water grid
+ * Edge Cases Handled: all-water grid (perimeter 0), single land cell (perimeter 4), land on grid border/corners (out-of-bounds neighbors simply not counted), large connected land mass (internal shared edges subtracted correctly)
  */
 class IslandPerimeter {
     public int islandPerimeter(int[][] grid) {
-        int count = 0;
-		int perimeter = 0;
-		boolean[][] land = new boolean[grid.length][grid[0].length];
-		for (int i = 0; i < grid.length; i++) {
-			for (int j = 0; j < grid[i].length; j++) {
-				if (grid[i][j] == 1) {
-					land[i][j] = true;
-				} else {
-					land[i][j] = false;
-				}
-			}
-		}
-		for (int s = 0; s < land.length; s++) {
-			for (int t = 0; t < land[0].length; t++) {
-				if (land[s][t]) {
-					if (t > 0 && land[s][t - 1])
-						count++;
-					if (t < land[s].length - 1 && land[s][t + 1])
-						count++;
-					if (s > 0 && land[s - 1][t])
-						count++;
-					if (s < land.length - 1 && land[s + 1][t])
-						count++;
+        int adjacentLandCount = 0;
+        int perimeter = 0;
+        boolean[][] land = new boolean[grid.length][grid[0].length];
+        for (int i = 0; i < grid.length; i++) {
+            for (int j = 0; j < grid[i].length; j++) {
+                if (grid[i][j] == 1) {
+                    land[i][j] = true;
+                } else {
+                    land[i][j] = false;
+                }
+            }
+        }
+        for (int row = 0; row < land.length; row++) {
+            for (int col = 0; col < land[0].length; col++) {
+                if (land[row][col]) {
+                    if (col > 0 && land[row][col - 1])
+                        adjacentLandCount++;
+                    if (col < land[row].length - 1 && land[row][col + 1])
+                        adjacentLandCount++;
+                    if (row > 0 && land[row - 1][col])
+                        adjacentLandCount++;
+                    if (row < land.length - 1 && land[row + 1][col])
+                        adjacentLandCount++;
 
-					perimeter = perimeter + (4 - count);
-					count = 0;
-				}
-			}
-		}
-		return perimeter;
+                    perimeter = perimeter + (4 - adjacentLandCount);
+                    adjacentLandCount = 0;
+                }
+            }
+        }
+        return perimeter;
     }
 }

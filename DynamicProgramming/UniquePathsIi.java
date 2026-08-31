@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Matrix
  * https://leetcode.com/problems/unique-paths-ii/
  *
- * Pattern: Dynamic Programming (2D Grid with Obstacles)
- * Key insight: Same grid-counting as Unique Paths, but obstacle cells are forced to 0 ways and the top/left edges stop propagating past a blocked cell.
+ * Pattern: 2D grid DP with obstacle nullification
+ * Key insight: dp[i][j] = 0 for any obstacle cell; otherwise dp[i][j] = dp[i-1][j] + dp[i][j-1] (sum of paths from above and left), which naturally kills path counts downstream of obstacles since zero propagates.
  *
- * Time Complexity: O(M * N) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(M * N) - Allocates a full 2D DP grid
+ * Time Complexity: O(m*n) - Single pass filling the DP grid
+ * Space Complexity: O(m*n) - Full 2D table matching grid dimensions
  *
- * Edge Cases Handled: obstacle at start cell (returns 0), obstacle at end, fully blocked path (returns 0), single row or single column with obstacles
+ * Edge Cases Handled: obstacle at (0,0) immediately returns 0; first row/column propagate zeros after any obstacle blocks the edge
  */
 class UniquePathsIi {
     public int uniquePathsWithObstacles(int[][] obstacleGrid) {

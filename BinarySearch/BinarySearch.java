@@ -4,18 +4,17 @@
  * https://leetcode.com/problems/binary-search/
  *
  * Pattern: Classical Binary Search
- * Key insight: Repeatedly probe the middle of the remaining interval and discard the half that cannot contain the target, shrinking the search space by half each iteration.
+ * Key insight: Maintain [start, end] inclusive; at each step, compare nums[mid] to target and discard the half that cannot contain it, halving the search space every iteration.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log n) - Search space halves each step.
+ * Space Complexity: O(1) - Three integer variables (start, end, mid).
  *
- * Edge Cases Handled: target not found (returns -1), single element, target at first/last index (boundaries)
+ * Edge Cases Handled: target absent (returns -1), single-element array, target at first or last index
  */
 class BinarySearch {
     public int search(int[] nums, int target) {
         int start = 0;
         int end = nums.length - 1;
-        int res;
         while (start <= end) {
             int mid = start + (end - start) / 2;
 

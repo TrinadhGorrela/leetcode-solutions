@@ -3,23 +3,23 @@
  * Difficulty: Easy | Tags: Array, Two Pointers
  * https://leetcode.com/problems/move-zeroes/
  *
- * Pattern: Two Pointers (In-Place Partition)
- * Key insight: Use a write pointer to track the position for the next non-zero, swapping each non-zero forward; all zeros naturally shift to the tail in place.
+ * Pattern: Stable In-Place Zero Partition
+ * Key insight: Swapping each non-zero to the write pointer's position (instead of just overwriting) preserves the relative order of non-zero elements—a critical constraint that distinguishes this from an unstable partition.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - One pass; writeIndex only advances, never retreats
+ * Space Complexity: O(1) - Two index variables and one temp, in-place on input array
  *
- * Edge Cases Handled: Empty array, single element, all zeros (no swaps), no zeros, zeros interleaved with non-zeros
+ * Edge Cases Handled: No zeros in array (swap is identity), all zeros (no swaps execute), leading zeros, trailing zeros, zeros interleaved with non-zeros throughout
  */
 class MoveZeroes {
     public void moveZeroes(int[] nums) {
-        int j=0, temp;
+        int writeIndex = 0, temp;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != 0) {
                 temp = nums[i];
-                nums[i] = nums[j];
-                nums[j] = temp;
-                j++;
+                nums[i] = nums[writeIndex];
+                nums[writeIndex] = temp;
+                writeIndex++;
             }
         }
     }

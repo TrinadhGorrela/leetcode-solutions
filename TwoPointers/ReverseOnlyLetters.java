@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/reverse-only-letters/
  *
- * Pattern: Two Pointers (Letter Swap, Skip Non-Letters)
- * Key insight: Swap letters with two pointers moving inward, advancing each pointer past any non-letter before swapping; non-letters stay in place.
+ * Pattern: Letter-Only Two-Pointer Reversal
+ * Key insight: Advance each pointer past non-letter characters (digits, symbols, spaces) using Character.isLetter(), then swap only when both land on letters—non-letters maintain their original positions.
  *
- * Time Complexity: O(N) - Two pointers approach iterating through elements once
- * Space Complexity: O(N) - Allocates memory for string processing
+ * Time Complexity: O(N) - Each character examined at most twice (once per pointer); skip loops don't revisit
+ * Space Complexity: O(N) - char[] for in-place swaps
  *
- * Edge Cases Handled: Empty string, single character, no letters (string unchanged), all letters, mixed letters/non-letters with non-letters kept in place
+ * Edge Cases Handled: No alphabetic characters (string unchanged), all letters (full reverse), digits and hyphens interleaved with letters, Unicode letters handled by Character.isLetter()
  */
 class ReverseOnlyLetters {
     public static String reverseOnlyLetters(String s) {

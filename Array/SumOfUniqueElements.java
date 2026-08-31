@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Counting
  * https://leetcode.com/problems/sum-of-unique-elements/
  *
- * Pattern: Hash Map (Counting)
- * Key insight: Count every element, then sum only those whose frequency is exactly 1.
+ * Pattern: Frequency Map + Selective Sum
+ * Key insight: A single HashMap pass establishes each element's frequency; a second pass sums only values whose count equals 1, separating uniques from duplicates in O(1) lookup per element.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - First pass builds the frequency map; second pass filters and sums — both linear
+ * Space Complexity: O(N) - HashMap stores up to N distinct keys with their integer counts
  *
- * Edge Cases Handled: all elements unique (sum of all), all duplicates (sum 0), single element, negative values
+ * Edge Cases Handled: all unique (returns total sum), all duplicates (returns 0), single element (returns that element), negative values counted correctly by HashMap
  */
 class SumOfUniqueElements {
     public int sumOfUnique(int[] nums) {

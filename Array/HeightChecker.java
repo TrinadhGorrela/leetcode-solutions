@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Sorting, Counting Sort, Bubble Sort
  * https://leetcode.com/problems/height-checker/
  *
- * Pattern: Sorting (Comparison)
- * Key insight: Clone and sort the heights, then count positions where the sorted order differs from the original to get the number of out-of-place students.
+ * Pattern: Clone + Sort + Positional Comparison
+ * Key insight: The expected sorted order is the only valid non-decreasing arrangement; cloning and sorting the array, then comparing element-by-element with the original, directly counts misplaced students.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(N) - Allocates a cloned array
+ * Time Complexity: O(N log N) - Arrays.sort on the cloned array dominates the linear comparison pass
+ * Space Complexity: O(N) - A full clone of the heights array is created before sorting
  *
- * Edge Cases Handled: already sorted (result 0), all equal heights, fully reversed order, single element
+ * Edge Cases Handled: already sorted (returns 0), all equal heights (returns 0), fully reversed order (returns N), single element (returns 0)
  */
 class HeightChecker {
     public int heightChecker(int[] heights) {

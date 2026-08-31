@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, Recursion
  * https://leetcode.com/problems/powx-n/
  *
- * Pattern: Exponentiation by Squaring (Fast Power)
- * Key insight: Square the base each step and fold it into the result only for set bits of |n|; invert the base for negative exponents and use long for N to handle Integer.MIN_VALUE.
+ * Pattern: Binary Exponentiation by Squaring
+ * Key insight: Repeatedly square the base while halving the exponent, multiplying the accumulator only for set bits of |N|; using long for the exponent avoids the negation overflow of Integer.MIN_VALUE, and negative exponents are handled by inverting the base.
  *
- * Time Complexity: O(log N) - Logarithmic fast exponentiation
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log |n|) - Halving the exponent each iteration
+ * Space Complexity: O(1) - Only res, x, and the long N variable
  *
-* Edge Cases Handled: negative exponent (base inverted), Integer.MIN_VALUE exponent via long to avoid negation overflow, exponent 0 (returns 1), |n| = 1
+ * Edge Cases Handled: n = 0 (returns 1 without loop), negative n (base inverted via 1/x), Integer.MIN_VALUE (N as long so -N is valid), odd vs even bits of N handled by the % 2 fold
  */
 class PowxN {
     public double myPow(double x, int n) {

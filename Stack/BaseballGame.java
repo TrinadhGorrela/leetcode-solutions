@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Stack, Simulation
  * https://leetcode.com/problems/baseball-game/
  *
- * Pattern: Stack (Simulation)
- * Key insight: Apply each operation against a stack of scores: push raw numbers, pop on C, push 2x the top on D, and push the sum of the top two on +, then total the stack.
+ * Pattern: Stack-Based Score Simulation
+ * Key insight: Maintain a stack of valid round scores; "C" pops the last valid score, "D" pushes 2× the top, "+" pushes the sum of the top two (without removing them), and integers push directly. Return the stack sum at the end.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each operation is O(1) (push/pop); final sum is O(k) where k is stack size.
+ * Space Complexity: O(n) - Stack holds up to n valid scores.
  *
- * Edge Cases Handled: Negative scores parsed correctly, zero, single number, stack emptied by consecutive C operations before summing
+ * Edge Cases Handled: negative integer scores, consecutive "C" operations emptying the stack, "+" when only two valid scores exist, integer parsing of multi-digit negatives
  */
 class BaseballGame {
     public int calPoints(String[] operations) {

@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Hash Table, Math, Two Pointers, Floyd's Cycle Finding Algorithm
  * https://leetcode.com/problems/happy-number/
  *
- * Pattern: Hash Set (Cycle Detection)
- * Key insight: Repeatedly replace n with the sum of the squares of its digits; track seen values, returning true at 1 and false the moment a value repeats (a cycle is reached).
+ * Pattern: HashSet Cycle Detection
+ * Key insight: Replace n with the sum of its digits' squares repeatedly; the sequence must either reach 1 (happy) or enter a cycle (unhappy)—detect the cycle by checking a HashSet of seen values.
  *
- * Time Complexity: O(log N) amortized - Digit square sum sequence cycles quickly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(log n) amortized - Digit-square sum shrinks rapidly; cycle detection via set lookup is O(1) amortized.
+ * Space Complexity: O(log n) - HashSet stores values along the sequence before cycling.
  *
- * Edge Cases Handled: n = 1 (already happy), n = 0, repeated value (cycle detected, returns false), single-digit numbers
+ * Edge Cases Handled: n = 1 (already happy), n = 0, single-digit non-1 (cycle), cycle detected early (returns false immediately)
  */
 class HappyNumber {
     public boolean isHappy(int n) {

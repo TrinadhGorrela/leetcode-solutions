@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/same-tree/
  *
- * Pattern: Depth-First Search (Structural Comparison)
- * Key insight: Two trees are identical iff both are null, or both non-null with equal values and matching left and right subtrees, checked recursively in pre-order.
+ * Pattern: Recursive Structural Equality
+ * Key insight: Simultaneously walk both trees in pre-order; fail immediately on any structural mismatch (one null, one not) or value mismatch, otherwise recurse into both children. No hash map needed.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Requires space for the recursion call stack
+ * Time Complexity: O(n) - Each node is compared at most once; early termination on mismatch.
+ * Space Complexity: O(h) - Recursion depth is the minimum height of the two trees.
  *
- * Edge Cases Handled: both trees empty (null roots), one tree null and other not, single leaf node, nodes with one null child, equal vs misaligned structure
+ * Edge Cases Handled: both null roots, one null and one non-null, same values but different structure, different values at same position, single-node trees, deep left-only vs right-only chains
  */
 /**
  * Definition for a binary tree node.

@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Sorting
  * https://leetcode.com/problems/remove-covered-intervals/
  *
- * Pattern: Sorting + Greedy (Intervals)
- * Key insight: Sort intervals so covers appear first (same start -> larger end first), then count intervals that are not fully covered by the last kept interval.
+ * Pattern: Sort-then-Scan Cover Detection
+ * Key insight: Sorting by ascending start (and descending end for ties) ensures the widest interval for a given start is encountered first; a subsequent interval is covered if it falls within the last kept interval's bounds (start ≥ kept.start && end ≤ kept.end).
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N log N) - Custom sort dominates; linear scan is O(N)
+ * Space Complexity: O(1) - Index pointer and count; sort modifies in place
  *
- * Edge Cases Handled: single interval, identical intervals, partial overlaps (not covered), nested/full containment, same start with longer end
+ * Edge Cases Handled: identical intervals (second is covered), same start different end (longer one kept first), partial overlaps (not covered, new kept interval set), fully nested intervals (inner removed)
  */
 class RemoveCoveredIntervals {
     public int removeCoveredIntervals(int[][] intervals) {
@@ -19,17 +19,17 @@ class RemoveCoveredIntervals {
             }
             return Integer.compare(a[0], b[0]);
         });
-        int n = intervals.length;
-        int t = 0;
+        int count = intervals.length;
+        int lastKeptIndex = 0;
         for (int i = 1; i < intervals.length; i++) {
-            int[] temp = intervals[t];
+            int[] last = intervals[lastKeptIndex];
             int[] curr = intervals[i];
-            if (temp[0] <= curr[0] && temp[1] >= curr[1]) {
-                n--;
+            if (last[0] <= curr[0] && last[1] >= curr[1]) {
+                count--;
             } else {
-                t = i;
+                lastKeptIndex = i;
             }
         }
-        return n;
+        return count;
     }
 }

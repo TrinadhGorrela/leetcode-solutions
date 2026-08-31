@@ -3,13 +3,13 @@
  * Difficulty: Hard | Tags: Array, Binary Search, Divide and Conquer
  * https://leetcode.com/problems/median-of-two-sorted-arrays/
  *
- * Pattern: Merge (Two Pointers)
- * Key insight: Merge the two sorted arrays into one and pick the middle element(s), handling both odd and even total lengths. (Suboptimal O(m+n); a binary-search O(log(m+n)) partition approach is ideal.)
+ * Pattern: Merge-Then-Pick Median
+ * Key insight: Standard merge into a combined sorted array, then return arr[(len-1)/2] for odd length or average of arr[len/2-1] and arr[len/2] for even—correct but O(m+n) vs. the optimal O(log(min(m,n))) binary partition approach.
  *
- * Time Complexity: O(m+n) - Merge-based implementation (Suboptimal approach)
- * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
+ * Time Complexity: O(m+n) - Linear merge fills the combined array; not the optimal O(log(min(m,n))) binary-search solution
+ * Space Complexity: O(m+n) - Combined result array sized m+n
  *
- * Edge Cases Handled: empty first / second array, one array fully smaller, equal elements across arrays, odd and even combined lengths
+ * Edge Cases Handled: One or both arrays empty, one array entirely smaller than the other, all elements equal, odd vs. even combined length selecting the correct median index
  */
 class MedianOfTwoSortedArrays {
     public double findMedianSortedArrays(int[] nums1, int[] nums2) {
@@ -30,12 +30,11 @@ class MedianOfTwoSortedArrays {
         while (j < n2) {
             res[k++] = nums2[j++];
         }
-        int t = res.length;
-        if (t % 2 != 0) {
-            return res[t / 2 ];
-        }
-        else{
-            return (double)(res[t/2-1]+res[t/2])/2;
+        int total = res.length;
+        if (total % 2 != 0) {
+            return res[total / 2];
+        } else {
+            return (double) (res[total / 2 - 1] + res[total / 2]) / 2;
         }
     }
 }

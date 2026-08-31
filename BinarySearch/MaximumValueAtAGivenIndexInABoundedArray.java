@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, Binary Search, Greedy
  * https://leetcode.com/problems/maximum-value-at-a-given-index-in-a-bounded-array/
  *
- * Pattern: Binary Search on Answer + Math
- * Key insight: Binary search the peak value at the given index, and use an arithmetic-series formula to compute the minimal total array sum required for a candidate peak (decrementing on both sides down to 1).
+ * Pattern: Binary Search on Answer + Arithmetic Series
+ * Key insight: Binary search the peak value at `index`; for each candidate, compute the minimal array sum by summing a trapezoid-shaped decrease (max(1, peak - distance)) on each side using closed-form arithmetic series, all in long to avoid overflow.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log maxSum) - Search range is [1, maxSum], each check is O(1) via formula.
+ * Space Complexity: O(1) - Only the peak candidate, two side counts, and long accumulators.
  *
- * Edge Cases Handled: index at the edge of array (one side count 0), decrements reaching 1 (long formula), large n/maxSum (long arithmetic to avoid overflow)
+ * Edge Cases Handled: index at array edge (one side has zero cells), peak so low that sides clamp to 1, maxSum too small to place any peak (returns 1), long arithmetic prevents overflow on large n
  */
 class MaximumValueAtAGivenIndexInABoundedArray {
     public int maxValue(int n, int index, int maxSum) {
@@ -22,7 +22,7 @@ class MaximumValueAtAGivenIndexInABoundedArray {
             long leftCount = index;
             long rightCount = n - 1 - index;
 
-            long total = mid + calc(mid, leftCount) + calc(mid, rightCount);
+            long total = mid + calcSideSum(mid, leftCount) + calcSideSum(mid, rightCount);
 
             if (total <= maxSum) {
                 res = mid;
@@ -34,15 +34,15 @@ class MaximumValueAtAGivenIndexInABoundedArray {
         return res;
     }
 
-    public static long calc(int v, long count) {
+    public static long calcSideSum(int peakValue, long count) {
         if (count == 0) {
             return 0;
         }
 
-        long k = Math.min(count, v - 1);
+        long k = Math.min(count, peakValue - 1);
         if (k > 0) {
-            long first = v - 1;
-            long last = v - 1 * k;
+            long first = peakValue - 1;
+            long last = peakValue - 1 * k;
             long decSum = k * (first + last) / 2;
             long ones = count - k;
             return decSum + ones;

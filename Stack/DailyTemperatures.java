@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Stack, Monotonic Stack
  * https://leetcode.com/problems/daily-temperatures/
  *
- * Pattern: Monotonic Stack (Next Greater Distance)
- * Key insight: Scan from right to left keeping a decreasing stack of indices; pop smaller/equal temperatures and the distance to the remaining top is the answer for each day.
+ * Pattern: Monotonic Decreasing Stack (Next Greater Distance)
+ * Key insight: Scan right-to-left, maintaining a stack of indices with strictly decreasing temperatures. For each day, pop all temperatures ≤ today; the stack top (if any) is the next warmer day, and the distance is top − i.
  *
- * Time Complexity: O(N) - Monotonic stack operations are amortized O(1)
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each index pushed and popped at most once.
+ * Space Complexity: O(n) - Stack and result array each hold up to n entries.
  *
- * Edge Cases Handled: Single day (result 0), all equal temperatures (all 0), strictly decreasing sequence (no warmer day after), warmer day far to the right, last element always 0
+ * Edge Cases Handled: last day always gets 0, strictly decreasing sequence (all zeros), single day (returns [0]), all equal temperatures (all zeros)
  */
 class DailyTemperatures {
     public int[] dailyTemperatures(int[] temperatures) {

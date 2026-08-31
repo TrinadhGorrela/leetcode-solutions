@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Hash Table
  * https://leetcode.com/problems/two-sum/
  *
- * Pattern: One-Pass Hash Map
- * Key insight: Store previously seen numbers and their indices in a hash map to quickly check if the complement of the current number has been encountered.
+ * Pattern: One-Pass Hash Map Lookup
+ * Key insight: For each element, compute its complement (target - nums[i]) and check if it already exists in the map; this avoids a nested loop by trading space for a single-pass lookup.
  *
- * Time Complexity: O(N) - Single pass, constant time map operations
- * Space Complexity: O(N) - Stores up to N elements in hash map
+ * Time Complexity: O(N) - Single linear scan with O(1) average HashMap get/put
+ * Space Complexity: O(N) - HashMap stores at most N number-to-index entries
  *
- * Edge Cases Handled: negative values, target requiring two negatives, duplicate values (complement may reuse index avoided via ordering), answer spanning endpoints
+ * Edge Cases Handled: duplicate values (later index correctly pairs with earlier index via map overwrite), negative numbers and negative targets, answer at array boundaries (first and last element)
  */
 class TwoSum {
     public int[] twoSum(int[] nums, int target) {

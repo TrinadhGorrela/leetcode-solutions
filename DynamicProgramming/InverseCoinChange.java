@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/inverse-coin-change/
  *
- * Pattern: 1D Dynamic Programming
- * Key insight: Reverse knapsack logic
+ * Pattern: Reverse unbounded knapsack reconstruction
+ * Key insight: Maintain a running DP of reachable amounts; at each step the "missing" way count (numWays[i] - dp[i+1]) must be exactly 1 to justify adding coin (i+1), after which the coin's contribution is folded into dp via forward accumulation.
  *
- * Time Complexity: O(C * A)
- * Space Complexity: O(A)
+ * Time Complexity: O(coins * amount) - Each discovered coin triggers a forward sweep of the DP array
+ * Space Complexity: O(amount) - Single 1D DP array
  *
- * Edge Cases Handled: inconsistent way-counts (t < 0 or t > 1, returns empty), empty input, single coin in list
+ * Edge Cases Handled: missing ways <0 or >1 at any step means impossible, returning empty list; first element numWays[0] is implicitly 1; single-coin input
  */
 class InverseCoinChange {
     public List<Integer> findCoins(int[] numWays) {
@@ -19,19 +19,17 @@ class InverseCoinChange {
 
         for (int i = 0; i < numWays.length; i++) {
             int ways = dp[i + 1];
-            int t = numWays[i] - ways;
+            int difference = numWays[i] - ways;
 
-            if (t == 1) {
+            if (difference == 1) {
                 for (int amt = i + 1; amt <= numWays.length; amt++) {
-                    int rem = amt - (i + 1);
-                    dp[amt] += dp[rem];
-
+                    int remaining = amt - (i + 1);
+                    dp[amt] += dp[remaining];
                 }
                 res.add(i + 1);
-            } else if (t < 0 || t > 1) {
+            } else if (difference < 0 || difference > 1) {
                 return new ArrayList<>();
             }
-
         }
 
         return res;

@@ -4,12 +4,12 @@
  * https://leetcode.com/problems/sqrtx/
  *
  * Pattern: Binary Search on Integer Square Root
- * Key insight: Binary search the largest m with m*m <= x, comparing mid <= x/mid to avoid integer overflow, and remember the last viable mid.
+ * Key insight: Search [1, x] for the largest mid where mid ≤ x / mid (equivalent to mid² ≤ x but avoids overflow); record the last satisfying mid as the floor square root.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log x) - Interval halves each step.
+ * Space Complexity: O(1) - Three integers: start, end, result.
  *
- * Edge Cases Handled: x = 0 (returns 0), x = 1, perfect squares (exact root), non-perfect squares (floor), overflow avoided by comparing mid <= x/mid
+ * Edge Cases Handled: x = 0 (early return), x = 1, perfect square (exact mid found), non-perfect square (returns floor), overflow prevented by using x/mid instead of mid*mid
  */
 class Sqrtx {
     public int mySqrt(int x) {
@@ -18,18 +18,18 @@ class Sqrtx {
 
         int start = 1;
         int end = x;
-        int res = 0;
+        int result = 0;
 
         while (start <= end) {
             int mid = start + (end - start) / 2;
 
             if (mid <= x / mid) {
-                res = mid;
+                result = mid;
                 start = mid + 1;
             } else {
                 end = mid - 1;
             }
         }
-        return res;
+        return result;
     }
 }

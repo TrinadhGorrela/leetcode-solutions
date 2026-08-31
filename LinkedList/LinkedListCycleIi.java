@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Hash Table, Linked List, Two Pointers, Floyd's Cycle Finding Algorithm
  * https://leetcode.com/problems/linked-list-cycle-ii/
  *
- * Pattern: Two Pointers
- * Key insight: Uses Floyd's cycle-finding algorithm (slow/fast pointers) to detect cycles.
+ * Pattern: Floyd's Two-Phase Cycle Detection
+ * Key insight: Phase 1: slow/fast meet inside the cycle. Phase 2: reset slow to head and advance both one step at a time—they meet at the cycle entry because the distance from head to entry equals the distance from the meeting point back to entry (mod cycle length).
  *
- * Time Complexity: O(N) - Floyd's Cycle Finding traverses nodes in linear time
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Each phase is at most O(n).
+ * Space Complexity: O(1) - Two pointers only.
  *
- * Edge Cases Handled: null head (returns null), no cycle (returns null), single node, cycle of length 1
+ * Edge Cases Handled: no cycle (fast reaches null), cycle at the head (entry found immediately in phase 2), single-node self-loop, cycle does not include the head
  */
 /**
  * Definition for singly-linked list.

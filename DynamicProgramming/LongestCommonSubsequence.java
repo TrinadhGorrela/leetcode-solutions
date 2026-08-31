@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: String, Dynamic Programming, Longest Common Subsequence
  * https://leetcode.com/problems/longest-common-subsequence/
  *
- * Pattern: Dynamic Programming (2D LCS Table)
- * Key insight: If characters match extend 1 + the diagonal result; otherwise take the better of the two adjacent subproblems; the bottom-right cell holds the LCS length.
+ * Pattern: 2D bottom-up DP table for subsequence matching
+ * Key insight: When text1[i-1]==text2[j-1], extend the diagonal (matched prefix grows); otherwise carry forward the best of dropping one character from either string. The DP invariant is memo[i][j] = LCS length of prefixes of length i and j.
  *
- * Time Complexity: O(m*n) - Dynamic programming over two strings
- * Space Complexity: O(m*n) - Allocates a 2D array for memoization scaling with input sizes
+ * Time Complexity: O(m*n) - Fill every cell of the (m+1)x(n+1) table
+ * Space Complexity: O(m*n) - Full 2D table
  *
- * Edge Cases Handled: one or both strings empty (returns 0), no common characters (returns 0), all characters identical (LCS = full string)
+ * Edge Cases Handled: empty strings return 0; no common chars yield 0; identical strings yield min(m,n)
  */
 class LongestCommonSubsequence {
     public int longestCommonSubsequence(String text1, String text2) {

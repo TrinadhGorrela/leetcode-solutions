@@ -3,21 +3,21 @@
  * Difficulty: Medium | Tags: Array, Greedy, Sorting, Counting Sort
  * https://leetcode.com/problems/maximum-ice-cream-bars/
  *
- * Pattern: Greedy + Sorting
- * Key insight: To maximize the count, buy the cheapest bars first; sort costs ascending and deduct until coins run out.
+ * Pattern: Sort-Ascending Greedy Selection
+ * Key insight: Every unit of coin spent on a cheaper bar "frees up" capacity for more bars than spending on an expensive one; sorting ascending and taking greedily maximizes the total count — this is the unbounded subset-sum optimality for unit-profit items.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N log N) - Sorting dominates; the scan is O(N) with early termination
+ * Space Complexity: O(1) - Running counters (coins, count) plus in-place sort
  *
- * Edge Cases Handled: cannot afford any bar (returns 0), can afford all bars, coins fully spent mid-array
+ * Edge Cases Handled: zero coins (returns 0 immediately), can afford all bars (count = N), coins exhausted mid-array (loop continues but condition fails), all bars same price
  */
 class MaximumIceCreamBars {
     public int maxIceCream(int[] costs, int coins) {
         int count = 0;
         Arrays.sort(costs);
-        for (int i : costs) {
-            if (coins >= i) {
-                coins -= i;
+        for (int cost : costs) {
+            if (coins >= cost) {
+                coins -= cost;
                 count++;
             }
         }

@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Divide and Conquer, Tree, Binary Tree
  * https://leetcode.com/problems/construct-binary-tree-from-inorder-and-postorder-traversal/
  *
- * Pattern: Tree Construction Hash Map
- * Key insight: Use hash map for O(1) inorder index lookup and recursively split tree bounds
+ * Pattern: Recursive Divide-and-Conquer with Hash Map Lookup
+ * Key insight: Process postorder from right to left — each element is a root. Look it up in inorder to find the split; build the right subtree first (mid + 1 to end) then the left (st to mid - 1), decrementing postIndex after consuming each root.
  *
- * Time Complexity: O(N) - Visit each node once to construct
- * Space Complexity: O(N) - Hash map and recursion stack
+ * Time Complexity: O(n) - Each node constructed once; hash map gives O(1) split lookups.
+ * Space Complexity: O(n) - Hash map for inorder indices plus O(h) recursion stack.
  *
- * Edge Cases Handled: empty arrays (guard st < 0 / st > end), single node, skewed tree (only left or only right children), boundary index handling (mid - 1 / mid + 1)
+ * Edge Cases Handled: single node, boundary guards (st < 0, end > length, st > end), right-only or left-only skewed chains, trees requiring right-subtree-first construction order
  */
 /**
  * Definition for a binary tree node.

@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/binary-tree-right-side-view/
  *
- * Pattern: BFS (Rightmost Node per Level)
- * Key insight: Traverse level by level and capture the last node visited in each level after enqueuing both children, collecting the right-side view.
+ * Pattern: BFS Level-Order with Last-Node Capture
+ * Key insight: Snapshot the queue size for each level; the node dequeued when size reaches 1 (the final node of that level) is the rightmost visible node — children are enqueued first so left/right order is preserved.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each node is enqueued and dequeued exactly once.
+ * Space Complexity: O(w) - Queue holds at most one level's width of nodes.
  *
- * Edge Cases Handled: empty tree / null root (returns empty list), single node, single-level root, missing right child per level (last node of each level)
+ * Edge Cases Handled: null root returns empty list, single node, missing right child (falls back to leftmost as visible), skewed tree, complete binary tree, single-level root only
  */
 /**
  * Definition for a binary tree node.

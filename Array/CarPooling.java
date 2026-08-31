@@ -3,24 +3,24 @@
  * Difficulty: Medium | Tags: Array, Sorting, Heap (Priority Queue), Simulation, Prefix Sum
  * https://leetcode.com/problems/car-pooling/
  *
- * Pattern: Prefix Sum (Sweep Line)
- * Key insight: Use a difference array over stops: add passengers at the pickup point and subtract at the drop-off point, then sweep forward to ensure the running total never exceeds capacity.
+ * Pattern: Difference Array Sweep Line
+ * Key insight: Model each trip as +passengers at start and -passengers at end on a fixed 1001-slot difference array (stops bounded to [0, 1000]). A single prefix sweep reveals the running passenger count at every stop; if any exceeds capacity, return false.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
+ * Time Complexity: O(N + 1001) - O(N) to mark pickups and drop-offs, O(1001) for the sweep (constant bound on stop range)
+ * Space Complexity: O(1) - Fixed 1001-element array independent of input size
  *
- * Edge Cases Handled: no trips, capacity zero, simultaneous pickup/drop-off at same stop, trips beyond fixed stop range
+ * Edge Cases Handled: no trips (vacuously true), simultaneous pickup and drop-off at the same stop, trips at stop 0 or stop 1000, capacity of zero
  */
 class CarPooling {
     public boolean carPooling(int[][] trips, int capacity) {
-        int[] pass = new int[1001];
+        int[] passengerCount = new int[1001];
         for (int i = 0; i < trips.length; i++) {
-            pass[trips[i][1]] = pass[trips[i][1]] + trips[i][0];
-            pass[trips[i][2]] = pass[trips[i][2]] - trips[i][0];
+            passengerCount[trips[i][1]] = passengerCount[trips[i][1]] + trips[i][0];
+            passengerCount[trips[i][2]] = passengerCount[trips[i][2]] - trips[i][0];
         }
         int sum = 0;
-        for (int i = 0; i < pass.length; i++) {
-            sum += pass[i];
+        for (int i = 0; i < passengerCount.length; i++) {
+            sum += passengerCount[i];
             if (sum > capacity) {
                 return false;
             }

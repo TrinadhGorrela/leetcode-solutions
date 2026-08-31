@@ -3,14 +3,13 @@
  * Difficulty: Easy | Tags: Array, Simulation
  * https://leetcode.com/problems/distribute-elements-into-two-arrays-i/
  *
- * Pattern: Simulation
- * Key insight: Place the first two elements into two lists and append each subsequent element to the list whose last element is larger, then concatenate both lists back into the array.
+ * Pattern: Two-List Greedy Distribution
+ * Key insight: Seed arr1 and arr2 with the first two elements, then append each subsequent element to whichever list has the larger tail. This greedy comparison drives the distribution without any sorting.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input
- * size
+ * Time Complexity: O(N) - One pass from index 2 to N-1 for distribution, one pass to flatten both lists back into the result array
+ * Space Complexity: O(N) - Two ArrayLists collectively hold all N elements
  *
- * Edge Cases Handled: exactly two elements, equal last elements (goes to arr2), negative values
+ * Edge Cases Handled: exactly two elements (no loop iterations, just the two seeds), equal tail values (tie goes to arr2 via the else branch), all elements the same
  */
 class DistributeElementsIntoTwoArraysI {
     public int[] resultArray(int[] nums) {
@@ -28,13 +27,13 @@ class DistributeElementsIntoTwoArraysI {
             }
         }
 
-        int in = 0;
+        int insertPos = 0;
         for (int i = 0; i < arr1.size(); i++) {
-            nums[in++] = arr1.get(i);
+            nums[insertPos++] = arr1.get(i);
         }
 
         for (int i = 0; i < arr2.size(); i++) {
-            nums[in++] = arr2.get(i);
+            nums[insertPos++] = arr2.get(i);
         }
 
         return nums;

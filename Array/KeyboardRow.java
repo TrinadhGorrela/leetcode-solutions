@@ -3,38 +3,38 @@
  * Difficulty: Easy | Tags: Array, Hash Table, String
  * https://leetcode.com/problems/keyboard-row/
  *
- * Pattern: String / Keyboard Mapping
- * Key insight: Map each character of a word to its keyboard row; the word qualifies only if all of its letters belong to a single row.
+ * Pattern: Row-Flag Intersection
+ * Key insight: For each word, mark which of the three rows are touched using a 3-element flags array; if exactly one flag is set, all characters come from a single row.
  *
- * Time Complexity: O(N * L) - N is number of words, L is max word length
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N * L) - N words, each scanned character-by-character with indexOf on a 10-char row string
+ * Space Complexity: O(N) - LinkedList accumulates qualifying words; 3-element flags array per word is constant
  *
- * Edge Cases Handled: uppercase letters (case-insensitive), single-letter words, empty string (excluded), words spanning multiple rows (excluded)
+ * Edge Cases Handled: uppercase letters (lowercased before lookup), single-letter words (always qualify), words crossing row boundaries (flags sum > 1, rejected)
  */
 class KeyboardRow {
     public String[] findWords(String[] words) {
-        String FirstRow = "qwertyuiop";
-        String SecondRow = "asdfghjkl";
-        String ThirdRow = "zxcvbnm";
+        String firstRow = "qwertyuiop";
+        String secondRow = "asdfghjkl";
+        String thirdRow = "zxcvbnm";
         List<String> list = new LinkedList<>();
         for (String word : words) {
-            int[] arr = new int[3];
+            int[] rowFlags = new int[3];
             for (char ch : word.toLowerCase().toCharArray()) {
-                if (FirstRow.indexOf(ch) != -1)
-                    arr[0] = 1;
-                else if (SecondRow.indexOf(ch) != -1)
-                    arr[1] = 1;
-                else if (ThirdRow.indexOf(ch) != -1)
-                    arr[2] = 1;
+                if (firstRow.indexOf(ch) != -1)
+                    rowFlags[0] = 1;
+                else if (secondRow.indexOf(ch) != -1)
+                    rowFlags[1] = 1;
+                else if (thirdRow.indexOf(ch) != -1)
+                    rowFlags[2] = 1;
             }
-            int sum = arr[0] + arr[1] + arr[2];
+            int sum = rowFlags[0] + rowFlags[1] + rowFlags[2];
             if (sum == 1)
                 list.add(word);
         }
-        String[] res = new String[list.size()];
+        String[] result = new String[list.size()];
         int i = 0;
         for (String word : list)
-            res[i++] = word;
-        return res;
+            result[i++] = word;
+        return result;
     }
 }

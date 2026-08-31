@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/house-robber-ii/
  *
- * Pattern: Dynamic Programming (Circular Reduction)
- * Key insight: Because houses are circular (first and last are adjacent), run the linear House Robber DP on two sub-arrays: one excluding the first house and one excluding the last, taking the better result.
+ * Pattern: Circular array reduction via two linear House Robber sub-problems
+ * Key insight: Since first and last houses are adjacent in a circle, no valid solution can rob both; solve two independent linear House Robber instances (nums[0..n-2] and nums[1..n-1]) and return the max.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses arrays for skipFirst/skipLast processing
+ * Time Complexity: O(n) - Two linear DP passes, each O(n)
+ * Space Complexity: O(n) - Two auxiliary arrays of length n-1
  *
- * Edge Cases Handled: empty array (returns 0), single house (returns its value), two houses (max of the two), circular adjacency handled by skipping first/last
+ * Edge Cases Handled: n=0 returns 0; n=1 returns nums[0]; n=2 returns max of both; circular adjacency resolved by exclusive sub-arrays
  */
 class HouseRobberIi {
     public int rob(int[] nums) {
@@ -36,15 +36,15 @@ class HouseRobberIi {
         return Math.max(lootSkippingLast, lootSkippingFirst);
     }
 
-    public static int robbery(int[] arr) {
-        int[] loot = new int[arr.length];
+    public static int robbery(int[] houses) {
+        int[] loot = new int[houses.length];
 
-        loot[0] = arr[0];
-        loot[1] = Math.max(arr[0], arr[1]);
+        loot[0] = houses[0];
+        loot[1] = Math.max(houses[0], houses[1]);
 
-        for (int i = 2; i < arr.length; i++) {
-            loot[i] = Math.max(loot[i - 2] + arr[i], loot[i - 1]);
+        for (int i = 2; i < houses.length; i++) {
+            loot[i] = Math.max(loot[i - 2] + houses[i], loot[i - 1]);
         }
-        return loot[arr.length - 1];
+        return loot[houses.length - 1];
     }
 }

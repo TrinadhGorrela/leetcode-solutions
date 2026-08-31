@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Bit Manipulation, Matrix, Simulation
  * https://leetcode.com/problems/flipping-an-image/
  *
- * Pattern: Matrix Transform (Reverse then Invert)
- * Key insight: Reverse each row in place with two pointers, then invert every cell with 1 - value, all in the original array.
+ * Pattern: Two-Pointer Row Reverse + Bitwise Invert
+ * Key insight: Reverse each row in-place with two pointers, then invert every cell with 1 - value; both operations run on the original array with no extra space.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n²) - Reverse is O(n) per row, invert is O(n) per row.
+ * Space Complexity: O(1) - In-place swaps and subtraction.
  *
- * Edge Cases Handled: 1x1 image, single row, middle cell of odd-length row (unchanged by reversal but inverted), all zeros / all ones
+ * Edge Cases Handled: 1×1 image, odd-width rows (center element swapped with itself then inverted), all zeros, all ones
  */
 class FlippingAnImage {
     public int[][] flipAndInvertImage(int[][] image) {

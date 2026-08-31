@@ -4,12 +4,12 @@
  * https://leetcode.com/problems/valid-perfect-square/
  *
  * Pattern: Binary Search on Integer Square Root
- * Key insight: Binary search for an integer whose square exactly equals num, using long arithmetic when squaring to avoid overflow.
+ * Key insight: Search [1, num] for a mid where (long) mid * mid == num; cast to long before multiplying to prevent integer overflow on large inputs.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log num) - Interval halves each step.
+ * Space Complexity: O(1) - Three integers: left, right, mid (long for square).
  *
- * Edge Cases Handled: num < 0 (returns false), num = 0, num = 1 (perfect square), overflow avoided via long multiplication
+ * Edge Cases Handled: num < 0 (returns false), num = 0 or 1 (immediate), overflow avoided via long cast, non-perfect square returns false
  */
 class ValidPerfectSquare {
     public boolean isPerfectSquare(int num) {
@@ -17,18 +17,18 @@ class ValidPerfectSquare {
         if (num < 0)
             return false;
 
-        int t = 1;
-        int s = num;
+        int left = 1;
+        int right = num;
         
-        while (t <= s) {
-            int b = t + (s - t) / 2;
-            long sq = (long) b * b;
+        while (left <= right) {
+            int mid = left + (right - left) / 2;
+            long sq = (long) mid * mid;
             if (sq == num)
                 return true;
             else if (sq < num)
-                t = b + 1;
+                left = mid + 1;
             else
-                s = b - 1;
+                right = mid - 1;
         }
         return false;
 

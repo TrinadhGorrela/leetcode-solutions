@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/maximum-depth-of-binary-tree/
  *
- * Pattern: Depth-First Search (Post-order Height)
- * Key insight: The depth of a node is 1 plus the larger of its children's depths; compute bottom-up recursively.
+ * Pattern: Post-order DFS Height Calculation
+ * Key insight: Return 0 for null nodes; otherwise the depth is 1 + max(leftDepth, rightDepth). The max naturally handles unbalanced subtrees without special-casing.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(V) - Maintains visited states or queue/stack depth
+ * Time Complexity: O(n) - Every node is visited exactly once.
+ * Space Complexity: O(h) - Recursion stack depth is tree height; O(log n) balanced, O(n) skewed.
  *
- * Edge Cases Handled: empty tree / null root (returns 0), single node, skewed tree (left-only or right-only chain)
+ * Edge Cases Handled: null root returns 0, single node returns 1, left-only chain, right-only chain, complete binary tree, highly unbalanced tree
  */
 /**
  * Definition for a binary tree node.

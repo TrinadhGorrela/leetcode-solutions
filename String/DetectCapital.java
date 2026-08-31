@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: String
  * https://leetcode.com/problems/detect-capital/
  *
- * Pattern: Character Case Counting
- * Key insight: Accepted capitalizations are: all upper, all lower, or only the first letter upper; count uppercase letters and check these conditions.
+ * Pattern: Uppercase Count + Position Check
+ * Key insight: Count uppercase letters; valid rules are: all uppercase, all lowercase, or exactly 1 uppercase at position 0. Any other count/position combination is invalid.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Single pass counting uppercase characters.
+ * Space Complexity: O(1) - One integer counter.
  *
- * Edge Cases Handled: Single letter (upper or lower), all uppercase, all lowercase, only first letter uppercase, other mixed capitalizations rejected
+ * Edge Cases Handled: single character (always valid), all uppercase, all lowercase, only first letter uppercase, mixed case with 1 uppercase not at position 0 (rejected)
  */
 class DetectCapital {
     public boolean detectCapitalUse(String word) {

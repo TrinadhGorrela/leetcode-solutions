@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Math, Sorting, Polygons
  * https://leetcode.com/problems/type-of-triangle/
  *
- * Pattern: Math (Triangle Inequality)
- * Key insight: Apply the triangle inequality to reject invalid sides, then classify by comparing the three side lengths (equilateral, isosceles, scalene).
+ * Pattern: Conditional Triangle Classification
+ * Key insight: First reject degenerate triangles via the triangle inequality (any side >= sum of the other two → "none"), then classify by equality: all three equal → equilateral, exactly two → isosceles, zero → scalene.
  *
- * Time Complexity: O(1) - Computes the result mathematically without any iteration
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(1) - Three comparisons plus branch logic, no loops
+ * Space Complexity: O(1) - Three integer variables for the sides
  *
- * Edge Cases Handled: degenerate/invalid sides (returns "none"), equilateral, isosceles (two equal sides)
+ * Edge Cases Handled: degenerate case where one side equals the sum of the other two (returns "none"), equilateral (all equal), isosceles with two equal, all sides distinct
  */
 class TypeOfTriangle {
     public String triangleType(int[] nums) {

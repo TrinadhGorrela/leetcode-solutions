@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Linked List, Two Pointers
  * https://leetcode.com/problems/rotate-list/
  *
- * Pattern: Circular Shift (Length Normalization)
- * Key insight: Compute the list length, reduce k modulo it, link the tail to the head to form a cycle, then walk len-k steps and cut the cycle to expose the new head.
+ * Pattern: Circular Link + Cut
+ * Key insight: Compute the length, reduce k mod len, then link tail→head to form a cycle. Walk (len - k) steps from head and cut the cycle there—the next node becomes the new head.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Two passes: one for length, one to the cut point.
+ * Space Complexity: O(1) - Only length counter and traversal pointers.
  *
- * Edge Cases Handled: null head (returns null), k = 0 or k a multiple of length (returns head unchanged), k > length (reduced via modulo), single node
+ * Edge Cases Handled: null list, k mod len == 0 (no rotation needed), k > length (modular reduction), single node, list of two nodes
  */
 /**
  * Definition for singly-linked list.

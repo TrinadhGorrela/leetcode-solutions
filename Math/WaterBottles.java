@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Math, Simulation
  * https://leetcode.com/problems/water-bottles/
  *
- * Pattern: Simulation (Bottle Exchange, Fixed Rate)
- * Key insight: Repeatedly exchange full bottles back to empties: drink them, add the exchange's yield to the total, and carry forward any remainder bottles until fewer than numExchange remain.
+ * Pattern: Iterative Bottle Exchange (Fixed Exchange Rate)
+ * Key insight: Each round, divide current bottles by numExchange to get newly drinkable bottles, then fold in the modulo remainder as leftover empties; repeat until the batch is too small to exchange.
  *
- * Time Complexity: O(log N) - Logarithmic division by exchange rate
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log_{numExchange}(numBottles)) - Bottles shrink by roughly the exchange rate each iteration
+ * Space Complexity: O(1) - Only three int variables (res, t, numBottles)
  *
-* Edge Cases Handled: exact division with zero remainder, leftover remainder carried into the next exchange, fewer bottles than numExchange remaining
+ * Edge Cases Handled: exact multiples of numExchange (remainder = 0, no leftovers folded in), numBottles < numExchange on first iteration (returns initial count immediately)
  */
 class WaterBottles {
     public static int numWaterBottles(int numBottles, int numExchange) {

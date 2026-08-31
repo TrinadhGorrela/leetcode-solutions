@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Two Pointers, String, Dynamic Programming, Manacher
  * https://leetcode.com/problems/longest-palindromic-substring/
  *
- * Pattern: Expand Around Center
- * Key insight: For each center (single char or char pair), expand outward while the two ends are equal and track the longest palindrome; even/odd lengths handled by the two center cases.
+ * Pattern: Expand-Around-Center (Odd + Even)
+ * Key insight: Every palindrome has a center; testing all 2N-1 centers (N single-char + N-1 char-pair) and expanding outward gives the longest palindrome without needing DP or Manacher's.
  *
- * Time Complexity: O(N^2) - Explores palindromes centered at each index
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N^2) - 2N-1 centers, each expansion up to O(N) in the worst case (all same chars)
+ * Space Complexity: O(1) - Only start index, max length, and loop counters; no auxiliary data structures
  *
- * Edge Cases Handled: Single character, all same characters (whole string palindromic), even-length palindromes via double center, strings with no palindrome longer than 1
+ * Edge Cases Handled: Single character (length 1), all identical characters (entire string), longest palindrome at the very end of the string, even-length palindromes found via pair centers
  */
 class LongestPalindromicSubstring {
 

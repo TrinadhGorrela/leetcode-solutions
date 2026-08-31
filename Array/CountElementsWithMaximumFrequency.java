@@ -3,25 +3,25 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Counting
  * https://leetcode.com/problems/count-elements-with-maximum-frequency/
  *
- * Pattern: Hash Map (Counting)
- * Key insight: Count frequencies of all elements, track the maximum frequency, then sum the counts of all elements attaining that maximum.
+ * Pattern: Two-Pass Frequency Counting
+ * Key insight: First pass builds a frequency map while tracking the running max frequency; second pass counts how many array positions belong to elements at that max frequency (counting per occurrence, not per distinct value).
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - Two linear passes: one to build the frequency map, one to count qualifying elements
+ * Space Complexity: O(N) - HashMap stores one entry per distinct element
  *
- * Edge Cases Handled: single element, all elements distinct (max frequency 1), all elements equal, tie of multiple elements at max frequency
+ * Edge Cases Handled: single element, all distinct (max freq = 1, answer = N), all equal (max freq = N, answer = N), multiple distinct values tied at max frequency
  */
 class CountElementsWithMaximumFrequency {
     public int maxFrequencyElements(int[] nums) {
         Map<Integer, Integer> map = new HashMap<>();
-        int max = 0, count = 0;
+        int maxFreq = 0, count = 0;
         for (int i : nums) {
             map.put(i, map.getOrDefault(i, 0) + 1);
-            if (map.get(i) > max)
-                max = map.get(i);
+            if (map.get(i) > maxFreq)
+                maxFreq = map.get(i);
         }
         for (int i : nums) {
-            if (map.get(i) == max)
+            if (map.get(i) == maxFreq)
                 count = count + 1;
         }
         return count;

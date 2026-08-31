@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Sliding Window, Prefix Sum
  * https://leetcode.com/problems/minimum-size-subarray-sum/
  *
- * Pattern: Sliding Window (Variable-Length Sum)
- * Key insight: Extend the right edge growing the sum; once it reaches target, shrink from the left to find the minimal covering window while recording the shortest length found.
+ * Pattern: Variable-Length Sliding Window (Minimum Sum >= Target)
+ * Key insight: Expand right to grow the running sum; once sum >= target, repeatedly shrink from the left (subtracting nums[left]) while maintaining the >= target invariant, recording the minimum window length at each shrink step. Both pointers advance monotonically, ensuring O(N).
  *
- * Time Complexity: O(N) - Sliding window pointers only move forward
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Right pointer iterates N times; left pointer advances at most N times total across all iterations
+ * Space Complexity: O(1) - Only three scalars (left, sum, res) with no auxiliary structures
  *
- * Edge Cases Handled: No subarray reaches target (returns 0), single element reaches target, whole array is the only valid window, target met exactly
+ * Edge Cases Handled: no subarray sums to target or more (return 0), single element equals target, target requires the entire array, target met exactly at window boundary
  */
 class MinimumSizeSubarraySum {
     public int minSubArrayLen(int target, int[] nums) {

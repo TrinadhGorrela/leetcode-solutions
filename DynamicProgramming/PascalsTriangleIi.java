@@ -3,20 +3,20 @@
  * Difficulty: Easy | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/pascals-triangle-ii/
  *
- * Pattern: Dynamic Programming (Reuse Previous Row)
- * Key insight: Build rows iteratively from the previous one; each interior element is the sum of the two above it. The whole triangle is built here for clarity (an O(k) rolling-row version is possible).
+ * Pattern: Row-by-row DP constructing Pascal's Triangle
+ * Key insight: Each row is built from the previous by summing adjacent pairs; edges are always 1. The full triangle is constructed up to rowIndex, then the last row is returned.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(N^2) - Builds the entire triangle
+ * Time Complexity: O(rowIndex^2) - Builds all rows 0..rowIndex, row i has i+1 elements
+ * Space Complexity: O(rowIndex^2) - Stores the entire triangle up to the requested row
  *
- * Edge Cases Handled: rowIndex = 0 (single 1), rowIndex = 1, sum values exceeding single digit (no cap)
+ * Edge Cases Handled: rowIndex=0 returns [1]; rowIndex=1 returns [1,1]; no modular arithmetic needed
  */
 class PascalsTriangleIi {
     public List<Integer> getRow(int rowIndex) {
         List<List<Integer>> res = new ArrayList<>();
-        List<Integer> Fir = new ArrayList<>();
-        Fir.add(1);
-        res.add(Fir);
+        List<Integer> firstRow = new ArrayList<>();
+        firstRow.add(1);
+        res.add(firstRow);
 
         for (int i = 1; i <= rowIndex; i++) {
             List<Integer> prev = res.get(i - 1);

@@ -3,28 +3,28 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Sorting, Counting Sort
  * https://leetcode.com/problems/how-many-numbers-are-smaller-than-the-current-number/
  *
- * Pattern: Brute Force (Nested Loops)
- * Key insight: For each element, count how many other elements are strictly smaller by scanning the whole array.
+ * Pattern: Brute Force Pairwise Comparison
+ * Key insight: For each position i, a second pass over the entire array counts elements strictly less than nums[i], skipping self-comparison via the i != j guard.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(N) - Allocates the result array
+ * Time Complexity: O(N^2) - N elements each compared against all N-1 other elements
+ * Space Complexity: O(N) - Result array of length N stores the count for each position
  *
- * Edge Cases Handled: equal values excluded (strictly smaller), single element (result 0), all equal, smallest/largest in array
+ * Edge Cases Handled: equal values excluded by strict less-than, single element (result is [0]), all identical values (all counts 0), minimum and maximum elements in the array
  */
 class HowManyNumbersAreSmallerThanTheCurrentNumber {
     public int[] smallerNumbersThanCurrent(int[] nums) {
-        int[] res = new int[nums.length];
+        int[] result = new int[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            int s = 0;
+            int smallerCount = 0;
             for (int j = 0; j < nums.length; j++) {
                 if (i != j && nums[i] > nums[j]) {
-                    s++;
+                    smallerCount++;
                 }
 
             }
-            res[i] = s;
+            result[i] = smallerCount;
         }
 
-        return res;
+        return result;
     }
 }

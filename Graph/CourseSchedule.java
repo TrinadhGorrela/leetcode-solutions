@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort, Directed Acyclic Graph
  * https://leetcode.com/problems/course-schedule/
  *
- * Pattern: DFS Cycle Detection (Directed Graph)
- * Key insight: The schedule is possible iff the prerequisite graph has no cycle; run DFS tracking nodes on the current recursion path and return true as soon as a back edge is found.
+ * Pattern: DFS Cycle Detection in Directed Graph
+ * Key insight: Build the prerequisite graph as a DAG check: if DFS encounters a node currently on the recursion stack (recPath), a back edge exists meaning a cycle is present and scheduling is impossible. Nodes fully explored are marked visited to avoid redundant traversal across disconnected components.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(V + E) - Each course and prerequisite edge visited once across all DFS calls
+ * Space Complexity: O(V + E) - Adjacency list for E edges; visited and recPath arrays of size V; recursion stack up to V deep
  *
-* Edge Cases Handled: no prerequisites (trivially schedulable), cycle/back-edge detected via recursion path, disconnected prerequisite graph, single course
+ * Edge Cases Handled: no prerequisites (vacuously acyclic, returns true), cycle detection via recPath back-edge (returns false), disconnected prerequisite graph (outer loop starts DFS from each unvisited course), single course with no prerequisites (returns true)
  */
 class CourseSchedule {
     public boolean canFinish(int numCourses, int[][] prerequisites) {
@@ -40,12 +40,12 @@ class CourseSchedule {
         visited[curr] = true;
         recPath[curr] = true;
 
-        for (int i : adj.get(curr)) {
-            if (!visited[i]) {
-                if (dfs(adj, visited, recPath, i)) {
+        for (int neighbor : adj.get(curr)) {
+            if (!visited[neighbor]) {
+                if (dfs(adj, visited, recPath, neighbor)) {
                     return true;
                 }
-            } else if (recPath[i]) {
+            } else if (recPath[neighbor]) {
                 return true;
             }
         }

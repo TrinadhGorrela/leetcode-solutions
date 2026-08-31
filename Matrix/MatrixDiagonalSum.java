@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Matrix
  * https://leetcode.com/problems/matrix-diagonal-sum/
  *
- * Pattern: Matrix Diagonal Summation
- * Key insight: Add cells on either main diagonal (i==j or i+j == n-1); the two diagonals share only the center on odd n, keeping the sum single-counted via the inclusive condition.
+ * Pattern: Dual-Diagonal Accumulation
+ * Key insight: A cell belongs to the primary diagonal (i == j) or the anti-diagonal (i + j == n−1); on odd n, the center cell satisfies both conditions and is counted only once thanks to the `||` (not double-add).
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n²) - Double loop over the full matrix; could be O(n) with direct diagonal indexing.
+ * Space Complexity: O(1) - Running sum only.
  *
- * Edge Cases Handled: 1x1 matrix (center counted once), odd n (shared center single-counted), even n (no shared center)
+ * Edge Cases Handled: 1×1 matrix (center counted once), odd n (shared center), even n (no overlap)
  */
 class MatrixDiagonalSum {
     public int diagonalSum(int[][] mat) {

@@ -3,13 +3,13 @@
  * Difficulty: Hard | Tags: Backtracking, Algorithm X
  * https://leetcode.com/problems/n-queens-ii/
  *
- * Pattern: Backtracking (Constraint Placement)
- * Key insight: Same N-Queens solution as the full-board variant, but only the total count is returned by checking column, main-diagonal, and anti-diagonal conflicts per placement.
+ * Pattern: Row-by-Row Backtracking with Three-Way Conflict Detection
+ * Key insight: Place one queen per row; for each candidate column, verify no existing queen shares the same column, main diagonal (row - col constant), or anti-diagonal (row + col constant) -- these three O(1) checks per cell prune the entire search tree without auxiliary data structures.
  *
- * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
- * Space Complexity: O(N^2) - Allocates an N x N board array
+ * Time Complexity: O(n!) - place first queen in n columns, second in at most n-1, etc.; conflict checks reduce this further in practice
+ * Space Complexity: O(n^2) for the board representation + O(n) recursion depth
  *
- * Edge Cases Handled: n = 1 (single queen), small boards, column/diagonal boundary checks at board edges
+ * Edge Cases Handled: n = 1 (one solution), n = 2 or n = 3 (zero solutions), boundary cells on first/last column where diagonal indices go out of bounds (guarded by bounds check), full backtracking when no safe column exists in a row
  */
 class NQueensIi {
     public int totalNQueens(int n) {
@@ -20,11 +20,11 @@ class NQueensIi {
             Arrays.fill(board[i], '.');
         }
 
-        queen(board, res, n, 0);
+        placeQueens(board, res, n, 0);
         return res.size();
     }
 
-    public void queen(char[][] board, List<List<String>> res, int n, int row) {
+    public void placeQueens(char[][] board, List<List<String>> res, int n, int row) {
         if (row == n) {
             List<String> solution = new ArrayList<>();
             for (char[] line : board) {
@@ -34,15 +34,15 @@ class NQueensIi {
             return;
         }
         for (int col = 0; col < n; col++) {
-            if (issafe(board, row, col, n)) {
+            if (isSafe(board, row, col, n)) {
                 board[row][col] = 'Q';
-                queen(board, res, n, row + 1);
+                placeQueens(board, res, n, row + 1);
                 board[row][col] = '.';
             }
         }
     }
 
-    public boolean issafe(char[][] board, int row, int col, int n) {
+    public boolean isSafe(char[][] board, int row, int col, int n) {
         for (int i = 0; i < n; i++) {
             if (board[i][col] == 'Q')
                 return false;

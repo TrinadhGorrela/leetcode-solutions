@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Stack, Tree, Depth-First Search, Binary Tree
  * https://leetcode.com/problems/binary-tree-preorder-traversal/
  *
- * Pattern: Depth-First Search
- * Key insight: Recursively traverses the current node, left subtree, then right subtree.
+ * Pattern: Recursive DFS (Root-Left-Right)
+ * Key insight: Visit the root before its children, then recurse left then right — produces a top-down traversal useful for serialization and expression tree prefix notation.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each node is appended to the result list exactly once.
+ * Space Complexity: O(h) - Recursion stack depth equals tree height.
  *
- * Edge Cases Handled: empty tree / null root (returns empty list), single node, skewed tree (left or right only), leaf nodes (null children)
+ * Edge Cases Handled: null root returns empty list, single node, left-only chain, right-only chain, leaf nodes (null children terminate recursion)
  */
 /**
  * Definition for a binary tree node.

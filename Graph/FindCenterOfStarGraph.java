@@ -3,36 +3,36 @@
  * Difficulty: Easy | Tags: Graph Theory
  * https://leetcode.com/problems/find-center-of-star-graph/
  *
- * Pattern: Degree Counting
- * Key insight: In a star graph the center appears in every edge; count occurrences of the two endpoints of the first edge across all edges and return the one with the higher count.
+ * Pattern: Degree Counting on First Edge
+ * Key insight: In a valid star graph the center node appears in every edge. The center must be one of the two endpoints of the first edge; count how many times each appears across all edges and return the one with count == E (appears in all edges). No full degree map needed.
  *
- * Time Complexity: O(E) - Single pass over the edges array
- * Space Complexity: O(1) - Only a few variables for counting
+ * Time Complexity: O(E) - Single pass over all edges, checking two endpoints per edge
+ * Space Complexity: O(1) - Only four integer variables (two endpoints, two counters)
  *
-* Edge Cases Handled: minimal star of a single edge, both first-edge endpoints counted across all edges to break ties
+ * Edge Cases Handled: minimal star graph (single edge, either endpoint is center), both endpoints of first edge checked against all edges to find the true center
  */
 class FindCenterOfStarGraph {
     public int findCenter(int[][] edges) {
-        int s = edges[0][0];
-        int t = edges[0][1];
+        int firstNode = edges[0][0];
+        int secondNode = edges[0][1];
 
-        int countS = 0;
-        int countT = 0;
+        int countFirstNode = 0;
+        int countSecondNode = 0;
 
         for (int[] edge : edges) {
-            if (edge[0] == s || edge[1] == s) {
-                countS++;
+            if (edge[0] == firstNode || edge[1] == firstNode) {
+                countFirstNode++;
             }
 
-            if (edge[0] == t || edge[1] == t) {
-                countT++;
+            if (edge[0] == secondNode || edge[1] == secondNode) {
+                countSecondNode++;
             }
         }
 
-        if (countS > countT) {
-            return s;
+        if (countFirstNode > countSecondNode) {
+            return firstNode;
         }
 
-        return t;
+        return secondNode;
     }
 }

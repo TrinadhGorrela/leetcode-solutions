@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Sorting
  * https://leetcode.com/problems/third-maximum-number/
  *
- * Pattern: Single-Pass (Track Top Three)
- * Key insight: Maintain the top three distinct values, rotating them down as larger values appear; skip duplicates, and return the third if it exists else the maximum.
+ * Pattern: Single-Pass Three-Variable Tracking
+ * Key insight: Maintain three nullable Integer references (first, second, third); on each new distinct value, cascade the old values downward (third = second, second = first) and assign the new max — no sorting or set needed.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - One pass with constant-time comparisons and shifts per element
+ * Space Complexity: O(1) - Three nullable Integer references and loop index only
  *
- * Edge Cases Handled: fewer than 3 distinct (returns max), duplicates skipped, all values equal, minimum Integer value as a candidate
+ * Edge Cases Handled: fewer than 3 distinct values (third remains null, returns first), duplicates explicitly skipped via equality checks, Integer.MIN_VALUE as a valid candidate, all elements identical
  */
 class ThirdMaximumNumber {
     public int thirdMax(int[] nums) {

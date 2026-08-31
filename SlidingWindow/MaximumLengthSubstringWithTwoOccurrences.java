@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Hash Table, String, Sliding Window
  * https://leetcode.com/problems/maximum-length-substring-with-two-occurrences/
  *
- * Pattern: Sliding Window (At Most Two of Each)
- * Key insight: Extend the right edge counting each char; when the newest char exceeds two occurrences, advance the left edge to restore the constraint, maximizing the valid window.
+ * Pattern: Variable Sliding Window with Per-Character Frequency Cap (max 2)
+ * Key insight: Grow the window rightward, incrementing each character's count in a map. When any character's count exceeds 2, shrink from the left (decrementing and advancing) until that character is back to exactly 2. The window is always valid after the while loop, so record its length.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Map keys bounded by alphabet size
+ * Time Complexity: O(N) - Right advances once per iteration; left advances at most N times total; each map operation is O(1)
+ * Space Complexity: O(1) - HashMap holds at most 26 lowercase letters
  *
- * Edge Cases Handled: Single character, all same character (result capped at 2), all characters distinct (full length), third occurrence triggering window shrink
+ * Edge Cases Handled: single character string (result 1), all same character (capped at 2), all distinct characters (full string length), third occurrence of any character triggers left advancement
  */
 class MaximumLengthSubstringWithTwoOccurrences {
     public int maximumLengthSubstring(String s) {

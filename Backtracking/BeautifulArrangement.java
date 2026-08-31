@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Backtracking, Bit Manipulation, Bitmask
  * https://leetcode.com/problems/beautiful-arrangement/
  *
- * Pattern: Backtracking
- * Key insight: Build the arrangement position by position, pruning any candidate where the index condition (i % pos == 0 or pos % i == 0) is not satisfied, and count complete arrangements.
+ * Pattern: Permutation Backtracking with Divisibility Pruning
+ * Key insight: At each position p (1-indexed), only try placing numbers i where i % p == 0 or p % i == 0; this mutual-divisibility constraint prunes entire subtrees early, making the search much faster than brute-force permutation enumeration.
  *
- * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n!) worst case, but practical runtime is far lower due to divisibility pruning eliminating most branches
+ * Space Complexity: O(n) recursion depth + O(n) boolean array for tracking used numbers
  *
- * Edge Cases Handled: n = 1 (single arrangement), no element satisfies the divisibility condition for a position (pruned)
+ * Edge Cases Handled: n = 1 (single arrangement [1]), positions where no unused number satisfies the divisibility condition (backtrack immediately), all numbers equal to 1 (only one valid arrangement)
  */
 class BeautifulArrangement {
     public int countArrangement(int n) {
@@ -19,13 +19,12 @@ class BeautifulArrangement {
         }
 
         int count = 0;
-        List<List<Integer>> res = new ArrayList<>();
-        count = solve(nums, new ArrayList<>());
+        count = backtrack(nums, new ArrayList<>());
 
         return count;
     }
 
-    public static int solve(int[] nums, List<Integer> temp) {
+    public static int backtrack(int[] nums, List<Integer> temp) {
         if (temp.size() == nums.length) {
             return 1;
         }
@@ -42,7 +41,7 @@ class BeautifulArrangement {
             }
 
             temp.add(nums[i]);
-            count += solve(nums, temp);
+            count += backtrack(nums, temp);
             temp.remove(temp.size() - 1);
         }
         return count;

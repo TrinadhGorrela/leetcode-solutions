@@ -3,37 +3,37 @@
  * Difficulty: Easy | Tags: Array, Sliding Window
  * https://leetcode.com/problems/defuse-the-bomb/
  *
- * Pattern: Prefix Sum
- * Key insight: Duplicate the code array to handle the circular window, build a prefix sum of length 2N, and compute each window sum with O(1) prefix differences (special-case k == 0).
+ * Pattern: Circular Array via Prefix Sum on Doubled Array
+ * Key insight: Duplicate the code array to length 2N and build a prefix sum over it. Each window sum becomes a single O(1) prefix-difference subtraction: result[i] = prefix[i+k] - prefix[i] for k > 0, and symmetrically for k < 0 using the mirrored region.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
+ * Time Complexity: O(N) - One pass to build the 2N prefix array, one pass to compute each element of the result
+ * Space Complexity: O(N) - Prefix array of length 2N (input-sized, constant factor)
  *
- * Edge Cases Handled: k = 0 (all zeros), negative k (previous elements), circular wrap-around, single element
+ * Edge Cases Handled: k = 0 (returns all zeros immediately), negative k (sums preceding elements via the second half of the prefix), single-element array
  */
 class DefuseTheBomb {
     public int[] decrypt(int[] code, int k) {
-        int t = code.length;
-        int[] prefix = new int[2 * t];
-        int[] res = new int[t];
+        int length = code.length;
+        int[] prefix = new int[2 * length];
+        int[] result = new int[length];
         prefix[0] = code[0];
 
         if (k == 0)
-            return res;
+            return result;
 
-        for (int i = 1; i < 2 * t; i++) {
-            prefix[i] = code[i % t] + prefix[i - 1];
+        for (int i = 1; i < 2 * length; i++) {
+            prefix[i] = code[i % length] + prefix[i - 1];
         }
         if (k > 0) {
-            for (int i = 0; i < t; i++) {
-                res[i] = prefix[i + k] - prefix[i];
+            for (int i = 0; i < length; i++) {
+                result[i] = prefix[i + k] - prefix[i];
             }
         } else {
-            for (int i = t; i < 2 * t; i++) {
-                res[i - t] = prefix[i - 1] - prefix[i + k - 1];
+            for (int i = length; i < 2 * length; i++) {
+                result[i - length] = prefix[i - 1] - prefix[i + k - 1];
 
             }
         }
-        return res;
+        return result;
     }
 }

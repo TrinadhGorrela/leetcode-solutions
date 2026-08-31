@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/reverse-words-in-a-string-iii/
  *
- * Pattern: Two Pointers (Per-Word Reversal)
- * Key insight: Mark each word's start, and on each space reverse the just-completed word by swapping its boundaries; reverse the final word after the loop.
+ * Pattern: Single-Pass Per-Word In-Place Reversal
+ * Key insight: Convert to char[] and track each word's start index; on every space (or end-of-string), reverse just that word's range with an inner two-pointer swap—no String.split overhead.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Allocates memory for string processing
+ * Time Complexity: O(N) - One outer pass + each character swapped at most once across all inner reversals
+ * Space Complexity: O(N) - char[] copy needed since Java Strings are immutable
  *
- * Edge Cases Handled: Empty string, single word (no spaces), multiple words, single-character words
+ * Edge Cases Handled: Leading/trailing spaces (none per contract but code is robust), multiple consecutive spaces, single-character words, entire string as one word
  */
 class ReverseWordsInAStringIii {
     public String reverseWords(String s) {

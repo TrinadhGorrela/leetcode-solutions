@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, Dynamic Programming, Combinatorics
  * https://leetcode.com/problems/count-sorted-vowel-strings/
  *
- * Pattern: Dynamic Programming (Counting)
- * Key insight: dp[i][j] counts strings of length i ending with the j-th vowel; each extends only from vowels <= itself to preserve sorted order, and the answer is the sum of the final row.
+ * Pattern: 2D counting DP with suffix-sum recurrence
+ * Key insight: dp[i][j] = number of sorted strings of length i using vowels[j..4]; the backward inner loop computes a suffix sum so each position accumulates all valid extensions from equal or later vowels.
  *
- * Time Complexity: O(N) - Inner loop is bounded by a constant (5 vowels)
- * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
+ * Time Complexity: O(n) - Outer loop n, inner loop is constant 5
+ * Space Complexity: O(n*5) = O(n) - 2D array with 5 columns
  *
- * Edge Cases Handled: n = 1 (returns 5), strings of length 1 seeded directly
+ * Edge Cases Handled: n=1 returns 5; base row dp[1][j]=1 for each vowel; answer is sum of dp[n][0..4]
  */
 class CountSortedVowelStrings {
     public int countVowelStrings(int n) {
@@ -30,11 +30,11 @@ class CountSortedVowelStrings {
             }
         }
 
-        int res = 0;
+        int totalWays = 0;
         for (int i = 0; i < 5; i++) {
-            res += dp[n][i];
+            totalWays += dp[n][i];
         }
 
-        return res;
+        return totalWays;
     }
 }

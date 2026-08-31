@@ -4,12 +4,12 @@
  * https://leetcode.com/problems/first-bad-version/
  *
  * Pattern: Binary Search (Lower Bound)
- * Key insight: Versions form a monotonic bad-after-a-point sequence; find the first index where isBadVersion is true by moving the upper bound to mid on a bad version and the lower bound past mid otherwise.
+ * Key insight: Versions form a monotonic [good...good, bad...bad] sequence; when mid is bad, set end = mid (it could be the first bad); when mid is good, set start = mid + 1 (first bad is strictly after). Converges when start == end.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log n) - Interval halves each step.
+ * Space Complexity: O(1) - Two pointers: start, end.
  *
- * Edge Cases Handled: n = 1, first version is bad (start stays 1), last version is first bad (end converges to n), all versions good/good-then-bad
+ * Edge Cases Handled: n = 1, first version is bad (start never advances past 1), last version is first bad, all versions good
  */
 /* The isBadVersion API is defined in the parent class VersionControl.
       boolean isBadVersion(int version); */
@@ -23,7 +23,6 @@ public class FirstBadVersion extends VersionControl {
             if (isBadVersion(mid)) {
                 end = mid;
             } else {
-
                 start = mid + 1;
             }
         }

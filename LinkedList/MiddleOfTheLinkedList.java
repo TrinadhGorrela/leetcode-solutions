@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Linked List, Two Pointers
  * https://leetcode.com/problems/middle-of-the-linked-list/
  *
- * Pattern: Two Pointers (Slow / Fast Runner)
- * Key insight: Advance a slow pointer one step and a fast pointer two steps; when the fast pointer reaches the end, the slow pointer sits exactly at the middle (second middle for even length).
+ * Pattern: Fast / Slow Runner
+ * Key insight: Advance slow by one and fast by two; when fast reaches the end, slow is at the second middle (for even-length lists) because it traveled exactly half the distance.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Slow traverses half the list.
+ * Space Complexity: O(1) - Two pointers: slow, fast.
  *
- * Edge Cases Handled: single node (returns it), even number of nodes (returns the second middle), odd number of nodes
+ * Edge Cases Handled: single node (returned as-is), even-length list (returns the second middle), odd-length list
  */
 /**
  * Definition for singly-linked list.

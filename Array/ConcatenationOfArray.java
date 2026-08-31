@@ -3,22 +3,22 @@
  * Difficulty: Easy | Tags: Array, Simulation
  * https://leetcode.com/problems/concatenation-of-array/
  *
- * Pattern: Simulation
- * Key insight: Allocate an array of size 2N and copy each element into both position i and position i + N.
+ * Pattern: Double-Write Loop
+ * Key insight: Allocate a 2N result array and write each nums[i] to both position i and position i+N in a single pass, producing nums+nums without string concatenation.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Allocates the result array
+ * Time Complexity: O(N) - One pass writing two result slots per iteration
+ * Space Complexity: O(N) - Output array of exactly 2N elements
  *
- * Edge Cases Handled: empty input, single element
+ * Edge Cases Handled: single element (writes to positions 0 and 1), empty array (2*0 = 0-length output)
  */
 class ConcatenationOfArray {
     public int[] getConcatenation(int[] nums) {
         int n = nums.length;
-        int[] ans = new int[2 * n];
+        int[] result = new int[2 * n];
         for (int i = 0; i < n; i++) {
-            ans[i] = nums[i];
-            ans[n + i] = nums[i];
+            result[i] = nums[i];
+            result[n + i] = nums[i];
         }
-        return ans;
+        return result;
     }
 }

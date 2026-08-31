@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Hash Table, String, Counting
  * https://leetcode.com/problems/maximum-number-of-balloons/
  *
- * Pattern: Hash Map (Character Counting)
- * Key insight: Count occurrences of the letters in 'balloon'; the answer is the minimum of b, a, n and half of l and o (since l and o appear twice).
+ * Pattern: Character Frequency Counting
+ * Key insight: Count every character in the text; "balloon" needs b=1, a=1, l=2, o=2, n=1—so the answer is min(count[b], count[a], count[l]/2, count[o]/2, count[n]).
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - One pass to build frequency map, O(1) to compute min.
+ * Space Complexity: O(1) - At most 26 entries in the map.
  *
- * Edge Cases Handled: missing required letters (returns 0), all 26 letters present, odd count of 'l' or 'o' (halved correctly), text without enough of any single letter
+ * Edge Cases Handled: missing any required letter (returns 0), odd count of 'l' or 'o' (integer division floors correctly), text contains no letters from "balloon"
  */
 class MaximumNumberOfBalloons {
     public int maxNumberOfBalloons(String text) {

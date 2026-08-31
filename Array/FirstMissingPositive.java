@@ -3,13 +3,13 @@
  * Difficulty: Hard | Tags: Array, Hash Table
  * https://leetcode.com/problems/first-missing-positive/
  *
- * Pattern: Hash Set
- * Key insight: Store all elements in a set, then scan upward from 1 to find the first positive integer not present. (Suboptimal O(N) space; an O(1)-space in-place marking solution also exists.)
+ * Pattern: HashSet + Linear Probe from 1
+ * Key insight: The answer is at most n+1 (array of size n can hold at most n consecutive positives starting at 1), so probing from 1 with a HashSet gives O(n) time — suboptimal space, but simple and correct.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly (Optimal time, but suboptimal O(N) space approach)
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - One pass to build the set, at most N+1 contains checks
+ * Space Complexity: O(N) - HashSet stores all N elements
  *
- * Edge Cases Handled: no positive integers (answer 1), all positives in sequence (answer n+1), negatives and zeros ignored, duplicate values
+ * Edge Cases Handled: no positive integers in array (answer is 1), all 1..n present (answer is n+1), negatives and zeros (ignored by probe), duplicates (absorbed by set)
  */
 class FirstMissingPositive {
     public int firstMissingPositive(int[] nums) {

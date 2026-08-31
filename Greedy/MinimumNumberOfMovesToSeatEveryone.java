@@ -3,24 +3,24 @@
  * Difficulty: Easy | Tags: Array, Greedy, Sorting, Counting Sort
  * https://leetcode.com/problems/minimum-number-of-moves-to-seat-everyone/
  *
- * Pattern: Sorting + Greedy
- * Key insight: Pair each student with the closest seat; after sorting both arrays, summing pairwise absolute differences yields the minimum total movement.
+ * Pattern: Sort-and-Pair Optimal Matching
+ * Key insight: By the rearrangement inequality, pairing the i-th smallest student with the i-th smallest seat minimizes the sum of absolute displacements — sorting both arrays and taking elementwise differences is both necessary and sufficient.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N log N) - Two sorts dominate; the difference scan is O(N)
+ * Space Complexity: O(1) - In-place sorts and scalar accumulator
  *
- * Edge Cases Handled: single seat/student, seats equal to student positions, unsorted input
+ * Edge Cases Handled: all students already in their seats (total moves = 0), single student, identical seat positions, students and seats in completely reversed order
  */
 class MinimumNumberOfMovesToSeatEveryone {
     public int minMovesToSeat(int[] seats, int[] students) {
         Arrays.sort(seats);
         Arrays.sort(students);
 
-        int res = 0;
+        int totalMoves = 0;
         for (int i = 0; i < seats.length; i++) {
-            res += Math.abs(seats[i] - students[i]);
+            totalMoves += Math.abs(seats[i] - students[i]);
         }
 
-        return res;
+        return totalMoves;
     }
 }

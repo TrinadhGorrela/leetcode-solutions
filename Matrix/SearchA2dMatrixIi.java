@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Divide and Conquer, Matrix
  * https://leetcode.com/problems/search-a-2d-matrix-ii/
  *
- * Pattern: Staircase Search (Start Top-Right)
- * Key insight: Start at the top-right corner; move left when the cell is larger than the target and down when it is smaller, eliminating a full row or column each step.
+ * Pattern: Staircase Search (Top-Right Start)
+ * Key insight: Start at the top-right corner: if the cell equals target, found; if larger, eliminate the entire column (move left); if smaller, eliminate the entire row (move down). Each step removes a full row or column.
  *
- * Time Complexity: O(M+N) - Staircase search starting from top-right or bottom-left
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(m + n) - At most m downward moves + n leftward moves.
+ * Space Complexity: O(1) - Two indices: row, col.
  *
- * Edge Cases Handled: target not found (returns false), single row or single column, target at top-right start cell
+ * Edge Cases Handled: target absent (returns false), single row or column, target at the starting top-right cell, target at bottom-left
  */
 class SearchA2dMatrixIi {
     public boolean searchMatrix(int[][] matrix, int target) {

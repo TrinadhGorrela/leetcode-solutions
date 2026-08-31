@@ -4,12 +4,12 @@
  * https://leetcode.com/problems/reverse-linked-list/
  *
  * Pattern: Iterative In-Place Reversal
- * Key insight: Sweep with curr/prev/next, flipping each node's next pointer to its predecessor as the traversal advances; prev ends up as the new head.
+ * Key insight: Maintain prev, curr, next; at each step, save curr.next, point curr.next back to prev, then advance both pointers. After the loop, prev sits at the new head.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Single traversal, each pointer moves once.
+ * Space Complexity: O(1) - Three pointers: prev, curr, next.
  *
- * Edge Cases Handled: null head (returns null), single node (returns it unchanged), two nodes
+ * Edge Cases Handled: null list (prev stays null), single node (returned unchanged), two nodes
  */
 /**
  * Definition for singly-linked list.

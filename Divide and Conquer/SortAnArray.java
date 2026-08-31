@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Divide and Conquer, Sorting, Heap (Priority Queue), Merge Sort, Bucket Sort, Radix Sort, Counting Sort
  * https://leetcode.com/problems/sort-an-array/
  *
- * Pattern: Merge Sort (Divide & Conquer)
- * Key insight: Recursively split the array in half and merge sorted halves into a temporary array, copying the merged run back in place.
+ * Pattern: Top-Down Merge Sort
+ * Key insight: Recursively split the array at the midpoint until single-element base cases, then merge two sorted halves back in-place using a temporary buffer—classic divide-and-conquer yielding guaranteed O(n log n).
  *
- * Time Complexity: O(N log N) - Merge sort is O(N log N)
- * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
+ * Time Complexity: O(n log n) - Array is halved log n times; each merge level scans all n elements.
+ * Space Complexity: O(n) - Temporary array used during each merge pass.
  *
- * Edge Cases Handled: single element, already sorted, reverse-sorted, all equal (no swaps), negative values
+ * Edge Cases Handled: single element (base case), already sorted input, reverse-sorted input, all equal elements, negative values
  */
 class SortAnArray {
     public int[] sortArray(int[] nums) {

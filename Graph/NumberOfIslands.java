@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Depth-First Search, Breadth-First Search, Union-Find, Matrix
  * https://leetcode.com/problems/number-of-islands/
  *
- * Pattern: BFS (Grid Connected Components)
- * Key insight: Scan the grid; each time an unvisited '1' is found, increment the island count and BFS-flood its entire connected component of 1s marking them visited.
+ * Pattern: BFS Connected Components on Grid
+ * Key insight: Each unvisited '1' cell starts a new island; BFS floods the entire 4-connected component of land cells, marking them visited. The flood guarantees no cell in the same island is counted twice, since BFS only enqueues unvisited land neighbors.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(M * N) - Grid scan is M*N; BFS visits each land cell exactly once across all islands
+ * Space Complexity: O(M * N) - Visited matrix and BFS queue both scale with grid size
  *
- * Edge Cases Handled: all-water grid (zero islands), single-cell island, islands at grid borders/corners, diagonal 1s not connected
+ * Edge Cases Handled: all-water grid (returns 0), single-cell island at any position, diagonal '1's not connected (treated as separate islands), islands touching grid borders or corners
  */
 class NumberOfIslands {
     public int numIslands(char[][] grid) {

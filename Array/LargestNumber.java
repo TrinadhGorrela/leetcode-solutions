@@ -3,29 +3,29 @@
  * Difficulty: Medium | Tags: Array, String, Greedy, Sorting
  * https://leetcode.com/problems/largest-number/
  *
- * Pattern: Sorting (Custom Comparator)
- * Key insight: Convert numbers to strings and sort by the concatenation comparator (b+a).compareTo(a+b) so the largest combined number comes first; guard against the all-zeros case.
+ * Pattern: Custom Concatenation Sort
+ * Key insight: The comparator (b+a).compareTo(a+b) is transitive and encodes which digit arrangement is lexicographically larger — e.g., "34" > "3" but "3" > "30", so the sort produces the globally optimal concatenation.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(N) - Uses a string array
+ * Time Complexity: O(N log N) - Sorting N string conversions; each comparison is O(L) where L is digit count
+ * Space Complexity: O(N) - String array for N converted numbers
  *
- * Edge Cases Handled: all zeros (returns "0" not "000..."), single element, numbers with common prefixes, leading-zero formatting avoided
+ * Edge Cases Handled: all zeros (leading-zero guard returns "0"), single element, numbers sharing common prefixes (e.g., 3 and 34), leading zeros avoided by integer-to-string conversion
  */
 class LargestNumber {
     public String largestNumber(int[] nums) {
-        String[] t = new String[nums.length];
+        String[] strNums = new String[nums.length];
         for (int i = 0; i < nums.length; i++) {
-            t[i] = nums[i] + "";
+            strNums[i] = nums[i] + "";
         }
-        Arrays.sort(t, (a, b) -> (b + a).compareTo(a + b));
-        StringBuilder s = new StringBuilder();
+        Arrays.sort(strNums, (a, b) -> (b + a).compareTo(a + b));
+        StringBuilder builder = new StringBuilder();
 
-        if (t[0].equals("0")) {
+        if (strNums[0].equals("0")) {
             return "0";
         }
-        for (int i = 0; i < t.length; i++) {
-            s.append(t[i] + "");
+        for (int i = 0; i < strNums.length; i++) {
+            builder.append(strNums[i] + "");
         }
-        return s.toString();
+        return builder.toString();
     }
 }

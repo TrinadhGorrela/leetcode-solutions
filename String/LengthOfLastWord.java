@@ -3,30 +3,18 @@
  * Difficulty: Easy | Tags: String
  * https://leetcode.com/problems/length-of-last-word/
  *
- * Pattern: Backward Scan (Trailing Whitespace Trim)
- * Key insight: Skip trailing spaces from the end, then count non-space characters until the next space to measure just the last word.
+ * Pattern: Split-and-Count
+ * Key insight: Trim leading/trailing whitespace, split on whitespace boundaries, and return the length of the last element in the resulting array.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Trim and split each scan the string once.
+ * Space Complexity: O(n) - Split array holds all words.
  *
- * Edge Cases Handled: Trailing spaces, single word, multiple words, leading spaces, last word at the start of the string
+ * Edge Cases Handled: trailing spaces, leading spaces, single word, multiple spaces between words
  */
 class LengthOfLastWord {
     public int lengthOfLastWord(String s) {
-        int res = 0;
-        int a = s.length() - 1;
-        
-        while (a >= 0 && s.charAt(a) == ' ') {
-            a--;
-        }
-        for (int i = a; i >= 0; i--) {
-            if (s.charAt(i) != ' ') {
-                res++;
-            }
-            if (s.charAt(i) == ' ') {
-                break;
-            }
-        }
-        return res;
+        String[] words = s.trim("\\s+");
+        String last = words[words.length - 1];
+        return last.length();
     }
 }

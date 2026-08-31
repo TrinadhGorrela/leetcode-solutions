@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Math, Simulation, Number Theory
  * https://leetcode.com/problems/add-digits/
  *
- * Pattern: Digital Root (mod 9)
- * Key insight: The repeated digit sum equals the digital root: 0 for 0, 9 when divisible by 9, otherwise num % 9.
+ * Pattern: Digital Root (Modulo 9 Closed Form)
+ * Key insight: Repeatedly summing a number's digits yields its digital root, expressible in closed form: 0 for n = 0, 9 when n % 9 == 0, and n % 9 otherwise — avoiding all iteration.
  *
- * Time Complexity: O(1) - Computes the result mathematically without any iteration
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(1) - Single modulo check, no digit loop
+ * Space Complexity: O(1) - No auxiliary data structures
  *
-* Edge Cases Handled: num = 0 (returns 0), exact multiples of 9 (returns 9), num already a single digit
+ * Edge Cases Handled: n = 0 (returned as 0, not 9), exact multiples of 9 (digit root 9, handled by the explicit check since n % 9 would give 0), single-digit n already at its root
  */
 class AddDigits {
     public int addDigits(int num) {

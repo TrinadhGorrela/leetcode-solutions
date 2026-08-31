@@ -3,22 +3,22 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Greedy
  * https://leetcode.com/problems/jump-game/
  *
- * Pattern: Greedy (Reachability via Farthest Reach)
- * Key insight: Track the farthest index reachable so far; if any position is beyond the current reach the array is unwinnable, and reaching or exceeding the last index means success.
+ * Pattern: Greedy (Expanding Reachability Window)
+ * Key insight: Maintain the farthest reachable index; if the current index ever exceeds that bound, no path forward exists — otherwise greedily extend the window and short-circuit as soon as the last index is reachable.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Single pass; early exit when farthestReach >= last index
+ * Space Complexity: O(1) - Only one tracking variable (farthestReach)
  *
- * Edge Cases Handled: single element (immediately reachable), stuck at a zero (returns false), already at last index, element with jump reaching exactly the end
+ * Edge Cases Handled: single element (trivially reachable), leading zero that blocks progress (returns false), first jump already covers the entire array, zero-length effective path from index 0
  */
 class JumpGame {
     public boolean canJump(int[] nums) {
-        int max = 0;
+        int farthestReach = 0;
         for (int i = 0; i < nums.length; i++) {
-            if (max < i)
+            if (farthestReach < i)
                 return false;
-            max = Math.max(max, i + nums[i]);
-            if (max >= nums.length - 1)
+            farthestReach = Math.max(farthestReach, i + nums[i]);
+            if (farthestReach >= nums.length - 1)
                 return true;
         }
         return false;

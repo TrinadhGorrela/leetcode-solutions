@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/best-time-to-buy-and-sell-stock/
  *
- * Pattern: One-Pass Min Tracking (Greedy)
- * Key insight: Track the minimum price seen so far and compute the maximum profit by taking each price as the sell price, updating profit = max(profit, price - minPrice) on the fly.
+ * Pattern: Single-Pass Min Tracking
+ * Key insight: The optimal sell price is always evaluated against the cheapest prior buy price; maintaining a running minimum lets each day compute its potential profit in O(1), making the global maximum profit a single-pass scan.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - One pass through prices with O(1) work per element
+ * Space Complexity: O(1) - Two variables (minPrice, maxProfit)
  *
- * Edge Cases Handled: single element (profit 0), all decreasing prices, all equal prices
+ * Edge Cases Handled: single price (profit stays 0), monotonically decreasing prices (minPrice updates but profit never beats 0), first day is also the cheapest (profit = last - first)
  */
 class BestTimeToBuyAndSellStock {
     public int maxProfit(int[] prices) {

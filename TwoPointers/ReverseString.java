@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Two Pointers, String
  * https://leetcode.com/problems/reverse-string/
  *
- * Pattern: Two Pointers (In-Place Swap)
- * Key insight: Swap the characters at two pointers moving from both ends toward the center, reversing the array in place.
+ * Pattern: In-Place Two-Pointer Swap
+ * Key insight: Swap s[left] and s[right] then advance both inward; the loop terminates when left >= right, naturally handling both even and odd lengths without separate logic.
  *
- * Time Complexity: O(N) - Two pointers approach iterating through elements once
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - N/2 swaps, each O(1)
+ * Space Complexity: O(1) - One temp char variable; all swaps happen in the input array
  *
- * Edge Cases Handled: Empty array, single element (self-swap no-op), even and odd length arrays
+ * Edge Cases Handled: Empty array (loop never enters), single element (left == right, no-op), even-length (pointers meet between elements), odd-length (middle element stays put)
  */
 class ReverseString {
     public void reverseString(char[] s) {

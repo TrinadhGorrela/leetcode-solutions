@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Greedy, Sorting, Timsort
  * https://leetcode.com/problems/boats-to-save-people/
  *
- * Pattern: Sorting + Two Pointers (Opposite Ends)
- * Key insight: Sort weights; pair the lightest and heaviest remaining people, sending the heaviest alone if they exceed the limit, else together, counting one boat per pass.
+ * Pattern: Sort + Greedy Two-Pointer Pairing
+ * Key insight: Greedily pair the heaviest person with the lightest person who fits (maximizing boat utilization); if no one fits alongside, the heaviest rides alone—sorting makes this a single-pass two-pointer scan.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N log N) - Sorting dominates; the two-pointer scan is O(N)
+ * Space Complexity: O(1) - Three integers (left, right, boat count) beyond the sort
  *
- * Edge Cases Handled: Single person (rides alone), heaviest person exceeding limit when paired, all people fit in pairs, lowest weight person riding with heaviest
+ * Edge Cases Handled: Heaviest person exceeds limit alone (boats still counted), everyone fits in pairs (N/2 boats), single person, all people at the same weight, lightest + heaviest exactly equals limit
  */
 class BoatsToSavePeople {
     public int numRescueBoats(int[] people, int limit) {

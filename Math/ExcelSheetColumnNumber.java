@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Math, String
  * https://leetcode.com/problems/excel-sheet-column-number/
  *
- * Pattern: Base-26 Conversion
- * Key insight: Treat the column title as a base-26 number (A=1...Z=26); fold each letter into the running total with sum = sum*26 + digit.
+ * Pattern: Base-26 Decoding (Horner Folding)
+ * Key insight: Map each letter to its 1-based value (A=1..Z=26) via c - 'A' + 1, then fold left-to-right as sum = sum * 26 + digit, yielding the numeric column index in one pass.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(L) - One iteration per character in the title
+ * Space Complexity: O(1) - Only the running sum and per-character value
  *
-* Edge Cases Handled: single-letter column (A = 1), multi-letter titles folded left with base-26 arithmetic, uppercase letters assumed
+ * Edge Cases Handled: single-letter titles (A -> 1, Z -> 26), multi-letter titles folded correctly with the base-26 multiplier, uppercase-only input assumed by the c - 'A' mapping
  */
 class ExcelSheetColumnNumber {
     public int titleToNumber(String columnTitle) {

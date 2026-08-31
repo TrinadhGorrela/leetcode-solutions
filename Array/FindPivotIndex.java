@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Prefix Sum
  * https://leetcode.com/problems/find-pivot-index/
  *
- * Pattern: Prefix Sum
- * Key insight: Precompute left and right cumulative sums for each index; the pivot is the first index where the sum of elements on the left equals the sum on the right.
+ * Pattern: Dual Prefix-Sum Arrays
+ * Key insight: Build a left prefix sum and a reversed right prefix sum, each of length N+1 with index 0 = 0; for index i, leftSum[i] is the sum of elements left of i and rightSum[N-i-1] is the sum right of i.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses prefix/suffix arrays (can be optimized to O(1) space)
+ * Time Complexity: O(N) - Three linear passes: one forward (left sums), one reverse (right sums), one comparison pass
+ * Space Complexity: O(N) - Two auxiliary arrays of length N+1 store the left and right cumulative sums
  *
- * Edge Cases Handled: single element (pivot 0), pivot at first index (empty left sum), pivot at last index (empty right sum), no pivot (returns -1), negative values
+ * Edge Cases Handled: single element (leftSum[0]=rightSum[0]=0, pivot 0), pivot at index 0 (empty left sum), pivot at last index (empty right sum), no valid pivot (returns -1)
  */
 class FindPivotIndex {
     public int pivotIndex(int[] nums) {

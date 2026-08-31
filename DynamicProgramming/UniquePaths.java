@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, Dynamic Programming, Combinatorics
  * https://leetcode.com/problems/unique-paths/
  *
- * Pattern: Dynamic Programming (Grid Counting)
- * Key insight: dp[i][j] = number of ways to reach cell (i,j), equal to the sum of the ways from the cell above and the cell to the left; edges are seeded to 1.
+ * Pattern: 2D grid DP, path counting from top-left
+ * Key insight: dp[i][j] = dp[i-1][j] + dp[i][j-1] because every path to (i,j) must arrive from directly above or directly left; first row and first column are all 1s since there's only one way along an edge.
  *
- * Time Complexity: O(M * N) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(M * N) - Allocates a full 2D DP grid
+ * Time Complexity: O(m*n) - Fill every cell of the m x n grid
+ * Space Complexity: O(m*n) - Full 2D DP table
  *
- * Edge Cases Handled: 1x1 grid (returns 1), single row or single column (exactly 1 path), start cell
+ * Edge Cases Handled: 1x1 grid returns 1; single row or column returns 1 (only one straight-line path)
  */
 class UniquePaths {
     public int uniquePaths(int m, int n) {

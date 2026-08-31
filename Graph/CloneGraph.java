@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Hash Table, Depth-First Search, Breadth-First Search, Graph Theory
  * https://leetcode.com/problems/clone-graph/
  *
- * Pattern: DFS + Hash Map (Memoized Clone)
- * Key insight: Recursively clone each node, using a map keyed by node value to return already-cloned nodes and break cycles; each neighbor is cloned via DFS.
+ * Pattern: DFS with Memoization Map
+ * Key insight: Clone each node on first visit and store it in a value-keyed map. When DFS encounters a neighbor already in the map, it reuses the existing clone instead of creating a duplicate, which both breaks cycles and avoids redundant work. The map serves as both a visited set and a clone registry.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(V + E) - Each node cloned once; each edge traversed once to link neighbors
+ * Space Complexity: O(V) - HashMap stores V cloned nodes; recursion stack up to V deep
  *
-* Edge Cases Handled: null node (returns null), self-loops and cycles (already-cloned nodes returned via map), single isolated node with no neighbors
+ * Edge Cases Handled: null input node (returns null immediately), self-loop (map lookup returns the node's own clone), cycle in graph (map prevents infinite recursion), single isolated node with no neighbors (cloned with empty neighbor list)
  */
 /*
 // Definition for a Node.
@@ -32,7 +32,6 @@ class Node {
 */
 
 class CloneGraph {
-
     public Node cloneGraph(Node node) {
         Map<Integer, Node> visited = new HashMap<>();
         return dfs(visited, node);
@@ -47,16 +46,16 @@ class CloneGraph {
             return visited.get(node.val);
         }
 
-        Node temp = new Node(node.val);
-        visited.put(node.val, temp);
+        Node clone = new Node(node.val);
+        visited.put(node.val, clone);
 
         for (Node i : node.neighbors) {
             if (!visited.containsKey(i.val)) {
-                temp.neighbors.add(dfs(visited, i));
+                clone.neighbors.add(dfs(visited, i));
             } else {
-                temp.neighbors.add(visited.get(i.val));
+                clone.neighbors.add(visited.get(i.val));
             }
         }
-        return temp;
+        return clone;
     }
 }

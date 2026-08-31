@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Binary Search
  * https://leetcode.com/problems/find-first-and-last-position-of-element-in-sorted-array/
  *
- * Pattern: Two Binary Searches
- * Key insight: The core trick is to adapt binary search to find the first and last occurrences by continuing the search on one side even after a match is found.
+ * Pattern: Dual Binary Search (Lower/Upper Bound)
+ * Key insight: A single helper runs standard binary search but takes an `isLeft` flag: on a match, record the index and continue searching left (for first) or right (for last) instead of returning immediately.
  *
- * Time Complexity: O(log n) - Two binary searches on array of size n.
- * Space Complexity: O(1) - Constant extra space used for variables.
+ * Time Complexity: O(log n) - Two independent binary searches, each halving the range.
+ * Space Complexity: O(1) - Only pointer variables and one intermediate index.
  *
- * Edge Cases Handled: target not found (both indices -1), single element, single occurrence (first == last), target at boundaries
+ * Edge Cases Handled: target absent (both return -1), single element array, first == last when target appears exactly once, target at array boundaries
  */
 class FindFirstAndLastPositionOfElementInSortedArray {
     public int[] searchRange(int[] nums, int target) {
@@ -19,13 +19,13 @@ class FindFirstAndLastPositionOfElementInSortedArray {
     private static int findIndex(int[] nums, int target, boolean isLeft) {
         int left = 0;
         int right = nums.length - 1;
-        int in = -1;
+        int foundIndex = -1;
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
 
             if (nums[mid] == target) {
-                in = mid;
+                foundIndex = mid;
                 if (isLeft) {
                     right = mid - 1;
                 } else {
@@ -37,6 +37,6 @@ class FindFirstAndLastPositionOfElementInSortedArray {
                 right = mid - 1;
             }
         }
-        return in;
+        return foundIndex;
     }
 }

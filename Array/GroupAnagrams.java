@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Hash Table, String, Sorting
  * https://leetcode.com/problems/group-anagrams/
  *
- * Pattern: Hash Table (Canonical Form)
- * Key insight: Anagrams share the same sorted character sequence; sort each word and group words by their sorted-key in a hash map.
+ * Pattern: Sorted-String Key Hashing
+ * Key insight: Sorting each string's characters produces a canonical form — all anagrams map to the same key, so a single HashMap pass groups them without pairwise comparison.
  *
- * Time Complexity: O(N * L log L) - Sorting each string of max length L
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N * L log L) - N strings each sorted in O(L log L) where L is max string length
+ * Space Complexity: O(N * L) - HashMap holds all N strings plus their sorted keys of length up to L
  *
- * Edge Cases Handled: single string, empty strings (all anagrams), repeated identical strings, all distinct
+ * Edge Cases Handled: empty strings (grouped together as valid anagrams), single-character strings, all strings identical (single group), all strings unique (N groups of size 1)
  */
 class GroupAnagrams {
     public List<List<String>> groupAnagrams(String[] strs) {
@@ -17,13 +17,13 @@ class GroupAnagrams {
         for (String s : strs) {
             char[] c = s.toCharArray();
             Arrays.sort(c);
-            String temp = new String(c);
-            if (!map.containsKey(temp)) {
-                map.put(temp, new ArrayList<>());
+            String key = new String(c);
+            if (!map.containsKey(key)) {
+                map.put(key, new ArrayList<>());
             }
-            map.get(temp).add(s);
+            map.get(key).add(s);
         }
-        List<List<String>> res=new ArrayList<>(map.values());
-        return res;
+        List<List<String>> result = new ArrayList<>(map.values());
+        return result;
     }
 }

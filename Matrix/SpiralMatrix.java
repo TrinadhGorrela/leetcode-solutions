@@ -3,43 +3,43 @@
  * Difficulty: Medium | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/spiral-matrix/
  *
- * Pattern: Boundary Shrinking (Spiral Simulation)
- * Key insight: Walk four edges of the current bounds (top, right, bottom, left), shrink the bounds inward each lap, guarding the bottom/left passes for single-row or single-column cases.
+ * Pattern: Boundary Shrinking Spiral Traversal
+ * Key insight: Walk the four edges of the current bounds (top row → right col → bottom row → left col), then shrink each boundary inward. Guard the bottom and left passes with `rowBegin ≤ rowEnd` / `colBegin ≤ colEnd` to avoid double-counting in single-row or single-column remnants.
  *
- * Time Complexity: O(M * N) - Traverses every element in the M x N matrix exactly once
- * Space Complexity: O(M * N) - Stores all matrix elements in the output list
+ * Time Complexity: O(m·n) - Each element visited exactly once.
+ * Space Complexity: O(m·n) - Output list holds all elements.
  *
- * Edge Cases Handled: single row, single column, 1x1 matrix, single-row/single-column traversal (guarded bottom and left passes)
+ * Edge Cases Handled: single row, single column, 1×1 matrix, odd vs. even dimensions (innermost layer may be a single row or column)
  */
 class SpiralMatrix {
     public List<Integer> spiralOrder(int[][] matrix) {
         List<Integer> res = new ArrayList<>();
-        int rowbegin = 0;
-        int rowend = matrix.length - 1;
-        int colbegin = 0;
-        int colend = matrix[0].length - 1;
+        int rowBegin = 0;
+        int rowEnd = matrix.length - 1;
+        int colBegin = 0;
+        int colEnd = matrix[0].length - 1;
 
-        while (rowbegin <= rowend && colbegin <= colend) {
-            for (int i = colbegin; i <= colend; i++) {
-                res.add(matrix[rowbegin][i]);
+        while (rowBegin <= rowEnd && colBegin <= colEnd) {
+            for (int i = colBegin; i <= colEnd; i++) {
+                res.add(matrix[rowBegin][i]);
             }
-            rowbegin++;
-            for (int j = rowbegin; j <= rowend; j++) {
-                res.add(matrix[j][colend]);
+            rowBegin++;
+            for (int j = rowBegin; j <= rowEnd; j++) {
+                res.add(matrix[j][colEnd]);
             }
-            colend--;
-            if (rowbegin <= rowend) {
-                for (int k = colend; k >= colbegin; k--) {
-                    res.add(matrix[rowend][k]);
+            colEnd--;
+            if (rowBegin <= rowEnd) {
+                for (int k = colEnd; k >= colBegin; k--) {
+                    res.add(matrix[rowEnd][k]);
                 }
             }
-            rowend--;
-            if (colbegin <= colend) {
-                for (int l = rowend; l >= rowbegin; l--) {
-                    res.add(matrix[l][colbegin]);
+            rowEnd--;
+            if (colBegin <= colEnd) {
+                for (int row = rowEnd; row >= rowBegin; row--) {
+                    res.add(matrix[row][colBegin]);
                 }
             }
-            colbegin++;
+            colBegin++;
         }
         return res;
     }

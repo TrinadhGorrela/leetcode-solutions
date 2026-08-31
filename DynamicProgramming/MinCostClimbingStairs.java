@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/min-cost-climbing-stairs/
  *
- * Pattern: Dynamic Programming (1D Bottom-up)
- * Key insight: dp[i] = minimum cost to reach step i, computed as min(cost[i-1] + dp[i-1], cost[i-2] + dp[i-2]); answer is the cost to pass the last step.
+ * Pattern: 1D bottom-up DP with free start
+ * Key insight: dp[i] = min cost to reach step i from the ground; since you can start at step 0 or 1 for free, dp[0]=dp[1]=0, and each subsequent step pays the cost of the step you jumped from.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses a DP array
+ * Time Complexity: O(n) - Single loop from index 2 to n
+ * Space Complexity: O(n) - DP array of size n+1
  *
- * Edge Cases Handled: two steps (start at step 0), can start from first or second step (dp[0] and dp[1] = 0)
+ * Edge Cases Handled: n=2 returns 0 (both starting positions); dp[0] and dp[1] are free; answer is dp[n] not dp[n-1] since "top" is past the last step
  */
 class MinCostClimbingStairs {
     public int minCostClimbingStairs(int[] cost) {

@@ -3,39 +3,39 @@
  * Difficulty: Easy | Tags: Array, Math, Backtracking, Bit Manipulation, Combinatorics, Enumeration
  * https://leetcode.com/problems/sum-of-all-subset-xor-totals/
  *
- * Pattern: Backtracking (Enumerate Subsets)
- * Key insight: Enumerate every subset, compute the XOR of each, and add the totals; the recursion explores the full subset space.
+ * Pattern: Full Subset Enumeration with Post-Collection XOR Aggregation
+ * Key insight: Build every subset via forward-index backtracking, then iterate through the collected subsets computing each subset's cumulative XOR and summing into the answer; the empty subset contributes XOR = 0 (neutral) and is harmlessly included.
  *
- * Time Complexity: O(N * 2^N) - Enumerates all subsets and XORs each
- * Space Complexity: O(N * 2^N) - Stores every subset in the result list (can be O(N) with a running sum instead)
+ * Time Complexity: O(2^n * n) - 2^n subsets generated, each XOR-accumulated in O(n) time
+ * Space Complexity: O(2^n * n) for storing all subsets (reducible to O(n) with a running XOR sum during recursion)
  *
- * Edge Cases Handled: single element (empty subset + itself), empty subset (XOR 0), repeated/duplicate values
+ * Edge Cases Handled: single element (empty subset XOR 0 + element itself), all elements zero (every subset XORs to 0), repeated values (subsets are structurally distinct even if values repeat), n = 0 (returns 0 from empty subset)
  */
 class SumOfAllSubsetXorTotals {
     public int subsetXORSum(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
-        solve(nums, res, new ArrayList<>(), 0);
+        backtrack(nums, res, new ArrayList<>(), 0);
         int ans = 0;
 
         for (List<Integer> list : res) {
-            int sum = 0;
+            int subsetXor = 0;
             for (int i : list) {
-                sum ^= i;
+                subsetXor ^= i;
             }
-            ans += sum;
+            ans += subsetXor;
         }
         return ans;
     }
 
-    public static void solve(int[] nums, List<List<Integer>> res, List<Integer> temp, int st) {
+    public static void backtrack(int[] nums, List<List<Integer>> res, List<Integer> temp, int startIndex) {
         res.add(new ArrayList<>(temp));
-        if (st == nums.length) {
+        if (startIndex == nums.length) {
             return;
         }
 
-        for (int i = st; i < nums.length; i++) {
+        for (int i = startIndex; i < nums.length; i++) {
             temp.add(nums[i]);
-            solve(nums, res, temp, i + 1);
+            backtrack(nums, res, temp, i + 1);
             temp.remove(temp.size() - 1);
         }
     }

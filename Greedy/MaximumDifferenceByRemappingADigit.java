@@ -3,26 +3,26 @@
  * Difficulty: Easy | Tags: Math, Greedy
  * https://leetcode.com/problems/maximum-difference-by-remapping-a-digit/
  *
- * Pattern: Greedy (Digit Remapping)
- * Key insight: Remap the first digit that is not 9 to 9 for the maximum, and remap the leading digit to 0 for the minimum; subtract the two results.
+ * Pattern: Two-Scan Digit Remapping
+ * Key insight: The maximum is achieved by replacing the first non-9 digit with 9 (greedy leftmost swap), and the minimum by replacing the leading digit with 0 (since leading zeros are stripped by parseInt). Both are independent, single-character global replacements.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Creates string copies for remapping
+ * Time Complexity: O(D) - D = number of digits; two string scans and two String.replace calls
+ * Space Complexity: O(D) - Two string copies for the max and min candidates
  *
-* Edge Cases Handled: number already all 9s (no digit can be raised, a unchanged), leading digit remapped to 0 (leading zeros produced), remapped minimum parsed after dropping leading zeros
+ * Edge Cases Handled: all digits already 9 (max equals input, no replacement), single-digit input, leading digit replacement produces effective leading zero (parseInt handles it), digits like 100 (max=900, min=0)
  */
 class MaximumDifferenceByRemappingADigit {
     public int minMaxDifference(int num) {
-        String a = Integer.toString(num);
-        String b = a;
+        String maxStr = Integer.toString(num);
+        String minStr = maxStr;
         int i = 0;
-        while (i < a.length() && a.charAt(i) == '9') {
+        while (i < maxStr.length() && maxStr.charAt(i) == '9') {
             i++;
         }
-        if (i < a.length()) {
-            a = a.replace(a.charAt(i), '9');
+        if (i < maxStr.length()) {
+            maxStr = maxStr.replace(maxStr.charAt(i), '9');
         }
-        b = b.replace(b.charAt(0), '0');
-        return Integer.parseInt(a) - Integer.parseInt(b);
+        minStr = minStr.replace(minStr.charAt(0), '0');
+        return Integer.parseInt(maxStr) - Integer.parseInt(minStr);
     }
 }

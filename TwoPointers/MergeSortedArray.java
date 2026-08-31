@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/merge-sorted-array/
  *
- * Pattern: Two Pointers (Merge from the End)
- * Key insight: Fill the output from the largest position backward using pointers at the ends of both arrays, so no extra space is needed and no element is overwritten before use.
+ * Pattern: Reverse-Direction Three-Pointer Merge
+ * Key insight: Filling from the tail avoids overwriting nums1 elements that haven't been merged yet; comparing from the larger end means remaining nums2 elements can be bulk-copied when nums1 is exhausted.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(m+n) - Each element examined once; remaining tail copied in O(n) at most
+ * Space Complexity: O(1) - Three index variables, merges in-place into nums1's pre-allocated buffer
  *
- * Edge Cases Handled: m = 0 (only nums2), n = 0 (only nums1), equal elements, all of nums1 smaller / larger than nums2
+ * Edge Cases Handled: m = 0 (all elements from nums2), n = 0 (nums1 already correct), nums1 all smaller than nums2 (bulk copy), nums2 all smaller (element-by-element merge), equal values across arrays
  */
 class MergeSortedArray {
   public void merge(int[] nums1, int m, int[] nums2, int n) {

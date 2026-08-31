@@ -3,33 +3,33 @@
  * Difficulty: Easy | Tags: Array, Greedy
  * https://leetcode.com/problems/lemonade-change/
  *
- * Pattern: Greedy (Cash Register / Change Making)
- * Key insight: Track the count of $5 and $10 bills; give change greedily, preferring a $10+$5 for a $20 and falling back to three $5s, returning false when no exact change is possible.
+ * Pattern: Fixed-Denomination Greedy Change-Making
+ * Key insight: Only $5 and $10 bills accumulate (used as change); a $20 payment is best served by one $10 + one $5 (preserves more $5s for future), falling back to three $5s — this greedy preference is optimal because $10 bills are useless as change for $5-only scenarios.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Single pass; constant work per bill
+ * Space Complexity: O(1) - Two counters (fiveCount, tenCount)
  *
- * Edge Cases Handled: first customer pays with $10 or $20 (returns false if no change), gives exact change preferring $10+$5 for $20, insufficient small bills (returns false)
+ * Edge Cases Handled: first customer with $10 or $20 (no change possible, returns false), sequence requiring $10+$5 path for $20 (preserves fiveCount), customer paying $20 when only three $5s available (last-resort path)
  */
 class LemonadeChange {
     public boolean lemonadeChange(int[] bills) {
-        int five_count = 0;
-        int ten_count = 0;
-        for (int i : bills) {
-            if (i == 5) {
-                five_count++;
-            } else if (i == 10) {
-                ten_count++;
-                if (five_count == 0) {
+        int fiveCount = 0;
+        int tenCount = 0;
+        for (int bill : bills) {
+            if (bill == 5) {
+                fiveCount++;
+            } else if (bill == 10) {
+                tenCount++;
+                if (fiveCount == 0) {
                     return false;
                 }
-                five_count--;
+                fiveCount--;
             } else {
-                if (ten_count != 0 && five_count != 0) {
-                    ten_count--;
-                    five_count--;
-                } else if (five_count >= 3) {
-                    five_count -= 3;
+                if (tenCount != 0 && fiveCount != 0) {
+                    tenCount--;
+                    fiveCount--;
+                } else if (fiveCount >= 3) {
+                    fiveCount -= 3;
                 } else {
                     return false;
                 }

@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/diagonal-traverse/
  *
- * Pattern: Hash Map (Diagonal Grouping)
- * Key insight: Group cells by the constant i+j (each group is one diagonal), then emit groups in order, reversing alternate diagonals to achieve the zig-zag traversal.
+ * Pattern: HashMap Grouping + Direction Toggle
+ * Key insight: Group all cells by diagonal index (i + j); even-indexed diagonals are emitted top-to-bottom, odd-indexed ones bottom-to-top (reversed), producing the required zig-zag order.
  *
- * Time Complexity: O(M*N) - Visits every matrix element once
- * Space Complexity: O(M * N) - Map stores all matrix elements
+ * Time Complexity: O(m·n) - Build map in O(m·n), read out in O(m·n).
+ * Space Complexity: O(m·n) - HashMap stores every element once.
  *
- * Edge Cases Handled: 1x1 matrix, single row / single column, non-square matrices, diagonal boundary cells
+ * Edge Cases Handled: 1×1 matrix, single row or column (each diagonal has one element), non-square matrices
  */
 class DiagonalTraverse {
     public int[] findDiagonalOrder(int[][] mat) {

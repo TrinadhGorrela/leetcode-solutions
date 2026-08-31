@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Depth-First Search, Breadth-First Search, Matrix
  * https://leetcode.com/problems/flood-fill/
  *
- * Pattern: BFS (Grid Flood Fill)
- * Key insight: BFS from the start cell, recoloring every same-color neighbor in the 4 directions until the connected component is fully repainted; early exit if the start already has the target color.
+ * Pattern: BFS Flood Fill on Pixel Grid
+ * Key insight: BFS from the starting pixel, replacing every 4-connected neighbor that matches the original color with the new color. The early exit when `originalColor == color` prevents infinite re-enqueueing of the same connected component.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(M * N) - Worst case visits every pixel in the image once
+ * Space Complexity: O(M * N) - BFS queue worst-case holds the entire connected component (e.g., uniform-color image)
  *
-* Edge Cases Handled: start pixel already the target color (early return, image unchanged), single-cell image, start cell on a border or corner
+ * Edge Cases Handled: start pixel already equals target color (early return, image unchanged), single-pixel image, entire image is one color (all pixels recolored), start pixel on border or corner (fewer neighbors)
  */
 class FloodFill {
     public int[][] floodFill(int[][] image, int sr, int sc, int color) {
@@ -20,13 +20,13 @@ class FloodFill {
         }
 
         queue.offer(new int[] { sr, sc });
-        solve(queue, image, sr, sc, originalColor, color);
+        bfsFill(queue, image, sr, sc, originalColor, color);
         image[sr][sc] = color;
         return image;
 
     }
 
-    public static void solve(Queue<int[]> queue, int[][] image, int sr, int sc, int originalColor, int color) {
+    public static void bfsFill(Queue<int[]> queue, int[][] image, int sr, int sc, int originalColor, int color) {
         int[][] dirs = {
                 { -1, 0 }, { 0, -1 }, { 1, 0 }, { 0, 1 }
         };

@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Depth-First Search, Breadth-First Search, Graph Theory
  * https://leetcode.com/problems/keys-and-rooms/
  *
- * Pattern: BFS (Graph Reachability)
- * Key insight: BFS from room 0, opening each room whose key is found; at the end, all rooms must have been visited for full reachability.
+ * Pattern: BFS Reachability from Source Node
+ * Key insight: Model rooms as nodes and keys as directed edges; BFS from room 0 explores the reachable subgraph. If the visited set covers all n rooms, every room is reachable. Keys in already-visited rooms are redundant and skipped.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N + E) - N rooms visited at most once; E is total number of keys across all rooms
+ * Space Complexity: O(N) - Visited boolean array and BFS queue each hold at most N entries
  *
-* Edge Cases Handled: unreachable room (returns false), single room that opens itself, rooms yielding no keys
+ * Edge Cases Handled: single room (room 0 opens itself, returns true), room with no keys (dead end, no neighbors enqueued), unreachable room in a disconnected component (returns false)
  */
 class KeysAndRooms {
     public boolean canVisitAllRooms(List<List<Integer>> rooms) {
@@ -23,10 +23,10 @@ class KeysAndRooms {
             while (size != 0) {
                 int curr = queue.poll();
 
-                for (int i : rooms.get(curr)) {
-                    if (!visited[i]) {
-                        visited[i] = true;
-                        queue.offer(i);
+                for (int neighbor : rooms.get(curr)) {
+                    if (!visited[neighbor]) {
+                        visited[neighbor] = true;
+                        queue.offer(neighbor);
                     }
                 }
                 size--;

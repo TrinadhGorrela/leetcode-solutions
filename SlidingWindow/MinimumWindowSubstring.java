@@ -3,13 +3,13 @@
  * Difficulty: Hard | Tags: Hash Table, String, Sliding Window
  * https://leetcode.com/problems/minimum-window-substring/
  *
- * Pattern: Sliding Window (Two-Frequency Matching)
- * Key insight: Slide a window whose counts of each ASCII char dominate t's counts (isPos check), then shrink the left edge while the window still covers t to minimize its length.
+ * Pattern: Sliding Window with Character Frequency Dominance Check
+ * Key insight: Build a frequency array for t (freq1) and a sliding window frequency array for s (freq2). Expand right until freq2 dominates freq1 for every ASCII character (the isPos check). Then shrink left as long as dominance holds, updating the minimum. The isPos scan over 128 chars is constant since the alphabet is fixed.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
+ * Time Complexity: O(128 * N) = O(N) - Right advances N times; left advances at most N times; each isPos check scans a fixed 128-element array
+ * Space Complexity: O(1) - Two fixed-size int[128] arrays regardless of input length
  *
- * Edge Cases Handled: s shorter than t (returns empty string), no valid window (returns empty string), s equals t (whole string returned), duplicate characters in t
+ * Edge Cases Handled: s shorter than t (early return ""), no valid window exists (returns ""), t contains repeated characters (freq1 has counts > 1), s equals t (entire string is the minimum window), t has all unique characters
  */
 class MinimumWindowSubstring {
     public String minWindow(String s, String t) {

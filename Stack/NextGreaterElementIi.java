@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Stack, Monotonic Stack
  * https://leetcode.com/problems/next-greater-element-ii/
  *
- * Pattern: Monotonic Stack (Circular Array, Twice-Length)
- * Key insight: Iterate over the doubled-circular array right-to-left keeping a decreasing stack; the nearest greater element for each position is the stack top after popping smaller values, which naturally handles the wrap.
+ * Pattern: Monotonic Decreasing Stack (Circular Array)
+ * Key insight: Iterate right-to-left over a conceptual doubled array (indices 0..2n−1 mod n); maintain a decreasing stack of values. For each position, pop everything ≤ nums[i%n]; the stack top is the next greater element. Writing i%n handles the circular wrap naturally.
  *
- * Time Complexity: O(N) - Monotonic stack operations are amortized O(1)
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each element pushed and popped at most once across the 2n scan.
+ * Space Complexity: O(n) - Stack and result array each hold up to n entries.
  *
- * Edge Cases Handled: Single element (result -1), all equal elements (all -1), maximum element at any position (result -1), circular wrap finding greater in earlier indices
+ * Edge Cases Handled: single element (result −1), all equal values (all −1), maximum value at every position (all −1), wrap-around where next greater is at an earlier index
  */
 class NextGreaterElementIi {
     public int[] nextGreaterElements(int[] nums) {

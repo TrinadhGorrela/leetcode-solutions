@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Math, Simulation, Combinatorics, Number Theory
  * https://leetcode.com/problems/find-triangular-sum-of-an-array/
  *
- * Pattern: Simulation
- * Key insight: Repeatedly replace the array with the pairwise modulo-10 sums of adjacent elements until a single value remains.
+ * Pattern: Iterative Reduction (Pascal's Triangle Mod 10)
+ * Key insight: Each pass reduces the array by one element by computing (nums[i] + nums[i+1]) % 10 for every adjacent pair. After N-1 passes, a single value remains — equivalent to the apex of a Pascal's triangle weighted by the initial values, modulo 10.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(N) - sum() allocates a new array each pass
+ * Time Complexity: O(N^2) - N-1 reduction passes, each processing a progressively shorter array (summing to N*(N-1)/2 operations)
+ * Space Complexity: O(N) - Each pass allocates a temporary array of size N-1-i
  *
- * Edge Cases Handled: single element (returns it directly), sums causing carry (modulo 10), adjacent pair sums
+ * Edge Cases Handled: single element array (returned immediately), carry handled by modulo 10 at each pairwise sum
  */
 class FindTriangularSumOfAnArray {
        public static int triangularSum(int[] nums) {

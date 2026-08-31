@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Matrix
  * https://leetcode.com/problems/search-a-2d-matrix/
  *
- * Pattern: Binary Search (Flatten 2D to 1D)
- * Key insight: Map each flat index to a (row, col) pair with division/modulo by the column count, then run a standard binary search over the conceptually flattened sorted matrix.
+ * Pattern: Binary Search on Virtual Flattened Array
+ * Key insight: Treat the m×n matrix as a sorted array of length m*n; map a flat index to (row, col) via mid / n and mid % n, then run standard binary search—no actual flattening needed.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log(m·n)) - Standard binary search over m*n elements.
+ * Space Complexity: O(1) - Flat index bounds and row/col derived via division/modulo.
  *
- * Edge Cases Handled: target not found (returns false), single row or single column, target at matrix corners
+ * Edge Cases Handled: target absent (returns false), single row or single column, target at first or last cell
  */
 class SearchA2dMatrix {
     public boolean searchMatrix(int[][] matrix, int target) {

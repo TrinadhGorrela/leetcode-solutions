@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, Backtracking, Bit Manipulation
  * https://leetcode.com/problems/gray-code/
  *
- * Pattern: Bit Manipulation (Mirror Doubling / Binary Reflected Gray Code)
- * Key insight: Construct the n-bit Gray code by reflecting the current sequence and adding the new high bit, using the iteration results via bit doubling to keep consecutive values differing in one bit.
+ * Pattern: Binary Reflected Gray Code (Mirror Doubling)
+ * Key insight: To extend from n-1 to n bits, iterate the existing sequence in reverse (the mirror) and add the new high bit via addition (list values + bit); the mirrored order guarantees exactly one differing bit across the reflection boundary.
  *
- * Time Complexity: O(2^N) - Iterative doubling constructs the sequence
- * Space Complexity: O(2^N) - Allocates list for all Gray code permutations
+ * Time Complexity: O(2^n) - Sequence doubles in length each bit level; total elements = 2^n
+ * Space Complexity: O(2^n) - Stores the full 2^n-element result list
  *
-* Edge Cases Handled: n = 0 (sequence is just [0]), mirror reflection preserves the one-bit difference across the boundary
+ * Edge Cases Handled: n = 0 (sequence is just [0], loop never runs), the boundary between the last original element and the first mirrored element differing in exactly one bit
  */
 class GrayCode {
     public List<Integer> grayCode(int n) {

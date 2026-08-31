@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Linked List, Recursion
  * https://leetcode.com/problems/remove-linked-list-elements/
  *
- * Pattern: Linked List Deletion with Dummy Node
- * Key insight: A dummy node precedes the head to simplify removal of leading matches; unlink every node whose value equals the target, keeping the previous pointer otherwise.
+ * Pattern: Dummy-Headed Linear Scan
+ * Key insight: A dummy predecessor node eliminates the special case of removing the head; walk with prev and curr—when curr.val == target, bypass it (prev.next = curr.next), otherwise advance prev.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Single traversal of the list.
+ * Space Complexity: O(1) - Dummy node + two pointers.
  *
- * Edge Cases Handled: null head, remove at head (dummy node), remove all nodes, target not present (returns original list)
+ * Edge Cases Handled: null list, head matches target (dummy bypasses it), all nodes match (result is null), target absent (list unchanged), consecutive matches
  */
 /**
  * Definition for singly-linked list.

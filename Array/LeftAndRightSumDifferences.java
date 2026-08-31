@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Prefix Sum
  * https://leetcode.com/problems/left-and-right-sum-differences/
  *
- * Pattern: Prefix Sum
- * Key insight: Build left and right cumulative sums for every index, then take the absolute difference between them as the result.
+ * Pattern: Bidirectional Prefix Sum
+ * Key insight: Compute the left prefix sum and right suffix sum simultaneously in one pass (left fills forward, right fills backward using mirrored indices), then take the absolute difference per index.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses prefix/suffix arrays (can be optimized to O(1) space)
+ * Time Complexity: O(N) - One pass to build both sum arrays, one pass to compute absolute differences
+ * Space Complexity: O(N) - Three auxiliary arrays: leftSum, rightSum, and result, each of length N
  *
- * Edge Cases Handled: single element (both sums 0), negative values (absolute difference), pivot at edges
+ * Edge Cases Handled: single element (both sums are 0, result 0), leftmost index (empty left sum), rightmost index (empty right sum), negative values handled by manual absolute difference
  */
 class LeftAndRightSumDifferences {
     public int[] leftRightDifference(int[] nums) {

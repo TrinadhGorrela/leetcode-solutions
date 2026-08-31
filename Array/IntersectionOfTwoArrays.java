@@ -3,33 +3,33 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Two Pointers, Binary Search, Sorting
  * https://leetcode.com/problems/intersection-of-two-arrays/
  *
- * Pattern: Hash Set
- * Key insight: Load one array into a set, then collect unique elements of the other array that are present in the set.
+ * Pattern: Dual HashSet Intersection
+ * Key insight: Building a set from nums2 and probing it while iterating nums1 gives O(1) membership checks; the result set handles deduplication automatically.
  *
- * Time Complexity: O(N) - HashSet lookup takes linear time
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N + M) - Build set from nums2 in O(M), probe each nums1 element in O(1)
+ * Space Complexity: O(N + M) - Two sets: one for nums2 lookup, one for unique results
  *
- * Edge Cases Handled: no common elements (empty result), duplicate values in either input (deduplicated), one array with single element
+ * Edge Cases Handled: no intersection (returns empty array), duplicates within one input (deduplicated by result set), one or both arrays empty
  */
 class IntersectionOfTwoArrays {
     public int[] intersection(int[] nums1, int[] nums2) {
-        Set<Integer> num = new HashSet<>();
-        Set<Integer> res = new HashSet<>();
+        Set<Integer> nums2Set = new HashSet<>();
+        Set<Integer> result = new HashSet<>();
         for (int i : nums2) {
-            num.add(i);
+            nums2Set.add(i);
         }
-        int b = nums1.length;
-        for (int i = 0; i < b; i++) {
-            if (num.contains(nums1[i])) {
-                res.add(nums1[i]);
+        int length = nums1.length;
+        for (int i = 0; i < length; i++) {
+            if (nums2Set.contains(nums1[i])) {
+                result.add(nums1[i]);
             }
         }
-        int[] result = new int[res.size()];
-        int i = 0;
-        for (Integer key : res) {
-            result[i] = key;
-            i++;
+        int[] resultArray = new int[result.size()];
+        int index = 0;
+        for (Integer key : result) {
+            resultArray[index] = key;
+            index++;
         }
-        return result;
+        return resultArray;
     }
 }

@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Linked List
  * https://leetcode.com/problems/remove-duplicates-from-sorted-list/
  *
- * Pattern: Linked List Deletion (previous / current pointers)
- * Key insight: Walk prev and curr; when curr duplicates prev, unlink curr by pointing prev.next beyond it, otherwise advance both; values repeat only in runs because the list is sorted.
+ * Pattern: Two-Pointer Deduplication
+ * Key insight: Because the list is sorted, duplicates appear in consecutive runs; walk prev and curr—when curr.val == prev.val, skip it (prev.next = curr.next), otherwise advance both pointers.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Single traversal, each node visited once.
+ * Space Complexity: O(1) - Two pointers: prev, curr.
  *
- * Edge Cases Handled: null head (returns null), all nodes duplicate (reduces to one), single node, duplicates at the tail
+ * Edge Cases Handled: null list, all nodes identical (reduces to single node), no duplicates (list unchanged), duplicates at the tail
  */
 /**
  * Definition for singly-linked list.

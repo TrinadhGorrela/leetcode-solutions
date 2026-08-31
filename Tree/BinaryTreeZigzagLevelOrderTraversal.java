@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Tree, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/binary-tree-zigzag-level-order-traversal/
  *
- * Pattern: BFS (Level-Order with Alternating Direction)
- * Key insight: Build each level via BFS and reverse the list on alternating depth counts, producing a left-to-right then right-to-left zig-zag sequence.
+ * Pattern: BFS Level-Order with Direction Flip
+ * Key insight: Standard BFS collects each level left-to-right; on even-numbered levels (2nd, 4th, ...), reverse the collected list before adding it. Uses a level counter modulo 2 rather than a deque-based insertion trick.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each node visited once; reversal is O(w) per level, summing to O(n).
+ * Space Complexity: O(w) - Queue holds at most one level's worth of nodes (w = max width).
  *
- * Edge Cases Handled: empty tree / null root (returns empty list), single node, single level, skewed tree (single node per level)
+ * Edge Cases Handled: null root returns empty list, single node (no reversal), single-level tree, skewed tree (every level has one node, reversal is a no-op), perfect binary tree (full reversal on even levels)
  */
 /**
  * Definition for a binary tree node.
@@ -36,7 +36,7 @@ class BinaryTreeZigzagLevelOrderTraversal {
 
         Queue<TreeNode> queue = new ArrayDeque<>();
         queue.offer(root);
-        int in = 1;
+        int level = 1;
 
         while (!queue.isEmpty()) {
             List<Integer> temp = new ArrayList<>();
@@ -54,10 +54,10 @@ class BinaryTreeZigzagLevelOrderTraversal {
                 }
                 size--;
             }
-            if (in % 2 == 0) {
+            if (level % 2 == 0) {
                 Collections.reverse(temp);
             }
-            in++;
+            level++;
             result.add(temp);
         }
         return result;

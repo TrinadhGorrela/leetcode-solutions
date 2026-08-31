@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Matrix
  * https://leetcode.com/problems/toeplitz-matrix/
  *
- * Pattern: Diagonal Group Validation (Neighbor Comparison)
- * Key insight: Each cell must equal the cell one row down and one column right for all diagonals to match; comparing each cell against its lower-right neighbor suffices.
+ * Pattern: Neighbor Comparison (Diagonal Invariant)
+ * Key insight: Every diagonal (constant i−j) has identical values iff each cell equals its lower-right neighbor matrix[i+1][j+1]; a single scan of interior cells suffices.
  *
- * Time Complexity: O(M*N) - Visits every matrix element
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(m·n) - Interior cells only; loop bounds skip last row/col.
+ * Space Complexity: O(1) - No extra storage.
  *
- * Edge Cases Handled: single row, single column, 1x1 matrix, all equal values, out-of-bounds avoided by length-1 loop bounds
+ * Edge Cases Handled: 1×1 matrix (trivially true), single row or column (always true), first mismatch returns false early
  */
 class ToeplitzMatrix {
     public boolean isToeplitzMatrix(int[][] matrix) {

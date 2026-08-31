@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Greedy, Sorting
  * https://leetcode.com/problems/maximize-sum-of-array-after-k-negations/
  *
- * Pattern: Greedy + Sorting
- * Key insight: Flip the most negative values first while flips remain; if leftover flips are odd, subtract twice the smallest element, since a remaining flip must reduce the sum by 2*min at worst.
+ * Pattern: Sort-First Greedy Negation
+ * Key insight: After sorting, flip negatives from smallest (most negative) upward since each flip adds the most to the sum. If flips remain and k is odd, one final flip on the smallest absolute element costs exactly 2×min — an unavoidable penalty since even remaining flips cancel out.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N log N) - Sorting dominates; the negation and sum passes are O(N)
+ * Space Complexity: O(1) - In-place sort and scalar accumulators
  *
- * Edge Cases Handled: k = 0, no negative numbers, leftover odd or even flips (k % 2), k exceeding the number of negatives, smallest element doubled-penalty when odd flips remain
+ * Edge Cases Handled: k = 0 (no flips, original sum), all negatives with k > N (all flipped, then odd-flip adjustment), no negatives (only odd-k adjustment applies), k exactly equals count of negatives
  */
 class MaximizeSumOfArrayAfterKNegations {
     public int largestSumAfterKNegations(int[] nums, int k) {

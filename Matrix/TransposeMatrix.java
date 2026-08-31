@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/transpose-matrix/
  *
- * Pattern: Index Swap (Transposition)
- * Key insight: Exchange roles of rows and columns by writing matrix[i][j] into res[j][i], producing a result of swapped dimensions.
+ * Pattern: Index Swap Transposition
+ * Key insight: Create a result array with swapped dimensions (n×m) and write matrix[i][j] into res[j][i] in a single nested loop.
  *
- * Time Complexity: O(M*N) - Visits every matrix element
- * Space Complexity: O(M * N) - Allocates a 2D array for the transposed matrix
+ * Time Complexity: O(m·n) - Every cell visited once.
+ * Space Complexity: O(m·n) - New n×m result matrix.
  *
- * Edge Cases Handled: single row / single column, non-square matrices (swapped dimensions), 1x1 matrix
+ * Edge Cases Handled: non-square matrices (dimensions swap), single row, single column, 1×1 matrix
  */
 class TransposeMatrix {
     public int[][] transpose(int[][] matrix) {

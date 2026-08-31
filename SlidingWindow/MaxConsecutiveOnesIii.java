@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Binary Search, Sliding Window, Prefix Sum
  * https://leetcode.com/problems/max-consecutive-ones-iii/
  *
- * Pattern: Sliding Window (At Most k Zeros)
- * Key insight: Track the number of zeros in the window; when it exceeds k, shrink from the left until zeros are within budget, keeping the longest window that is flippable to all ones.
+ * Pattern: Variable Sliding Window (At Most k Zeros)
+ * Key insight: Count zeros in the window; when the count exceeds k, advance left until a zero is evicted, restoring the budget. The window represents a subarray that can be fully converted to ones by flipping at most k zeros. Track the maximum window length throughout.
  *
- * Time Complexity: O(N) - Sliding window takes linear time
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Right pointer scans once; left pointer advances at most N times total
+ * Space Complexity: O(1) - Three integer scalars (left, max, count) with no heap or map
  *
- * Edge Cases Handled: k = 0 (no flips allowed), all zeros, all ones, k exceeding the number of zeros (full array flippable)
+ * Edge Cases Handled: k = 0 (no flips, answer is the longest existing run of 1s), all zeros (answer is k if k <= N), all ones (answer is N), k >= total zero count (entire array is flippable)
  */
 class MaxConsecutiveOnesIii {
     public int longestOnes(int[] nums, int k) {

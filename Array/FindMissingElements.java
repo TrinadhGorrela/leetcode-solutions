@@ -3,33 +3,33 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Sorting
  * https://leetcode.com/problems/find-missing-elements/
  *
- * Pattern: Sorting
- * Key insight: Sorts the array to sequentially identify missing elements.
+ * Pattern: Sort + Two-Pointer Gap Walk
+ * Key insight: Sort the array, then walk a `low` pointer from the minimum to the maximum while advancing through sorted values. Whenever `low` doesn't match the current element, it's a gap — add it to the result and advance `low`.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N log N) - Dominated by sorting; the subsequent scan is O(N)
+ * Space Complexity: O(N) - ArrayList to collect missing values (sorting is in-place for arrays)
  *
- * Edge Cases Handled: duplicates (skipped), single element (none missing), contiguous range with no gaps, gaps at either end
+ * Edge Cases Handled: duplicates (skipped by the else-if branch), contiguous range with no gaps (returns empty list), gaps at the start or end of the range
  */
 class FindMissingElements {
     public List<Integer> findMissingElements(int[] nums) {
-        List<Integer> list = new ArrayList<>();
+        List<Integer> missingList = new ArrayList<>();
         Arrays.sort(nums);
-        int in = 0;
+        int index = 0;
         int low = nums[0];
         int high = nums[nums.length - 1];
 
-        while (in < nums.length) {
-            if (nums[in] == low) {
+        while (index < nums.length) {
+            if (nums[index] == low) {
                 low++;
-                in++;
-            } else if (nums[in] < low) {
-                in++;
+                index++;
+            } else if (nums[index] < low) {
+                index++;
             } else {
-                list.add(low);
+                missingList.add(low);
                 low++;
             }
         }
-        return list;
+        return missingList;
     }
 }

@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Tree, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/binary-tree-level-order-traversal/
  *
- * Pattern: BFS (Level-Order Traversal)
- * Key insight: Dequeue the current level's node count into a snapshot, collect those nodes into a list while enqueuing their children, yielding one list per level.
+ * Pattern: BFS with Level-Size Snapshot
+ * Key insight: Snapshot queue.size() before the inner loop to isolate exactly one level's nodes — children enqueued during processing land in the next level's batch, keeping levels cleanly separated.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each node enqueued and dequeued exactly once.
+ * Space Complexity: O(w) - Queue width equals the maximum number of nodes at any single level.
  *
- * Edge Cases Handled: empty tree / null root (returns empty list), single node, single level, skewed tree (single node per level)
+ * Edge Cases Handled: null root returns empty list, single node, single-level tree, skewed tree (one node per level), complete binary tree (widest level at bottom)
  */
 /**
  * Definition for a binary tree node.

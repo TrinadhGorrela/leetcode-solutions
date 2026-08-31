@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Backtracking, Bit Manipulation
  * https://leetcode.com/problems/subsets-ii/
  *
- * Pattern: Backtracking (Sort + Skip Duplicates)
- * Key insight: Sort first, then skip consecutive duplicate values at the same recursion level so that each distinct subset is generated exactly once.
+ * Pattern: Forward-Index Subset Enumeration with Same-Level Duplicate Skip
+ * Key insight: Sort the input, then within the for-loop at each recursion level, skip nums[i] when it equals nums[i-1] and i > startIndex -- this prevents the same value from being chosen at the same depth/position, which is what causes duplicate subsets.
  *
- * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
- * Space Complexity: O(N * 2^N) - Holds all subsets
+ * Time Complexity: O(2^n * n) - at most 2^n subsets generated, each copied in O(n); duplicate skipping reduces branching for non-distinct inputs
+ * Space Complexity: O(n) recursion depth + O(n * 2^n) for output
  *
- * Edge Cases Handled: single element, all elements equal (duplicates deduped to one subset of each size), no duplicates (behaves like plain subsets), empty subset
+ * Edge Cases Handled: all elements identical (only one subset per size), no duplicates (skip condition never triggers), single element, empty subset always included via the initial res.add snapshot
  */
 class SubsetsIi {
     public List<List<Integer>> subsetsWithDup(int[] nums) {

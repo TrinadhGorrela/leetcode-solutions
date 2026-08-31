@@ -3,36 +3,34 @@
  * Difficulty: Easy | Tags: String, Stack, Bracket Sequences
  * https://leetcode.com/problems/valid-parentheses/
  *
- * Pattern: Stack (Bracket Matching)
- * Key insight: Push opening brackets; on a closing bracket, ensure the stack is non-empty and its top matches the required type, then pop; the string is valid iff the stack ends empty.
+ * Pattern: Stack-Based Bracket Matching
+ * Key insight: Push every opening bracket; on a closing bracket, check the stack top for the matching type and pop. The string is valid iff the stack is empty at the end.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each character pushed and popped at most once.
+ * Space Complexity: O(n) - Worst case: all opening brackets pushed.
  *
- * Edge Cases Handled: Empty string (valid), single bracket (unmatched), unmatched closing bracket (empty stack pop returns false), mismatched bracket pairs, deeply nested brackets
+ * Edge Cases Handled: empty string (valid), single bracket (unmatched), closing bracket with empty stack, mismatched pair types, deeply nested valid sequence
  */
 class ValidParentheses {
     public boolean isValid(String s) {
-        Stack<Character> res = new Stack<>();
-        char c;
-        for(int i=0;i<s.length();i++){
-            c=s.charAt(i);
-            if(c=='('||c=='{'||c=='['){
-                 res.push(c);
-            }
-            else{
-                if(res.isEmpty()){
+        Stack<Character> stack = new Stack<>();
+        char ch;
+        for (int i = 0; i < s.length(); i++) {
+            ch = s.charAt(i);
+            if (ch == '(' || ch == '{' || ch == '[') {
+                stack.push(ch);
+            } else {
+                if (stack.isEmpty()) {
                     return false;
                 }
-                char top = res.pop();
-        if ((c == ')' && top != '(') ||
-            (c == ']' && top != '[') ||
-            (c == '}' && top != '{')) {
-            return false;
+                char top = stack.pop();
+                if ((ch == ')' && top != '(') ||
+                    (ch == ']' && top != '[') ||
+                    (ch == '}' && top != '{')) {
+                    return false;
+                }
             }
         }
-     
-    }
-    return res.isEmpty();
+        return stack.isEmpty();
     }
 }

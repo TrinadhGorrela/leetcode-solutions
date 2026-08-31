@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/spiral-matrix-ii/
  *
- * Pattern: Boundary Shrinking (Spiral Fill)
- * Key insight: Fill an n x n matrix in spiral order by writing the four edges of the shrinking square each lap with an incrementing counter.
+ * Pattern: Layer-by-Layer Spiral Fill
+ * Key insight: Maintain four boundaries (top, bottom, left, right); traverse the four edges of the current outer layer filling values with an incrementing counter, then shrink all four boundaries inward and repeat.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(N^2) - Allocates the result 2D array
+ * Time Complexity: O(n²) - Each of the n² cells written exactly once.
+ * Space Complexity: O(n²) - The output matrix itself.
  *
- * Edge Cases Handled: n = 1 (single cell), odd/even n, single-row/single-column lap (guarded bottom and left passes)
+ * Edge Cases Handled: n = 1 (single cell), odd n (innermost layer is a single row/col), boundary collapse after last layer
  */
 class SpiralMatrixIi {
     public int[][] generateMatrix(int n) {
@@ -19,29 +19,29 @@ class SpiralMatrixIi {
         int rowEnd = n - 1;
         int colBegin = 0;
         int colEnd = n - 1;
-        int t = 1;
+        int counter = 1;
         while (rowBegin <= rowEnd && colBegin <= colEnd) {
 
             for (int i = colBegin; i <= colEnd; i++) {
-                res[rowBegin][i] = t++;
+                res[rowBegin][i] = counter++;
             }
             rowBegin++;
 
             for (int j = rowBegin; j <= rowEnd; j++) {
-                res[j][colEnd] = t++;
+                res[j][colEnd] = counter++;
             }
             colEnd--;
 
             if (rowBegin <= rowEnd) {
                 for (int k = colEnd; k >= colBegin; k--) {
-                    res[rowEnd][k] = t++;
+                    res[rowEnd][k] = counter++;
                 }
                 rowEnd--;
             }
 
             if (colBegin <= colEnd) {
                 for (int s = rowEnd; s >= rowBegin; s--) {
-                    res[s][colBegin] = t++;
+                    res[s][colBegin] = counter++;
                 }
                 colBegin++;
             }

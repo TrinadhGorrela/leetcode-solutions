@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Binary Search, Interactive
  * https://leetcode.com/problems/guess-number-higher-or-lower/
  *
- * Pattern: Binary Search (Interactive)
- * Key insight: Use the guess() feedback (-1/0/1) as the comparison to shrink the search interval toward the picked number in logarithmic time.
+ * Pattern: Interactive Binary Search
+ * Key insight: The guess() API returns -1 (too high), 1 (too low), or 0 (found); use these as the comparison to halve [left, right] each iteration until the exact number is narrowed down.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log n) - Interval halves each guess.
+ * Space Complexity: O(1) - Three integers: left, right, mid.
  *
- * Edge Cases Handled: n = 1, picked number at the boundary (1 or n), picked number is the midpoint early hit
+ * Edge Cases Handled: n = 1 (returned immediately), picked number at boundary (1 or n), picked number is the initial midpoint
  */
 /** 
  * Forward declaration of guess API.
@@ -26,11 +26,11 @@ public class GuessNumberHigherOrLower extends GuessGame {
         int right = n;
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            int res = guess(mid);
+            int guessResult = guess(mid);
 
-            if (res == 0) {
+            if (guessResult == 0) {
                 return mid;
-            } else if (res == -1) {
+            } else if (guessResult == -1) {
                 right = mid - 1;
             } else {
                 left = mid + 1;

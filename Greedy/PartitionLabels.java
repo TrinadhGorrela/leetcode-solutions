@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Hash Table, Two Pointers, String, Greedy
  * https://leetcode.com/problems/partition-labels/
  *
- * Pattern: Greedy + Two Pointers (Last Occurrence Scan)
- * Key insight: Record each character's last index, then sweep the string extending the current partition's end to the max last-index seen; close a partition when the sweep reaches that end.
+ * Pattern: Last-Index Greedy Partitioning
+ * Key insight: Each character's last occurrence defines the minimum right boundary of any partition containing it; by greedily extending the current partition's end to the maximum last-index seen, we guarantee all characters in the partition appear nowhere outside it.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Bounded by lowercase alphabet size (26)
+ * Time Complexity: O(N) - Two linear passes: one to build last-index map, one to scan and partition
+ * Space Complexity: O(1) - Fixed 26-entry HashMap for lowercase letters
  *
- * Edge Cases Handled: single character (one partition), all identical characters (single partition), all unique characters (each its own partition of length 1)
+ * Edge Cases Handled: single character (one partition of length 1), all identical characters (entire string is one partition), string with all unique characters (each character gets its own partition), repeated characters spanning the whole string
  */
 class PartitionLabels {
     public List<Integer> partitionLabels(String s) {
@@ -20,15 +20,15 @@ class PartitionLabels {
             map.put(s.charAt(i), i);
         }
 
-        int st = 0;
+        int start = 0;
         int end = 0;
 
         for (int i = 0; i < s.length(); i++) {
             end = Math.max(end, map.get(s.charAt(i)));
 
             if (end == i) {
-                list.add(end - st + 1);
-                st = i + 1;
+                list.add(end - start + 1);
+                start = i + 1;
             }
         }
         return list;

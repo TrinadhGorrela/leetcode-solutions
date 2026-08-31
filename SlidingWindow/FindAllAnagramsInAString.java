@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Hash Table, String, Sliding Window
  * https://leetcode.com/problems/find-all-anagrams-in-a-string/
  *
- * Pattern: Sliding Window + Frequency Array
- * Key insight: Slide a fixed-length window equal to pattern length across s, maintaining the window's letter counts and comparing them to the pattern's counts; matches yield starting indices.
+ * Pattern: Fixed-Size Sliding Window with Frequency Array Comparison
+ * Key insight: Build frequency arrays for both t and the first window of s (both of size |t|). Slide the window one position at a time, updating only two counts (evict left, add right), then compare the full 26-element frequency arrays via Arrays.compare. A match means an anagram was found at that position.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Frequency arrays have a fixed size of 26
+ * Time Complexity: O(26 * N) = O(N) - N slide steps each with a O(26) frequency comparison
+ * Space Complexity: O(1) - Two fixed-size int[26] arrays independent of input
  *
- * Edge Cases Handled: s shorter than t (empty result), s equals t, no anagram present, anagram at start (index 0) or end of s
+ * Edge Cases Handled: s shorter than t (early return empty list), anagram at index 0 (checked before the loop), anagram at the very end of s, no anagram present, duplicate characters in t requiring exact frequency match
  */
 class FindAllAnagramsInAString {
     public List<Integer> findAnagrams(String s, String t) {

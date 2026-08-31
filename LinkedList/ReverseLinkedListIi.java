@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Linked List
  * https://leetcode.com/problems/reverse-linked-list-ii/
  *
- * Pattern: Sub-list Reversal with Dummy Node
- * Key insight: Walk to the node just before left, reverse exactly (right-left+1) nodes in place, then re-attach the head and tail of that reversed segment to the surroundings.
+ * Pattern: Dummy-Headed Sub-List Reversal
+ * Key insight: Use a dummy node so left=1 (head reversal) needs no special case; walk a pointer to the node just before `left`, then reverse exactly (right - left + 1) nodes in-place by repeated front-insertion, and re-stitch the segment's two ends to its neighbors.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Single pass to position + reversal of the segment.
+ * Space Complexity: O(1) - In-place pointer rewiring only.
  *
- * Edge Cases Handled: left = 1 (reversal includes the head, dummy node), left == right (single-node segment, unchanged), reversal at the tail, reversal spanning the whole list
+ * Edge Cases Handled: left = 1 (head is part of reversal; dummy handles it), left == right (no-op), reversal spans the entire list, reversal at the tail
  */
 /**
  * Definition for singly-linked list.

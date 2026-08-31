@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Hash Table, String
  * https://leetcode.com/problems/word-pattern/
  *
- * Pattern: Hash Map + Set (Bijection Check)
- * Key insight: Map each pattern character to a word while a set records words already used, enforcing the one-to-one correspondence in both directions.
+ * Pattern: Dual-Map Bijection Check
+ * Key insight: Maintain a char→word HashMap and a word-HashSet simultaneously; the map ensures each pattern character maps to exactly one word, while the set prevents two different pattern characters from sharing the same word—enforcing a true bijection.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Split the string into n words, then single pass; map/set ops are O(1) average.
+ * Space Complexity: O(n) - Map and set together hold up to n entries.
  *
- * Edge Cases Handled: pattern and word counts differ (returns false), empty pattern, one pattern char mapped to two different words (conflict), two pattern chars mapped to the same word (set conflict)
+ * Edge Cases Handled: pattern and word count mismatch (returns false), empty pattern, two pattern chars mapped to the same word (set blocks it), one pattern char mapped to two words (map blocks it)
  */
 class WordPattern {
     public boolean wordPattern(String pattern, String s) {

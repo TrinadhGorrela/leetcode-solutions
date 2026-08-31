@@ -3,27 +3,27 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Greedy
  * https://leetcode.com/problems/container-with-most-water/
  *
- * Pattern: Two Pointers (Shrink from Ends)
- * Key insight: Start pointers at both ends, compute area from the shorter wall's height and current width, then move the shorter wall inward since its height bounds the container.
+ * Pattern: Greedy Two-Pointer Shrink
+ * Key insight: The area is bounded by the shorter wall and the width; moving the taller wall inward can only decrease width without improving height, so always advancing the shorter pointer is provably optimal.
  *
- * Time Complexity: O(N) - Two pointers approach iterating through elements once
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Each pointer moves at most N steps; single pass
+ * Space Complexity: O(1) - Two pointers, one max tracker, one temp area variable
  *
- * Edge Cases Handled: Two-element minimal array, equal wall heights (right pointer moves), single element (area 0), tallest walls adjacent/at ends
+ * Edge Cases Handled: Minimum two-element array, equal heights (either pointer can move), all walls same height, tallest walls at the ends, progressively decreasing heights
  */
 class ContainerWithMostWater {
     public int maxArea(int[] height) {
         int left = 0;
         int right = height.length - 1;
-        int Maxarea = 0, area = 0;
+        int maxAreaValue = 0, area = 0;
         while (left < right) {
             area = Math.min(height[left], height[right]) * (right - left);
-            Maxarea = Math.max(Maxarea, area);
+            maxAreaValue = Math.max(maxAreaValue, area);
             if (height[left] < height[right])
                 left++;
             else
                 right--;
         }
-        return Maxarea;
+        return maxAreaValue;
     }
 }

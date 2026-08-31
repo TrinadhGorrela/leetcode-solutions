@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/sort-array-by-parity/
  *
- * Pattern: In-place Partition (Bubble-Style Shift)
- * Key insight: Slide each even number left to its correct position. A two-pointer single-swap solution is more efficient, but this shifting implementation is also correct.
+ * Pattern: In-place Bubble-Shift Partition
+ * Key insight: Maintain a `left` pointer marking where the next even element belongs; when an even is found, bubble it leftward by swapping adjacent elements until it reaches `left`.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time (Suboptimal approach)
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N^2) - Each even element may bubble past all odd elements preceding it (suboptimal; two-pointer swap is O(N))
+ * Space Complexity: O(1) - In-place swaps with only left, right, and temp variables
  *
- * Edge Cases Handled: all odd / all even, single element, zeros (even), negative even/odd values
+ * Edge Cases Handled: all odd (left stays 0), all even (each shifts one position), zeros treated as even, negative evens/odds (parity via modulo)
  */
 class SortArrayByParity {
     public int[] sortArrayByParity(int[] nums) {

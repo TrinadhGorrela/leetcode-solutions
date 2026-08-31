@@ -3,27 +3,27 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/palindrome-number/
  *
- * Pattern: Reverse-and-Compare
- * Key insight: Rebuild the number's digits in reverse order and compare with the original; negatives are automatically not palindromes.
+ * Pattern: Reverse Digits and Compare
+ * Key insight: Pop each digit off x via mod 10 and rebuild a reversed integer in a separate accumulator; at the end, the number is a palindrome iff the reversed value equals the original.
  *
- * Time Complexity: O(log n) - Processes the digits of the number
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log n) - One iteration per decimal digit of x
+ * Space Complexity: O(1) - Only digit, reversed, and original accumulators
  *
-* Edge Cases Handled: negative numbers (immediately false), x = 0 (palindrome), single-digit numbers
+ * Edge Cases Handled: negative x (rejected by the x > -1 guard), x = 0 (loop skipped, reversed stays 0, matches), single-digit numbers (always palindromes)
  */
 class PalindromeNumber {
     public boolean isPalindrome(int x) {
-        int a;
-        int sum = 0;
-        int b = x;
+        int digit;
+        int reversed = 0;
+        int original = x;
         if (x > -1) {
 
             while (x != 0) {
-                a = x % 10;
-                sum = sum * 10 + a;
+                digit = x % 10;
+                reversed = reversed * 10 + digit;
                 x = x / 10;
             }
-            if (b == sum) {
+            if (original == reversed) {
                 return true;
             } else {
                 return false;

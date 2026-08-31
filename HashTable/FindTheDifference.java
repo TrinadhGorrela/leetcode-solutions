@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Hash Table, String, Bit Manipulation, Sorting
  * https://leetcode.com/problems/find-the-difference/
  *
- * Pattern: Sum Difference (Bit Manipulation Alternative)
- * Key insight: Sum the ASCII values of t and subtract those of s; the leftover is the added character, since the target string holds exactly one extra char.
+ * Pattern: ASCII Sum Difference
+ * Key insight: Sum all ASCII values of t, subtract all ASCII values of s; since t contains exactly one extra character, the remainder is that character's ASCII code—no hash map needed.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Allocates memory for string processing
+ * Time Complexity: O(n) - Two linear passes over the strings.
+ * Space Complexity: O(1) - Single integer accumulator.
  *
- * Edge Cases Handled: empty s (t holds a single difference), added character at any position, difference among repeated characters
+ * Edge Cases Handled: empty s (t has one character), extra character at any position, repeated characters (sum difference still isolates the single addition)
  */
 class FindTheDifference {
     public char findTheDifference(String s, String t) {

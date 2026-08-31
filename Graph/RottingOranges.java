@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Breadth-First Search, Matrix
  * https://leetcode.com/problems/rotting-oranges/
  *
- * Pattern: Multi-Source BFS (Level-Order)
- * Key insight: Seed the queue with every initially rotten orange and BFS outward one level at a time, counting minutes; if any fresh orange remains after the flood, return -1.
+ * Pattern: Multi-Source BFS (Simultaneous Expansion)
+ * Key insight: All initially rotten oranges start at distance 0 and expand in parallel; each BFS level represents one minute. An `isRot` flag per level tracks whether any new orange rotted, so the minute counter only increments when propagation actually occurs.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(M * N) - Each cell enqueued at most once; initial scan plus BFS each visit every cell once
+ * Space Complexity: O(M * N) - BFS queue worst-case holds all cells (e.g., checkerboard pattern)
  *
-* Edge Cases Handled: fresh oranges unreachable from any rotten source (returns -1), no fresh oranges at all (returns 0), no initially rotten oranges with fresh present (-1), all oranges already rotten
+ * Edge Cases Handled: no fresh oranges (returns 0), fresh oranges isolated from all rotten sources (returns -1 after post-BFS scan), no initially rotten oranges with fresh present (returns -1), all oranges already rotten (returns 0)
  */
 class RottingOranges {
     public int orangesRotting(int[][] grid) {

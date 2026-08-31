@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/3sum/
  *
- * Pattern: Sorting + Two Pointers (Nested Sum, Dedup via Set)
- * Key insight: Sort, fix one element, then two-pointer the remainder toward sum zero; a hash set of lists deduplicates the triplets.
+ * Pattern: Sort + Fix-One + Two-Pointer Pair Search
+ * Key insight: Sorting lets us binary-reason about the remaining pair: for a fixed nums[i], if the pair sum is too negative we advance left, too positive we retreat right—O(N) per i. A HashSet of Lists handles duplicate triplets without skipping logic.
  *
- * Time Complexity: O(N^2) - The outer loop combined with the inner two-pointer scan dominates the O(N log N) sort
- * Space Complexity: O(N^2) - Stores up to O(N^2) unique triplets in the worst case
+ * Time Complexity: O(N^2) - O(N log N) sort dominated by N iterations × O(N) two-pointer scan each
+ * Space Complexity: O(N^2) - Worst case all triplets are unique; HashSet stores each triplet list
  *
- * Edge Cases Handled: null or empty array, fewer than 3 elements, no valid triplets (returns empty list), duplicates deduplicated via set
+ * Edge Cases Handled: Input shorter than 3 elements, all zeros, target reachable only by duplicate values, array with positive and negative mix requiring both pointer directions
  */
 class ThreeSum {
     public List<List<Integer>> threeSum(int[] nums) {

@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Matrix, Simulation
  * https://leetcode.com/problems/available-captures-for-rook/
  *
- * Pattern: Grid Simulation (Directional Scan)
- * Key insight: Locate the rook, then walk each of the four compass directions, counting the first pawn encountered before any blocking bishop.
+ * Pattern: Fixed-Board Directional Scan
+ * Key insight: Locate the rook on the 8×8 board, then walk outward in the four cardinal directions; count a capture the first time a pawn ('p') is encountered before any bishop ('B') blocks the path.
  *
- * Time Complexity: O(1) - Loops are bounded by fixed 8x8 board size
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(1) - Board is fixed 8×8; at most 4 × 7 = 28 cells checked.
+ * Space Complexity: O(1) - Only rook coordinates and a capture counter.
  *
- * Edge Cases Handled: rook at board edge (single scan direction), no pawns in any direction, pawn blocked by bishop, empty cells around rook
+ * Edge Cases Handled: rook at board edge (shortened scan), no pawns on the board, pawn blocked by bishop, multiple pawns in one direction (only the first counts)
  */
 class AvailableCapturesForRook {
     public int numRookCaptures(char[][] board) {

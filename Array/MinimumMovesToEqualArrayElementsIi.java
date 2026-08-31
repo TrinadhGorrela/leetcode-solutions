@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Math, Sorting
  * https://leetcode.com/problems/minimum-moves-to-equal-array-elements-ii/
  *
- * Pattern: Sorting + Median
- * Key insight: The value that minimizes the sum of absolute deviations is the median; after sorting, accumulate distances of all elements to the middle element.
+ * Pattern: Sort + Median Target
+ * Key insight: The L1-optimal meeting point (minimizing sum of absolute differences) is the median; after sorting, the middle element is the target and the answer is the sum of |nums[i] - median| for all i.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N log N) - Arrays.sort dominates; the subsequent accumulation loop is O(N)
+ * Space Complexity: O(1) - In-place sort with only a mid-value and an accumulator beyond the input
  *
- * Edge Cases Handled: single element (0 moves), all elements equal, even-length median, negative values
+ * Edge Cases Handled: single element (0 moves), all elements equal (0 moves), even-length array (uses upper median at N/2), negative values (absolute difference handles sign)
  */
 class MinimumMovesToEqualArrayElementsIi {
     public int minMoves2(int[] nums) {

@@ -19,11 +19,11 @@ class MazeSolver {
             return res;
 
         String path = "";
-        helper(maze, n, 0, 0, path, res);
+        explorePaths(maze, n, 0, 0, path, res);
         return res;
     }
 
-    public void helper(int[][] maze, int n, int row, int col, String path, List<String> res) {
+    public void explorePaths(int[][] maze, int n, int row, int col, String path, List<String> res) {
         if (row < 0 || col < 0 || row >= n || col >= n || maze[row][col] == 0 || maze[row][col] == -1) {
             return;
         }
@@ -35,10 +35,10 @@ class MazeSolver {
 
         maze[row][col] = -1;
 
-        helper(maze, n, row - 1, col, path + 'U', res);
-        helper(maze, n, row + 1, col, path + 'D', res);
-        helper(maze, n, row, col + 1, path + 'R', res);
-        helper(maze, n, row, col - 1, path + 'L', res);
+        explorePaths(maze, n, row - 1, col, path + 'U', res);
+        explorePaths(maze, n, row + 1, col, path + 'D', res);
+        explorePaths(maze, n, row, col + 1, path + 'R', res);
+        explorePaths(maze, n, row, col - 1, path + 'L', res);
 
         maze[row][col] = 1;
     }

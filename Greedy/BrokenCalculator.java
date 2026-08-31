@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, Greedy
  * https://leetcode.com/problems/broken-calculator/
  *
- * Pattern: Greedy (Reverse from Target)
- * Key insight: Work backwards from target: halve it when even else increment, because the forward operations only make the value grow; convert the remainder with startValue - target at the end.
+ * Pattern: Reverse Greedy (Invert Operations)
+ * Key insight: Forward multiply-by-2 is cheap but reverse divide-by-2 halves fast; increment has no inverse advantage, so work backward from target — halve when even, increment when odd — then bridge the remaining gap with subtraction.
  *
- * Time Complexity: O(log(target)) - Divides by 2 or adds 1, reaching startValue in log time
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log target) - Each step halves or nearly halves target; final subtraction is O(1)
+ * Space Complexity: O(1) - Two integer variables (count, target)
  *
-* Edge Cases Handled: target already equal to startValue (zero operations), odd target (incremented instead of halved), target below startValue (only double+decrement path, converted via subtraction)
+ * Edge Cases Handled: target == startValue (zero steps), odd target values (increment to make even then halve), target < startValue (reverse loop never runs, only subtraction remains), power-of-two target
  */
 class BrokenCalculator {
     public int brokenCalc(int startValue, int target) {

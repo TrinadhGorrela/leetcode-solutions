@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Math, Simulation
  * https://leetcode.com/problems/check-good-integer/
  *
- * Pattern: Digit Summary (Sum of Digits and Squares)
- * Key insight: Extract each digit with mod 10, accumulating both the digit sum and the sum of digits squared, then test whether their difference meets the threshold.
+ * Pattern: Single-Pass Digit Aggregation (Sum of Digits vs Sum of Squares)
+ * Key insight: Extract each digit once via mod 10 and, in the same pass, accumulate both the digit sum and the sum of digit squares; classify the number by whether squareSum - digitSum clears the threshold of 50.
  *
- * Time Complexity: O(log N) - Iterates over the digits of the input number
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log10 n) - One iteration per decimal digit
+ * Space Complexity: O(1) - Only digitSum and squareSum accumulators
  *
-* Edge Cases Handled: single-digit n, n = 0 (digit loop skipped), digit 0 contributes nothing to either sum
+ * Edge Cases Handled: n = 0 (loop skipped; both sums 0, fails the check), single-digit n, contributions from digit 0 are zero for both sums
  */
 class CheckGoodInteger {
     public boolean checkGoodInteger(int n) {

@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Linked List, Math
  * https://leetcode.com/problems/convert-binary-number-in-a-linked-list-to-integer/
  *
- * Pattern: Linked List Traversal + Base-2 Conversion
- * Key insight: Concatenate each node's bit into a string as the list is traversed, then parse that binary string into an integer.
+ * Pattern: String Accumulation + Base-2 Parse
+ * Key insight: Concatenate each node's bit into a StringBuilder to form the binary string, then use Integer.parseInt with radix 2 to convert to decimal.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - StringBuilder grows with the input size
+ * Time Complexity: O(n) - One pass to build the string, parse is also O(n).
+ * Space Complexity: O(n) - StringBuilder holds one character per node.
  *
- * Edge Cases Handled: single node, leading zero bit (does not change value), value that exceeds what a shorter representation implies
+ * Edge Cases Handled: single node, leading zero bits, maximum 30-bit value (within int range)
  */
 /**
  * Definition for singly-linked list.

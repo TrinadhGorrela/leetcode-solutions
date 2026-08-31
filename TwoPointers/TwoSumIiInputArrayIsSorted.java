@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Binary Search
  * https://leetcode.com/problems/two-sum-ii-input-array-is-sorted/
  *
- * Pattern: Two Pointers (Sorted Opposite Ends)
- * Key insight: Exploit the sorted array by pointing at both ends; move the left up when the sum is too small and the right down when too large, returning the 1-indexed pair.
+ * Pattern: Sorted Two-Pointer Convergence
+ * Key insight: Sorted array means incrementing left increases sum and decrementing right decreases it—each comparison eliminates one element, guaranteeing a single-pass O(N) search.
  *
- * Time Complexity: O(N) - Two pointers approach iterating through elements once
- * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
+ * Time Complexity: O(N) - Each pointer moves at most N times total; no element is revisited
+ * Space Complexity: O(1) - Two index variables plus one sum variable, no allocations
  *
- * Edge Cases Handled: Single element, duplicates in array, pair at the array ends, target not matching any pair (returns default [0, 0])
+ * Edge Cases Handled: Pair spanning the full array length, duplicate values at adjacent indices, target requiring the very last comparison, guaranteed exactly one solution per problem contract
  */
 class TwoSumIiInputArrayIsSorted {
     public static int[] twoSum(int[] numbers, int target) {

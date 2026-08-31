@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, Number Theory
  * https://leetcode.com/problems/sum-of-primes-between-number-and-its-reverse/
  *
- * Pattern: Reverse Construction + Prime Summation
- * Key insight: Reverse the digits to bound the range, then sum every prime between the smaller and larger of n and its reverse via trial-division primality.
+ * Pattern: Digit Reversal + Trial Division Prime Summation
+ * Key insight: Reverse n's digits to form the range endpoints, then iterate from min(n, rev) to max(n, rev) accumulating primes found via trial division up to sqrt(i).
  *
- * Time Complexity: O(N * sqrt(N)) - isPrime is O(sqrt(N)) and gets called for each number in the range
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(R * sqrt(M)) - R = |n - rev| range width, M = max value in range, trial division up to sqrt(M) per candidate
+ * Space Complexity: O(1) - Only int variables for rev, st, end, res, and the loop counter
  *
-* Edge Cases Handled: n = 0 or 1 (not prime), small primes 2, 3, reverse being smaller than n (range reordered via min/max), trailing-zero digits shortening the reverse
+ * Edge Cases Handled: n = 0 or 1 (not prime, contribute nothing), n = 2 or 3 (prime, included), n with trailing zeros (rev < n, range flips via min/max), single-element range where n equals its reverse
  */
 class SumOfPrimesBetweenNumberAndItsReverse {
     public int sumOfPrimesInRange(int n) {

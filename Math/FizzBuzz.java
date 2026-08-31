@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Math, String, Simulation
  * https://leetcode.com/problems/fizz-buzz/
  *
- * Pattern: Modular Conditional Simulation
- * Key insight: For each number, check divisibility by 15, 3, then 5 in descending precedence, appending the matching token or the number itself.
+ * Pattern: Ordered Modulo Dispatch
+ * Key insight: Iterate 1..n, testing divisibility in descending precedence — by 15 first (FizzBuzz), then 3 (Fizz), then 5 (Buzz) — and fall back to the numeric string when none apply.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - One pass over all n numbers, constant work each
+ * Space Complexity: O(n) - Result list must hold one string per number
  *
-* Edge Cases Handled: numbers divisible by both 3 and 5 (FizzBuzz checked first), n = 1, non-divisible numbers output as their own value
+ * Edge Cases Handled: multiples of both 3 and 5 (FizzBuzz branch checked first so it wins), n = 1 (only "1" produced), non-divisible numbers emitted as their own value
  */
 class FizzBuzz {
     public List<String> fizzBuzz(int n) {

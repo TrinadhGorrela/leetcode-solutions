@@ -3,32 +3,29 @@
  * Difficulty: Medium | Tags: String, Stack, Simulation
  * https://leetcode.com/problems/removing-stars-from-a-string/
  *
- * Pattern: StringBuilder as Stack (Simulation)
- * Key insight: Append each non-star character to a StringBuilder (acting as a stack) and remove the last character when a star is read, emulating the deletion of the nearest left neighbor.
+ * Pattern: StringBuilder as Stack
+ * Key insight: Append each non-'*' character to a StringBuilder; on '*', delete the last character (the nearest left neighbor). The StringBuilder naturally acts as a stack with O(1) amortized append/deleteAt-end.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - StringBuilder grows with the input size
+ * Time Complexity: O(n) - Each character appended or removed at most once.
+ * Space Complexity: O(n) - StringBuilder holds the surviving characters.
  *
- * Edge Cases Handled: Empty string, no stars, all stars (guarded empty delete), leading star, alternating star/letter pairs
+ * Edge Cases Handled: no stars (string unchanged), all stars (empty result), star at the beginning (guarded delete), alternating star/letter pattern
  */
 class RemovingStarsFromAString {
     public String removeStars(String s) {
-
         StringBuilder stb = new StringBuilder();
-        int a = s.length();
-        char c;
+        int length = s.length();
+        char ch;
 
-        for (int i = 0; i < a; i++) {
-            c = s.charAt(i);
-            if (c == '*') {
+        for (int i = 0; i < length; i++) {
+            ch = s.charAt(i);
+            if (ch == '*') {
                 if (stb.length() > 0) {
                     stb.deleteCharAt(stb.length() - 1);
                 }
             } else {
-                stb.append(c);
-
+                stb.append(ch);
             }
-
         }
         return stb.toString();
     }

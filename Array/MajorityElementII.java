@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Sorting, Counting, Boyer–Moore Majority Vote Algorithm
  * https://leetcode.com/problems/majority-element-ii/
  *
- * Pattern: Hash Map (Counting)
- * Key insight: Count frequencies and collect every element whose count is strictly greater than n/3 (there can be at most two such elements).
+ * Pattern: HashMap Frequency Count
+ * Key insight: At most two elements can exceed n/3 frequency — a full frequency map followed by a single filter pass identifies them with no need for Boyer-Moore voting.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - One pass to populate counts, one pass over distinct keys (at most N)
+ * Space Complexity: O(N) - HashMap holds one entry per distinct element
  *
- * Edge Cases Handled: single element, no element exceeds n/3 (empty result), exactly two majority elements, small arrays (n<3)
+ * Edge Cases Handled: no element exceeds n/3 (empty list returned), exactly one or two elements qualify, n < 3 (at most one qualifier), all elements identical
  */
 class MajorityElementII {
     public List<Integer> majorityElement(int[] nums) {

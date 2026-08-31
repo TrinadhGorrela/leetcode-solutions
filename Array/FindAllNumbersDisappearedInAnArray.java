@@ -3,17 +3,17 @@
  * Difficulty: Easy | Tags: Array, Hash Table
  * https://leetcode.com/problems/find-all-numbers-disappeared-in-an-array/
  *
- * Pattern: In-place Marking (Negation Trick)
- * Key insight: Use the array itself as a marker: for each value, negate the element at the index it maps to; any index left positive corresponds to a missing number. No extra space needed.
+ * Pattern: In-place Negation Marking
+ * Key insight: Use the array as its own hash set: for each value v, negate nums[|v|-1] to mark that the number |v| has been seen; after the pass, any unmarked (positive) index i indicates that i+1 is missing.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Marks elements in-place by negation, no auxiliary collection
+ * Time Complexity: O(N) - Two linear passes: one to mark by negation, one to collect positive indices
+ * Space Complexity: O(1) - All marking is done in-place on the input array; only the output list uses extra space
  *
- * Edge Cases Handled: no missing numbers, all missing (multiple), duplicates of the same value, value already negated (repeated index)
+ * Edge Cases Handled: no missing numbers (all indices negated), duplicates (absolute value ensures re-negation is skipped), already-negative values from prior marks (Math.abs prevents double-negation)
  */
 class FindAllNumbersDisappearedInAnArray {
     public List<Integer> findDisappearedNumbers(int[] nums) {
-        List<Integer> res = new ArrayList<>();
+        List<Integer> missingNumbers = new ArrayList<>();
         for (int i = 0; i < nums.length; i++) {
             int index = Math.abs(nums[i]) - 1;
             if (nums[index] > 0) {
@@ -22,8 +22,8 @@ class FindAllNumbersDisappearedInAnArray {
         }
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] > 0)
-                res.add(i + 1);
+                missingNumbers.add(i + 1);
         }
-        return res;
+        return missingNumbers;
     }
 }

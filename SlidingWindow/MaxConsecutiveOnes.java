@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array
  * https://leetcode.com/problems/max-consecutive-ones/
  *
- * Pattern: Sliding Window / Counting
- * Key insight: Maintain a running count of consecutive 1s, reset it at each 0, and keep the all-time maximum.
+ * Pattern: Linear Scan with Run-Length Counter
+ * Key insight: Increment a counter on each 1 and reset it to 0 on each 0, taking the max after every element. The final max() call after the loop handles a trailing run of ones that never encounters a 0 to trigger the mid-loop max update.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Single pass through the array
+ * Space Complexity: O(1) - Two integer scalars (count, max)
  *
- * Edge Cases Handled: all zeros (result 0), all ones (maximum run at end captured by final max), single element, trailing ones
+ * Edge Cases Handled: all zeros (count never exceeds 0), all ones (final max() after loop captures the full run), single element (1 or 0), leading zeros followed by ones, trailing ones with no terminating 0
  */
 class MaxConsecutiveOnes {
     public int findMaxConsecutiveOnes(int[] nums) {

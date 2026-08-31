@@ -3,32 +3,32 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/concatenate-non-zero-digits-and-multiply-by-sum-i/
  *
- * Pattern: Digit Manipulation (Reversal + Sum)
- * Key insight: Reverse the digits to restore their original order and sum them; rebuild a number skipping zero digits, then return the product of that number and the digit sum.
+ * Pattern: Two-Pass Digit Rebuild (Reverse Then Filter)
+ * Key insight: First reverse n's digits while accumulating their sum — reusing the reversal to expose digits in original order — then rebuild a number that skips zero digits, and return the product of that rebuilt number and the digit sum as a long to avoid overflowing int.
  *
- * Time Complexity: O(log N) - Processes digits of the number
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log10 n) - Two linear passes over the digits
+ * Space Complexity: O(1) - Only sum, reversedNum, num, and digit temporaries
  *
-* Edge Cases Handled: digits equal to zero (dropped during reconstruction), numbers ending in zero (reversal produces leading zeros), result kept in long to avoid overflow
+ * Edge Cases Handled: zero digits dropped during reconstruction, trailing zeros (reversal's leading zeros vanish harmlessly), single-digit n (sum and rebuilt value both match the digit), result exceeding int range (long accumulator prevents overflow)
  */
 class ConcatenateNonZeroDigitsAndMultiplyBySumI {
     public long sumAndMultiply(int n) {
         int sum = 0;
         long num = n;
-        long d = 0;
+        long reversedNum = 0;
         while (num != 0) {
-            long l = num % 10;
-            d = d * 10 + l;
-            sum += l;
+            long digit = num % 10;
+            reversedNum = reversedNum * 10 + digit;
+            sum += digit;
             num /= 10;
         }
         num = 0;
-        while (d != 0) {
-            long l = d % 10;
-            if (l != 0) {
-                num = num * 10 + l;
+        while (reversedNum != 0) {
+            long digit = reversedNum % 10;
+            if (digit != 0) {
+                num = num * 10 + digit;
             }
-            d /= 10;
+            reversedNum /= 10;
         }
         return num * sum;
     }

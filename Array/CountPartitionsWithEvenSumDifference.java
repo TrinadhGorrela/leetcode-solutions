@@ -3,17 +3,17 @@
  * Difficulty: Easy | Tags: Array, Math, Prefix Sum
  * https://leetcode.com/problems/count-partitions-with-even-sum-difference/
  *
- * Pattern: Prefix Sum + Math
- * Key insight: Compute the total sum once; for each valid split, the right side is total - leftSum, so the difference (leftSum - rightSum) can be checked for evenness in O(1).
+ * Pattern: Running Prefix Sum with Parity Check
+ * Key insight: leftSum - rightSum = 2*leftSum - total, so the difference is even exactly when total is even — meaning either all N-1 splits are valid or none are. The code still enumerates splits but the parity of the total sum is the decisive factor.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - One pass to compute total, one pass to evaluate each of the N-1 split positions
+ * Space Complexity: O(1) - Only an accumulator for total (long to prevent overflow) and a running left sum
  *
- * Edge Cases Handled: negative values, total sum overflow (uses long), no valid partition (odd difference)
+ * Edge Cases Handled: odd-length arrays producing no valid split when total is odd, negative values, large sums requiring long arithmetic
  */
 class CountPartitionsWithEvenSumDifference {
     public int countPartitions(int[] nums) {
-        int leftSum = 0, rightSum = 0, even = 0;
+        int leftSum = 0, rightSum = 0, partitionCount = 0;
         long total = 0;
         for (int i : nums) {
             total = total + i;
@@ -22,8 +22,8 @@ class CountPartitionsWithEvenSumDifference {
             leftSum = leftSum + nums[i];
             rightSum = (int) (total - leftSum);
             if ((leftSum - rightSum) % 2 == 0)
-                even++;
+                partitionCount++;
         }
-        return even;
+        return partitionCount;
     }
 }

@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Hash Table, Math, String
  * https://leetcode.com/problems/integer-to-roman/
  *
- * Pattern: Greedy (Ordered Roman Value Lookup)
- * Key insight: Walk a descending ordered list of roman value/symbol pairs (including subtractive combos like 900/CM), greedily appending the largest symbol that fits and subtracting its value from num.
+ * Pattern: Descending Greedy Value Decomposition
+ * Key insight: Encode subtractive forms (CM, CD, XC, XL, IX, IV) as explicit entries in a descending lookup table; the greedy while-loop repeatedly extracts the largest fitting value, producing a canonical Roman numeral with no backtracking.
  *
- * Time Complexity: O(1) - Work bounded by fixed constraints (Roman numerals max ~3999, 13 rules)
- * Space Complexity: O(1) - Fixed size array/map and bounded string output
+ * Time Complexity: O(1) - At most 15 iterations across the 13-entry table (max value 3999 = 3×M + 1×C + 1×D…)
+ * Space Complexity: O(1) - 13-entry LinkedHashMap; output string bounded by ~15 characters
  *
- * Edge Cases Handled: num = 1, subtractive combinations (4, 9, 40, 90, 400, 900), exact multiples of 10/100/1000, repeated symbols (e.g., 2, 3, 20, 30)
+ * Edge Cases Handled: all subtractive forms (4=IV, 9=IX, 40=XL, 90=XC, 400=CD, 900=CM), repeated symbols (3=MMM, 388=CCCLXXXVIII), boundary values (1=I, 3999=MMMCMXCIX)
  */
 class IntegerToRoman {
     public String intToRoman(int num) {

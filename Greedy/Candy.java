@@ -3,35 +3,35 @@
  * Difficulty: Hard | Tags: Array, Greedy
  * https://leetcode.com/problems/candy/
  *
- * Pattern: Greedy (Two-Pass Peak Rule)
- * Key insight: Assign 1 candy each, then enforce the left-to-right rule (t[i] = t[i-1]+1 when rating rises) in a forward pass and the right-to-left rule (t[i] = max(t[i], t[i+1]+1)) in a backward pass; the maxima of the two passes satisfy both neighbors.
+ * Pattern: Two-Pass Greedy with Max Merge
+ * Key insight: A single pass can only enforce one neighbor constraint at a time; two passes (left-to-right for ascending runs, right-to-left for descending runs) independently set lower bounds, and the elementwise max satisfies both simultaneously.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary array
+ * Time Complexity: O(N) - Three linear passes: forward, backward, and sum
+ * Space Complexity: O(N) - Candies array of length N
  *
- * Edge Cases Handled: single child (1 candy), all equal ratings (1 each), strictly increasing/decreasing ratings (peak rule), both neighbors higher/lower
+ * Edge Cases Handled: single child (returns 1), flat ratings (all get 1), strict mountain shape (peak gets max of both slopes), equal adjacent ratings (no forced increment in either direction)
  */
 class Candy {
     public int candy(int[] ratings) {
-        int[] t = new int[ratings.length];
-        Arrays.fill(t, 1);
+        int[] candies = new int[ratings.length];
+        Arrays.fill(candies, 1);
         for (int i = 1; i < ratings.length; i++) {
             if (ratings[i - 1] < ratings[i]) {
-                t[i] = Math.max(t[i], t[i - 1] + 1);
+                candies[i] = Math.max(candies[i], candies[i - 1] + 1);
             }
         }
 
         for (int i = ratings.length - 2; i >= 0; i--) {
             if (ratings[i + 1] < ratings[i]) {
-                t[i] = Math.max(t[i], t[i + 1] + 1);
+                candies[i] = Math.max(candies[i], candies[i + 1] + 1);
             }
         }
 
-        int s = 0;
+        int total = 0;
         for (int i = 0; i < ratings.length; i++) {
-            s += t[i];
+            total += candies[i];
         }
 
-        return s;
+        return total;
     }
 }

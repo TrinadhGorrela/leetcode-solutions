@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Two Pointers, Simulation
  * https://leetcode.com/problems/rearrange-array-elements-by-sign/
  *
- * Pattern: Two Pointers / Partition + Merge
- * Key insight: Split positives and negatives into two lists, then interleave them back at even/odd positions in the original order.
+ * Pattern: Two-Pass Partition + Interleave
+ * Key insight: Two linear passes (collect, then scatter) preserve relative order within each sign group; positives land at even indices and negatives at odd indices by construction, with no need for additional sorting.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - First pass fills pos/neg lists, second pass writes result; both O(N)
+ * Space Complexity: O(N) - Two ArrayLists plus the result array, all proportional to N
  *
- * Edge Cases Handled: equal counts of positives and negatives, unequal counts, zero (treated as negative side), single element
+ * Edge Cases Handled: Equal counts of positives and negatives (guaranteed by contract), large N (ArrayList dynamic resizing), single-element array, alternating signs already in place
  */
 class RearrangeArrayElementsBySign {
     public int[] rearrangeArray(int[] nums) {
@@ -24,31 +24,31 @@ class RearrangeArrayElementsBySign {
             }
         }
 
-        int s = 0;
-        int t = 0;
-        int in = 0;
-        int si = 0;
-        int ti = 0;
+        int positivePlaced = 0;
+        int negativePlaced = 0;
+        int resultIndex = 0;
+        int posIndex = 0;
+        int negIndex = 0;
 
-        while (s < pos.size() && t < neg.size()) {
-            if (in % 2 == 0) {
-                nums[in] = pos.get(si++);
-                s++;
+        while (positivePlaced < pos.size() && negativePlaced < neg.size()) {
+            if (resultIndex % 2 == 0) {
+                nums[resultIndex] = pos.get(posIndex++);
+                positivePlaced++;
             } else {
-                nums[in] = neg.get(ti++);
-                t++;
+                nums[resultIndex] = neg.get(negIndex++);
+                negativePlaced++;
             }
-            in++;
+            resultIndex++;
         }
 
-        while (s < pos.size()) {
-            nums[in++] = pos.get(si++);
-            s++;
+        while (positivePlaced < pos.size()) {
+            nums[resultIndex++] = pos.get(posIndex++);
+            positivePlaced++;
         }
 
-        while (t < neg.size()) {
-            nums[in++] = neg.get(ti++);
-            t++;
+        while (negativePlaced < neg.size()) {
+            nums[resultIndex++] = neg.get(negIndex++);
+            negativePlaced++;
         }
         return nums;
     }

@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Depth-First Search, Breadth-First Search, Matrix
  * https://leetcode.com/problems/pacific-atlantic-water-flow/
  *
- * Pattern: BFS (Reverse Flow from Oceans)
- * Key insight: BFS inward from every border cell touching an ocean, moving to equal-or-higher cells; a cell that is reachable from both oceans in its respective pass can drain to both.
+ * Pattern: Dual Reverse BFS (Ocean Inward Flow)
+ * Key insight: Instead of simulating water flowing downhill from each cell (O(M^2*N^2)), reverse the direction: BFS inward from Pacific border cells and Atlantic border cells separately, moving only to equal-or-higher neighbors. Cells reachable in both BFS passes form the intersection and can drain to both oceans.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(M * N) - Two independent BFS passes each visit every cell at most once
+ * Space Complexity: O(M * N) - Two boolean reachability matrices plus BFS queue
  *
-* Edge Cases Handled: null or empty grid (returns empty list), single-cell grid touching both oceans, cells on the shared border reachable from both passes, monotonic equal-height flows
+ * Edge Cases Handled: null or empty grid (returns empty list), single-cell grid touching both oceans, monotonic height plateaus (equal heights allow flow), shared-border cells (top-right corner touches both oceans directly)
  */
 class PacificAtlanticWaterFlow {
     public List<List<Integer>> pacificAtlantic(int[][] heights) {

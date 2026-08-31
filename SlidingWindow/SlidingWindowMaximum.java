@@ -3,13 +3,13 @@
  * Difficulty: Hard | Tags: Array, Queue, Sliding Window, Heap (Priority Queue), Monotonic Queue, Range Minimum/Maximum Query
  * https://leetcode.com/problems/sliding-window-maximum/
  *
- * Pattern: Monotonic Deque (Sliding Maximum)
- * Key insight: Keep a deque of candidate indices with strictly decreasing values; on each slide, pop smaller values from the back, add the new index, expire stale front indices, and read the max at the front.
+ * Pattern: Monotonic Deque (Sliding Window Maximum)
+ * Key insight: Maintain a deque of indices whose corresponding values are strictly decreasing; when adding a new element, evict all smaller values from the back (they can never be the max while the new one is in the window), then evict expired indices from the front. The front always holds the current window's maximum.
  *
- * Time Complexity: O(N) - Monotonic queue operations are amortized O(1)
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - Each index is pushed and popped from the deque at most once, giving amortized O(1) per element
+ * Space Complexity: O(k) - Deque stores at most k indices (one per window position)
  *
- * Edge Cases Handled: k = 1, window covering the whole array, all equal elements, monotonic increasing/decreasing sequences, stale indices expired from deque
+ * Edge Cases Handled: k equals array length (single window), k = 1 (each element is its own max), strictly increasing input (deque shrinks to size 1 each step), all identical values, decreasing input (deque holds all k indices)
  */
 class SlidingWindowMaximum {
     public int[] maxSlidingWindow(int[] nums, int k) {

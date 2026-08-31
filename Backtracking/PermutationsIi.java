@@ -3,26 +3,26 @@
  * Difficulty: Medium | Tags: Array, Backtracking, Sorting
  * https://leetcode.com/problems/permutations-ii/
  *
- * Pattern: Backtracking (Sorted + Skip Duplicates)
- * Key insight: Sort and use a used[] array; skip an index when it equals the previous value that was not used, preventing duplicate permutations.
+ * Pattern: Backtracking with Sort-Then-Skip Duplicate Suppression
+ * Key insight: After sorting, identical values are adjacent; at each recursion level, skip nums[i] when nums[i] == nums[i-1] and nums[i-1] was NOT used in the current branch -- this ensures the second copy is only placed after the first, preventing structurally duplicate permutations.
  *
- * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
- * Space Complexity: O(N * N!) - Holds all permutations
+ * Time Complexity: O(n * n!) worst case - n! permutations with O(n) each; duplicate skipping reduces this for non-distinct inputs
+ * Space Complexity: O(n) recursion depth + O(n * n!) for output storage
  *
- * Edge Cases Handled: single element, all elements identical (one unique permutation), duplicate values (deduped), no duplicates
+ * Edge Cases Handled: all elements identical (returns exactly one permutation), no duplicates (behaves identically to Permutations I), single element, mixed duplicates and distinct values
  */
 class PermutationsIi {
     public List<List<Integer>> permuteUnique(int[] nums) {
         List<List<Integer>> res = new ArrayList<>();
         Arrays.sort(nums);
         boolean[] used = new boolean[nums.length];
-        per(new ArrayList<>(), nums, res, used);
+        backtrack(new ArrayList<>(), nums, res, used);
         return res;
     }
 
-    public void per(List<Integer> sub, int[] nums, List<List<Integer>> res, boolean[] used) {
-        if (sub.size() == nums.length) {
-            res.add(new ArrayList<>(sub));
+    public void backtrack(List<Integer> current, int[] nums, List<List<Integer>> res, boolean[] used) {
+        if (current.size() == nums.length) {
+            res.add(new ArrayList<>(current));
             return;
         }
         for (int i = 0; i < nums.length; i++) {
@@ -31,10 +31,10 @@ class PermutationsIi {
             if (i > 0 && nums[i] == nums[i - 1] && !used[i - 1])
                 continue;
             used[i] = true;
-            sub.add(nums[i]);
-            per(sub, nums, res, used);
+            current.add(nums[i]);
+            backtrack(current, nums, res, used);
             used[i] = false;
-            sub.remove(sub.size() - 1);
+            current.remove(current.size() - 1);
         }
     }
 }

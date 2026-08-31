@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Backtracking, Bit Manipulation
  * https://leetcode.com/problems/subsets/
  *
- * Pattern: Backtracking (Choose/Exclude)
- * Key insight: Recursively branch on including or skipping each element starting from a running index, recording a copy of the subset at every level.
+ * Pattern: DFS Subset Enumeration with Forward-Only Indexing
+ * Key insight: Record a snapshot of the current subset at every recursive call (before iterating), then for each element from the current index forward, include it and recurse -- this naturally generates all 2^n subsets without explicit include/exclude branches.
  *
- * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
- * Space Complexity: O(N * 2^N) - Holds all subsets
+ * Time Complexity: O(2^n * n) - 2^n subsets, each copied in O(n) time
+ * Space Complexity: O(n) recursion depth + O(n * 2^n) for storing all subsets
  *
- * Edge Cases Handled: single element (empty subset + full subset), empty subset, repeated values (treated as distinct)
+ * Edge Cases Handled: empty input (returns single empty subset), single element (returns [[], [element]]), all elements equal (all 2^n subsets generated including duplicates), n = 0 edge case
  */
 class Subsets {
     public List<List<Integer>> subsets(int[] nums) {

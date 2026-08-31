@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Greedy
  * https://leetcode.com/problems/removing-minimum-and-maximum-from-array/
  *
- * Pattern: Array Scan + Minimum Deletions (Front/Back Removal)
- * Key insight: Locate the indices of the global min and max; the minimum deletions is the smallest of three strategies — delete from the front up to the farther index, from the back up to the nearer index, or split (min from one side, max from the other).
+ * Pattern: Single-Pass Index Tracking + Three-Strategy Minimization
+ * Key insight: A single linear scan records the indices of the min and max elements. Removing both requires a contiguous prefix, contiguous suffix, or one from each end — so the answer is min(farther index + 1, N - nearer index, nearer + 1 + N - farther).
  *
- * Time Complexity: O(N) - Single pass detects the min and max indices
- * Space Complexity: O(1) - Only a constant number of integer indices are tracked
+ * Time Complexity: O(N) - One pass over the array to locate min and max indices
+ * Space Complexity: O(1) - Only two integer index variables plus three candidate counts
  *
- * Edge Cases Handled: min and max at the same index (e.g. all elements equal), min/max already at an end (index 0 or N-1), N = 2 boundary
+ * Edge Cases Handled: all elements equal (min == max index), min or max already at an array boundary, array of size 2
  */
 class RemovingMinimumAndMaximumFromArray {
     public int minimumDeletions(int[] nums) {

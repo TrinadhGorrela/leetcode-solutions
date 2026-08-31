@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Tree, Depth-First Search, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/average-of-levels-in-binary-tree/
  *
- * Pattern: BFS (Level-Order Averaging)
- * Key insight: Process nodes level by level using a queue, summing each level's values and dividing by that level's node count to produce per-level averages.
+ * Pattern: BFS Level-Order Aggregation
+ * Key insight: Snapshot the level size, accumulate values into a long sum to prevent integer overflow, then cast to double for precise division. The long accumulator handles up to 10^5 nodes at max val.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Each node enqueued and dequeued once; per-level sum is O(w).
+ * Space Complexity: O(w) - Queue holds at most one level's width of nodes.
  *
- * Edge Cases Handled: empty tree / null root (returns empty list), single node, large per-level sums (uses long for sum), skewed tree
+ * Edge Cases Handled: null root returns empty list, single node, skewed tree, all-negative values, large node counts per level (long sum prevents overflow), division by level count cast to double
  */
 /**
  * Definition for a binary tree node.

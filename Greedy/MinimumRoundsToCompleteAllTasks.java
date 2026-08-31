@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Greedy, Counting
  * https://leetcode.com/problems/minimum-rounds-to-complete-all-tasks/
  *
- * Pattern: Greedy + Hash Map (Counting / Grouping)
- * Key insight: Each task level must appear at least 2 times (else impossible); the minimum rounds per level is ceil(count/3) since groups of 2 or 3 are allowed, and sum over all levels.
+ * Pattern: Counting + Ceil-Division Greedy
+ * Key insight: Since each round processes 2 or 3 tasks, the minimum rounds for count c is ⌈c/3⌉ — a count of 1 is impossible (returns -1), while counts ≥ 2 are always solvable because the remainder after dividing by 3 is always coverable by 2s.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - One pass to count frequencies, one pass over unique levels
+ * Space Complexity: O(U) - HashMap with U unique task levels
  *
- * Edge Cases Handled: level appearing exactly once (returns -1), count divisible by 3, count not divisible by 3 (extra group of 2), count = 2 (single round)
+ * Edge Cases Handled: any level with count 1 (impossible, returns -1), count divisible by 3 (exact ⌈c/3⌉), count mod 3 = 1 (requires one fewer 3-group and one more 2-group), single unique level
  */
 class MinimumRoundsToCompleteAllTasks {
     public int minimumRounds(int[] tasks) {
@@ -24,9 +24,9 @@ class MinimumRoundsToCompleteAllTasks {
                 return -1;
             }
 
-            int rem = map.get(i) % 3;
+            int remainder = map.get(i) % 3;
 
-            if (rem == 0) {
+            if (remainder == 0) {
                 rounds += map.get(i) / 3;
             } else {
                 rounds += map.get(i) / 3 + 1;

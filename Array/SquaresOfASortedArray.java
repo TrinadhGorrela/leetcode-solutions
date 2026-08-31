@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Sorting
  * https://leetcode.com/problems/squares-of-a-sorted-array/
  *
- * Pattern: Brute Force (Square + Bubble Sort)
- * Key insight: Square each element and then sort the result. (Suboptimal O(N^2) due to bubble sort; a two-pointer merge of the two halves is O(N).)
+ * Pattern: Square + Selection Sort
+ * Key insight: Square every element into a fresh array, then sort with an O(N^2) selection-sort pass. (Optimal O(N) is achievable with a two-pointer merge from the negative/positive split.)
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time (Suboptimal approach)
- * Space Complexity: O(N) - Allocates an array that scales dynamically with input size
+ * Time Complexity: O(N^2) - Nested comparison loops implement a selection sort on the squared values (suboptimal)
+ * Space Complexity: O(N) - Allocates a separate result array of the same length for the squared values
  *
- * Edge Cases Handled: negative values (squares reorder), zero, all equal values, single element
+ * Edge Cases Handled: negative values squaring and reordering, zeros, all identical values, single-element array
  */
 class SquaresOfASortedArray {
     public int[] sortedSquares(int[] nums) {

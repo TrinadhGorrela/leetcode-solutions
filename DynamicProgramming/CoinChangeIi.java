@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Dynamic Programming, Knapsack Problem, Complete Knapsack
  * https://leetcode.com/problems/coin-change-ii/
  *
- * Pattern: 1D DP Knapsack
- * Key insight: Iterate coins and accumulate ways to make each amount
+ * Pattern: 1D Complete Knapsack (combination counting)
+ * Key insight: Outer-loop on coins and inner-loop on amounts ensures each combination is counted once (not permutations); dp[amt] accumulates ways to form amt by adding the current coin to all previously reachable amounts.
  *
- * Time Complexity: O(C * A) - C coins and A amount
- * Space Complexity: O(A) - 1D DP array of size amount + 1
+ * Time Complexity: O(coins * amount) - Each coin updates every reachable amount
+ * Space Complexity: O(amount) - Single 1D array of size amount+1
  *
- * Edge Cases Handled: amount = 0 (returns 1), coins larger than amount (skipped), single coin
+ * Edge Cases Handled: amount=0 returns 1 (one way: choose nothing); coins larger than current amount are naturally skipped by the loop bound
  */
 class CoinChangeIi {
     public int change(int amount, int[] coins) {
@@ -18,8 +18,8 @@ class CoinChangeIi {
 
         for (int i = 0; i < coins.length; i++) {
             for (int amt = coins[i]; amt < dp.length; amt++) {
-                int rem = amt - coins[i];
-                dp[amt] += dp[rem];
+                int remaining = amt - coins[i];
+                dp[amt] += dp[remaining];
             }
         }
 

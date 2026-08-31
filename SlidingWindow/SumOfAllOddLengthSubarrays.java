@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Math, Prefix Sum
  * https://leetcode.com/problems/sum-of-all-odd-length-subarrays/
  *
- * Pattern: Sliding Window (Running Sum)
- * Key insight: For each odd length, slide a fixed-size window over the array updating the sum incrementally, and add every window sum to the total.
+ * Pattern: Odd-Length Fixed Window Enumeration
+ * Key insight: For each odd window length L, build the first window sum in O(L), then slide across the array using the additive/subtractive update curr = curr - nums[k - L] + nums[k], accumulating each window's sum into the total.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N^2) - Outer loop iterates over O(N) odd lengths, inner loop slides each window across up to N positions
+ * Space Complexity: O(1) - Only scalar accumulators (sum, curr) with no auxiliary data structures
  *
- * Edge Cases Handled: single element (odd length 1), even array length, negative values
+ * Edge Cases Handled: single-element array (only window of length 1), even-length array (no window of length N), all elements identical
  */
 class SumOfAllOddLengthSubarrays {
     public int sumOddLengthSubarrays(int[] nums) {

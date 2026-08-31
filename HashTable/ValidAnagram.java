@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Hash Table, String, Sorting
  * https://leetcode.com/problems/valid-anagram/
  *
- * Pattern: Character Frequency Array (Counting)
- * Key insight: Increment a 26-slot counter for each char of s and decrement for t; the strings are anagrams iff all slots return to zero (after lengths match).
+ * Pattern: Fixed-Size Frequency Array
+ * Key insight: Use a single int[26] counter: increment for each char in s, decrement for each char in t. If all slots return to zero (and lengths match), the strings are anagrams.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
+ * Time Complexity: O(n) - One pass through both strings, one pass through the 26-slot array.
+ * Space Complexity: O(1) - Fixed 26-element array regardless of input size.
  *
- * Edge Cases Handled: different lengths (returns false), empty strings (true), all same characters, single character anagrams
+ * Edge Cases Handled: different lengths (early false), empty strings (true), all same character, single-character anagrams
  */
 class ValidAnagram {
     public boolean isAnagram(String s, String t) {

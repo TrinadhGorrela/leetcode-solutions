@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Linked List, Recursion
  * https://leetcode.com/problems/merge-two-sorted-lists/
  *
- * Pattern: Iterative Merge with Dummy Node
- * Key insight: Repeatedly attach the smaller head of the two lists to a dummy tail pointer, advancing that list; after one list empties, link the remainder of the other — all in place with no node copying.
+ * Pattern: Iterative Merge with Dummy Head
+ * Key insight: A dummy node provides a clean tail pointer; compare the two list heads, attach the smaller node, advance that list, and repeat. When one list exhausts, link the remainder of the other—zero node allocation beyond the output.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(m + n) - Each node is visited exactly once.
+ * Space Complexity: O(1) - Dummy node + one tail pointer; output is in-place.
  *
- * Edge Cases Handled: one or both lists empty, unequal list lengths (attach remaining), equal node values (keeps the list2 node first), single-node lists
+ * Edge Cases Handled: one or both lists empty, unequal lengths (remaining tail appended), equal values (list1's node kept first), both single-node lists
  */
 /**
  * Definition for singly-linked list.

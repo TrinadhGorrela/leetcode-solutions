@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Backtracking
  * https://leetcode.com/problems/combination-sum-iii/
  *
- * Pattern: Backtracking (Fixed Pool)
- * Key insight: Choose k distinct numbers from 1..9 that sum to n, advancing the start index each step; record only when both the target and size constraints are met.
+ * Pattern: Backtracking Over Fixed Pool [1..9] with Dual Constraint Check
+ * Key insight: Enumerate combinations by advancing only forward from the current index (ensuring distinctness and no duplicates), and simultaneously prune when the running sum exceeds the target or the remaining elements are insufficient to fill k slots.
  *
- * Time Complexity: O(2^N) or O(N!) - Explores combinatorial possibilities via recursion
- * Space Complexity: O(C(9,k) * k) - Stores valid combinations from a fixed 1-9 pool
+ * Time Complexity: O(C(9,k)) - iterates over all k-combinations from a 9-element pool
+ * Space Complexity: O(k) recursion stack depth + O(C(9,k) * k) for output
  *
- * Edge Cases Handled: k = 1, no valid combination (returns empty), target already met with wrong size, smallest/largest k values
+ * Edge Cases Handled: k = 1 (single-number combinations), n < k*(k+1)/2 or n > sum(9-k+1..9) (impossible by bounds), single valid combination, no valid combination exists (empty result), k = 9 with n = 45 (exactly one combination)
  */
 class CombinationSumIii {
     public List<List<Integer>> combinationSum3(int k, int n) {
@@ -18,21 +18,21 @@ class CombinationSumIii {
         for (int i = 0; i < 9; i++) {
             nums[i] = i + 1;
         }
-        solve(nums, res, new ArrayList<>(), 0, n, k);
+        backtrack(nums, res, new ArrayList<>(), 0, n, k);
         return res;
     }
 
-    public static void solve(int[] nums, List<List<Integer>> res, List<Integer> temp, int in, int tar, int k) {
-        if (tar == 0) {
+    public static void backtrack(int[] nums, List<List<Integer>> res, List<Integer> temp, int startIndex, int target, int k) {
+        if (target == 0) {
             if (temp.size() == k) {
                 res.add(new ArrayList<>(temp));
             }
             return;
         }
 
-        for (int i = in; i < nums.length; i++) {
+        for (int i = startIndex; i < nums.length; i++) {
             temp.add(nums[i]);
-            solve(nums, res, temp, i + 1, tar - nums[i], k);
+            backtrack(nums, res, temp, i + 1, target - nums[i], k);
             temp.remove(temp.size() - 1);
         }
     }

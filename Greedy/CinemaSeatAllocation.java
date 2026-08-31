@@ -3,22 +3,22 @@
  * Difficulty: Medium | Tags: Array, Hash Table, Greedy, Bit Manipulation
  * https://leetcode.com/problems/cinema-seat-allocation/
  *
- * Pattern: Hash Table + Greedy
- * Key insight: Only rows with reservations matter; for each reserved row check the three possible 4-seat groups (left, middle, right), and add the full 2-group count for every unreserved row.
+ * Pattern: Hash Map Row-Sparse Greedy
+ * Key insight: Rows without reservations always accommodate 2 families; for reserved rows, the three candidate blocks (seats 2-5, 4-7, 6-9) are checked with booleans — left and right are independent, but middle is only viable when both left and right are blocked.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - One pass over reservedSeats to build the map, one pass over reserved rows; unreserved rows contribute a single multiply
+ * Space Complexity: O(R) - HashMap stores one boolean[11] per reserved row (R = number of distinct reserved rows)
  *
- * Edge Cases Handled: no reserved seats, rows without any reservations (full capacity), middle group when left/right overlap
+ * Edge Cases Handled: no reservations at all (returns 2n), single seat reserved in a row, middle block overlapping both left and right reservations, n = 1
  */
 class CinemaSeatAllocation {
     public int maxNumberOfFamilies(int n, int[][] reservedSeats) {
         Map<Integer, boolean[]> map = new HashMap<>();
-        for (int[] i : reservedSeats) {
-            int row = i[0];
-            int col = i[1];
-            map.putIfAbsent(i[0], new boolean[11]);
-            boolean[] temp = map.get(row);
+        for (int[] row : reservedSeats) {
+            int r = row[0];
+            int col = row[1];
+            map.putIfAbsent(row[0], new boolean[11]);
+            boolean[] temp = map.get(r);
             temp[col] = true;
         }
 

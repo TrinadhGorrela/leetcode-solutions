@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Sorting
  * https://leetcode.com/problems/smallest-missing-integer-greater-than-sequential-prefix-sum/
  *
- * Pattern: Hash Set + Sequential Prefix Sum
- * Key insight: Sum the longest prefix where consecutive values differ by 1, then keep incrementing that sum until it is not present in the set of all elements.
+ * Pattern: HashSet + Sequential Prefix Walk
+ * Key insight: Walk the sorted-adjacent prefix (where nums[i] - nums[i-1] == 1) accumulating its sum, then increment until the sum is absent from the element set. The break-on-gap ensures we only sum a true sequential run.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N) - One pass to populate the set, one pass to walk the sequential prefix, then a bounded increment loop
+ * Space Complexity: O(N) - HashSet stores all array elements for O(1) lookups during the increment phase
  *
- * Edge Cases Handled: single element, sequential prefix of length 1, duplicate values in set, sum already present (incremented)
+ * Edge Cases Handled: no sequential prefix (break at i=1, sum = nums[0]), single element array, sum value colliding with an existing element requiring further increments
  */
 class SmallestMissingIntegerGreaterThanSequentialPrefixSum {
     public int missingInteger(int[] nums) {

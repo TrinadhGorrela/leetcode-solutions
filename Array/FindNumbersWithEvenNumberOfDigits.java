@@ -3,31 +3,31 @@
  * Difficulty: Easy | Tags: Array, Math
  * https://leetcode.com/problems/find-numbers-with-even-number-of-digits/
  *
- * Pattern: Math (Digit Counting)
- * Key insight: Count the number of digits in each value by repeated division by 10; a value qualifies when the digit count is even.
+ * Pattern: Per-Element Digit Counting
+ * Key insight: Integer digit count equals floor(log10(n))+1; computed by repeated division by 10, then checked for evenness — no string conversion needed.
  *
- * Time Complexity: O(N log M) - M is max value, counting digits takes logarithmic time
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N * D) - N elements, each requiring D = O(log10(M)) divisions where M is the max value
+ * Space Complexity: O(1) - Counter and digit-count helper use only scalar variables
  *
- * Edge Cases Handled: single-digit values, largest values (10^5 range), value 0 (counted as 0 digits = even)
+ * Edge Cases Handled: single-digit numbers (1 digit, odd — excluded), value 0 (0 divisions, digit count 0, even — included), max value 10^5 (5 digits, odd — excluded)
  */
 class FindNumbersWithEvenNumberOfDigits {
     public int findNumbers(int[] nums) {
-        int res = 0;
+        int count = 0;
         for (int i : nums) {
-            if (helper(i) % 2 == 0) {
-                res++;
+            if (countDigits(i) % 2 == 0) {
+                count++;
             }
         }
-        return res;
+        return count;
     }
 
-    public static int helper(int n) {
-        int count = 0;
+    public static int countDigits(int n) {
+        int digitCount = 0;
         while (n != 0) {
-            count++;
+            digitCount++;
             n /= 10;
         }
-        return count;
+        return digitCount;
     }
 }

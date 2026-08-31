@@ -3,22 +3,22 @@
  * Difficulty: Easy | Tags: Array, Dynamic Programming
  * https://leetcode.com/problems/pascals-triangle/
  *
- * Pattern: Dynamic Programming (Reuse Previous Row)
- * Key insight: Build each row from the previous one, where every interior value is the sum of the two values directly above it, and edges are 1.
+ * Pattern: Row-by-row iterative DP building Pascal's Triangle
+ * Key insight: Row i is derived from row i-1 by summing each adjacent pair; both edges of every row are 1. Each new row is appended to the result list as it's computed.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(N^2) - Builds the entire triangle
+ * Time Complexity: O(numRows^2) - Row i has i elements, total elements = numRows*(numRows+1)/2
+ * Space Complexity: O(numRows^2) - Full triangle stored in the output
  *
- * Edge Cases Handled: numRows = 0 (empty list), numRows = 1 (single row), interior/carry accumulation
+ * Edge Cases Handled: numRows=0 returns empty list; numRows=1 returns [[1]]
  */
 class PascalsTriangle {
     public List<List<Integer>> generate(int numRows) {
         List<List<Integer>> res = new ArrayList<>();
         if (numRows == 0)
             return res;
-        List<Integer> Fir = new ArrayList<>();
-        Fir.add(1);
-        res.add(Fir);
+        List<Integer> firstRow = new ArrayList<>();
+        firstRow.add(1);
+        res.add(firstRow);
         if (numRows == 1)
             return res;
         for (int i = 1; i < numRows; i++) {

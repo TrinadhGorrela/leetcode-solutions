@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Binary Search
  * https://leetcode.com/problems/koko-eating-bananas/
  *
- * Pattern: Binary Search on Answer (Feasibility)
- * Key insight: Search eating speeds from 1 to the largest pile; validate a candidate speed by computing the total hours needed (ceiling of pile/speed) and comparing against h.
+ * Pattern: Binary Search on Answer
+ * Key insight: Search speeds in [1, max(pile)]; for each candidate speed k, sum ceil(pile[i] / k) across all piles to get total hours—if ≤ h the speed is feasible, binary search for the minimum feasible k.
  *
- * Time Complexity: O(N log W) - Binary search over answer range with linear validation per step
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n log M) - n piles, M = max(pile); each feasibility check is O(n).
+ * Space Complexity: O(1) - Only speed bounds and running hour total (long).
  *
- * Edge Cases Handled: single pile, piles not evenly divisible by speed (ceil handling), hours sum using long to avoid overflow
+ * Edge Cases Handled: single pile, speed evenly divides all piles, h equals number of piles (speed must be max pile), long prevents overflow on hour accumulation
  */
 class KokoEatingBananas {
     public int minEatingSpeed(int[] piles, int h) {
@@ -36,11 +36,11 @@ class KokoEatingBananas {
         return res;
     }
 
-    public static long isValid(int[] piles, int n) {
+    public static long isValid(int[] piles, int speed) {
         long res = 0;
         for (int i = 0; i < piles.length; i++) {
-            int temp = piles[i] / n;
-            if (piles[i] % n == 0) {
+            int temp = piles[i] / speed;
+            if (piles[i] % speed == 0) {
                 res += temp;
             } else {
                 res += temp + 1;

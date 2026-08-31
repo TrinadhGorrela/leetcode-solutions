@@ -3,35 +3,35 @@
  * Difficulty: Medium | Tags: Array, Greedy, Heap (Priority Queue)
  * https://leetcode.com/problems/maximum-average-pass-ratio/
  *
- * Pattern: Greedy + Max-Heap (Marginal Gain)
- * Key insight: Always add a student to the class with the largest marginal pass-ratio gain, tracked with a max heap keyed by that gain; reinsert after improving each class.
+ * Pattern: Greedy Max-Heap on Marginal Gain
+ * Key insight: Each extra student should go to the class where adding them yields the largest delta in pass ratio: `(pass+1)/(total+1) - pass/total`. A max-heap on this gain ensures each assignment is locally optimal; reinsert with updated gain after each allocation.
  *
- * Time Complexity: O((N + extraStudents) log N) - Priority queue offer/poll per iteration
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O((N + E) log N) - Build heap O(N), then E heap operations of O(log N) each
+ * Space Complexity: O(N) - Heap stores one entry per class
  *
- * Edge Cases Handled: single class, extraStudents = 0 (no distribution), class already fully passed (total == pass gives no marginal gain)
+ * Edge Cases Handled: extraStudents = 0 (no heap pops), class with 100% pass rate (gain approaches 0, naturally deprioritized), single class (all students go there), large E with small N (heap churn but correct)
  */
 class MaximumAveragePassRatio {
     public double maxAverageRatio(int[][] classes, int extraStudents) {
-        PriorityQueue<double[]> max = new PriorityQueue<>((a, b) -> Double.compare(b[0], a[0]));
+        PriorityQueue<double[]> maxGainQueue = new PriorityQueue<>((a, b) -> Double.compare(b[0], a[0]));
 
-        for (int[] c : classes) {
-            int pass = c[0];
-            int total = c[1];
+        for (int[] classInfo : classes) {
+            int pass = classInfo[0];
+            int total = classInfo[1];
             double gain = (pass + 1.0) / (total + 1) - (double) pass / total;
-            max.offer(new double[] { gain, pass, total });
+            maxGainQueue.offer(new double[] { gain, pass, total });
         }
 
         for (int s = 0; s < extraStudents; s++) {
-            double[] top = max.poll();
+            double[] top = maxGainQueue.poll();
             double pass = top[1] + 1;
             double total = top[2] + 1;
             double gain = (pass + 1.0) / (total + 1) - (double) pass / total;
-            max.offer(new double[] { gain, pass, total });
+            maxGainQueue.offer(new double[] { gain, pass, total });
         }
         double res = 0.0;
-        while (!max.isEmpty()) {
-            double[] top = max.poll();
+        while (!maxGainQueue.isEmpty()) {
+            double[] top = maxGainQueue.poll();
             res = res + top[1] / top[2];
         }
         return res / classes.length;

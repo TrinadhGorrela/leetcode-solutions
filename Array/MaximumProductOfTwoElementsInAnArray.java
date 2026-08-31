@@ -3,26 +3,26 @@
  * Difficulty: Easy | Tags: Array, Sorting, Heap (Priority Queue)
  * https://leetcode.com/problems/maximum-product-of-two-elements-in-an-array/
  *
- * Pattern: Single-Pass (Track Top Two)
- * Key insight: Track the largest and second-largest values in one pass, then return (max-1)*(secondMax-1) for the maximum product.
+ * Pattern: Single-Pass Top-Two Tracking
+ * Key insight: Since the product increases with each operand, the max product of (nums[i]-1)*(nums[j]-1) is always achieved by the two largest values — no sorting needed.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Single linear scan comparing each element against current max and secondMax
+ * Space Complexity: O(1) - Two integer variables (max, secondMax) hold the running top-two values
  *
- * Edge Cases Handled: duplicate maximum values, exactly two elements, all equal values, smallest possible values (1)
+ * Edge Cases Handled: duplicate maximums (secondMax stays below max), all equal values (secondMax = max = same element value), two-element input, element value 1 (product becomes 0)
  */
 class MaximumProductOfTwoElementsInAnArray {
     public int maxProduct(int[] nums) {
         int max = 0;
-        int smax = 0;
+        int secondMax = 0;
         for (int i = 0; i < nums.length; i++) {
             if (max <= nums[i]) {
-                smax = max;
+                secondMax = max;
                 max = nums[i];
-            } else if (smax < nums[i] && max != nums[i]) {
-                smax = nums[i];
+            } else if (secondMax < nums[i] && max != nums[i]) {
+                secondMax = nums[i];
             }
         }
-        return (max - 1) * (smax - 1);
+        return (max - 1) * (secondMax - 1);
     }
 }

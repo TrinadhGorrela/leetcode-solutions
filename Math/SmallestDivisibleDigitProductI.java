@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Math, Enumeration
  * https://leetcode.com/problems/smallest-divisible-digit-product-i/
  *
- * Pattern: Iterative Search (Digit Product Test)
- * Key insight: Compute the product of a number's digits and test divisibility by t, incrementing n until a valid candidate is found; the solution space is dense so it terminates quickly.
+ * Pattern: Linear Scan with Digit Product Check
+ * Key insight: Starting from n, increment one at a time, computing the product of each candidate's digits via repeated mod-10 extraction; return the first n where digitProduct % t == 0.
  *
- * Time Complexity: Small constant in practice - The digit product reaches a multiple of t within a few increments thanks to the dense solution space
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(k * d) - k = number of increments until a match, d = average digit count per candidate (at most 4 since n <= 100)
+ * Space Complexity: O(1) - Only temp variables for the digit product and loop state
  *
-* Edge Cases Handled: digit product of 0 (multiples of 10) divisible by any t, single-digit n, candidate found immediately when n already satisfies divisibility
+ * Edge Cases Handled: any candidate containing a 0 digit (product = 0, divisible by any t), n itself already satisfying divisibility (zero increments), t = 1 (always satisfied on first check)
  */
 class SmallestDivisibleDigitProductI {
     public int smallestNumber(int n, int t) {

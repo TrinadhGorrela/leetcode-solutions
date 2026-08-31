@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Math, Matrix
  * https://leetcode.com/problems/rotate-image/
  *
- * Pattern: Transpose + Reverse Each Row
- * Key insight: A 90-degree clockwise rotation equals transposing the matrix (swap across the main diagonal) then reversing each row in place.
+ * Pattern: Transpose + Row Reverse
+ * Key insight: A 90° clockwise rotation decomposes into two in-place operations: (1) transpose the matrix by swapping matrix[i][j] with matrix[j][i] for i < j, then (2) reverse each row with two pointers.
  *
- * Time Complexity: O(N^2) - Uses nested loops to process elements in quadratic time
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n²) - Transpose touches n²/2 cells, row reversal touches n²/2 cells.
+ * Space Complexity: O(1) - In-place swaps only.
  *
- * Edge Cases Handled: 1x1 matrix, 2x2 matrix, single row reverse (works for any square size)
+ * Edge Cases Handled: 1×1 matrix (no swaps needed), 2×2 matrix, any square size
  */
 class RotateImage {
     public void rotate(int[][] matrix) {

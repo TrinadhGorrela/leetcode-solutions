@@ -4,13 +4,12 @@
  * https://leetcode.com/problems/search-insert-position/
  *
  * Pattern: Binary Search (Lower Bound)
- * Key insight: Track the first index where the value is >= target; when the loop ends, low naturally holds the correct insertion position.
+ * Key insight: Standard binary search on [low, high]; if mid == target return mid, otherwise narrow. When the loop ends, low is the first index where nums[low] >= target—the correct insertion point.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a
- * monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log n) - Interval halves each step.
+ * Space Complexity: O(1) - Three integers: low, high, mid.
  *
- * Edge Cases Handled: target already present, target smaller than all (inserts at 0), target larger than all (inserts at end), single element
+ * Edge Cases Handled: target present (returns its index), target smaller than all elements (returns 0), target larger than all (returns n), single-element array
  */
 class SearchInsertPosition {
     public int searchInsert(int[] nums, int target) {

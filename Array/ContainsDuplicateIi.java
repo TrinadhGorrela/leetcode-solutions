@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Sliding Window
  * https://leetcode.com/problems/contains-duplicate-ii/
  *
- * Pattern: Brute Force (Nested Loops)
- * Key insight: For each element, scan the next k positions and return true if an equal value appears within the window.
+ * Pattern: Sliding Window (Brute Force)
+ * Key insight: For each index i, the inner loop checks at most k subsequent positions (j - i <= k), so the worst case is bounded by O(N*k) even though it appears quadratic.
  *
- * Time Complexity: O(N*K) - Inner loop constrained by window size k
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N*k) - Outer loop over N elements, inner loop scans up to k positions ahead
+ * Space Complexity: O(1) - No auxiliary data structures; only loop indices
  *
- * Edge Cases Handled: single element, window size k larger than array, duplicates exactly k apart, no duplicates
+ * Edge Cases Handled: k >= n (full array scanned per element), duplicates exactly k apart (boundary match), single element (no inner iteration), no duplicates (full O(N*k) traversal)
  */
 class ContainsDuplicateIi {
     public boolean containsNearbyDuplicate(int[] nums, int k) {

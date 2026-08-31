@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Math, Dynamic Programming
  * https://leetcode.com/problems/rotate-function/
  *
- * Pattern: Math (Rotation Recurrence)
- * Key insight: Derive F(k+1) from F(k) using F(k+1) = F(k) + sum - n*A[n-k], updating the max in a single pass after computing the initial weighted sum.
+ * Pattern: Math (Recurrence Relation)
+ * Key insight: Each rotation shifts one element from the weighted sum's tail to subtract n*value, yielding F(k+1) = F(k) + totalSum - n*A[n-k] — avoiding recomputation of every rotation from scratch.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - First pass computes F(0) and totalSum; second pass applies the recurrence for N-1 rotations
+ * Space Complexity: O(1) - Only long accumulators (max, sum, prev) beyond the input array
  *
- * Edge Cases Handled: single element, negative values, sum repeated over all rotations constant, overflow avoided via long
+ * Edge Cases Handled: single element (F(0) is the only rotation), negative values in the array, integer overflow via long arithmetic, all equal values (all rotations yield the same product)
  */
 class RotateFunction {
     public int maxRotateFunction(int[] nums) {

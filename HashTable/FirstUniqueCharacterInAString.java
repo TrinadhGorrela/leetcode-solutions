@@ -3,26 +3,26 @@
  * Difficulty: Easy | Tags: Hash Table, String, Queue, Counting
  * https://leetcode.com/problems/first-unique-character-in-a-string/
  *
- * Pattern: Hash Map (Frequency Counting)
- * Key insight: Count each character's frequency in one pass, then scan left to right returning the first index whose character appears exactly once.
+ * Pattern: Two-Pass Frequency Count
+ * Key insight: First pass builds a frequency map for every character; second pass scans left to right and returns the first index whose character has count exactly 1.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - Two linear passes; map operations are O(1) for lowercase letters.
+ * Space Complexity: O(1) - Map holds at most 26 entries.
  *
- * Edge Cases Handled: no unique character (returns -1), all same characters, single character (returns 0)
+ * Edge Cases Handled: no unique character (returns -1), all characters identical, single character (returns 0), unique character at the end
  */
 class FirstUniqueCharacterInAString {
-	public int firstUniqChar(String s) {
-		Map<Character, Integer> map = new HashMap<>();
-		for (int i = 0; i < s.length(); i++) {
-			map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
-		}
-		for (int i = 0; i < s.length(); i++) {
-			if (map.get(s.charAt(i)) == 1) {
-				return i;
-			}
-		}
-		return -1;
-	}
+    public int firstUniqChar(String s) {
+        Map<Character, Integer> map = new HashMap<>();
+        for (int i = 0; i < s.length(); i++) {
+            map.put(s.charAt(i), map.getOrDefault(s.charAt(i), 0) + 1);
+        }
+        for (int i = 0; i < s.length(); i++) {
+            if (map.get(s.charAt(i)) == 1) {
+                return i;
+            }
+        }
+        return -1;
+    }
 
 }

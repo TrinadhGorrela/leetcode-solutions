@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Hash Table, Math, String
  * https://leetcode.com/problems/roman-to-integer/
  *
- * Pattern: Hash Map (Right-to-Left Scan)
- * Key insight: Scan right to left; subtract a numeral's value when it is smaller than the numeral to its right (subtractive notation) and add it otherwise.
+ * Pattern: Right-to-Left Scan with Subtract Notation
+ * Key insight: Scan right to left through the Roman numeral string; when a numeral is smaller than the one immediately to its right, subtract it (e.g., IV = 5−1), otherwise add it. This handles all subtractive pairs in a single pass.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Map size is fixed to 7 Roman numeral characters
+ * Time Complexity: O(n) - Single right-to-left pass.
+ * Space Complexity: O(1) - HashMap of 7 entries, fixed.
  *
- * Edge Cases Handled: single-character numeral, subtractive pairs (IV, IX, XL, XC, CD, CM) where a smaller numeral precedes a larger one, repeated numerals (e.g., III, MM)
+ * Edge Cases Handled: single-character numeral (e.g., "V"), all additive (e.g., "VIII"), all subtractive (e.g., "IV", "XC"), maximum value "MMMCMXCIX" (3999)
  */
 class RomanToInteger {
     public int romanToInt(String s) {

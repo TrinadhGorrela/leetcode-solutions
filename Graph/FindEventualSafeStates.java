@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Depth-First Search, Breadth-First Search, Graph Theory, Topological Sort, Kosaraju's Algorithm, Tarjan's SCC Algorithm
  * https://leetcode.com/problems/find-eventual-safe-states/
  *
- * Pattern: DFS with Recursion-Path Cycle Detection
- * Key insight: A node is safe iff it is not part of a cycle; run DFS over the graph marking the current recursion path and only mark a node safe when it has no outgoing edge to an unsafe/cyclic node.
+ * Pattern: DFS Cycle Detection (Three-State Marking)
+ * Key insight: Each node is in one of three states: unvisited, on the current recursion path (recPath), or resolved. If DFS encounters a node still on the recursion path, a cycle exists and the current branch is unsafe. A node is marked safe only after all its descendants are confirmed safe (recursion unwinds without detecting a cycle).
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(V + E) - Each node and edge processed once; visited array prevents redundant DFS calls
+ * Space Complexity: O(V) - Three boolean arrays (visited, recPath, safe) of size V; recursion stack up to V deep
  *
-* Edge Cases Handled: terminal nodes with no outgoing edges (safe), cycle/back-edge detection via the recursion path, empty graph, nodes forming a cycle
+ * Edge Cases Handled: terminal nodes with no outgoing edges (immediately safe), nodes on a cycle (recPath back-edge detection marks entire cycle unsafe), self-loop (immediate cycle detection), disconnected components (each DFS call starts from unvisited node)
  */
 class FindEventualSafeStates {
     public List<Integer> eventualSafeNodes(int[][] graph) {
@@ -36,12 +36,12 @@ class FindEventualSafeStates {
         visited[curr] = true;
         recPath[curr] = true;
 
-        for (int i : graph[curr]) {
-            if (!visited[i]) {
-                if (dfs(graph, visited, recPath, safe, i)) {
+        for (int neighbor : graph[curr]) {
+            if (!visited[neighbor]) {
+                if (dfs(graph, visited, recPath, safe, neighbor)) {
                     return true;
                 }
-            } else if (recPath[i]) {
+            } else if (recPath[neighbor]) {
                 return true;
             }
         }

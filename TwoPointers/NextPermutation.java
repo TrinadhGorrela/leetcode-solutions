@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Two Pointers
  * https://leetcode.com/problems/next-permutation/
  *
- * Pattern: Two Pointers (Standard Next Permutation)
- * Key insight: Find the pivot where ascending order breaks, swap it with the next-larger element from the right, then reverse the suffix to get the smallest greater permutation; if no pivot exists, reverse the whole array.
+ * Pattern: Pivot-Swap-Suffix-Reverse
+ * Key insight: Scanning right-to-left finds the first descent (pivot). The suffix is already in descending order, so swapping pivot with the rightmost element greater than it and then reversing the suffix yields the lexicographically next permutation.
  *
- * Time Complexity: O(N) - Two passes over the array to find pivot and reverse elements
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Right-to-left pivot scan + right-to-left swap search + in-place suffix reverse; all linear
+ * Space Complexity: O(1) - Three index variables and one temp, in-place on input array
  *
- * Edge Cases Handled: descending order (no pivot, reverse to ascending), single element or single pivot candidate, duplicate values
+ * Edge Cases Handled: Entirely descending input (no pivot found, full reverse yields ascending), all elements equal (no pivot, array unchanged), single element (no-op), pivot at index 0 with full suffix reversal
  */
 class NextPermutation {
     public void nextPermutation(int[] nums) {

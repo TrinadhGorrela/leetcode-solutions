@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Array, Binary Search
  * https://leetcode.com/problems/search-in-rotated-sorted-array/
  *
- * Pattern: Binary Search (Rotated Array)
- * Key insight: One half around the pivot is always fully sorted; determine which half the target lies in by comparing against nums[left] to decide the search direction.
+ * Pattern: Modified Binary Search on Rotated Array
+ * Key insight: At every mid, one half (left-to-mid or mid-to-right) is guaranteed sorted; compare nums[left] ≤ nums[mid] to identify which half is sorted, then check if the target falls within that sorted range to decide the search direction.
  *
- * Time Complexity: O(log N) - Search space is halved per iteration in a monotonic sequence
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(log n) - Interval halves each step.
+ * Space Complexity: O(1) - Three pointers: left, right, mid.
  *
- * Edge Cases Handled: not rotated (still sorted), target not found (returns -1), single element, target at the rotated boundaries
+ * Edge Cases Handled: no rotation (array still sorted), target absent (returns -1), single element, pivot at boundary
  */
 class SearchInRotatedSortedArray {
     public int search(int[] nums, int target) {

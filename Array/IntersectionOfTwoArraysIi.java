@@ -3,32 +3,32 @@
  * Difficulty: Easy | Tags: Array, Hash Table, Two Pointers, Binary Search, Sorting
  * https://leetcode.com/problems/intersection-of-two-arrays-ii/
  *
- * Pattern: Hash Map (Frequency)
- * Key insight: Count occurrences in the first array, then for each element of the second array emit it while its recorded frequency remains and decrement that frequency to respect multiplicities.
+ * Pattern: Frequency Map with Countdown
+ * Key insight: A frequency map of nums1 tracks how many times each element is available; as nums2 is scanned, matching elements are emitted and their count decremented, naturally respecting multiplicity.
  *
- * Time Complexity: O(N) - HashMap lookup takes linear time
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(N + M) - Build frequency map in O(N), scan nums2 in O(M) with O(1) lookups
+ * Space Complexity: O(N) - HashMap holds up to N distinct entries from nums1
  *
- * Edge Cases Handled: no common elements, repeated occurrences counted by multiplicity, duplicates within a single array
+ * Edge Cases Handled: no common elements (empty result), one element appears more times in nums2 than nums1 (capped by frequency), both arrays empty
  */
 class IntersectionOfTwoArraysIi {
     public int[] intersect(int[] nums1, int[] nums2) {
-        Map<Integer, Integer> map1 = new HashMap<>();
-        List<Integer> res = new ArrayList<>();
+        Map<Integer, Integer> frequencyMap = new HashMap<>();
+        List<Integer> resultList = new ArrayList<>();
         for (int i : nums1) {
-            map1.put(i, map1.getOrDefault(i, 0) + 1);
+            frequencyMap.put(i, frequencyMap.getOrDefault(i, 0) + 1);
         }
         for (int i : nums2) {
-            if (map1.containsKey(i) && map1.get(i) > 0) {
-                res.add(i);
-                map1.put(i, map1.get(i) - 1);
+            if (frequencyMap.containsKey(i) && frequencyMap.get(i) > 0) {
+                resultList.add(i);
+                frequencyMap.put(i, frequencyMap.get(i) - 1);
             }
         }
-        int[] result = new int[res.size()];
-        int a = 0;
-        for (int t : res) {
-            result[a] = t;
-            a++;
+        int[] result = new int[resultList.size()];
+        int index = 0;
+        for (int val : resultList) {
+            result[index] = val;
+            index++;
         }
         return result;
     }

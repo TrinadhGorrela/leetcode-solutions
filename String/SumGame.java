@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Math, String, Greedy, Game Theory
  * https://leetcode.com/problems/sum-game/
  *
- * Pattern: Game Theory (Parity + Pair Mirroring)
- * Key insight: If the total number of '?' is odd Alice moves last and wins; with an even count, Bob mirrors paired '?'s on both sides, so Alice wins only when the surplus question marks on one side (driving by 9 per paired excess) cannot be balanced to equal half-sums.
+ * Pattern: Game Theory — Parity + Sum-Balance Analysis
+ * Key insight: If the total number of '?' is odd, Alice moves last and wins trivially. With even '?', Bob can mirror Alice's moves on the opposite half. Alice wins only when the half-sums differ by a non-multiple of 9 times the per-half '?' count difference, because each '?' pair swings the sum by exactly 9.
  *
- * Time Complexity: O(N) - Single linear scan over the string
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n) - Single linear scan computing left/right sums and '?' counts.
+ * Space Complexity: O(1) - Four integer counters (leftSum, rightSum, leftCount, rightCount).
  *
- * Edge Cases Handled: Odd number of '?' (Alice wins), no '?' present, balanced '?' counts and digit sums (Bob wins), single '?'
+ * Edge Cases Handled: odd '?' count (Alice wins immediately), balanced sums and '?' counts (Bob wins), zero '?' in the string, difference not divisible by 9 (Alice wins)
  */
 class SumGame {
     public boolean sumGame(String num) {

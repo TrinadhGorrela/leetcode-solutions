@@ -3,37 +3,37 @@
  * Difficulty: Medium | Tags: Array, Math, Dynamic Programming, Recursion, Minimax, Game Theory, Zero-Sum Game
  * https://leetcode.com/problems/predict-the-winner/
  *
- * Pattern: Dynamic Programming (Minimax, Interval DP)
- * Key insight: The current player's score minus the optimal opponent score from the remaining interval is maximized; memoize state (start, end) to avoid recomputation.
+ * Pattern: Interval DP with minimax recursion and memoization
+ * Key insight: solve(start,end) returns the max score difference (current player minus opponent) over nums[start..end]; picking left gives nums[start] - solve(start+1,end), and the player picks whichever end maximizes this difference.
  *
- * Time Complexity: O(N^2) - 2D memoization has N^2 states
- * Space Complexity: O(N^2) - Allocates a 2D array for memoization
+ * Time Complexity: O(n^2) - n^2 unique (start,end) states, each computed in O(1)
+ * Space Complexity: O(n^2) - Memoization table of size n x n
  *
- * Edge Cases Handled: single element (st == end), even-length packs (guaranteed win), all equal values (tie)
+ * Edge Cases Handled: start==end returns nums[start] (last coin); difference >= 0 means player 1 wins or ties
  */
 class PredictTheWinner {
     public boolean predictTheWinner(int[] nums) {
-        int[][] res = new int[nums.length][nums.length];
+        int[][] memo = new int[nums.length][nums.length];
 
-        for (int[] i : res) {
+        for (int[] i : memo) {
             Arrays.fill(i, -1);
         }
 
-        return solve(res, nums, 0, nums.length - 1) >= 0;
+        return solve(memo, nums, 0, nums.length - 1) >= 0;
     }
 
-    public static int solve(int[][] res, int[] nums, int st, int end) {
-        if (st >= end) {
-            return nums[st];
+    public static int solve(int[][] memo, int[] nums, int start, int end) {
+        if (start >= end) {
+            return nums[start];
         }
 
-        if (res[st][end] != -1) {
-            return res[st][end];
+        if (memo[start][end] != -1) {
+            return memo[start][end];
         }
 
-        int left = nums[st] - solve(res, nums, st + 1, end);
-        int right = nums[end] - solve(res, nums, st, end - 1);
-        res[st][end] = Math.max(left, right);
-        return res[st][end];
+        int left = nums[start] - solve(memo, nums, start + 1, end);
+        int right = nums[end] - solve(memo, nums, start, end - 1);
+        memo[start][end] = Math.max(left, right);
+        return memo[start][end];
     }
 }

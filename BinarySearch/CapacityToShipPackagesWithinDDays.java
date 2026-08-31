@@ -3,28 +3,28 @@
  * Difficulty: Medium | Tags: Array, Binary Search
  * https://leetcode.com/problems/capacity-to-ship-packages-within-d-days/
  *
- * Pattern: Binary Search on Answer (Feasibility)
- * Key insight: Search the minimum possible capacity between the heaviest package and the total weight; check feasibility by greedily counting the days required for a candidate capacity.
+ * Pattern: Binary Search on Answer
+ * Key insight: The search space for capacity is [max(weights), sum(weights)]; for each candidate capacity, a greedy left-to-right scan packs as many packages as possible per day and counts whether days suffice.
  *
- * Time Complexity: O(N log W) - Binary search over answer range with linear validation per step
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(n log W) - n = number of packages, W = sum of weights; each feasibility check is O(n).
+ * Space Complexity: O(1) - Only load accumulator and day counter.
  *
- * Edge Cases Handled: single package (heaviest = total weight), packages heavier than a candidate capacity (carry-over handled), days count exactly met
+ * Edge Cases Handled: single package (capacity = its weight), all packages fit in one day, capacity must equal heaviest single package minimum, days exactly equal to number of packages
  */
 class CapacityToShipPackagesWithinDDays {
 
-    public static boolean isValid(int[] weights, int days, int c) {
-        int capacity = 0;
-        int daysneed = 1;
+    public static boolean isValid(int[] weights, int days, int capacity) {
+        int currentLoad = 0;
+        int daysNeeded = 1;
         for (int i = 0; i < weights.length; i++) {
-            capacity += weights[i];
-            if (capacity > c) {
-                capacity = weights[i];
-                daysneed++;
+            currentLoad += weights[i];
+            if (currentLoad > capacity) {
+                currentLoad = weights[i];
+                daysNeeded++;
             }
         }
 
-        return daysneed <= days;
+        return daysNeeded <= days;
     }
 
     public int shipWithinDays(int[] weights, int days) {

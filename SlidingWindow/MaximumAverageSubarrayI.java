@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Sliding Window
  * https://leetcode.com/problems/maximum-average-subarray-i/
  *
- * Pattern: Sliding Window (Fixed-Length Sum)
- * Key insight: Start with the sum of the first k elements, then roll the window right by adding the entering element and subtracting the leaving one, tracking the maximum sum before dividing by k.
+ * Pattern: Fixed-Size Sliding Window (Rolling Sum)
+ * Key insight: Compute the sum of the initial k-element window, then slide by adding nums[right] and subtracting nums[right - k] in O(1). Compare the running sum (not average) against the max to avoid repeated division; divide once at the end.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Initial window O(k), then N - k slide steps each O(1)
+ * Space Complexity: O(1) - Two double scalars (sum, max) with no auxiliary data
  *
- * Edge Cases Handled: k equals array length (single window), k = 1, all-negative numbers (max seeded from first window, not 0), duplicate max sums
+ * Edge Cases Handled: k equals array length (entire array is one window), all-negative values (max is seeded from the first window, not 0), k = 1 (reduces to finding the max element)
  */
 class MaximumAverageSubarrayI {
     public double findMaxAverage(int[] nums, int k) {

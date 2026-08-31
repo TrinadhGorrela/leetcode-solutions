@@ -3,23 +3,23 @@
  * Difficulty: Easy | Tags: Array, Two Pointers
  * https://leetcode.com/problems/remove-element/
  *
- * Pattern: Two Pointers (In-Place Overwrite)
- * Key insight: Use a write pointer; each element not equal to val is copied to the write position, compressing all other values to the front in place.
+ * Pattern: Fast/Slow Write-Pointer Compression
+ * Key insight: A writeIndex tracks where the next non-val element goes; the read pointer sweeps once, copying qualifying elements forward—no swap needed since we only care about the prefix's content.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Single pass; every element compared exactly once
+ * Space Complexity: O(1) - Two index variables, in-place modification of input array
  *
- * Edge Cases Handled: Empty array, all elements equal to val (result 0), val not present, single element
+ * Edge Cases Handled: All elements equal val (writeIndex stays 0), val absent (all copied in place, no extra work), empty array, single element matching or not matching val
  */
 class RemoveElement {
     public int removeElement(int[] nums, int val) {
-        int a = 0;
+        int writeIndex = 0;
         for (int i = 0; i < nums.length; i++) {
             if (nums[i] != val) {
-                nums[a] = nums[i];
-                a++;
+                nums[writeIndex] = nums[i];
+                writeIndex++;
             }
         }
-        return a;
+        return writeIndex;
     }
 }

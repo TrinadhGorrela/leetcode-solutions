@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Tree, Breadth-First Search, Binary Tree
  * https://leetcode.com/problems/binary-tree-level-order-traversal-ii/
  *
- * Pattern: BFS (Level-Order, Bottom-Up)
- * Key insight: Perform a standard top-down level-order BFS, then reverse the collected level lists to emit them from the bottom level upward.
+ * Pattern: BFS Level-Order with Final Reverse
+ * Key insight: Run standard BFS (left-to-right, top-to-bottom) collecting one list per level, then reverse the outer list at the end. Cheaper than using a LinkedList with addFirst or a Deque.
  *
- * Time Complexity: O(V + E) - Traverses all vertices and edges in the graph structure
- * Space Complexity: O(N) - Uses an auxiliary collection that scales with input size
+ * Time Complexity: O(n) - BFS visits each node once; the final reverse is O(d) where d is tree depth.
+ * Space Complexity: O(w) - Queue holds at most max-width nodes; result list holds all n values.
  *
- * Edge Cases Handled: empty tree / null root (returns empty list), single node, single level, skewed tree (single node per level)
+ * Edge Cases Handled: null root returns empty list, single node, single-level tree (reverse is no-op), skewed tree (each level has one node), deep balanced tree
  */
 /**
  * Definition for a binary tree node.

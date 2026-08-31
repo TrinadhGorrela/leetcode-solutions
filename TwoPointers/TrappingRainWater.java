@@ -3,13 +3,13 @@
  * Difficulty: Hard | Tags: Array, Two Pointers, Dynamic Programming, Stack, Monotonic Stack
  * https://leetcode.com/problems/trapping-rain-water/
  *
- * Pattern: Two Pointers
- * Key insight: Water trapped above a bar is bounded by min(leftMax, rightMax) - height; move the pointer on the shorter side, updating its max and adding the difference.
+ * Pattern: Two-Pointer Water-Level Sweep
+ * Key insight: At each step the shorter-side bar is the bottleneck—water above it is determined by its own historical max and the opposite side's max, so advancing the shorter pointer is always safe and avoids needing precomputed leftMax/rightMax arrays.
  *
- * Time Complexity: O(N) - Two-pointer approach is linear
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N) - Each pointer advances at most N steps; single pass with no nested loops
+ * Space Complexity: O(1) - Only four variables (left, right, leftMax, rightMax) regardless of input size
  *
- * Edge Cases Handled: fewer than 3 bars, flat (all equal) / monotonic arrays (no water), equal-height left/right sides
+ * Edge Cases Handled: Fewer than 3 bars (zero water), monotonic ascending/descending heights, plateaus where left == right height, all bars at equal height
  */
 class TrappingRainWater {
     public int trap(int[] height) {

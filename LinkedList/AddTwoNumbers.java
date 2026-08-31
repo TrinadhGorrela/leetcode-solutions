@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Linked List, Math, Recursion
  * https://leetcode.com/problems/add-two-numbers/
  *
- * Pattern: Linked List Traversal with Carry
- * Key insight: Walk both lists simultaneously, summing aligned digits plus a carry, and building the result list; after the shorter list ends, drain the longer one and append any final carry.
+ * Pattern: Linked List Addition with Carry
+ * Key insight: Walk both lists in parallel, summing corresponding digits plus a running carry; build the result list node-by-node. When one list ends, continue draining the other. A final carry of 1 after both lists exhaust appends one extra node.
  *
- * Time Complexity: O(N) - Iterates over the input elements linearly
- * Space Complexity: O(max(m, n)) - Allocates new output linked list nodes
+ * Time Complexity: O(max(m, n)) - Traverses the longer list once.
+ * Space Complexity: O(max(m, n)) - Output list is at most max(m,n) + 1 nodes.
  *
- * Edge Cases Handled: unequal list lengths (draining the longer list), digit sum 10-18 (carry), final carry creating an extra node, one list empty
+ * Edge Cases Handled: unequal list lengths, digit sum ≥ 10 (carry propagates), final carry producing an extra leading node, one or both lists empty
  */
 /**
  * Definition for singly-linked list.

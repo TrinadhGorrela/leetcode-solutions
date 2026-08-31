@@ -3,22 +3,22 @@
  * Difficulty: Easy | Tags: Math
  * https://leetcode.com/problems/convert-the-temperature/
  *
- * Pattern: Unit Conversion Formula
- * Key insight: Apply the fixed Celsius-to-Kelvin and Celsius-to-Fahrenheit formulas and return both results in an array.
+ * Pattern: Direct Unit Conversion (Fixed Formulas)
+ * Key insight: Apply the two standard conversion formulas — K = C + 273.15 and F = C * 1.80 + 32.00 — and package both results into a two-element array.
  *
- * Time Complexity: O(1) - Computes the result mathematically without any iteration
- * Space Complexity: O(1) - Only allocates fixed-size arrays independent of input scaling
+ * Time Complexity: O(1) - Two fixed arithmetic expressions
+ * Space Complexity: O(1) - A constant-size [2] array allocated for the result
  *
-* Edge Cases Handled: zero celsius (breaks even at 273.15 K / 32 F), negative celsius, fractional celsius (decimal arithmetic preserved)
+ * Edge Cases Handled: celsius = 0 (K = 273.15, F = 32.00), negative celsius (valid linear mapping), fractional celsius (double arithmetic preserves precision)
  */
 class ConvertTheTemperature {
     public double[] convertTemperature(double celsius) {
         double kelvin = celsius + 273.15;
-        double faren = celsius * 1.80 + 32.00;
+        double fahrenheit = celsius * 1.80 + 32.00;
 
-        double[] tri = new double[2];
-        tri[0] = kelvin;
-        tri[1] = faren;
-        return tri;
+        double[] result = new double[2];
+        result[0] = kelvin;
+        result[1] = fahrenheit;
+        return result;
     }
 }

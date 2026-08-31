@@ -3,13 +3,13 @@
  * Difficulty: Easy | Tags: Array, Two Pointers, Greedy, Sorting, Quicksort
  * https://leetcode.com/problems/assign-cookies/
  *
- * Pattern: Sorting + Two Pointers (Greedy Matching)
- * Key insight: Sort greediness and cookie sizes; advance the cookie pointer until it satisfies the current child's greed, counting each matched pair (a child never goes backwards).
+ * Pattern: Sort + Greedy Cookie-to-Child Matching
+ * Key insight: After sorting both arrays, a single forward scan matches the smallest sufficient cookie to each child in order—any cookie too small for the current child is also too small for all remaining children.
  *
- * Time Complexity: O(N log N) - Dominated by the sorting operation on the input array
- * Space Complexity: O(1) - Only primitive variables used for tracking state
+ * Time Complexity: O(N log N + M log M) - Sorting both arrays dominates; the merge scan is O(N+M)
+ * Space Complexity: O(1) - Three integers (two pointers + count) beyond the sort
  *
- * Edge Cases Handled: Empty greed or sizes array (result 0), no cookie large enough for any child, all children satisfied, extra oversized cookies left unused
+ * Edge Cases Handled: No cookies (0 satisfied), no children (0 satisfied), all cookies too small, all cookies large enough (min(g) matched), oversized cookies leftover unused
  */
 class AssignCookies {
     public int findContentChildren(int[] g, int[] s) {

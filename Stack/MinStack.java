@@ -3,13 +3,13 @@
  * Difficulty: Medium | Tags: Stack, Design
  * https://leetcode.com/problems/min-stack/
  *
- * Pattern: Auxiliary Stack
- * Key insight: Maintain a second stack to store minimums, pushing a value onto it only if it's less than or equal to the current minimum, and popping from it when the main stack's popped element is the current minimum.
+ * Pattern: Auxiliary Minimum Stack
+ * Key insight: Maintain a parallel `min` stack that mirrors only non-increasing minimums: push onto `min` only when the new value ≤ current min, pop from `min` when the main stack's popped element equals the current min. getMin() is O(1) via min.peek().
  *
- * Time Complexity: O(1) - All stack operations are constant time.
- * Space Complexity: O(N) - Two stacks store up to N elements.
+ * Time Complexity: O(1) - push, pop, top, and getMin are all constant time.
+ * Space Complexity: O(n) - Both stacks hold at most n elements in the worst case.
  *
- * Edge Cases Handled: Duplicate minimum values pushed (min stack mirrors each), popping the current minimum repeatedly, single-element stack, push equal to current minimum
+ * Edge Cases Handled: duplicate minimums (each pushed onto min stack), popping the current minimum exposes the previous minimum, single-element stack, push value equal to current minimum
  */
 class MinStack {
     Stack<Integer> input;
