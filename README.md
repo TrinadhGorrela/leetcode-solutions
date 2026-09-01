@@ -54,7 +54,7 @@ I built this the way you actually study: practice first, notice the recurring sh
 | ------ | ----- |
 | **Total solutions** | **310** (306 Java + 4 SQL) |
 | Difficulty | 🟢 154 Easy · 🟡 141 Medium · 🔴 11 Hard |
-| Patterns covered | **16** |
+| Patterns covered | **17** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
 
@@ -62,7 +62,7 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Pattern | Solved | Easy | Medium | Hard |
 | ------- | ------ | :---: | :----: | :---: |
-| Array | 63 | 45 | 17 | 1 |
+| Array | 56 | 40 | 15 | 1 |
 | Math | 36 | 27 | 9 | 0 |
 | Greedy | 31 | 9 | 21 | 1 |
 | Two Pointers | 24 | 13 | 9 | 2 |
@@ -76,6 +76,7 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Matrix | 13 | 5 | 8 | 0 |
 | Hash Table | 8 | 8 | 0 | 0 |
 | String | 8 | 7 | 1 | 0 |
+| Prefix Sum | 7 | 5 | 2 | 0 |
 | Stack | 6 | 2 | 4 | 0 |
 | Divide and Conquer | 1 | 0 | 1 | 0 |
 | **Total (Java)** | **306** | **154** | **141** | **11** |
@@ -94,7 +95,7 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 ```
 leetcode-solutions/
-├── Array/              ── 63
+├── Array/              ── 56
 ├── Backtracking/       ── 18
 ├── BinarySearch/       ── 13
 ├── Divide and Conquer/ ── 1
@@ -105,6 +106,7 @@ leetcode-solutions/
 ├── LinkedList/         ── 13
 ├── Math/               ── 36
 ├── Matrix/             ── 13
+├── PrefixSum/          ── 7
 ├── SlidingWindow/      ── 16
 ├── Stack/              ── 6
 ├── String/             ── 8
