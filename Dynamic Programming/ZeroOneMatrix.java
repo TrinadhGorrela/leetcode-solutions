@@ -14,7 +14,7 @@
  * Edge Cases Handled: all-zeros grid stays all-zeros; isolated 1-cells at corners get corrected by the reverse pass;
  * sentinel value m*n is safely larger than any real distance
  */
-class Zero1Matrix {
+class ZeroOneMatrix {
     public int[][] updateMatrix(int[][] mat) {
         int m = mat.length;
         int n = mat[0].length;
