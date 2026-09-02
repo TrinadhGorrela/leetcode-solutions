@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-310%20%7C%20310%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-328%20%7C%20328%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Easy-154-44B77B?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Medium-141-FCB833?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Hard-11-EB5C5C?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Easy-157-44B77B?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Medium-154-FCB833?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Hard-12-EB5C5C?style=for-the-badge"/>
 </p>
 
 <h1 align="center">LeetCode Solutions in Java</h1>
@@ -52,9 +52,9 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Metric | Value |
 | ------ | ----- |
-| **Total solutions** | **310** (306 Java + 4 SQL) |
-| Difficulty | 🟢 154 Easy · 🟡 141 Medium · 🔴 11 Hard |
-| Patterns covered | **17** |
+| **Total solutions** | **328** (324 Java + 4 SQL) |
+| Difficulty | 🟢 157 Easy · 🟡 154 Medium · 🔴 12 Hard |
+| Patterns covered | **24** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
 
@@ -62,14 +62,14 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Pattern | Solved | Easy | Medium | Hard |
 | ------- | ------ | :---: | :----: | :---: |
-| Array | 56 | 40 | 15 | 1 |
+| Array | 57 | 41 | 15 | 1 |
 | Math | 36 | 27 | 9 | 0 |
 | Greedy | 31 | 9 | 21 | 1 |
+| Graph | 24 | 5 | 17 | 2 |
 | Two Pointers | 24 | 13 | 9 | 2 |
-| Graph | 21 | 5 | 14 | 2 |
 | Backtracking | 18 | 1 | 14 | 3 |
 | Dynamic Programming | 18 | 5 | 13 | 0 |
-| Tree | 17 | 9 | 8 | 0 |
+| Tree | 18 | 9 | 9 | 0 |
 | Sliding Window | 16 | 5 | 9 | 2 |
 | Binary Search | 13 | 6 | 7 | 0 |
 | Linked List | 13 | 7 | 6 | 0 |
@@ -78,10 +78,17 @@ I built this the way you actually study: practice first, notice the recurring sh
 | String | 8 | 7 | 1 | 0 |
 | Prefix Sum | 7 | 5 | 2 | 0 |
 | Stack | 6 | 2 | 4 | 0 |
+| Binary Search | 4 | 0 | 3 | 1 |
+| Heap | 3 | 1 | 2 | 0 |
+| Two Pointers | 2 | 0 | 2 | 0 |
 | Divide and Conquer | 1 | 0 | 1 | 0 |
-| **Total (Java)** | **306** | **154** | **141** | **11** |
+| Dynamic Programming | 1 | 0 | 1 | 0 |
+| Prefix Sum | 1 | 0 | 1 | 0 |
+| Sliding Window | 1 | 0 | 0 | 0 |
+| Trie | 1 | 1 | 0 | 0 |
+| **Total (Java)** | **324** | **157** | **154** | **12** |
 | Database (SQL) | 4 | — | — | — |
-| **Grand total** | **310** | **154** | **141** | **11** |
+| **Grand total** | **328** | **157** | **154** | **12** |
 
 ## Conventions used throughout
 
@@ -95,23 +102,30 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 ```
 leetcode-solutions/
-├── Array/              ── 56
-├── Backtracking/       ── 18
-├── BinarySearch/       ── 13
-├── Divide and Conquer/ ── 1
-├── DynamicProgramming/ ── 18
-├── Graph/              ── 21
-├── Greedy/             ── 31
-├── HashTable/          ── 8
-├── LinkedList/         ── 13
-├── Math/               ── 36
-├── Matrix/             ── 13
-├── PrefixSum/          ── 7
-├── SlidingWindow/      ── 16
-├── Stack/              ── 6
-├── String/             ── 8
-├── Tree/               ── 17
-└── TwoPointers/        ── 24
+├── Array/               ── 57
+├── Backtracking/        ── 18
+├── Binary Search/       ── 13
+├── BinarySearch/        ── 4
+├── Divide and Conquer/  ── 1
+├── Dynamic Programming/ ── 18
+├── DynamicProgramming/  ── 1
+├── Graph/               ── 24
+├── Greedy/              ── 31
+├── Hash Table/          ── 8
+├── Heap/                ── 3
+├── Linked List/         ── 13
+├── Math/                ── 36
+├── Matrix/              ── 13
+├── Prefix Sum/          ── 7
+├── PrefixSum/           ── 1
+├── Sliding Window/      ── 16
+├── SlidingWindow/       ── 1
+├── Stack/               ── 6
+├── String/              ── 8
+├── Tree/                ── 18
+├── Trie/                ── 1
+├── Two Pointers/        ── 24
+└── TwoPointers/         ── 2
 ```
 
 ## Tech stack
