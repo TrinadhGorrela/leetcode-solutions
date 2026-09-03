@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-329%20%7C%20329%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-329%20%7C%20325%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
-  <img src="https://img.shields.io/badge/Easy-157-44B77B?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Medium-155-FCB833?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Easy-160-44B77B?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Medium-156-FCB833?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Hard-13-EB5C5C?style=for-the-badge"/>
 </p>
 
@@ -53,8 +53,8 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Metric | Value |
 | ------ | ----- |
 | **Total solutions** | **329** (325 Java + 4 SQL) |
-| Difficulty | 🟢 157 Easy · 🟡 155 Medium · 🔴 13 Hard |
-| Patterns covered | **19** |
+| Difficulty | 🟢 160 Easy · 🟡 156 Medium · 🔴 13 Hard |
+| Patterns covered | **20** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
 
@@ -82,8 +82,8 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Divide and Conquer | 1 | 0 | 1 | 0 |
 | Trie | 1 | 1 | 0 | 0 |
 | **Total (Java)** | **325** | **157** | **155** | **13** |
-| Database (SQL) | 4 | — | — | — |
-| **Grand total** | **329** | **157** | **155** | **13** |
+| Database (SQL) | 4 | 3 | 1 | 0 |
+| **Grand total** | **329** | **160** | **156** | **13** |
 
 ## Conventions used throughout
 
@@ -101,6 +101,7 @@ leetcode-solutions/
 ├── Backtracking/        ── 18
 ├── Binary Search/       ── 17
 ├── Database/            ── 4 (SQL)
+├── Database_SQL/        ── 4
 ├── Divide and Conquer/  ── 1
 ├── Dynamic Programming/ ── 20
 ├── Graph/               ── 22
