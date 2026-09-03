@@ -1,5 +1,5 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-329%20%7C%20325%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-329%20%7C%20329%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/Easy-157-44B77B?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Medium-155-FCB833?style=for-the-badge"/>
