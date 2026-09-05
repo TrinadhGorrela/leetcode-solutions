@@ -16,8 +16,8 @@
 class AngleBetweenHandsOfAClock {
     public double angleClock(int hour, int minutes) {
         hour = hour * 30;
-        double minute = (double) minutes * 11 / 2;
-        double angle = Math.abs(hour - minute);
+        double minuteAngle = (double) minutes * 11 / 2;
+        double angle = Math.abs(hour - minuteAngle);
         return angle < 360 - angle ? angle : 360 - angle;
     }
 }

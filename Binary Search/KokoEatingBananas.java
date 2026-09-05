@@ -27,8 +27,8 @@ class KokoEatingBananas {
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            long temp = isValid(piles, mid);
-            if (temp <= h) {
+            long hoursNeeded = computeHours(piles, mid);
+            if (hoursNeeded <= h) {
                 res = mid;
                 right = mid - 1;
             } else {
@@ -38,16 +38,16 @@ class KokoEatingBananas {
         return res;
     }
 
-    public static long isValid(int[] piles, int speed) {
-        long res = 0;
+    public static long computeHours(int[] piles, int speed) {
+        long totalHours = 0;
         for (int i = 0; i < piles.length; i++) {
-            int temp = piles[i] / speed;
+            int fullHours = piles[i] / speed;
             if (piles[i] % speed == 0) {
-                res += temp;
+                totalHours += fullHours;
             } else {
-                res += temp + 1;
+                totalHours += fullHours + 1;
             }
         }
-        return res;
+        return totalHours;
     }
 }

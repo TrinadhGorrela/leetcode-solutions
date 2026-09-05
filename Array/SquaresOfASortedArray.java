@@ -16,10 +16,10 @@ class SquaresOfASortedArray {
     public int[] sortedSquares(int[] nums) {
         int n = nums.length;
         int[] res = new int[n];
-        int a = 0;
+        int writeIdx = 0;
         for (int i : nums) {
-            res[a] = i * i;
-            a++;
+            res[writeIdx] = i * i;
+            writeIdx++;
         }
         for (int i = 0; i < n; i++) {
             for (int j = i + 1; j < n; j++) {

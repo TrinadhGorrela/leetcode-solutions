@@ -44,14 +44,14 @@ class ReorderList {
         ListNode back = prev;
 
         while (back != null) {
-            ListNode fNode = head.next;
-            ListNode bNode = back.next;
+            ListNode frontNext = head.next;
+            ListNode backNext = back.next;
 
             head.next = back;
-            back.next = fNode;
+            back.next = frontNext;
 
-            head = fNode;
-            back = bNode;
+            head = frontNext;
+            back = backNext;
         }
     }
 }

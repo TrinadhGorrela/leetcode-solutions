@@ -29,7 +29,7 @@ class FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints {
         ListNode prev = head;
         ListNode curr = head.next;
 
-        int len = 1;
+        int position = 1;
         int first = 0;
         int prevPos = 0;
         int currPos = 0;
@@ -42,12 +42,12 @@ class FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints {
             ListNode next = curr.next;
             if ((prev.val < curr.val && curr.val > next.val) || (prev.val > curr.val && curr.val < next.val)) {
                 if (first == 0) {
-                    first = len;
-                    prevPos = len;
-                    currPos = len;
+                    first = position;
+                    prevPos = position;
+                    currPos = position;
                 } else {
                     prevPos = currPos;
-                    currPos = len;
+                    currPos = position;
 
                     max = currPos - first;
                     min = Math.min(min, currPos - prevPos);
@@ -57,7 +57,7 @@ class FindTheMinimumAndMaximumNumberOfNodesBetweenCriticalPoints {
 
             prev = curr;
             curr = next;
-            len++;
+            position++;
         }
 
         if (nodes < 2) {

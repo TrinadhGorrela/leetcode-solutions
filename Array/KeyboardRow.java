@@ -29,8 +29,8 @@ class KeyboardRow {
                 else if (thirdRow.indexOf(ch) != -1)
                     rowFlags[2] = 1;
             }
-            int sum = rowFlags[0] + rowFlags[1] + rowFlags[2];
-            if (sum == 1)
+            int rowCount = rowFlags[0] + rowFlags[1] + rowFlags[2];
+            if (rowCount == 1)
                 list.add(word);
         }
         String[] result = new String[list.size()];

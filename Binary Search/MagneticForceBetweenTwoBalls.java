@@ -25,7 +25,7 @@ class MagneticForceBetweenTwoBalls {
 
         while (left <= right) {
             int mid = left + (right - left) / 2;
-            if (helper(position, mid) >= m) {
+            if (countBalls(position, mid) >= m) {
                 res = mid;
                 left = mid + 1;
             } else {
@@ -35,7 +35,7 @@ class MagneticForceBetweenTwoBalls {
         return res;
     }
 
-    private static int helper(int[] position, int k) {
+    private static int countBalls(int[] position, int k) {
         int placed = 1;
         int lastPlaced = position[0];
         for (int i = 1; i < position.length; i++) {

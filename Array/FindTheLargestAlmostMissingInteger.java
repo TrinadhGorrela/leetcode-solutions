@@ -24,8 +24,8 @@ class FindTheLargestAlmostMissingInteger {
 
         for (int i = 0; i < nums.length; i++) {
             int count = 0;
-            for (List<Integer> list2 : list) {
-                if (list2.contains(nums[i])) {
+            for (List<Integer> window : list) {
+                if (window.contains(nums[i])) {
                     count++;
                 }
             }
@@ -37,10 +37,10 @@ class FindTheLargestAlmostMissingInteger {
     }
 
     public static void add(int[] nums, List<List<Integer>> list, int st, int k) {
-        List<Integer> temp = new ArrayList<>();
+        List<Integer> subarray = new ArrayList<>();
         for (int i = st; i < st + k; i++) {
-            temp.add(nums[i]);
+            subarray.add(nums[i]);
         }
-        list.add(temp);
+        list.add(subarray);
     }
 }

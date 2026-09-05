@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-335%20%7C%20331%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-337%20%7C%20333%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/Easy-161-44B77B?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Medium-161-FCB833?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Medium-163-FCB833?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Hard-13-EB5C5C?style=for-the-badge"/>
 </p>
 
@@ -52,8 +52,8 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Metric | Value |
 | ------ | ----- |
-| **Total solutions** | **335** (331 Java + 4 SQL) |
-| Difficulty | 🟢 161 Easy · 🟡 161 Medium · 🔴 13 Hard |
+| **Total solutions** | **337** (333 Java + 4 SQL) |
+| Difficulty | 🟢 161 Easy · 🟡 163 Medium · 🔴 13 Hard |
 | Patterns covered | **20** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
@@ -66,24 +66,24 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Math | 36 | 27 | 9 | 0 |
 | Greedy | 31 | 9 | 21 | 1 |
 | Two Pointers | 24 | 13 | 9 | 2 |
-| Graph | 22 | 5 | 14 | 3 |
 | Dynamic Programming | 21 | 5 | 16 | 0 |
-| Tree | 20 | 9 | 11 | 0 |
+| Graph | 21 | 5 | 14 | 2 |
+| Tree | 21 | 9 | 11 | 1 |
 | Sliding Window | 19 | 5 | 12 | 2 |
 | Backtracking | 18 | 1 | 14 | 3 |
 | Binary Search | 17 | 6 | 10 | 1 |
 | Linked List | 14 | 7 | 7 | 0 |
 | Matrix | 13 | 5 | 8 | 0 |
-| Prefix Sum | 9 | 6 | 3 | 0 |
-| String | 9 | 7 | 2 | 0 |
+| Prefix Sum | 10 | 6 | 4 | 0 |
+| String | 10 | 7 | 3 | 0 |
 | Hash Table | 8 | 8 | 0 | 0 |
 | Stack | 6 | 2 | 4 | 0 |
 | Heap | 4 | 1 | 3 | 0 |
 | Divide and Conquer | 1 | 0 | 1 | 0 |
 | Trie | 1 | 1 | 0 | 0 |
-| **Total (Java)** | **331** | **158** | **160** | **13** |
+| **Total (Java)** | **333** | **158** | **162** | **13** |
 | Database (SQL) | 4 | 3 | 1 | 0 |
-| **Grand total** | **335** | **161** | **161** | **13** |
+| **Grand total** | **337** | **161** | **163** | **13** |
 
 ## Conventions used throughout
 
@@ -104,18 +104,18 @@ leetcode-solutions/
 ├── Database_SQL/        ── 4
 ├── Divide and Conquer/  ── 1
 ├── Dynamic Programming/ ── 21
-├── Graph/               ── 22
+├── Graph/               ── 21
 ├── Greedy/              ── 31
 ├── Hash Table/          ── 8
 ├── Heap/                ── 4
 ├── Linked List/         ── 14
 ├── Math/                ── 36
 ├── Matrix/              ── 13
-├── Prefix Sum/          ── 9
+├── Prefix Sum/          ── 10
 ├── Sliding Window/      ── 19
 ├── Stack/               ── 6
-├── String/              ── 9
-├── Tree/                ── 20
+├── String/              ── 10
+├── Tree/                ── 21
 ├── Trie/                ── 1
 └── Two Pointers/        ── 24
 ```

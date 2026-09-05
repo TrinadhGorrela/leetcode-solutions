@@ -22,17 +22,17 @@ class CinemaSeatAllocation {
             int r = row[0];
             int col = row[1];
             map.putIfAbsent(row[0], new boolean[11]);
-            boolean[] temp = map.get(r);
-            temp[col] = true;
+            boolean[] rowSeats = map.get(r);
+            rowSeats[col] = true;
         }
 
         int res = 0;
         for (int i : map.keySet()) {
-            boolean[] temp = map.get(i);
+            boolean[] rowSeats = map.get(i);
 
-            boolean left = !temp[2] && !temp[3] && !temp[4] && !temp[5];
-            boolean right = !temp[6] && !temp[7] && !temp[8] && !temp[9];
-            boolean middle = !temp[4] && !temp[5] && !temp[6] && !temp[7];
+            boolean left = !rowSeats[2] && !rowSeats[3] && !rowSeats[4] && !rowSeats[5];
+            boolean right = !rowSeats[6] && !rowSeats[7] && !rowSeats[8] && !rowSeats[9];
+            boolean middle = !rowSeats[4] && !rowSeats[5] && !rowSeats[6] && !rowSeats[7];
 
             if (left) {
                 res++;

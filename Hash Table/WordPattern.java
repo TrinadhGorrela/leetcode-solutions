@@ -18,23 +18,23 @@ class WordPattern {
     public boolean wordPattern(String pattern, String s) {
         Map<Character,String> map=new HashMap<>();
         Set<String> set=new HashSet<>();
-        String[] t=s.split(" ");
-        if(pattern.length()!=t.length)
+        String[] words=s.split(" ");
+        if(pattern.length()!=words.length)
         	return false;
         for(int i=0;i<pattern.length();i++) {
         	if(map.containsKey(pattern.charAt(i))) {
-        		if(!map.get(pattern.charAt(i)).equals(t[i])) {
+        		if(!map.get(pattern.charAt(i)).equals(words[i])) {
         			return false;
         		}
         			
         	}
         	else {
-        		if (set.contains(t[i])) {
+        		if (set.contains(words[i])) {
         		    return false; 
         		}
 
-        		map.put(pattern.charAt(i), t[i]);
-        		set.add(t[i]);
+        		map.put(pattern.charAt(i), words[i]);
+        		set.add(words[i]);
         	}
         }
         return true; 

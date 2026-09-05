@@ -19,20 +19,20 @@ class SelfDividingNumbers {
         List<Integer> res = new ArrayList<>();
 
         for (int i = left; i <= right; i++) {
-            if (isdiv(i)) {
+            if (isSelfDividing(i)) {
                 res.add(i);
             }
         }
         return res;
     }
 
-    private static boolean isdiv(int num) {
-        int temp = num;
+    private static boolean isSelfDividing(int num) {
+        int original = num;
         while (num != 0) {
             int last = num % 10;
             if (last == 0) {
                 return false;
-            } else if (last != 0 && temp % last != 0) {
+            } else if (last != 0 && original % last != 0) {
                 return false;
             }
             num /= 10;

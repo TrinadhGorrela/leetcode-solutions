@@ -21,11 +21,11 @@ class PossibleBipartition {
         Map<Integer, List<Integer>> adjList = new HashMap<>();
         int[] groups = new int[n + 1];
 
-        for (int[] like : dislikes) {
-            adjList.putIfAbsent(like[0], new ArrayList<>());
-            adjList.putIfAbsent(like[1], new ArrayList<>());
-            adjList.get(like[0]).add(like[1]);
-            adjList.get(like[1]).add(like[0]);
+        for (int[] dislike : dislikes) {
+            adjList.putIfAbsent(dislike[0], new ArrayList<>());
+            adjList.putIfAbsent(dislike[1], new ArrayList<>());
+            adjList.get(dislike[0]).add(dislike[1]);
+            adjList.get(dislike[1]).add(dislike[0]);
         }
 
         for (int i : adjList.keySet()) {

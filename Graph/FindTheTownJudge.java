@@ -16,16 +16,16 @@
  */
 class FindTheTownJudge {
     public int findJudge(int n, int[][] trust) {
-        int[] inOrder = new int[n + 1];
-        int[] outOrder = new int[n + 1];
+        int[] inDegree = new int[n + 1];
+        int[] outDegree = new int[n + 1];
 
         for (int[] pair : trust) {
-            inOrder[pair[1]]++;
-            outOrder[pair[0]]++;
+            inDegree[pair[1]]++;
+            outDegree[pair[0]]++;
         }
 
         for (int i = 1; i <= n; i++) {
-            if (inOrder[i] == n - 1 && outOrder[i] == 0) {
+            if (inDegree[i] == n - 1 && outDegree[i] == 0) {
                 return i;
             }
         }

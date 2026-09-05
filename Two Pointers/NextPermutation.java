@@ -20,17 +20,17 @@ class NextPermutation {
         for (int i = nums.length - 2; i >= 0; i--) {
             if (nums[i] < nums[i + 1]) {
                 pivot = i;
-                int max = pivot + 1;
+                int swapWith = pivot + 1;
                 for (int j = nums.length - 1; j >= 0; j--) {
                     if (nums[pivot] < nums[j]) {
-                        max = j;
+                        swapWith = j;
                         break;
                     }
                 }
 
                 int temp1 = nums[pivot];
-                nums[pivot] = nums[max];
-                nums[max] = temp1;
+                nums[pivot] = nums[swapWith];
+                nums[swapWith] = temp1;
 
                 int left = pivot + 1;
                 int right = nums.length - 1;

@@ -34,7 +34,7 @@ class MinimumWindowSubstring {
 
         for (int right = 0; right < s.length(); right++) {
             freq2[s.charAt(right)]++;
-            while (isPos(freq1, freq2)) {
+            while (isWindowValid(freq1, freq2)) {
                 if (min > right - left + 1) {
                     min = right - left + 1;
                     res = s.substring(left, right + 1);
@@ -47,7 +47,7 @@ class MinimumWindowSubstring {
         return res;
     }
 
-    public static boolean isPos(int[] arr1, int[] arr2) {
+    public static boolean isWindowValid(int[] arr1, int[] arr2) {
         for (int i = 0; i < arr1.length; i++) {
             if (arr1[i] > arr2[i]) {
                 return false;

@@ -24,16 +24,16 @@ class RomanToInteger {
         map.put('D', 500);
         map.put('M', 1000);
 
-        int r = map.get(s.charAt(s.length() - 1));
+        int result = map.get(s.charAt(s.length() - 1));
         for (int i = s.length() - 2; i >= 0; i--) {
             int cur = map.get(s.charAt(i));
             int next = map.get(s.charAt(i + 1));
             if (cur < next) {
-                r = r - cur;
+                result = result - cur;
             } else {
-                r = r + cur;
+                result = result + cur;
             }
         }
-        return r;
+        return result;
     }
 }

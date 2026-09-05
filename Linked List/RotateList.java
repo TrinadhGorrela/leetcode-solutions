@@ -25,17 +25,17 @@
  */
 class RotateList {
     public ListNode rotateRight(ListNode head, int k) {
-        ListNode curr1 = head;
-        ListNode curr2 = head;
+        ListNode lengthWalker = head;
+        ListNode tail = head;
         int len = 0;
 
         if (head == null) {
             return head;
         }
 
-        while (curr1 != null) {
+        while (lengthWalker != null) {
             len++;
-            curr1 = curr1.next;
+            lengthWalker = lengthWalker.next;
         }
 
         k = k % len;
@@ -44,11 +44,11 @@ class RotateList {
             return head;
         }
 
-        while (curr2.next != null) {
-            curr2 = curr2.next;
+        while (tail.next != null) {
+            tail = tail.next;
         }
         
-        curr2.next = head;
+        tail.next = head;
 
         ListNode prev = null;
         for (int i = 0; i < len - k; i++) {

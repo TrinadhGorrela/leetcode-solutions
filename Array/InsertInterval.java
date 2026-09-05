@@ -17,19 +17,19 @@
 class InsertInterval {
     public int[][] insert(int[][] intervals, int[] newInterval) {
         List<int[]> list = new ArrayList<>();
-        int in = 0;
-        while (in < intervals.length && intervals[in][1] < newInterval[0]) {
-            list.add(intervals[in++]);
+        int index = 0;
+        while (index < intervals.length && intervals[index][1] < newInterval[0]) {
+            list.add(intervals[index++]);
         }
-        while (in < intervals.length && intervals[in][0] <= newInterval[1]) {
-            newInterval[0] = Math.min(newInterval[0], intervals[in][0]);
-            newInterval[1] = Math.max(newInterval[1], intervals[in++][1]);
+        while (index < intervals.length && intervals[index][0] <= newInterval[1]) {
+            newInterval[0] = Math.min(newInterval[0], intervals[index][0]);
+            newInterval[1] = Math.max(newInterval[1], intervals[index++][1]);
         }
 
         list.add(newInterval);
 
-        while (in < intervals.length) {
-            list.add(intervals[in++]);
+        while (index < intervals.length) {
+            list.add(intervals[index++]);
         }
 
         return list.toArray(new int[list.size()][]);

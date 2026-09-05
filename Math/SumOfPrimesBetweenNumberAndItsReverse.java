@@ -16,12 +16,12 @@
  */
 class SumOfPrimesBetweenNumberAndItsReverse {
     public int sumOfPrimesInRange(int n) {
-        int temp = n;
+        int remaining = n;
         int rev = 0;
-        while (temp != 0) {
-            int last = temp % 10;
+        while (remaining != 0) {
+            int last = remaining % 10;
             rev = rev * 10 + last;
-            temp /= 10;
+            remaining /= 10;
         }
 
         int st = Math.min(n, rev);

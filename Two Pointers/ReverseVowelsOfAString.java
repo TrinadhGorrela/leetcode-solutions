@@ -21,13 +21,13 @@ class ReverseVowelsOfAString {
 		int right = chars.length - 1;
 
 		while (left < right) {
-			if (!check(chars[left])) {
+			if (!isVowel(chars[left])) {
 				left++;
 			}
-			if (!check(chars[right])) {
+			if (!isVowel(chars[right])) {
 				right--;;
 			}
-			if(check(chars[left]) && check(chars[right])) {
+			if(isVowel(chars[left]) && isVowel(chars[right])) {
 				char temp=chars[left];
 				chars[left]=chars[right];
 				chars[right]=temp;
@@ -39,7 +39,7 @@ class ReverseVowelsOfAString {
 		return new String(chars);
 	}
 
-	public static boolean check(char c) {
+	public static boolean isVowel(char c) {
 		if (c == 'a' || c == 'e' || c == 'i' || c == 'o' || c == 'u' || c=='A' || c=='E' || c=='I' || c=='O' || c=='U') {
 			return true;
 		}

@@ -42,12 +42,12 @@ class MaximumValueAtAGivenIndexInABoundedArray {
             return 0;
         }
 
-        long k = Math.min(count, peakValue - 1);
-        if (k > 0) {
+        long decreasingCells = Math.min(count, peakValue - 1);
+        if (decreasingCells > 0) {
             long first = peakValue - 1;
-            long last = peakValue - 1 * k;
-            long decSum = k * (first + last) / 2;
-            long ones = count - k;
+            long last = peakValue - 1 * decreasingCells;
+            long decSum = decreasingCells * (first + last) / 2;
+            long ones = count - decreasingCells;
             return decSum + ones;
         }
         return count;

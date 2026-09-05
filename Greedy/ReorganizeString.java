@@ -23,12 +23,12 @@ class ReorganizeString {
         }
 
         int maxCount = 0;
-        int mostFrequentChar = 0;
+        int mostFrequentCharVal = 0;
 
-        for (char i : freq.keySet()) {
-            if (maxCount < freq.get(i)) {
-                maxCount = freq.get(i);
-                mostFrequentChar = i;
+        for (char ch : freq.keySet()) {
+            if (maxCount < freq.get(ch)) {
+                maxCount = freq.get(ch);
+                mostFrequentCharVal = ch;
             }
         }
 
@@ -40,19 +40,19 @@ class ReorganizeString {
         }
         
         while (maxCount > 0) {
-            res[index] = (char) mostFrequentChar;
+            res[index] = (char) mostFrequentCharVal;
             index += 2;
             maxCount--;
         }
 
-        for (char i : freq.keySet()) {
-            int remaining = freq.get(i);
+        for (char ch : freq.keySet()) {
+            int remaining = freq.get(ch);
             while (remaining > 0) {
-                if (i != mostFrequentChar) {
+                if (ch != mostFrequentCharVal) {
                     if (index >= s.length()) {
                         index = 1;
                     }
-                    res[index] = (char) i;
+                    res[index] = (char) ch;
                     index += 2;
                 }
                 remaining--;

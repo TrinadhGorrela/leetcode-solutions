@@ -32,37 +32,37 @@ class SortAnArray {
     }
 
     public static int[] merge(int[] nums, int st, int mid, int end) {
-        int[] tri = new int[end - st + 1];
+        int[] merged = new int[end - st + 1];
         int i = st;
         int j = mid + 1;
         int in = 0;
 
         while (i <= mid && j <= end) {
             if (nums[i] < nums[j]) {
-                tri[in] = nums[i];
+                merged[in] = nums[i];
                 in++;
                 i++;
             } else {
-                tri[in] = nums[j];
+                merged[in] = nums[j];
                 in++;
                 j++;
             }
         }
 
         while (i <= mid) {
-            tri[in] = nums[i];
+            merged[in] = nums[i];
             in++;
             i++;
         }
 
         while (j <= end) {
-            tri[in] = nums[j];
+            merged[in] = nums[j];
             in++;
             j++;
         }
 
-        for (int s = 0; s < tri.length; s++) {
-            nums[st] = tri[s];
+        for (int s = 0; s < merged.length; s++) {
+            nums[st] = merged[s];
             st++;
         }
 

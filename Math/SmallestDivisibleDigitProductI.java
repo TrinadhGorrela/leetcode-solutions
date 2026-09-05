@@ -17,8 +17,8 @@
 class SmallestDivisibleDigitProductI {
     public int smallestNumber(int n, int t) {
         while (true) {
-            int temp = multiply(n);
-            if (temp % t == 0) {
+            int digitProduct = multiply(n);
+            if (digitProduct % t == 0) {
                 return n;
             }
             n++;

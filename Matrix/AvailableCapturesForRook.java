@@ -32,12 +32,12 @@ class AvailableCapturesForRook {
     }
 
     public int captures(int r, int c, char[][] board) {
-        int z = 0;
+        int captureCount = 0;
         for (int i = c - 1; i >= 0; i--) {
             if (board[r][i] == 'B')
                 break;
             if (board[r][i] == 'p') {
-                z++;
+                captureCount++;
                 break;
             }
         }
@@ -46,7 +46,7 @@ class AvailableCapturesForRook {
             if (board[r][i] == 'B')
                 break;
             if (board[r][i] == 'p') {
-                z++;
+                captureCount++;
                 break;
             }
         }
@@ -55,7 +55,7 @@ class AvailableCapturesForRook {
             if (board[i][c] == 'B')
                 break;
             if (board[i][c] == 'p') {
-                z++;
+                captureCount++;
                 break;
             }
         }
@@ -64,12 +64,12 @@ class AvailableCapturesForRook {
             if (board[i][c] == 'B')
                 break;
             if (board[i][c] == 'p') {
-                z++;
+                captureCount++;
                 break;
             }
         }
 
-        return z;
+        return captureCount;
 
     }
 }

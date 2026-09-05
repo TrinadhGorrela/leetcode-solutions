@@ -18,38 +18,38 @@
  */
 class SlidingWindowMaximum {
     public int[] maxSlidingWindow(int[] nums, int k) {
-        Deque<Integer> max = new ArrayDeque<>();
+        Deque<Integer> monotonicDeque = new ArrayDeque<>();
         List<Integer> list = new ArrayList<>();
 
         for (int i = 0; i < k; i++) {
-            while (!max.isEmpty() && nums[max.getLast()] < nums[i]) {
-                max.removeLast();
+            while (!monotonicDeque.isEmpty() && nums[monotonicDeque.getLast()] < nums[i]) {
+                monotonicDeque.removeLast();
             }
 
-            max.add(i);
+            monotonicDeque.add(i);
 
         }
 
-        list.add(nums[max.getFirst()]);
+        list.add(nums[monotonicDeque.getFirst()]);
 
         for (int i = k; i < nums.length; i++) {
-            while (!max.isEmpty() && nums[max.getLast()] < nums[i]) {
-                max.removeLast();
+            while (!monotonicDeque.isEmpty() && nums[monotonicDeque.getLast()] < nums[i]) {
+                monotonicDeque.removeLast();
             }
 
-            max.add(i);
+            monotonicDeque.add(i);
 
-            if (max.getFirst() == i - k) {
-                max.removeFirst();
+            if (monotonicDeque.getFirst() == i - k) {
+                monotonicDeque.removeFirst();
             }
-            list.add(nums[max.getFirst()]);
+            list.add(nums[monotonicDeque.getFirst()]);
         }
 
         int[] res = new int[list.size()];
-        int in = 0;
+        int idx = 0;
 
         for (int i : list) {
-            res[in++] = i;
+            res[idx++] = i;
         }
 
         return res;

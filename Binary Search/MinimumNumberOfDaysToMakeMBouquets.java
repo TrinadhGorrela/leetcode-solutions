@@ -46,18 +46,18 @@ class MinimumNumberOfDaysToMakeMBouquets {
         return res;
     }
 
-    public static int days(int[] nums, int dayThreshold, int k) {
-        int count = 0;
+    public static int days(int[] bloomDay, int dayThreshold, int k) {
+        int consecutiveBlooms = 0;
         int bouquetCount = 0;
         for (int i : nums) {
             if (i <= dayThreshold) {
-                count++;
+                consecutiveBlooms++;
             } else {
-                bouquetCount += count / k;
-                count = 0;
+                bouquetCount += consecutiveBlooms / k;
+                consecutiveBlooms = 0;
             }
         }
-        bouquetCount += count / k;
+        bouquetCount += consecutiveBlooms / k;
         return bouquetCount;
     }
 }

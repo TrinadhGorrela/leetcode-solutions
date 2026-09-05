@@ -38,7 +38,7 @@ class RottingOranges {
     }
 
     public static int solve(Queue<int[]> queue, int[][] grid) {
-        int max = 0;
+        int minutes = 0;
         while (!queue.isEmpty()) {
             int size = queue.size();
             boolean isRot = false;
@@ -74,9 +74,9 @@ class RottingOranges {
                 size--;
             }
             if (isRot) {
-                max++;
+                minutes++;
             }
         }
-        return max;
+        return minutes;
     }
 }

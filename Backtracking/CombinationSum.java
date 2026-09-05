@@ -16,24 +16,24 @@
  * exactly, candidates all larger than target (pruned immediately by target < 0 check), empty candidates array
  */
 class CombinationSum {
-    public List<List<Integer>> combinationSum(int[] arr, int target) {
+    public List<List<Integer>> combinationSum(int[] candidates, int target) {
         List<List<Integer>> res = new ArrayList<>();
         List<Integer> combi = new ArrayList<>();
-        backtrack(arr, res, 0, combi, target);
+        backtrack(candidates, res, 0, combi, target);
         return res;
     }
 
-    public void backtrack(int[] arr, List<List<Integer>> res, int startIndex, List<Integer> combi, int target) {
-        if (startIndex == arr.length || target < 0) {
+    public void backtrack(int[] candidates, List<List<Integer>> res, int startIndex, List<Integer> combi, int target) {
+        if (startIndex == candidates.length || target < 0) {
             return;
         }
         if (target == 0) {
             res.add(new ArrayList<>(combi));
             return;
         }
-        combi.add(arr[startIndex]);
-        backtrack(arr, res, startIndex, combi, target - arr[startIndex]);
+        combi.add(candidates[startIndex]);
+        backtrack(candidates, res, startIndex, combi, target - candidates[startIndex]);
         combi.remove(combi.size() - 1);
-        backtrack(arr, res, startIndex + 1, combi, target);
+        backtrack(candidates, res, startIndex + 1, combi, target);
     }
 }

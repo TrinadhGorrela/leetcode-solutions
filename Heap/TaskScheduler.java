@@ -17,19 +17,19 @@ class TaskScheduler {
         int maxFreq = 0;
         int maxCount = 0;
 
-        for (char i : tasks) {
-            freq[i - 'A']++;
+        for (char task : tasks) {
+            freq[task - 'A']++;
 
-            if (freq[i - 'A'] == maxFreq) {
+            if (freq[task - 'A'] == maxFreq) {
                 maxCount++;
-            } else if (freq[i - 'A'] > maxFreq) {
-                maxFreq = freq[i - 'A'];
+            } else if (freq[task - 'A'] > maxFreq) {
+                maxFreq = freq[task - 'A'];
                 maxCount = 1;
             }
         }
 
-        int calLength = (maxFreq - 1) * (n + 1) + maxCount;
+        int minIntervals = (maxFreq - 1) * (n + 1) + maxCount;
 
-        return Math.max(calLength, tasks.length);
+        return Math.max(minIntervals, tasks.length);
     }
 }

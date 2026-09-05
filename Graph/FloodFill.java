@@ -36,9 +36,9 @@ class FloodFill {
         while (!queue.isEmpty()) {
             int size = queue.size();
             while (size != 0) {
-                int[] temp = queue.poll();
-                int i = temp[0];
-                int j = temp[1];
+                int[] curr = queue.poll();
+                int i = curr[0];
+                int j = curr[1];
 
                 for (int[] dir : dirs) {
                     int newI = i + dir[0];

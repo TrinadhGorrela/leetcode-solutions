@@ -17,14 +17,14 @@ class WaterBottles {
     public static int numWaterBottles(int numBottles, int numExchange) {
         int res=numBottles;
         while(numBottles>=numExchange){
-        int t=numBottles/numExchange;
+        int bottlesFromExchange=numBottles/numExchange;
            if(numBottles%numExchange==0){
-            res=res+t;
-            numBottles=t;
+            res=res+bottlesFromExchange;
+            numBottles=bottlesFromExchange;
            }
            else{
-            res=res+t;
-            numBottles=t+(numBottles%numExchange);
+            res=res+bottlesFromExchange;
+            numBottles=bottlesFromExchange+(numBottles%numExchange);
            }
         }
         return res;

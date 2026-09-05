@@ -21,8 +21,8 @@ class KClosestPointsToOrigin {
 
         for (int i = 0; i < points.length; i++) {
             int[] point = points[i];
-            double sqrt = Math.sqrt((point[0] * point[0]) + (point[1] * point[1]));
-            queue.offer(new double[] { sqrt, point[0], point[1] });
+            double distance = Math.sqrt((point[0] * point[0]) + (point[1] * point[1]));
+            queue.offer(new double[] { distance, point[0], point[1] });
             if (queue.size() > k) {
                 queue.poll();
             }

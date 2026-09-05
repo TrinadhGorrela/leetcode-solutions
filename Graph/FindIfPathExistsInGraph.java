@@ -53,9 +53,9 @@ class FindIfPathExistsInGraph {
     }
 
     static void addEdge(List<List<Integer>> graph, int u, int v) {
-        List<Integer> temp1 = graph.get(u);
-        List<Integer> temp2 = graph.get(v);
-        temp1.add(v);
-        temp2.add(u);
+        List<Integer> adjU = graph.get(u);
+        List<Integer> adjV = graph.get(v);
+        adjU.add(v);
+        adjV.add(u);
     }
 }

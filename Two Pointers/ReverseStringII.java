@@ -15,20 +15,20 @@
  */
 class ReverseStringII {
     public static String reverseStr(String s, int k) {
-        char[] res = s.toCharArray();
+        char[] chars = s.toCharArray();
 
         for (int i = 0; i < s.length(); i = i + 2 * k) {
-            swap(res, i, Math.min(i + k - 1, s.length() - 1));
+            swap(chars, i, Math.min(i + k - 1, s.length() - 1));
         }
 
-        return new String(res);
+        return new String(chars);
     }
 
-    public static void swap(char[] res, int st, int en) {
+    public static void swap(char[] chars, int st, int en) {
         while (st < en) {
-            char temp = res[st];
-            res[st] = res[en];
-            res[en] = temp;
+            char temp = chars[st];
+            chars[st] = chars[en];
+            chars[en] = temp;
             st++;
             en--;
         }

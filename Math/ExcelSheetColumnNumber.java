@@ -18,8 +18,8 @@ class ExcelSheetColumnNumber {
         int sum = 0;
         for (int i = 0; i < columnTitle.length(); i++) {
             char c = columnTitle.charAt(i);
-            int num = c - 64;
-            sum = (sum * 26) + num;
+            int letterValue = c - 64;
+            sum = (sum * 26) + letterValue;
         }
         return sum;
     }
