@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-338%20%7C%20334%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-343%20%7C%20339%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/Easy-161-44B77B?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Medium-163-FCB833?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Hard-14-EB5C5C?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Medium-167-FCB833?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Hard-15-EB5C5C?style=for-the-badge"/>
 </p>
 
 <h1 align="center">LeetCode Solutions in Java</h1>
@@ -52,9 +52,9 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Metric | Value |
 | ------ | ----- |
-| **Total solutions** | **338** (334 Java + 4 SQL) |
-| Difficulty | 🟢 161 Easy · 🟡 163 Medium · 🔴 14 Hard |
-| Patterns covered | **20** |
+| **Total solutions** | **343** (339 Java + 4 SQL) |
+| Difficulty | 🟢 161 Easy · 🟡 167 Medium · 🔴 15 Hard |
+| Patterns covered | **21** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
 
@@ -65,12 +65,12 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Array | 58 | 41 | 16 | 1 |
 | Math | 36 | 27 | 9 | 0 |
 | Greedy | 31 | 9 | 21 | 1 |
+| Dynamic Programming | 25 | 5 | 18 | 2 |
 | Two Pointers | 24 | 13 | 9 | 2 |
-| Dynamic Programming | 22 | 5 | 16 | 1 |
 | Graph | 21 | 5 | 14 | 2 |
 | Tree | 21 | 9 | 11 | 1 |
+| Backtracking | 19 | 1 | 15 | 3 |
 | Sliding Window | 19 | 5 | 12 | 2 |
-| Backtracking | 18 | 1 | 14 | 3 |
 | Binary Search | 17 | 6 | 10 | 1 |
 | Linked List | 14 | 7 | 7 | 0 |
 | Matrix | 13 | 5 | 8 | 0 |
@@ -80,10 +80,11 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Stack | 6 | 2 | 4 | 0 |
 | Heap | 4 | 1 | 3 | 0 |
 | Divide and Conquer | 1 | 0 | 1 | 0 |
+| Misc | 1 | 0 | 1 | 0 |
 | Trie | 1 | 1 | 0 | 0 |
-| **Total (Java)** | **334** | **158** | **162** | **14** |
+| **Total (Java)** | **339** | **158** | **166** | **15** |
 | Database (SQL) | 4 | 3 | 1 | 0 |
-| **Grand total** | **338** | **161** | **163** | **14** |
+| **Grand total** | **343** | **161** | **167** | **15** |
 
 ## Conventions used throughout
 
@@ -98,12 +99,12 @@ I built this the way you actually study: practice first, notice the recurring sh
 ```
 leetcode-solutions/
 ├── Array/               ── 58
-├── Backtracking/        ── 18
+├── Backtracking/        ── 19
 ├── Binary Search/       ── 17
 ├── Database/            ── 4 (SQL)
 ├── Database_SQL/        ── 4
 ├── Divide and Conquer/  ── 1
-├── Dynamic Programming/ ── 22
+├── Dynamic Programming/ ── 25
 ├── Graph/               ── 21
 ├── Greedy/              ── 31
 ├── Hash Table/          ── 8
@@ -111,6 +112,7 @@ leetcode-solutions/
 ├── Linked List/         ── 14
 ├── Math/                ── 36
 ├── Matrix/              ── 13
+├── misc/                ── 1
 ├── Prefix Sum/          ── 10
 ├── Sliding Window/      ── 19
 ├── Stack/               ── 6
