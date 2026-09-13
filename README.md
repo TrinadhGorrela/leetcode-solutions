@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-360%20%7C%20356%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-361%20%7C%20357%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/Easy-164-44B77B?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Medium-178-FCB833?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Medium-179-FCB833?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Hard-18-EB5C5C?style=for-the-badge"/>
 </p>
 
@@ -52,9 +52,9 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Metric | Value |
 | ------ | ----- |
-| **Total solutions** | **360** (356 Java + 4 SQL) |
-| Difficulty | 🟢 164 Easy · 🟡 178 Medium · 🔴 18 Hard |
-| Patterns covered | **21** |
+| **Total solutions** | **361** (357 Java + 4 SQL) |
+| Difficulty | 🟢 164 Easy · 🟡 179 Medium · 🔴 18 Hard |
+| Patterns covered | **20** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
 
@@ -62,7 +62,7 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Pattern | Solved | Easy | Medium | Hard |
 | ------- | ------ | :---: | :----: | :---: |
-| Array | 59 | 42 | 16 | 1 |
+| Array | 60 | 42 | 17 | 1 |
 | Math | 38 | 28 | 10 | 0 |
 | Greedy | 31 | 9 | 21 | 1 |
 | Dynamic Programming | 28 | 5 | 21 | 2 |
@@ -82,9 +82,9 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Divide and Conquer | 1 | 0 | 1 | 0 |
 | Misc | 1 | 0 | 1 | 0 |
 | Trie | 1 | 1 | 0 | 0 |
-| **Total (Java)** | **356** | **161** | **177** | **18** |
+| **Total (Java)** | **357** | **161** | **178** | **18** |
 | Database (SQL) | 4 | 3 | 1 | 0 |
-| **Grand total** | **360** | **164** | **178** | **18** |
+| **Grand total** | **361** | **164** | **179** | **18** |
 
 ## Conventions used throughout
 
@@ -98,11 +98,10 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 ```
 leetcode-solutions/
-├── Array/               ── 59
+├── Array/               ── 60
 ├── Backtracking/        ── 21
 ├── Binary Search/       ── 18
 ├── Database/            ── 4 (SQL)
-├── Database_SQL/        ── 4
 ├── Divide and Conquer/  ── 1
 ├── Dynamic Programming/ ── 28
 ├── Graph/               ── 23
