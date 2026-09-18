@@ -54,7 +54,7 @@ I built this the way you actually study: practice first, notice the recurring sh
 | ------ | ----- |
 | **Total solutions** | **373** (369 Java + 4 SQL) |
 | Difficulty | 🟢 165 Easy · 🟡 188 Medium · 🔴 20 Hard |
-| Patterns covered | **20** |
+| Patterns covered | **18** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
 
@@ -62,26 +62,24 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Pattern | Solved | Easy | Medium | Hard |
 | ------- | ------ | :---: | :----: | :---: |
-| Array | 60 | 42 | 17 | 1 |
-| Math | 39 | 29 | 10 | 0 |
-| Greedy | 31 | 9 | 21 | 1 |
-| Dynamic Programming | 29 | 5 | 22 | 2 |
-| Two Pointers | 26 | 13 | 10 | 3 |
-| Graph | 23 | 5 | 16 | 2 |
-| Linked List | 23 | 8 | 15 | 0 |
-| Backtracking | 21 | 1 | 16 | 4 |
-| Tree | 21 | 9 | 11 | 1 |
-| Sliding Window | 20 | 5 | 13 | 2 |
-| Binary Search | 18 | 6 | 10 | 2 |
-| Matrix | 13 | 5 | 8 | 0 |
-| String | 12 | 7 | 4 | 1 |
-| Prefix Sum | 10 | 6 | 4 | 0 |
-| Hash Table | 8 | 8 | 0 | 0 |
-| Stack | 7 | 2 | 5 | 0 |
-| Heap | 5 | 1 | 3 | 1 |
+| Math | 54 | 37 | 17 | 0 |
+| Array | 45 | 31 | 14 | 0 |
+| Dynamic Programming | 31 | 3 | 25 | 3 |
+| Greedy | 25 | 6 | 16 | 3 |
+| Hash Table | 25 | 19 | 5 | 1 |
+| Linked List | 23 | 8 | 14 | 1 |
+| Tree | 23 | 9 | 13 | 1 |
+| Two Pointers | 21 | 11 | 8 | 2 |
+| Backtracking | 19 | 1 | 14 | 4 |
+| Graph | 19 | 2 | 15 | 2 |
+| Binary Search | 17 | 6 | 10 | 1 |
+| Sliding Window | 16 | 4 | 10 | 2 |
+| String | 14 | 11 | 3 | 0 |
+| Matrix | 13 | 4 | 9 | 0 |
+| Prefix Sum | 11 | 7 | 4 | 0 |
+| Stack | 8 | 2 | 6 | 0 |
+| Heap | 4 | 1 | 3 | 0 |
 | Divide and Conquer | 1 | 0 | 1 | 0 |
-| Misc | 1 | 0 | 1 | 0 |
-| Trie | 1 | 1 | 0 | 0 |
 | **Total (Java)** | **369** | **162** | **187** | **20** |
 | Database (SQL) | 4 | 3 | 1 | 0 |
 | **Grand total** | **373** | **165** | **188** | **20** |
@@ -98,27 +96,25 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 ```
 leetcode-solutions/
-├── Array/               ── 60
-├── Backtracking/        ── 21
-├── Binary Search/       ── 18
+├── Array/               ── 45
+├── Backtracking/        ── 19
+├── Binary Search/       ── 17
 ├── Database/            ── 4 (SQL)
 ├── Divide and Conquer/  ── 1
-├── Dynamic Programming/ ── 29
-├── Graph/               ── 23
-├── Greedy/              ── 31
-├── Hash Table/          ── 8
-├── Heap/                ── 5
+├── Dynamic Programming/ ── 31
+├── Graph/               ── 19
+├── Greedy/              ── 25
+├── Hash Table/          ── 25
+├── Heap/                ── 4
 ├── Linked List/         ── 23
-├── Math/                ── 39
+├── Math/                ── 54
 ├── Matrix/              ── 13
-├── misc/                ── 1
-├── Prefix Sum/          ── 10
-├── Sliding Window/      ── 20
-├── Stack/               ── 7
-├── String/              ── 12
-├── Tree/                ── 21
-├── Trie/                ── 1
-└── Two Pointers/        ── 26
+├── Prefix Sum/          ── 11
+├── Sliding Window/      ── 16
+├── Stack/               ── 8
+├── String/              ── 14
+├── Tree/                ── 23
+└── Two Pointers/        ── 21
 ```
 
 ## Tech stack
