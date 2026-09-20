@@ -20,6 +20,6 @@ class ReverseDegreeOfAString {
             sum = sum + (temp * (i + 1));
         }
 
-    return sum;
+        return sum;
     }
 }
