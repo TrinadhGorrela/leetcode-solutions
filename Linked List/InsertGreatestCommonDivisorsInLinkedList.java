@@ -47,5 +47,4 @@ class InsertGreatestCommonDivisorsInLinkedList {
 
         return s;
     }
-
 }
