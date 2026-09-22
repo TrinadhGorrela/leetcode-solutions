@@ -1,9 +1,9 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-379%20%7C%20375%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-380%20%7C%20376%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/Easy-166-44B77B?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Medium-193-FCB833?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Hard-20-EB5C5C?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Hard-21-EB5C5C?style=for-the-badge"/>
 </p>
 
 <h1 align="center">LeetCode Solutions in Java</h1>
@@ -52,8 +52,8 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Metric | Value |
 | ------ | ----- |
-| **Total solutions** | **379** (375 Java + 4 SQL) |
-| Difficulty | 🟢 166 Easy · 🟡 193 Medium · 🔴 20 Hard |
+| **Total solutions** | **380** (376 Java + 4 SQL) |
+| Difficulty | 🟢 166 Easy · 🟡 193 Medium · 🔴 21 Hard |
 | Patterns covered | **18** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
@@ -68,7 +68,7 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Greedy | 25 | 6 | 16 | 3 |
 | Hash Table | 25 | 19 | 5 | 1 |
 | Linked List | 25 | 8 | 16 | 1 |
-| Tree | 23 | 9 | 13 | 1 |
+| Tree | 24 | 9 | 13 | 2 |
 | Two Pointers | 21 | 11 | 8 | 2 |
 | Backtracking | 19 | 1 | 14 | 4 |
 | Graph | 19 | 2 | 15 | 2 |
@@ -80,9 +80,9 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Stack | 9 | 2 | 7 | 0 |
 | Heap | 4 | 1 | 3 | 0 |
 | Divide and Conquer | 1 | 0 | 1 | 0 |
-| **Total (Java)** | **375** | **163** | **192** | **20** |
+| **Total (Java)** | **376** | **163** | **192** | **21** |
 | Database (SQL) | 4 | 3 | 1 | 0 |
-| **Grand total** | **379** | **166** | **193** | **20** |
+| **Grand total** | **380** | **166** | **193** | **21** |
 
 ## Conventions used throughout
 
@@ -113,7 +113,7 @@ leetcode-solutions/
 ├── Sliding Window/      ── 16
 ├── Stack/               ── 9
 ├── String/              ── 14
-├── Tree/                ── 23
+├── Tree/                ── 24
 └── Two Pointers/        ── 21
 ```
 
