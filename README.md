@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-380%20%7C%20376%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-381%20%7C%20377%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/Easy-166-44B77B?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Medium-193-FCB833?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Medium-194-FCB833?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Hard-21-EB5C5C?style=for-the-badge"/>
 </p>
 
@@ -52,8 +52,8 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Metric | Value |
 | ------ | ----- |
-| **Total solutions** | **380** (376 Java + 4 SQL) |
-| Difficulty | 🟢 166 Easy · 🟡 193 Medium · 🔴 21 Hard |
+| **Total solutions** | **381** (377 Java + 4 SQL) |
+| Difficulty | 🟢 166 Easy · 🟡 194 Medium · 🔴 21 Hard |
 | Patterns covered | **18** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
@@ -76,13 +76,13 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Sliding Window | 16 | 4 | 10 | 2 |
 | String | 14 | 11 | 3 | 0 |
 | Matrix | 13 | 4 | 9 | 0 |
-| Prefix Sum | 11 | 7 | 4 | 0 |
+| Prefix Sum | 12 | 7 | 5 | 0 |
 | Stack | 9 | 2 | 7 | 0 |
 | Heap | 4 | 1 | 3 | 0 |
 | Divide and Conquer | 1 | 0 | 1 | 0 |
-| **Total (Java)** | **376** | **163** | **192** | **21** |
+| **Total (Java)** | **377** | **163** | **193** | **21** |
 | Database (SQL) | 4 | 3 | 1 | 0 |
-| **Grand total** | **380** | **166** | **193** | **21** |
+| **Grand total** | **381** | **166** | **194** | **21** |
 
 ## Conventions used throughout
 
@@ -109,7 +109,7 @@ leetcode-solutions/
 ├── Linked List/         ── 25
 ├── Math/                ── 55
 ├── Matrix/              ── 13
-├── Prefix Sum/          ── 11
+├── Prefix Sum/          ── 12
 ├── Sliding Window/      ── 16
 ├── Stack/               ── 9
 ├── String/              ── 14
