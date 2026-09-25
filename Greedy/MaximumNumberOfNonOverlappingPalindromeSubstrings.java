@@ -40,11 +40,11 @@ class MaximumNumberOfNonOverlappingPalindromeSubstrings {
     }
 
     private static boolean isPal(String s, int left, int right) {
-
         while (left < right) {
             if (s.charAt(left) != s.charAt(right)) {
                 return false;
             }
+
             left++;
             right--;
         }
