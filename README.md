@@ -1,8 +1,8 @@
 <p align="center">
-  <img src="https://img.shields.io/badge/Solutions-384%20%7C%20380%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
+  <img src="https://img.shields.io/badge/Solutions-385%20%7C%20381%20Java%20%2B%204%20SQL-4B8BBE?style=for-the-badge&logo=leetcode&logoColor=FFA116"/>
   <img src="https://img.shields.io/badge/Language-Java%2017-E76F00?style=for-the-badge&logo=java&logoColor=white"/>
   <img src="https://img.shields.io/badge/Easy-167-44B77B?style=for-the-badge"/>
-  <img src="https://img.shields.io/badge/Medium-195-FCB833?style=for-the-badge"/>
+  <img src="https://img.shields.io/badge/Medium-196-FCB833?style=for-the-badge"/>
   <img src="https://img.shields.io/badge/Hard-22-EB5C5C?style=for-the-badge"/>
 </p>
 
@@ -52,8 +52,8 @@ I built this the way you actually study: practice first, notice the recurring sh
 
 | Metric | Value |
 | ------ | ----- |
-| **Total solutions** | **384** (380 Java + 4 SQL) |
-| Difficulty | 🟢 167 Easy · 🟡 195 Medium · 🔴 22 Hard |
+| **Total solutions** | **385** (381 Java + 4 SQL) |
+| Difficulty | 🟢 167 Easy · 🟡 196 Medium · 🔴 22 Hard |
 | Patterns covered | **18** |
 | Language | Java 17 — standard library only, zero external deps |
 | Structure | Organized by **algorithmic pattern**, self-contained files |
@@ -65,8 +65,8 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Math | 57 | 38 | 19 | 0 |
 | Array | 46 | 32 | 14 | 0 |
 | Dynamic Programming | 32 | 3 | 26 | 3 |
+| Hash Table | 26 | 19 | 6 | 1 |
 | Greedy | 25 | 6 | 16 | 3 |
-| Hash Table | 25 | 19 | 5 | 1 |
 | Linked List | 25 | 8 | 16 | 1 |
 | Tree | 24 | 9 | 13 | 2 |
 | Two Pointers | 21 | 11 | 8 | 2 |
@@ -80,9 +80,9 @@ I built this the way you actually study: practice first, notice the recurring sh
 | Stack | 10 | 2 | 7 | 1 |
 | Heap | 4 | 1 | 3 | 0 |
 | Divide and Conquer | 1 | 0 | 1 | 0 |
-| **Total (Java)** | **380** | **164** | **194** | **22** |
+| **Total (Java)** | **381** | **164** | **195** | **22** |
 | Database (SQL) | 4 | 3 | 1 | 0 |
-| **Grand total** | **384** | **167** | **195** | **22** |
+| **Grand total** | **385** | **167** | **196** | **22** |
 
 ## Conventions used throughout
 
@@ -104,7 +104,7 @@ leetcode-solutions/
 ├── Dynamic Programming/ ── 32
 ├── Graph/               ── 19
 ├── Greedy/              ── 25
-├── Hash Table/          ── 25
+├── Hash Table/          ── 26
 ├── Heap/                ── 4
 ├── Linked List/         ── 25
 ├── Math/                ── 57
