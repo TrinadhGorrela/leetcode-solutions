@@ -15,17 +15,19 @@
  * index 0, single-element arrays
  */
 class MinimumCommonValue {
-    public int getCommon(int[] nums1, int[] nums2) {
+     public int getCommon(int[] nums1, int[] nums2) {
         Set<Integer> set = new HashSet<>();
-        int res = Integer.MAX_VALUE;
+
         for (int i = 0; i < nums1.length; i++) {
             set.add(nums1[i]);
         }
-        for (int j = 0; j < nums2.length; j++) {
-            if (set.contains(nums2[j])) {
-                res = Math.min(res, nums2[j]);
+
+        for (int i : nums2) {
+            if (set.contains(i)) {
+                return i;
             }
         }
-        return res == Integer.MAX_VALUE ? -1 : res;
+        
+        return -1;
     }
 }

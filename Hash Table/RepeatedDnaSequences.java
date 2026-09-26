@@ -1,7 +1,7 @@
 /**
  * 187. Repeated DNA Sequences
  * Difficulty: Medium | Tags: Hash Table, String, Bit Manipulation, Sliding Window, Rolling Hash, Hash Function, Z
- * Algorithm, Boyer�Moore String-Search Algorithm
+ * Algorithm, Boyer-Moore String-Search Algorithm
  * https://leetcode.com/problems/repeated-dna-sequences/
  *
  * Pattern: Hash Table + Substring Enumeration (Fixed-Length Sliding Window)

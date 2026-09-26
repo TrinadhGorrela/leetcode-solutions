@@ -15,28 +15,29 @@
  * same word (set blocks it), one pattern char mapped to two words (map blocks it)
  */
 class WordPattern {
-    public boolean wordPattern(String pattern, String s) {
-        Map<Character,String> map=new HashMap<>();
-        Set<String> set=new HashSet<>();
-        String[] words=s.split(" ");
-        if(pattern.length()!=words.length)
-        	return false;
-        for(int i=0;i<pattern.length();i++) {
-        	if(map.containsKey(pattern.charAt(i))) {
-        		if(!map.get(pattern.charAt(i)).equals(words[i])) {
-        			return false;
-        		}
-        			
-        	}
-        	else {
-        		if (set.contains(words[i])) {
-        		    return false; 
-        		}
+	public boolean wordPattern(String pattern, String s) {
+        Map<Character, String> map = new HashMap<>();
+        Set<String> set = new HashSet<>();
+        String[] words = s.split(" ");
 
-        		map.put(pattern.charAt(i), words[i]);
-        		set.add(words[i]);
-        	}
+        if (pattern.length() != words.length)
+            return false;
+
+        for (int i = 0; i < pattern.length(); i++) {
+            if (map.containsKey(pattern.charAt(i))) {
+                if (!map.get(pattern.charAt(i)).equals(words[i])) {
+                    return false;
+                }
+            } else {
+                if (set.contains(words[i])) {
+                    return false;
+                }
+
+                map.put(pattern.charAt(i), words[i]);
+                set.add(words[i]);
+            }
         }
-        return true; 
+		
+        return true;
     }
 }
